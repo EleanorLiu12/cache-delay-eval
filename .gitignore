@@ -1,0 +1,23 @@
+.DS_Store
+
+# Research materials kept outside the remote repository.
+docs/
+paper/
+CS 699 Proposal_KejunLiu.md
+
+# Local environments and tooling.
+.venv/
+.venv-vllm-metal/
+.tools/
+
+# Python build and test artifacts.
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Keep raw measurements in version control; ignore only scratch reruns.
+results/scratch-*
+
+# Generated static-site output.
+_site/

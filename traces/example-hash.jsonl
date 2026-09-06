@@ -1,0 +1,4 @@
+{"block_size": 512, "created_at": "2026-09-03T15:00:00+00:00", "metadata": {"purpose": "format example: no prompt text, block hashes only"}, "schema_version": "1.1", "source": "hand-authored (Mooncake-style, hash-only)", "time_unit": "ms", "trace_id": "example-hash-v1", "type": "trace_meta"}
+{"arrival_time_ms": 0, "block_hashes": [46, 47, 48], "metadata": {}, "output_tokens": 128, "prompt_tokens": 1400, "request_id": "req-000", "session_id": "session-000", "type": "request", "user_id": "user-000"}
+{"arrival_time_ms": 27482, "block_hashes": [46, 47, 91, 92], "metadata": {}, "output_tokens": 96, "parent_request_id": "req-000", "prompt_tokens": 1830, "request_id": "req-001", "session_id": "session-000", "type": "request", "user_id": "user-000"}
+{"arrival_time_ms": 91044, "block_hashes": [46, 47, 55], "metadata": {}, "output_tokens": 64, "prompt_tokens": 1290, "request_id": "req-002", "session_id": "session-001", "type": "request", "user_id": "user-000"}

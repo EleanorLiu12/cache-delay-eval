@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cache-delay-eval"
+version = "0.1.0"
+description = "Trace-driven evaluation tools for stale KV-cache routing state"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Kejun Liu"}]
+dependencies = []
+
+[project.scripts]
+cache-delay-generate-trace = "cache_delay_eval.generate_trace:main"
+cache-delay-validate-trace = "cache_delay_eval.trace:main"
+cache-delay-calibrate = "cache_delay_eval.calibration:main"
+cache-delay-summarize = "cache_delay_eval.summarize:main"
+cache-delay-audit = "cache_delay_eval.audit:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

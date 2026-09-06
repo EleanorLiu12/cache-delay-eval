@@ -1,0 +1,16 @@
+{
+  "base_url": "http://127.0.0.1:8000",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "backend": "vllm-cuda",
+  "hardware": "RECORD GPU MODEL AND MEMORY BEFORE RUN",
+  "prompt_tokens": [128, 512, 1024, 2048],
+  "cached_prefix_tokens": [0, 64, 256, 512, 1024],
+  "queue_depths": [0, 2, 8],
+  "block_size": 16,
+  "trials": 30,
+  "blocker_output_tokens": 64,
+  "blocker_headstart_ms": 25,
+  "timeout_s": 180,
+  "seed": 699,
+  "output": "results/calibration-cuda.jsonl"
+}

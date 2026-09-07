@@ -3,7 +3,7 @@
 # Research materials kept outside the remote repository.
 docs/
 paper/
-CS 699 Proposal_KejunLiu.md
+*Proposal*.md
 
 # Local environments and tooling.
 .venv/

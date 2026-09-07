@@ -1,11 +1,12 @@
 # Evaluating Cache Update Delays in LLM Request Routing
 
-A measurement harness for studying how **stale cache metadata** degrades
-prefix-cache-aware request routing in LLM serving systems.
+A measurement harness for studying how an LLM request router should trade off
+**estimated cache locality, estimated queue depth, and state age** when choosing
+a server.
 
-This repository is a course research project (CS 699). It is built to be run
-and audited by someone who has never seen the project before, so the sections
-below start from the serving background and end with exact commands.
+It is written to be run and audited by someone who has never seen the project
+before, so the sections below start from the serving background and end with
+exact commands.
 
 ---
 
@@ -41,22 +42,53 @@ the whole time. The router routes on a slightly old map.
 
 ## 2. The research question
 
-> **How does delaying cache-state updates affect cache hit rate and TTFT, and
-> at what delay does it start to hurt?**
+> **How should an LLM request router quantitatively trade off estimated
+> cached-prefix length, estimated queue depth, and state age to minimize TTFT?**
 
-Prior work (Preble, SGLang, llm-d) establishes that prefix locality is worth
-exploiting, and a recent P2P inference preprint shows that stale estimates
-erode the gains. What is missing is a number: **how much staleness a serving
-stack can absorb before routing quality collapses**, and how that threshold
-moves with cache lifetime and workload.
+The goal is not merely to show that cache locality, queueing, and stale state
+affect latency. It is to derive a measurable **routing criterion**: when is a
+longer cached prefix worth sending a request to a more heavily queued server,
+and how should that choice change as the router's information gets older?
+
+The terms in the question refer to specific router inputs:
+
+- **Estimated cached-prefix length** comes from the router-visible
+  **cache-index state**, which maps cache-block hashes to the servers believed
+  to hold them.
+- **Estimated queue depth** comes from the router-visible **load state**, such
+  as the latest reported number of running and waiting requests.
+- **State age** is the time since that cache-index or load state was generated.
+  It is not a generic JSON `metadata` field.
+
+The router-visible state can differ from **ground-truth state** at the servers.
+For example, the index may still list a block that has already been evicted, or
+the reported queue depth may no longer be current. The proposed router should
+account for that uncertainty rather than treating every reported value as
+equally reliable.
+
+The main question is supported by three narrower questions:
+
+1. **Latency calibration:** What is the TTFT cost of prompt length, actual
+   cached-prefix length, and actual queue depth? This produces
+   `L(prompt, cache, queue)` and quantifies how much queueing a cached prefix is
+   worth.
+2. **State accuracy:** How does state age affect the accuracy of the router's
+   estimated cache locations and queue depths?
+3. **Index scalability:** How do global KV-cache index size and update rate
+   affect cache-index update delay? Index memory is recorded as a supporting
+   measurement, not treated as a standalone research outcome.
+
+The final evaluation compares the resulting state-age-aware routing criterion
+with cache-only, load-only, session-affinity, and oracle routing. Its value is
+measured by TTFT and by how closely its server choices approach the oracle.
 
 The plan is trace-driven. A block-level emulator of two vLLM replicas holds
-ground-truth cache state and emits insert/evict events; the router receives
-them immediately or after a controlled delay (100 ms – 10 s); five policies are
-compared (round-robin, session affinity, approximate cache-aware, immediate
-event-driven, delayed event-driven). Live GPUs are used only for calibration
-and one validation slice — replaying the full sweep on real replicas would cost
-tens of hours per configuration across ~300 configurations.
+ground-truth cache and load state and emits state updates; the router receives
+them immediately or after a controlled delay (100 ms – 10 s). The proposed
+state-age-aware criterion is compared with round-robin, session-affinity,
+cache-only, load-only, and oracle routing. Live GPUs are used only for
+calibration and one validation slice — replaying the full sweep on real
+replicas would cost tens of hours per configuration across ~300 configurations.
 
 ### What is in this repository *today*
 

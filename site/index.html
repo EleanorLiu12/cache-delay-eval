@@ -80,6 +80,7 @@
       <div class="content-panel">
         <nav class="section-tabs" aria-label="Week 1–2 sections">
           <a href="#results">Results</a>
+          <a href="#discussion">Discussion</a>
           <a href="#validation">Validation</a>
           <a href="#methods">Methods</a>
           <a href="#data">Data</a>
@@ -185,6 +186,55 @@
               <p>The routing choice reverses between tested depths 0 and 2. Measuring depth 1 is the next step for a tighter boundary.</p>
             </article>
           </div>
+        </div>
+      </section>
+
+      <section class="shell discussion" id="discussion" aria-labelledby="discussion-title">
+        <div class="discussion-heading">
+          <div>
+            <p class="eyebrow">What this means</p>
+            <h2 id="discussion-title">A cache hit is a latency budget, not a routing rule</h2>
+          </div>
+          <p class="discussion-lede">
+            Cache locality should not be treated as a binary preference. A router should
+            choose the cache-holding replica only when its additional queueing cost is smaller
+            than the prefill time expected to be saved by reuse.
+          </p>
+        </div>
+
+        <div class="decision-rule" aria-label="Routing decision rule">
+          <span>Choose the cache-holding replica when</span>
+          <strong>additional queueing cost &lt; expected prefill time saved</strong>
+        </div>
+
+        <div class="discussion-grid">
+          <article>
+            <p class="discussion-index">01 · Interpretation</p>
+            <h3>The experiment supplies an empirical cost model</h3>
+            <p>
+              The lookup turns prompt length, cached-prefix length, and queue depth into an
+              expected TTFT. The routing decision can therefore compare predicted latency
+              instead of choosing a server from cache hits alone.
+            </p>
+          </article>
+          <article>
+            <p class="discussion-index">02 · Scope</p>
+            <h3>The measured boundary is system-specific</h3>
+            <p>
+              These values describe Qwen3-0.6B on vLLM-Metal and an Apple M3 Pro. This is a
+              single-server calibration, not evidence yet about stale state or multi-replica
+              routing behavior.
+            </p>
+          </article>
+          <article>
+            <p class="discussion-index">03 · Next step</p>
+            <h3>Refine the boundary, then test routing policies</h3>
+            <p>
+              Queue depths 0, 2, and 8 show that the decision reverses before depth 2, but do
+              not locate the exact crossover. Depth 1 is the next calibration point before the
+              lookup is used in the two-replica emulator.
+            </p>
+          </article>
         </div>
       </section>
 

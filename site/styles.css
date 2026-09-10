@@ -630,6 +630,88 @@ h3 {
   line-height: 1;
 }
 
+.discussion {
+  padding-block: 76px 82px;
+}
+
+.discussion-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(340px, 1.1fr);
+  gap: clamp(42px, 6vw, 76px);
+  align-items: end;
+  margin-bottom: 32px;
+}
+
+.discussion-lede {
+  margin-bottom: 2px;
+  color: var(--muted);
+  font-size: 1.02rem;
+}
+
+.decision-rule {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  margin-bottom: 24px;
+  padding: 22px 24px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  background: var(--paper);
+  box-shadow: var(--shadow-soft);
+}
+
+.decision-rule span {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.decision-rule strong {
+  color: var(--heading);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.12rem, 2.1vw, 1.48rem);
+  font-weight: 500;
+  text-align: right;
+}
+
+.discussion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.discussion-grid article {
+  min-height: 260px;
+  padding: 25px 24px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in srgb, var(--paper) 86%, transparent);
+}
+
+.discussion-grid h3 {
+  margin-bottom: 12px;
+  font-size: 1.02rem;
+}
+
+.discussion-grid article > p:last-child {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.discussion-index {
+  margin-bottom: 34px;
+  color: var(--red);
+  font-size: 0.72rem;
+  font-weight: 760;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
 .validation-band {
   padding-block: 82px;
   color: var(--validation-text);
@@ -835,6 +917,7 @@ footer {
 
   .intro,
   .section-heading,
+  .discussion-heading,
   .finding-layout,
   .validation-layout,
   .integrity-note,
@@ -967,6 +1050,7 @@ footer {
 
   .hero-chart,
   .findings,
+  .discussion,
   .methods,
   .validation-band,
   .data-section {
@@ -1023,6 +1107,16 @@ footer {
   .integrity-note {
     gap: 16px;
     padding: 25px 22px;
+  }
+
+  .decision-rule {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .decision-rule strong {
+    text-align: left;
   }
 
   .footer-inner {

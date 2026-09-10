@@ -753,6 +753,61 @@ h3 {
   text-transform: uppercase;
 }
 
+.comments-panel {
+  margin-top: 54px;
+  padding-top: 34px;
+  border-top: 2px solid var(--heading);
+}
+
+.comments-heading {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.75fr) minmax(340px, 1.25fr);
+  gap: clamp(36px, 6vw, 72px);
+  align-items: end;
+  margin-bottom: 28px;
+}
+
+.comments-heading h3 {
+  margin: 0;
+  color: var(--heading);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+
+.comments-heading > p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.comments-host {
+  min-height: 230px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  box-shadow: var(--shadow-soft);
+}
+
+.comments-host .giscus,
+.comments-host .giscus-frame {
+  width: 100%;
+}
+
+.comments-loading,
+.comments-host noscript p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.comments-loading a,
+.comments-host noscript a {
+  color: var(--accent);
+}
+
 .validation-band {
   padding-block: 82px;
   color: var(--validation-text);
@@ -1236,6 +1291,7 @@ footer {
   .intro,
   .section-heading,
   .discussion-heading,
+  .comments-heading,
   .finding-layout,
   .validation-layout,
   .integrity-note,
@@ -1358,6 +1414,10 @@ footer {
   .plan-document h3 {
     scroll-margin-top: 148px;
   }
+
+  .comments-host {
+    padding: 18px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -1417,6 +1477,20 @@ footer {
 
   .plan-toc ol {
     grid-template-columns: 1fr;
+  }
+
+  .comments-panel {
+    margin-top: 42px;
+    padding-top: 28px;
+  }
+
+  .comments-heading {
+    gap: 16px;
+  }
+
+  .comments-host {
+    min-height: 210px;
+    padding: 12px;
   }
 
   .intro {

@@ -12,12 +12,16 @@ license = {text = "MIT"}
 authors = [{name = "Kejun Liu"}]
 dependencies = []
 
+[project.optional-dependencies]
+plots = ["matplotlib>=3.8"]
+
 [project.scripts]
 cache-delay-generate-trace = "cache_delay_eval.generate_trace:main"
 cache-delay-validate-trace = "cache_delay_eval.trace:main"
 cache-delay-calibrate = "cache_delay_eval.calibration:main"
 cache-delay-summarize = "cache_delay_eval.summarize:main"
 cache-delay-audit = "cache_delay_eval.audit:main"
+cache-delay-analyze-calibration = "cache_delay_eval.analyze_calibration:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

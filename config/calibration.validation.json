@@ -1,0 +1,16 @@
+{
+  "base_url": "http://127.0.0.1:8000",
+  "model": "Qwen/Qwen3-0.6B",
+  "backend": "vllm-metal",
+  "hardware": "Apple M3 Pro, 18-core GPU, 36 GiB unified memory",
+  "prompt_tokens": [128, 512, 1024],
+  "cached_prefix_tokens": [0, 64, 256, 512],
+  "queue_depths": [0, 2, 8],
+  "block_size": 16,
+  "trials": 5,
+  "blocker_output_tokens": 32,
+  "blocker_headstart_ms": 50,
+  "timeout_s": 180,
+  "seed": 1701,
+  "output": "results/calibration-metal-validation.jsonl"
+}

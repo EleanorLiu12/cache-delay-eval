@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import concurrent.futures
+import hashlib
 import itertools
 import json
 import platform
@@ -26,6 +27,117 @@ def _load_config(path: Path) -> dict[str, Any]:
     if missing:
         raise ValueError(f"missing config keys: {', '.join(missing)}")
     return config
+
+
+def _conditions(config: dict[str, Any], block_size: int) -> list[tuple[int, int, int]]:
+    prompt_lengths = [int(value) for value in config["prompt_tokens"]]
+    prefix_lengths = [int(value) for value in config["cached_prefix_tokens"]]
+    queue_depths = [int(value) for value in config["queue_depths"]]
+    return [
+        (prompt_len, prefix_len, queue_depth)
+        for prompt_len, prefix_len, queue_depth in itertools.product(
+            prompt_lengths, prefix_lengths, queue_depths
+        )
+        if 0 <= prefix_len <= prompt_len - block_size and prefix_len % block_size == 0
+    ]
+
+
+def _schedule(
+    conditions: list[tuple[int, int, int]], trials: int, seed: int
+) -> list[tuple[int, int, int, int]]:
+    schedule = [(trial, *condition) for trial in range(trials) for condition in conditions]
+    random.Random(seed).shuffle(schedule)
+    return schedule
+
+
+def _config_fingerprint(config: dict[str, Any], trials: int) -> str:
+    """Identify settings that affect the observations in a calibration run."""
+    relevant = {
+        "model": config["model"],
+        "backend": config.get("backend", "vllm"),
+        "prompt_tokens": config["prompt_tokens"],
+        "cached_prefix_tokens": config["cached_prefix_tokens"],
+        "queue_depths": config["queue_depths"],
+        "block_size": int(config.get("block_size", 16)),
+        "trials": trials,
+        "seed": int(config.get("seed", 699)),
+        "blocker_output_tokens": int(config.get("blocker_output_tokens", 32)),
+        "blocker_headstart_ms": float(config.get("blocker_headstart_ms", 25)),
+        "blocker_ready_timeout_s": float(config.get("blocker_ready_timeout_s", 5)),
+    }
+    encoded = json.dumps(relevant, sort_keys=True, separators=(",", ":")).encode()
+    return hashlib.sha256(encoded).hexdigest()
+
+
+def _resume_state(
+    output: Path,
+    schedule: list[tuple[int, int, int, int]],
+    config: dict[str, Any],
+    trials: int,
+) -> tuple[str | None, set[int], str | None]:
+    """Validate an existing run and return its run ID and completed sequences."""
+    if not output.exists() or output.stat().st_size == 0:
+        return None, set(), None
+
+    expected_fingerprint = _config_fingerprint(config, trials)
+    run_id: str | None = None
+    prompt_scheme: str | None = None
+    completed: set[int] = set()
+    with output.open("r", encoding="utf-8") as stream:
+        for line_no, raw in enumerate(stream, 1):
+            if not raw.strip():
+                continue
+            try:
+                row = json.loads(raw)
+            except json.JSONDecodeError as exc:
+                raise ValueError(
+                    f"cannot resume: line {line_no} is incomplete or invalid JSON"
+                ) from exc
+            if row.get("type") != "calibration_result":
+                raise ValueError(f"cannot resume: line {line_no} is not a calibration result")
+            row_run_id = row.get("run_id")
+            if not isinstance(row_run_id, str) or not row_run_id:
+                raise ValueError(f"cannot resume: line {line_no} has no run_id")
+            if run_id is None:
+                run_id = row_run_id
+                prompt_scheme = str(row.get("prompt_scheme", "offset-v1"))
+                if prompt_scheme not in {"offset-v1", "suffix-nonce-v2"}:
+                    raise ValueError(
+                        f"cannot resume: line {line_no} uses unknown prompt scheme "
+                        f"{prompt_scheme!r}"
+                    )
+            elif row_run_id != run_id:
+                raise ValueError("cannot resume: output contains more than one run_id")
+            elif str(row.get("prompt_scheme", "offset-v1")) != prompt_scheme:
+                raise ValueError("cannot resume: output contains more than one prompt scheme")
+
+            sequence = row.get("sequence")
+            if isinstance(sequence, bool) or not isinstance(sequence, int):
+                raise ValueError(f"cannot resume: line {line_no} has an invalid sequence")
+            if sequence < 0 or sequence >= len(schedule):
+                raise ValueError(f"cannot resume: line {line_no} sequence is out of range")
+            if sequence in completed:
+                raise ValueError(f"cannot resume: duplicate sequence {sequence}")
+            trial, prompt_len, prefix_len, queue_depth = schedule[sequence]
+            actual = (
+                row.get("trial"),
+                row.get("prompt_tokens_target"),
+                row.get("cached_prefix_tokens_target"),
+                row.get("queue_depth_target"),
+            )
+            if actual != (trial, prompt_len, prefix_len, queue_depth):
+                raise ValueError(
+                    f"cannot resume: line {line_no} does not match the configured schedule"
+                )
+            if row.get("model") != config["model"]:
+                raise ValueError(f"cannot resume: line {line_no} uses a different model")
+            if row.get("block_size") != int(config.get("block_size", 16)):
+                raise ValueError(f"cannot resume: line {line_no} uses a different block size")
+            fingerprint = row.get("config_fingerprint")
+            if fingerprint is not None and fingerprint != expected_fingerprint:
+                raise ValueError(f"cannot resume: line {line_no} uses a different configuration")
+            completed.add(sequence)
+    return run_id, completed, prompt_scheme
 
 
 def _reservoir(client: VLLMClient, minimum_tokens: int, salt: str) -> list[int]:
@@ -85,12 +197,13 @@ def _wait_for_blockers(
         time.sleep(0.01)
 
 
-def run(config: dict[str, Any], output: Path, trials_override: int | None = None) -> None:
-    client = VLLMClient(
-        config["base_url"], config.get("api_key", ""), float(config.get("timeout_s", 180))
-    )
-    client.health()
-    server_version = client.version()
+def run(
+    config: dict[str, Any],
+    output: Path,
+    trials_override: int | None = None,
+    resume: bool = False,
+    progress_every: int = 1,
+) -> None:
     block_size = int(config.get("block_size", 16))
     trials = int(trials_override if trials_override is not None else config.get("trials", 30))
     seed = int(config.get("seed", 699))
@@ -98,32 +211,59 @@ def run(config: dict[str, Any], output: Path, trials_override: int | None = None
     headstart_ms = float(config.get("blocker_headstart_ms", 25))
     blocker_ready_timeout_s = float(config.get("blocker_ready_timeout_s", 5))
     prompt_lengths = [int(value) for value in config["prompt_tokens"]]
-    prefix_lengths = [int(value) for value in config["cached_prefix_tokens"]]
     queue_depths = [int(value) for value in config["queue_depths"]]
-    if block_size < 4 or trials < 1 or any(value < 0 for value in queue_depths):
-        raise ValueError("block_size must be >= 4, trials positive, and queue depths non-negative")
-
-    conditions = [
-        (prompt_len, prefix_len, queue_depth)
-        for prompt_len, prefix_len, queue_depth in itertools.product(
-            prompt_lengths, prefix_lengths, queue_depths
+    if (
+        block_size < 4
+        or trials < 1
+        or progress_every < 1
+        or any(value < 0 for value in queue_depths)
+    ):
+        raise ValueError(
+            "block_size must be >= 4, trials and progress interval positive, "
+            "and queue depths non-negative"
         )
-        if 0 <= prefix_len <= prompt_len - block_size and prefix_len % block_size == 0
-    ]
+
+    conditions = _conditions(config, block_size)
     if not conditions:
         raise ValueError("no valid conditions; prefixes must be block-aligned and leave one suffix block")
-    schedule = [(trial, *condition) for trial in range(trials) for condition in conditions]
-    random.Random(seed).shuffle(schedule)
+    schedule = _schedule(conditions, trials, seed)
+    if output.exists() and output.stat().st_size and not resume:
+        raise ValueError(
+            f"output already exists and is non-empty: {output}; use --resume or a fresh output"
+        )
+    prior_run_id, completed, prior_prompt_scheme = (
+        _resume_state(output, schedule, config, trials) if resume else (None, set(), None)
+    )
+    if len(completed) == len(schedule):
+        print(f"calibration already complete: {len(schedule)}/{len(schedule)} rows")
+        return
+
+    client = VLLMClient(
+        config["base_url"], config.get("api_key", ""), float(config.get("timeout_s", 180))
+    )
+    client.health()
+    server_version = client.version()
     max_prompt = max(prompt_lengths)
     max_queue = max(queue_depths)
     # A unique first block prevents cache bleed across conditions while the
     # remaining bodies can reuse a small token pool. One nonce is needed for
-    # each measured condition, each of its possible blocker requests, and the
-    # placebo warm request issued when the condition has no cached prefix.
-    nonce_count = len(schedule) * (max_queue + 2)
+    prompt_scheme = prior_prompt_scheme or "suffix-nonce-v2"
+    # each measured condition, each of its possible blocker requests, and two
+    # suffix sentinels. The sentinels force cached warm/probe prompts to diverge
+    # at the first block after the target prefix even if the reservoir happens
+    # to repeat at the selected body offsets.
+    nonce_stride = max_queue + (2 if prompt_scheme == "offset-v1" else 3)
+    nonce_count = len(schedule) * nonce_stride
     body_tokens = max_prompt * 4
-    run_uuid = uuid.uuid4()
-    run_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S") + "-" + run_uuid.hex
+    if prior_run_id is None:
+        run_uuid = uuid.uuid4()
+        run_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S") + "-" + run_uuid.hex
+    else:
+        run_id = prior_run_id
+        try:
+            run_uuid = uuid.UUID(hex=run_id.rsplit("-", 1)[1])
+        except (IndexError, ValueError) as exc:
+            raise ValueError(f"cannot resume: invalid run_id {run_id!r}") from exc
     body = _reservoir(client, body_tokens, run_id)
     distinct = list(dict.fromkeys(body))
     if len(distinct) < 16:
@@ -158,13 +298,28 @@ def run(config: dict[str, Any], output: Path, trials_override: int | None = None
         remaining = length - block_size
         return first + body[body_offset : body_offset + remaining]
     output.parent.mkdir(parents=True, exist_ok=True)
+    remaining = len(schedule) - len(completed)
+    if completed:
+        print(f"resuming {run_id}: {len(completed)}/{len(schedule)} complete, {remaining} remaining")
+    config_fingerprint = _config_fingerprint(config, trials)
     with output.open("a", encoding="utf-8") as stream:
         for sequence, (trial, prompt_len, prefix_len, queue_depth) in enumerate(schedule):
-            nonce_base = sequence * (max_queue + 2)
+            if sequence in completed:
+                continue
+            nonce_base = sequence * nonce_stride
             if prefix_len:
                 shared = prompt_with_nonce(nonce_base, prefix_len, 0)
-                warm_suffix = body[max_prompt : max_prompt + prompt_len - prefix_len]
-                probe_suffix = body[2 * max_prompt : 2 * max_prompt + prompt_len - prefix_len]
+                suffix_len = prompt_len - prefix_len
+                if prompt_scheme == "offset-v1":
+                    warm_suffix = body[max_prompt : max_prompt + suffix_len]
+                    probe_suffix = body[2 * max_prompt : 2 * max_prompt + suffix_len]
+                else:
+                    warm_suffix = nonce_block(nonce_base + max_queue + 1) + body[
+                        max_prompt : max_prompt + suffix_len - block_size
+                    ]
+                    probe_suffix = nonce_block(nonce_base + max_queue + 2) + body[
+                        2 * max_prompt : 2 * max_prompt + suffix_len - block_size
+                    ]
                 warm_prompt = shared + warm_suffix
                 probe_prompt = shared + probe_suffix
             else:
@@ -184,6 +339,8 @@ def run(config: dict[str, Any], output: Path, trials_override: int | None = None
                 "type": "calibration_result",
                 "schema_version": "1.0",
                 "run_id": run_id,
+                "config_fingerprint": config_fingerprint,
+                "prompt_scheme": prompt_scheme,
                 "sequence": sequence,
                 "trial": trial,
                 "model": config["model"],
@@ -271,11 +428,17 @@ def run(config: dict[str, Any], output: Path, trials_override: int | None = None
             stream.flush()
             status = result["status"]
             detail = "" if status != "ok" else f" ttft={result['ttft_ms']:.1f}ms"
-            print(
-                f"[{sequence + 1}/{len(schedule)}] prompt={prompt_len} prefix={prefix_len} "
-                f"queue={queue_depth} trial={trial} {status}{detail}",
-                flush=True,
-            )
+            completed.add(sequence)
+            if (
+                status != "ok"
+                or len(completed) % progress_every == 0
+                or len(completed) == len(schedule)
+            ):
+                print(
+                    f"[{len(completed)}/{len(schedule)}] prompt={prompt_len} "
+                    f"prefix={prefix_len} queue={queue_depth} trial={trial} {status}{detail}",
+                    flush=True,
+                )
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -283,11 +446,29 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--config", type=Path, required=True)
     parser.add_argument("--output", type=Path)
     parser.add_argument("--trials", type=int, help="override trials for a smoke run")
+    parser.add_argument(
+        "--resume",
+        action="store_true",
+        help="validate an existing output and run only its unfinished sequences",
+    )
+    parser.add_argument(
+        "--progress-every",
+        type=int,
+        default=1,
+        metavar="N",
+        help="print progress every N completed requests (errors always print)",
+    )
     args = parser.parse_args(argv)
     try:
         config = _load_config(args.config)
         output = args.output or Path(config.get("output", "results/calibration.jsonl"))
-        run(config, output, args.trials)
+        run(
+            config,
+            output,
+            args.trials,
+            resume=args.resume,
+            progress_every=args.progress_every,
+        )
     except (OSError, ValueError, RuntimeError) as exc:
         print(f"calibration failed: {exc}", file=sys.stderr)
         return 1

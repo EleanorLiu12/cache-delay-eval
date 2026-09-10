@@ -84,7 +84,9 @@ def main(argv: list[str] | None = None) -> int:
         raise SystemExit("no result rows found")
     args.output.parent.mkdir(parents=True, exist_ok=True)
     with args.output.open("w", encoding="utf-8", newline="") as stream:
-        writer = csv.DictWriter(stream, fieldnames=list(rows[0]))
+        writer = csv.DictWriter(
+            stream, fieldnames=list(rows[0]), lineterminator="\n"
+        )
         writer.writeheader()
         writer.writerows(rows)
     print(f"wrote {len(rows)} condition summaries to {args.output}")
@@ -93,4 +95,3 @@ def main(argv: list[str] | None = None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

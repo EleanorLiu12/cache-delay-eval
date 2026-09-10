@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Week 1–2 calibration results for stale-state-aware prefix-cache routing in distributed LLM serving.">
+    <title>Cache Delay Evaluation · Week 1–2 Results</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#results">Skip to results</a>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="wordmark" href="#top" aria-label="Cache Delay Evaluation home">
+          <span class="wordmark-mark" aria-hidden="true">CD</span>
+          <span>Cache Delay Evaluation</span>
+        </a>
+        <nav aria-label="Page sections">
+          <a href="#results">Results</a>
+          <a href="#validation">Validation</a>
+          <a href="#methods">Methods</a>
+          <a href="#data">Data</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="intro shell" aria-labelledby="page-title">
+        <div class="intro-copy">
+          <p class="eyebrow">Week 1–2 · TTFT calibration</p>
+          <h1 id="page-title">How cache reuse and queue depth shape time to first token</h1>
+          <p class="lede">
+            A controlled vLLM-Metal experiment measuring prompt length, cached-prefix length,
+            and queue depth. The resulting lookup table supplies empirical latency estimates
+            for the next-stage distributed routing emulator.
+          </p>
+          <div class="status-line" aria-label="Experiment status">
+            <span class="status-dot" aria-hidden="true"></span>
+            Complete and independently validated
+          </div>
+        </div>
+
+        <dl class="summary-grid" aria-label="Experiment summary">
+          <div>
+            <dt>945</dt>
+            <dd>accepted observations</dd>
+          </div>
+          <div>
+            <dt>27</dt>
+            <dd>experimental conditions</dd>
+          </div>
+          <div>
+            <dt>30 + 5</dt>
+            <dd>calibration + validation trials</dd>
+          </div>
+          <div>
+            <dt>0</dt>
+            <dd>audit mismatches</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="shell hero-chart" id="results" aria-labelledby="response-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Primary result</p>
+            <h2 id="response-title">Queue depth is the dominant source of TTFT</h2>
+          </div>
+          <p>
+            Each panel preserves all 30 raw measurements per condition. Solid markers show
+            medians with bootstrap 95% confidence intervals; the y-axis is logarithmic.
+          </p>
+        </div>
+        <figure class="chart-frame chart-frame-main">
+          <a href="assets/calibration-response.png" aria-label="Open the full-size calibration response chart">
+            <img src="assets/calibration-response.png" alt="Nine-panel chart of TTFT by cached-prefix length across prompt lengths and queue depths. TTFT rises sharply as queue depth increases.">
+          </a>
+          <figcaption>
+            TTFT response surface across 27 valid combinations of prompt length, cache reuse,
+            and observed queue depth.
+            <a href="assets/calibration-response.pdf">Download PDF</a>
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="shell findings" aria-labelledby="findings-title">
+        <div class="section-heading compact">
+          <div>
+            <p class="eyebrow">Interpretation</p>
+            <h2 id="findings-title">Cache reuse helps most when the server is idle</h2>
+          </div>
+        </div>
+        <div class="finding-layout">
+          <figure class="chart-frame">
+            <a href="assets/cache-benefit.png" aria-label="Open the full-size cache benefit chart">
+              <img src="assets/cache-benefit.png" alt="Chart showing TTFT savings from cache reuse for each prompt length and queue depth.">
+            </a>
+            <figcaption>
+              Absolute and relative cache benefit by condition.
+              <a href="assets/cache-benefit.pdf">Download PDF</a>
+            </figcaption>
+          </figure>
+
+          <div class="finding-cards">
+            <article>
+              <p class="metric">42.7%</p>
+              <h3>lower idle TTFT</h3>
+              <p>A 512-token cached prefix reduced the 1024-token prompt median from 240.1 ms to 137.6 ms.</p>
+            </article>
+            <article>
+              <p class="metric">21.4×</p>
+              <h3>queue-depth penalty</h3>
+              <p>For the uncached 1024-token prompt, median TTFT rose from 240.1 ms at depth 0 to 5140.3 ms at depth 8.</p>
+            </article>
+            <article>
+              <p class="metric">3 variables</p>
+              <h3>empirical routing cost</h3>
+              <p>The lookup estimates TTFT from prompt tokens, actually cached prefix tokens, and actual queue depth.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="validation-band" id="validation" aria-labelledby="validation-title">
+        <div class="shell">
+          <div class="section-heading inverse">
+            <div>
+              <p class="eyebrow">Held-out check</p>
+              <h2 id="validation-title">Independent validation stays close to calibration</h2>
+            </div>
+            <p>
+              A separately randomized five-trial run tested all 27 conditions with corrected
+              suffix nonces and no audit failures.
+            </p>
+          </div>
+          <div class="validation-layout">
+            <figure class="chart-frame dark-frame">
+              <a href="assets/calibration-validation.png" aria-label="Open the full-size calibration validation chart">
+                <img src="assets/calibration-validation.png" alt="Observed versus expected TTFT validation chart with points close to the equality line.">
+              </a>
+              <figcaption>
+                Expected calibration values versus held-out observations.
+                <a href="assets/calibration-validation.pdf">Download PDF</a>
+              </figcaption>
+            </figure>
+
+            <dl class="metrics-table" aria-label="Validation error summary">
+              <div class="metrics-header">
+                <dt>Statistic</dt>
+                <dd>MAE</dd>
+                <dd>MAPE</dd>
+              </div>
+              <div>
+                <dt>Mean TTFT</dt>
+                <dd>21.81 ms</dd>
+                <dd>1.31%</dd>
+              </div>
+              <div>
+                <dt>Median TTFT</dt>
+                <dd>25.05 ms</dd>
+                <dd>1.07%</dd>
+              </div>
+              <div>
+                <dt>p95 TTFT</dt>
+                <dd>55.48 ms</dd>
+                <dd>3.48%</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section class="shell methods" id="methods" aria-labelledby="methods-title">
+        <div class="section-heading compact">
+          <div>
+            <p class="eyebrow">Experimental design</p>
+            <h2 id="methods-title">Controlled, audited, and resumable</h2>
+          </div>
+        </div>
+        <ol class="method-grid">
+          <li>
+            <span>01</span>
+            <h3>Exact prompts</h3>
+            <p>Token IDs fix prompt and block-aligned prefix lengths exactly for the server tokenizer.</p>
+          </li>
+          <li>
+            <span>02</span>
+            <h3>Observed queues</h3>
+            <p>Each probe begins only after server metrics confirm the requested running-plus-waiting depth.</p>
+          </li>
+          <li>
+            <span>03</span>
+            <h3>Manipulation checks</h3>
+            <p>Every accepted row matches its target prompt length, cache-hit tokens, and queue depth.</p>
+          </li>
+          <li>
+            <span>04</span>
+            <h3>Safe continuation</h3>
+            <p>Interrupted runs resume only after existing rows, configuration, and schedule identity are validated.</p>
+          </li>
+        </ol>
+
+        <aside class="integrity-note" aria-labelledby="integrity-title">
+          <div>
+            <p class="eyebrow">Protocol integrity</p>
+            <h3 id="integrity-title">Failed and system-contaminated attempts were excluded, not erased</h3>
+          </div>
+          <p>
+            An early validation run revealed 32 unintended shared tokens, and later attempts
+            encountered a desktop-wide latency shift under high GPU load. Those runs remain
+            preserved locally for auditability but do not contribute to the published lookup,
+            figures, or reported validation errors.
+          </p>
+        </aside>
+      </section>
+
+      <section class="data-section" id="data" aria-labelledby="data-title">
+        <div class="shell data-layout">
+          <div>
+            <p class="eyebrow">Artifacts</p>
+            <h2 id="data-title">Inspect the published results</h2>
+            <p>
+              The public package contains the condition-level lookup, a machine-readable
+              validation report, and publication-resolution figures. Raw failed runs are not
+              included in the site package.
+            </p>
+          </div>
+          <div class="download-list">
+            <a href="assets/calibration-lookup.csv" download>
+              <span><strong>Calibration lookup</strong><small>CSV · 27 conditions</small></span>
+              <span aria-hidden="true">↓</span>
+            </a>
+            <a href="assets/calibration-validation-report.json" download>
+              <span><strong>Validation report</strong><small>JSON · audit and errors</small></span>
+              <span aria-hidden="true">↓</span>
+            </a>
+            <a href="https://github.com/EleanorLiu12/cache-delay-eval">
+              <span><strong>Source repository</strong><small>Code, tests, and experiment configuration</small></span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="shell footer-inner">
+        <p>Cache Delay Evaluation · Week 1–2 calibration study</p>
+        <p>Apple M3 Pro · Qwen/Qwen3-0.6B · vLLM-Metal</p>
+      </div>
+    </footer>
+  </body>
+</html>

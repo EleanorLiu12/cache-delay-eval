@@ -1,0 +1,27 @@
+{
+  "calibration_audit": {
+    "cache_hit_mismatches": 0,
+    "prompt_length_mismatches": 0,
+    "queue_depth_mismatches": 0,
+    "rows_ok": 810
+  },
+  "calibration_file": "results/calibration-metal-confirmatory.jsonl",
+  "condition_level_mean_mae_ms": 21.806277401234613,
+  "condition_level_mean_mape_percent": 1.3091062264016387,
+  "condition_level_mean_max_abs_error_ms": 92.72799596666664,
+  "condition_level_median_mae_ms": 25.05414440740735,
+  "condition_level_median_mape_percent": 1.0720440919878367,
+  "condition_level_p95_mae_ms": 55.48455054999996,
+  "condition_level_p95_mape_percent": 3.4820107925487216,
+  "condition_level_p95_max_abs_error_ms": 191.40430685,
+  "conditions": 27,
+  "routing_summary": "mean TTFT",
+  "uncertainty": "bootstrap 95% confidence interval for condition median",
+  "validation_audit": {
+    "cache_hit_mismatches": 0,
+    "prompt_length_mismatches": 0,
+    "queue_depth_mismatches": 0,
+    "rows_ok": 135
+  },
+  "validation_file": "results/calibration-metal-validation.jsonl"
+}

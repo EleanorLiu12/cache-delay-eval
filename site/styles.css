@@ -270,13 +270,54 @@ html[data-theme="dark"] .theme-icon-moon {
   flex-direction: column;
 }
 
-.sidebar-label {
-  margin: 0 12px 18px;
+.plan-link {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 18px;
+  padding: 13px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--heading);
+  background: var(--paper);
+  text-decoration: none;
+}
+
+.plan-link:hover,
+.plan-link:focus-visible,
+.plan-link.is-active {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.plan-link svg {
+  width: 21px;
+  height: 21px;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: var(--accent);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
+}
+
+.plan-link > span {
+  display: grid;
+  min-width: 0;
+  line-height: 1.25;
+}
+
+.plan-link strong {
+  font-size: 0.86rem;
+}
+
+.plan-link small {
+  margin-top: 4px;
+  overflow: hidden;
   color: var(--muted);
-  font-size: 0.7rem;
-  font-weight: 780;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-size: 0.68rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .week-nav {
@@ -892,6 +933,209 @@ h3 {
   font-size: 0.78rem;
 }
 
+.plan-toolbar {
+  position: sticky;
+  top: 76px;
+  z-index: 30;
+  display: flex;
+  min-height: 66px;
+  padding-inline: max(32px, calc((100% - 1120px) / 2));
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-bottom: 1px solid var(--line);
+  background: var(--tab-bg);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+
+.plan-toolbar > span {
+  color: var(--heading);
+  font-size: 0.92rem;
+  font-weight: 720;
+}
+
+.plan-toolbar a {
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 720;
+  text-decoration: none;
+}
+
+.plan-toolbar a:hover,
+.plan-toolbar a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.plan-main {
+  padding-block: clamp(62px, 7vw, 96px) 100px;
+}
+
+.plan-document {
+  max-width: 920px;
+}
+
+.plan-document h1 {
+  max-width: 780px;
+  margin: 0;
+  color: var(--heading);
+  font-size: clamp(3.15rem, 6vw, 5.6rem);
+  letter-spacing: -0.052em;
+  line-height: 0.98;
+}
+
+.plan-document h2,
+.plan-document h3 {
+  color: var(--heading);
+  scroll-margin-top: 168px;
+}
+
+.plan-document h2 {
+  margin: 70px 0 20px;
+  padding-top: 31px;
+  border-top: 1px solid var(--line-strong);
+  font-size: clamp(1.7rem, 3vw, 2.35rem);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.plan-document h3 {
+  margin: 34px 0 12px;
+  font-size: 1.14rem;
+  line-height: 1.35;
+}
+
+.plan-document p,
+.plan-document ul {
+  max-width: 790px;
+}
+
+.plan-document p {
+  margin: 0 0 19px;
+}
+
+.plan-document ul {
+  margin: 5px 0 25px;
+  padding-left: 1.35rem;
+}
+
+.plan-document li {
+  margin-block: 8px;
+  padding-left: 5px;
+}
+
+.plan-document code {
+  padding: 0.13em 0.34em;
+  border: 1px solid var(--line);
+  color: var(--heading);
+  background: var(--panel-soft);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.87em;
+}
+
+.plan-document pre {
+  max-width: 790px;
+  margin: 25px 0 30px;
+  padding: 21px 23px;
+  overflow-x: auto;
+  border: 1px solid var(--validation-line);
+  color: var(--validation-heading);
+  background: var(--validation-bg);
+  box-shadow: var(--shadow-soft);
+}
+
+.plan-document pre code {
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  font-size: 0.86rem;
+  line-height: 1.7;
+}
+
+.plan-toc {
+  max-width: 790px;
+  margin: 42px 0 16px;
+  padding: 25px 27px 27px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  box-shadow: var(--shadow-soft);
+}
+
+.plan-toc > strong {
+  display: block;
+  margin-bottom: 16px;
+  color: var(--heading);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.plan-toc ol {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0;
+  padding-left: 1.25rem;
+  column-gap: 40px;
+  row-gap: 10px;
+}
+
+.plan-toc li {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.83rem;
+}
+
+.plan-toc a {
+  text-decoration: none;
+}
+
+.plan-toc a:hover,
+.plan-toc a:focus-visible {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.table-wrap {
+  max-width: 100%;
+  margin: 24px 0 32px;
+  overflow-x: auto;
+  border-top: 2px solid var(--heading);
+}
+
+.plan-document table {
+  width: 100%;
+  min-width: 620px;
+  border-collapse: collapse;
+  background: var(--paper);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.plan-document th,
+.plan-document td {
+  padding: 13px 14px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.plan-document th {
+  color: var(--heading);
+  background: var(--panel-soft);
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.plan-document td:first-child {
+  min-width: 180px;
+  color: var(--heading);
+  font-weight: 680;
+}
+
 footer {
   color: var(--footer-text);
   background: var(--footer-bg);
@@ -970,8 +1214,23 @@ footer {
     padding: 14px 18px;
   }
 
-  .sidebar-label,
   .milestone-card {
+    display: none;
+  }
+
+  .week-sidebar-inner {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 10px;
+  }
+
+  .plan-link {
+    min-height: 58px;
+    margin-bottom: 0;
+  }
+
+  .plan-link small {
     display: none;
   }
 
@@ -1014,6 +1273,17 @@ footer {
   .section-tabs a {
     flex: 0 0 auto;
   }
+
+  .plan-toolbar {
+    top: 66px;
+    min-height: 60px;
+    padding-inline: 18px;
+  }
+
+  .plan-document h2,
+  .plan-document h3 {
+    scroll-margin-top: 148px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -1026,6 +1296,19 @@ footer {
     display: none;
   }
 
+  .week-sidebar-inner {
+    display: block;
+    padding-inline: 12px;
+  }
+
+  .plan-link {
+    margin-bottom: 10px;
+  }
+
+  .plan-link small {
+    display: block;
+  }
+
   .theme-toggle {
     width: 40px;
     height: 40px;
@@ -1033,6 +1316,33 @@ footer {
 
   .section-tabs {
     gap: 26px;
+  }
+
+  .plan-toolbar {
+    align-items: flex-start;
+    padding-block: 12px;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .plan-main {
+    padding-block: 52px 72px;
+  }
+
+  .plan-document h1 {
+    font-size: clamp(2.7rem, 14vw, 4.2rem);
+  }
+
+  .plan-document h2 {
+    margin-top: 54px;
+  }
+
+  .plan-toc {
+    padding: 22px 21px 24px;
+  }
+
+  .plan-toc ol {
+    grid-template-columns: 1fr;
   }
 
   .intro {

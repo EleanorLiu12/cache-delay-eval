@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Week 1–2 calibration results for stale-state-aware prefix-cache routing in distributed LLM serving.">
+    <meta name="theme-color" content="#102338">
     <title>Cache Delay Evaluation · Week 1–2 Results</title>
     <link rel="stylesheet" href="styles.css">
   </head>
@@ -71,10 +72,13 @@
             medians with bootstrap 95% confidence intervals; the y-axis is logarithmic.
           </p>
         </div>
+        <p class="chart-mobile-note">Swipe horizontally to inspect the full-resolution chart.</p>
         <figure class="chart-frame chart-frame-main">
-          <a href="assets/calibration-response.png" aria-label="Open the full-size calibration response chart">
-            <img src="assets/calibration-response.png" alt="Nine-panel chart of TTFT by cached-prefix length across prompt lengths and queue depths. TTFT rises sharply as queue depth increases.">
-          </a>
+          <div class="chart-viewport chart-viewport-grid">
+            <a href="assets/calibration-response.png" aria-label="Open the full-size calibration response chart">
+              <img src="assets/calibration-response.png" width="2665" height="2225" decoding="async" alt="Nine-panel chart of TTFT by cached-prefix length across prompt lengths and queue depths. TTFT rises sharply as queue depth increases.">
+            </a>
+          </div>
           <figcaption>
             TTFT response surface across 27 valid combinations of prompt length, cache reuse,
             and observed queue depth.
@@ -92,9 +96,11 @@
         </div>
         <div class="finding-layout">
           <figure class="chart-frame">
-            <a href="assets/cache-benefit.png" aria-label="Open the full-size cache benefit chart">
-              <img src="assets/cache-benefit.png" alt="Chart showing TTFT savings from cache reuse for each prompt length and queue depth.">
-            </a>
+            <div class="chart-viewport chart-viewport-wide">
+              <a href="assets/cache-benefit.png" aria-label="Open the full-size cache benefit chart">
+                <img src="assets/cache-benefit.png" width="2665" height="905" loading="lazy" decoding="async" alt="Chart showing TTFT savings from cache reuse for each prompt length and queue depth.">
+              </a>
+            </div>
             <figcaption>
               Absolute and relative cache benefit by condition.
               <a href="assets/cache-benefit.pdf">Download PDF</a>
@@ -135,9 +141,11 @@
           </div>
           <div class="validation-layout">
             <figure class="chart-frame dark-frame">
-              <a href="assets/calibration-validation.png" aria-label="Open the full-size calibration validation chart">
-                <img src="assets/calibration-validation.png" alt="Observed versus expected TTFT validation chart with points close to the equality line.">
-              </a>
+              <div class="chart-viewport chart-viewport-validation">
+                <a href="assets/calibration-validation.png" aria-label="Open the full-size calibration validation chart">
+                  <img src="assets/calibration-validation.png" width="2225" height="1015" loading="lazy" decoding="async" alt="Observed versus expected TTFT validation chart with points close to the equality line.">
+                </a>
+              </div>
               <figcaption>
                 Expected calibration values versus held-out observations.
                 <a href="assets/calibration-validation.pdf">Download PDF</a>

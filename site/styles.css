@@ -22,6 +22,10 @@ html {
   scroll-behavior: smooth;
 }
 
+section[id] {
+  scroll-margin-top: 88px;
+}
+
 body {
   margin: 0;
   color: var(--ink);
@@ -69,6 +73,7 @@ img {
   z-index: 20;
   border-bottom: 1px solid rgba(214, 222, 231, 0.9);
   background: rgba(248, 250, 252, 0.92);
+  -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
 }
 
@@ -119,6 +124,11 @@ nav a {
 nav a:hover,
 nav a:focus-visible {
   color: var(--red);
+}
+
+a:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 4px;
 }
 
 .intro {
@@ -260,6 +270,15 @@ h3 {
   box-shadow: var(--shadow);
 }
 
+.chart-viewport {
+  overflow: hidden;
+  background: var(--paper);
+}
+
+.chart-viewport > a {
+  display: block;
+}
+
 .chart-frame img {
   width: 100%;
   height: auto;
@@ -268,6 +287,10 @@ h3 {
 .chart-frame a:focus-visible img {
   outline: 4px solid var(--blue);
   outline-offset: -4px;
+}
+
+.chart-mobile-note {
+  display: none;
 }
 
 .chart-frame figcaption {
@@ -523,7 +546,7 @@ footer {
   margin: 0;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 980px) {
   .intro,
   .section-heading,
   .finding-layout,
@@ -598,6 +621,32 @@ footer {
   .chart-frame figcaption a {
     display: block;
     margin-top: 7px;
+  }
+
+  .chart-mobile-note {
+    display: block;
+    margin: -14px 0 14px;
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+
+  .chart-viewport {
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-color: #8ca0b1 #e8eef3;
+    scrollbar-width: thin;
+  }
+
+  .chart-viewport-grid > a {
+    width: 720px;
+  }
+
+  .chart-viewport-wide > a {
+    width: 700px;
+  }
+
+  .chart-viewport-validation > a {
+    width: 620px;
   }
 
   .method-grid {

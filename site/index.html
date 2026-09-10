@@ -124,12 +124,13 @@
       <section class="shell hero-chart" id="results" aria-labelledby="response-title">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">Primary result</p>
-            <h2 id="response-title">Queue depth is the dominant source of TTFT</h2>
+            <p class="eyebrow">Routing-relevant result</p>
+            <h2 id="response-title">The experiment quantifies when cache locality stops being worth the queue</h2>
           </div>
           <p>
-            Each panel preserves all 30 raw measurements per condition. Solid markers show
-            medians with bootstrap 95% confidence intervals; the y-axis is logarithmic.
+            For a 1024-token prompt, reusing 512 cached tokens saved 102.5 ms at idle.
+            At queue depth 2, that cached path took 1157.1 ms—4.8× the 240.1 ms
+            TTFT of an uncached, idle replica.
           </p>
         </div>
         <p class="chart-mobile-note">Swipe horizontally to inspect the full-resolution chart.</p>
@@ -151,7 +152,7 @@
         <div class="section-heading compact">
           <div>
             <p class="eyebrow">Interpretation</p>
-            <h2 id="findings-title">Cache reuse helps most when the server is idle</h2>
+            <h2 id="findings-title">Idle cache reuse provides a measurable latency budget</h2>
           </div>
         </div>
         <div class="finding-layout">
@@ -169,19 +170,19 @@
 
           <div class="finding-cards">
             <article>
-              <p class="metric">42.7%</p>
-              <h3>lower idle TTFT</h3>
-              <p>A 512-token cached prefix reduced the 1024-token prompt median from 240.1 ms to 137.6 ms.</p>
+              <p class="metric">102.5 ms</p>
+              <h3>maximum measured cache saving</h3>
+              <p>A 512-token cached prefix reduced the idle 1024-token prompt median from 240.1 ms to 137.6 ms.</p>
             </article>
             <article>
-              <p class="metric">21.4×</p>
-              <h3>queue-depth penalty</h3>
-              <p>For the uncached 1024-token prompt, median TTFT rose from 240.1 ms at depth 0 to 5140.3 ms at depth 8.</p>
+              <p class="metric">+917.0 ms</p>
+              <h3>penalty for choosing cached + queued</h3>
+              <p>At depth 2, the cached path was 917.0 ms slower than sending the same prompt to an uncached idle replica.</p>
             </article>
             <article>
-              <p class="metric">3 variables</p>
-              <h3>empirical routing cost</h3>
-              <p>The lookup estimates TTFT from prompt tokens, actually cached prefix tokens, and actual queue depth.</p>
+              <p class="metric">0 → 2</p>
+              <h3>observed crossover interval</h3>
+              <p>The routing choice reverses between tested depths 0 and 2. Measuring depth 1 is the next step for a tighter boundary.</p>
             </article>
           </div>
         </div>

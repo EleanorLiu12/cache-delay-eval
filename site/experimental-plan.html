@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Live experimental plan for evaluating stale-state-aware prefix-cache routing in distributed LLM serving.">
-    <meta name="theme-color" content="#102338">
+    <meta name="theme-color" content="#ffffff">
     <title>Cache Delay Evaluation · Experiment Plan</title>
     <script>
       (() => {
@@ -17,22 +17,21 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="academic.css">
     <script src="plan.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#plan-content">Skip to plan</a>
-    <header class="site-header">
-      <div class="topbar-inner">
-        <a class="wordmark" href="index.html" aria-label="Cache Delay Evaluation home">
-          <span class="wordmark-mark" aria-hidden="true">CD</span>
-          <span class="wordmark-copy">
-            <strong>Cache Delay Evaluation</strong>
-            <small>Distributed LLM routing study</small>
-          </span>
+
+    <header class="masthead">
+      <div class="masthead-inner">
+        <a class="masthead-id" href="index.html">
+          <strong>Cache Delay Evaluation</strong> <span>· CS 699 research report</span>
         </a>
-        <div class="topbar-actions">
-          <a class="repository-link" href="https://github.com/EleanorLiu12/cache-delay-eval">Repository</a>
+        <nav class="masthead-nav" aria-label="Site">
+          <a href="index.html">Report</a>
+          <a href="experimental-plan.html" aria-current="page">Experiment plan</a>
+          <a href="https://github.com/EleanorLiu12/cache-delay-eval">Source &amp; data</a>
           <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode">
             <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
               <circle cx="12" cy="12" r="4"></circle>
@@ -42,75 +41,85 @@
               <path d="M20.3 15.7A8.5 8.5 0 0 1 8.3 3.7 8.5 8.5 0 1 0 20.3 15.7Z"></path>
             </svg>
           </button>
-        </div>
+        </nav>
       </div>
     </header>
 
-    <div class="workspace">
-      <aside class="week-sidebar" aria-label="Experiment plan and project weeks">
-        <div class="week-sidebar-inner">
-          <a class="plan-link is-active" href="#top" aria-current="page">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M6.75 3.75h7.5l3 3v13.5H6.75z"></path>
-              <path d="M14.25 3.75v3h3M9.5 11h5M9.5 14.5h5"></path>
-            </svg>
-            <span>
-              <strong>Experiment Plan</strong>
-              <small>Questions, stages, and protocol</small>
-            </span>
-          </a>
-          <nav class="week-nav" aria-label="Project weeks">
-            <a class="week-link" href="index.html">
-              <span>Week 1–2</span>
-              <small>Calibration results</small>
-            </a>
-            <span class="week-link is-planned" aria-disabled="true">
-              <span>Week 3–4</span>
-              <small>Emulator · Planned</small>
-            </span>
-            <span class="week-link is-planned" aria-disabled="true">
-              <span>Week 5–6</span>
-              <small>Routing study · Planned</small>
-            </span>
-            <span class="week-link is-planned" aria-disabled="true">
-              <span>Week 7–8</span>
-              <small>Final evaluation · Planned</small>
-            </span>
-          </nav>
-          <div class="milestone-card">
-            <span class="status-dot" aria-hidden="true"></span>
-            <div>
-              <strong>Current milestone</strong>
-              <small>Week 1–2 complete</small>
-            </div>
-          </div>
-        </div>
-      </aside>
-
-      <div class="content-panel">
-        <div class="plan-toolbar">
-          <span class="plan-source-status" id="plan-source-status">Loading current plan from GitHub…</span>
-          <a href="https://github.com/EleanorLiu12/cache-delay-eval/blob/main/docs/experimental-plan.md">View source on GitHub <span aria-hidden="true">↗</span></a>
-        </div>
-        <main id="top" class="plan-main">
-          <article class="plan-document shell" id="plan-content" aria-live="polite" aria-busy="true">
-            <div class="plan-loading" role="status">
-              <span class="plan-loading-mark" aria-hidden="true"></span>
-              <p>Loading the latest plan from the repository…</p>
-            </div>
-            <noscript>
-              <p>This page needs JavaScript to display the current repository plan. <a href="https://github.com/EleanorLiu12/cache-delay-eval/blob/main/docs/experimental-plan.md">Read it on GitHub.</a></p>
-            </noscript>
-          </article>
-        </main>
-        <footer>
-          <div class="shell footer-inner">
-            <p>Cache Delay Evaluation · Experimental roadmap</p>
-            <p>Rendered live from docs/experimental-plan.md</p>
-          </div>
-        </footer>
+    <main class="paper" id="top">
+      <div class="plan-source">
+        <span class="plan-source-status" id="plan-source-status">Loading current plan from GitHub…</span>
+        <a href="https://github.com/EleanorLiu12/cache-delay-eval/blob/main/docs/experimental-plan.md">View source on GitHub</a>
       </div>
-    </div>
+
+      <article class="plan-document" id="plan-content" aria-live="polite" aria-busy="true">
+        <div class="plan-loading" role="status">
+          <p>Loading the latest plan from the repository…</p>
+        </div>
+        <noscript>
+          <p>This page needs JavaScript to display the current repository plan. <a href="https://github.com/EleanorLiu12/cache-delay-eval/blob/main/docs/experimental-plan.md">Read it on GitHub.</a></p>
+        </noscript>
+      </article>
+
+      <nav class="frontmatter" aria-labelledby="plan-schedule-title">
+        <div>
+          <h2 id="plan-schedule-title">Reports by stage</h2>
+          <table class="schedule">
+            <tbody>
+              <tr data-current="true">
+                <td class="stage"><a href="index.html">Calibration</a></td>
+                <td class="when">Week 1–2</td>
+                <td class="state">Published</td>
+              </tr>
+              <tr>
+                <td class="stage">Emulator</td>
+                <td class="when">Week 3–4</td>
+                <td class="state">Planned</td>
+              </tr>
+              <tr>
+                <td class="stage">Router and policies</td>
+                <td class="when">Week 5–6</td>
+                <td class="state">Planned</td>
+              </tr>
+              <tr>
+                <td class="stage">Delay injection</td>
+                <td class="when">Week 7–8</td>
+                <td class="state">Planned</td>
+              </tr>
+              <tr>
+                <td class="stage">Workload sweeps</td>
+                <td class="when">Week 9–10</td>
+                <td class="state">Planned</td>
+              </tr>
+              <tr>
+                <td class="stage">Trace replay</td>
+                <td class="when">Week 11–12</td>
+                <td class="state">Planned</td>
+              </tr>
+              <tr>
+                <td class="stage">Analysis and report</td>
+                <td class="when">Week 13–14</td>
+                <td class="state">Planned</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <h2 id="plan-results-title">Published reports</h2>
+          <ol class="toc-list">
+            <li><a href="index.html"><span class="toc-num">1</span>Week 1–2 · Calibration results</a></li>
+          </ol>
+          <p class="dateline">Later stages are added here as each two-week report is published.</p>
+        </div>
+      </nav>
+    </main>
+
+    <footer class="colophon">
+      <div class="colophon-inner">
+        <p>Cache Delay Evaluation · Experimental roadmap</p>
+        <p>Rendered live from docs/experimental-plan.md</p>
+      </div>
+    </footer>
+
     <script>
       (() => {
         const button = document.querySelector(".theme-toggle");
@@ -120,7 +129,7 @@
           button.setAttribute("aria-pressed", String(isDark));
           button.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
           button.title = isDark ? "Switch to light mode" : "Switch to dark mode";
-          themeMeta.content = isDark ? "#09131f" : "#102338";
+          themeMeta.content = isDark ? "#17191b" : "#ffffff";
         };
         button.addEventListener("click", () => {
           const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";

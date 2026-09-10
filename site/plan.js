@@ -163,7 +163,7 @@
       .join("");
     const toc = `<nav class="plan-toc" aria-label="Plan contents"><strong>On this page</strong><ol>${contents}</ol></nav>`;
     const body = blocks.join("\n").replace("</h1>", `</h1>${toc}`);
-    return `<p class="eyebrow">Research design · Live repository document</p>${body}`;
+    return `<p class="plan-kicker">Research protocol · rendered from the authoritative repository document</p>${body}`;
   };
 
   const decodeContent = (content) => {
@@ -174,7 +174,7 @@
 
   const showError = () => {
     article.innerHTML = `
-      <p class="eyebrow">Repository source unavailable</p>
+      <p class="plan-kicker">Repository source unavailable</p>
       <h1>Experiment Plan</h1>
       <div class="plan-error" role="alert">
         <strong>The current plan could not be loaded.</strong>

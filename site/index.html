@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Week 1–2 calibration results for stale-state-aware prefix-cache routing in distributed LLM serving.">
-    <meta name="theme-color" content="#102338">
+    <meta name="theme-color" content="#ffffff">
     <title>Cache Delay Evaluation · Week 1–2 Results</title>
     <script>
       (() => {
@@ -17,22 +17,21 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="academic.css">
     <script src="comments.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#results">Skip to results</a>
-    <header class="site-header">
-      <div class="topbar-inner">
-        <a class="wordmark" href="#top" aria-label="Cache Delay Evaluation home">
-          <span class="wordmark-mark" aria-hidden="true">CD</span>
-          <span class="wordmark-copy">
-            <strong>Cache Delay Evaluation</strong>
-            <small>Distributed LLM routing study</small>
-          </span>
+
+    <header class="masthead">
+      <div class="masthead-inner">
+        <a class="masthead-id" href="#top">
+          <strong>Cache Delay Evaluation</strong> <span>· CS 699 research report</span>
         </a>
-        <div class="topbar-actions">
-          <a class="repository-link" href="https://github.com/EleanorLiu12/cache-delay-eval">Repository</a>
+        <nav class="masthead-nav" aria-label="Site">
+          <a href="index.html" aria-current="page">Report</a>
+          <a href="experimental-plan.html">Experiment plan</a>
+          <a href="https://github.com/EleanorLiu12/cache-delay-eval">Source &amp; data</a>
           <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode">
             <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
               <circle cx="12" cy="12" r="4"></circle>
@@ -42,363 +41,335 @@
               <path d="M20.3 15.7A8.5 8.5 0 0 1 8.3 3.7 8.5 8.5 0 1 0 20.3 15.7Z"></path>
             </svg>
           </button>
-        </div>
+        </nav>
       </div>
     </header>
 
-    <div class="workspace">
-      <aside class="week-sidebar" aria-label="Experiment plan and project weeks">
-        <div class="week-sidebar-inner">
-          <a class="plan-link" href="experimental-plan.html">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M6.75 3.75h7.5l3 3v13.5H6.75z"></path>
-              <path d="M14.25 3.75v3h3M9.5 11h5M9.5 14.5h5"></path>
-            </svg>
-            <span>
-              <strong>Experiment Plan</strong>
-              <small>Questions, stages, and protocol</small>
-            </span>
-          </a>
-          <nav class="week-nav" aria-label="Project weeks">
-            <a class="week-link is-active" href="#top" aria-current="page">
-              <span>Week 1–2</span>
-              <small>Calibration results</small>
-            </a>
-            <span class="week-link is-planned" aria-disabled="true">
-              <span>Week 3–4</span>
-              <small>Emulator · Planned</small>
-            </span>
-            <span class="week-link is-planned" aria-disabled="true">
-              <span>Week 5–6</span>
-              <small>Routing study · Planned</small>
-            </span>
-            <span class="week-link is-planned" aria-disabled="true">
-              <span>Week 7–8</span>
-              <small>Final evaluation · Planned</small>
-            </span>
-          </nav>
-          <div class="milestone-card">
-            <span class="status-dot" aria-hidden="true"></span>
-            <div>
-              <strong>Current milestone</strong>
-              <small>Complete and validated</small>
-            </div>
-          </div>
-        </div>
-      </aside>
+    <main class="paper" id="top">
+      <header class="titleblock">
+        <h1 id="page-title">Effects of prefix-cache reuse and queue depth on time to first token</h1>
+        <p class="byline">Kejun Liu</p>
+        <p class="affiliation">CS 699 research project · Qwen3-0.6B on vLLM-Metal, Apple M3 Pro</p>
+        <p class="dateline">Week 1–2 calibration study · Status: complete and independently validated</p>
+        <ul class="linkbar">
+          <li><a href="experimental-plan.html">Experiment plan</a></li>
+          <li><a href="https://github.com/EleanorLiu12/cache-delay-eval">Code &amp; data</a></li>
+          <li><a href="assets/calibration-lookup.csv" download>Lookup table (CSV)</a></li>
+          <li><a href="assets/calibration-validation-report.json" download>Validation report (JSON)</a></li>
+        </ul>
+      </header>
 
-      <div class="content-panel">
-        <nav class="section-tabs" aria-label="Week 1–2 sections">
-          <a href="#results">Results</a>
-          <a href="#discussion">Discussion</a>
-          <a href="#validation">Validation</a>
-          <a href="#methods">Methods</a>
-          <a href="#data">Data</a>
-        </nav>
-
-    <main id="top">
-      <section class="intro shell" aria-labelledby="page-title">
-        <div class="intro-copy">
-          <p class="eyebrow">Week 1–2 · TTFT calibration</p>
-          <h1 id="page-title">How cache reuse and queue depth shape time to first token</h1>
-          <p class="lede">
-            A controlled vLLM-Metal experiment measuring prompt length, cached-prefix length,
-            and queue depth. The resulting lookup table supplies empirical latency estimates
-            for the next-stage distributed routing emulator.
-          </p>
-          <div class="status-line" aria-label="Experiment status">
-            <span class="status-dot" aria-hidden="true"></span>
-            Complete and independently validated
-          </div>
-        </div>
-
-        <dl class="summary-grid" aria-label="Experiment summary">
-          <div>
-            <dt>945</dt>
-            <dd>accepted observations</dd>
-          </div>
-          <div>
-            <dt>27</dt>
-            <dd>experimental conditions</dd>
-          </div>
-          <div>
-            <dt>30 + 5</dt>
-            <dd>calibration + validation trials</dd>
-          </div>
-          <div>
-            <dt>0</dt>
-            <dd>audit mismatches</dd>
-          </div>
-        </dl>
+      <section class="abstract" aria-labelledby="page-title">
+        <p>
+          <span class="label">Abstract.</span> A controlled vLLM-Metal experiment measuring prompt length,
+          cached-prefix length, and queue depth. The resulting lookup table supplies empirical latency
+          estimates for the next-stage distributed routing emulator. Reusing a 512-token cached prefix
+          saved 102.5 ms at idle, but at queue depth 2 the same cached path took 1157.1 ms, 4.8× the
+          240.1 ms time to first token of an uncached, idle replica. Cache locality is therefore not a
+          binary routing preference.
+        </p>
       </section>
 
-      <section class="shell hero-chart" id="results" aria-labelledby="response-title">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Routing-relevant result</p>
-            <h2 id="response-title">The experiment quantifies when cache locality stops being worth the queue</h2>
-          </div>
-          <p>
-            For a 1024-token prompt, reusing 512 cached tokens saved 102.5 ms at idle.
-            At queue depth 2, that cached path took 1157.1 ms—4.8× the 240.1 ms
-            TTFT of an uncached, idle replica.
-          </p>
-        </div>
-        <p class="chart-mobile-note">Swipe horizontally to inspect the full-resolution chart.</p>
-        <figure class="chart-frame chart-frame-main">
-          <div class="chart-viewport chart-viewport-grid">
+      <div class="table-block">
+        <p class="table-caption"><span class="label">Table 1.</span> Experimental sample and audit summary.</p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th scope="col">Quantity</th>
+              <th scope="col" class="num">Count</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Accepted observations</th><td class="num">945</td></tr>
+            <tr><th scope="row">Experimental conditions</th><td class="num">27</td></tr>
+            <tr><th scope="row">Trials per condition (calibration + validation)</th><td class="num">30 + 5</td></tr>
+            <tr><th scope="row">Audit mismatches</th><td class="num">0</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="frontmatter">
+        <nav aria-labelledby="contents-title">
+          <h2 id="contents-title">Contents</h2>
+          <ol class="toc-list">
+            <li><a href="#results"><span class="toc-num">1</span>Primary result</a></li>
+            <li><a href="#benefit"><span class="toc-num">2</span>Cache benefit at idle</a></li>
+            <li><a href="#discussion"><span class="toc-num">3</span>Interpretation</a></li>
+            <li><a href="#validation"><span class="toc-num">4</span>Validation</a></li>
+            <li><a href="#methods"><span class="toc-num">5</span>Experimental protocol</a></li>
+            <li><a href="#data"><span class="toc-num">6</span>Artifacts</a></li>
+          </ol>
+        </nav>
+
+        <nav aria-labelledby="schedule-title">
+          <h2 id="schedule-title">Reports by stage</h2>
+          <table class="schedule">
+            <tbody>
+              <tr data-current="true">
+                <td class="stage"><a href="index.html" aria-current="page">Calibration</a></td>
+                <td class="when">Week 1–2</td>
+                <td class="state">This report</td>
+              </tr>
+              <tr>
+                <td class="stage">Emulator</td>
+                <td class="when">Week 3–4</td>
+                <td class="state">Planned</td>
+              </tr>
+              <tr>
+                <td class="stage">Router and policies</td>
+                <td class="when">Week 5–6</td>
+                <td class="state">Planned</td>
+              </tr>
+              <tr>
+                <td class="stage">Delay injection</td>
+                <td class="when">Week 7–8</td>
+                <td class="state">Planned</td>
+              </tr>
+              <tr>
+                <td class="stage">Workload sweeps</td>
+                <td class="when">Week 9–10</td>
+                <td class="state">Planned</td>
+              </tr>
+              <tr>
+                <td class="stage">Trace replay</td>
+                <td class="when">Week 11–12</td>
+                <td class="state">Planned</td>
+              </tr>
+              <tr>
+                <td class="stage">Analysis and report</td>
+                <td class="when">Week 13–14</td>
+                <td class="state">Planned</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="dateline">Stages and protocol are specified in the <a href="experimental-plan.html">experiment plan</a>.</p>
+        </nav>
+      </div>
+
+      <section class="sec" id="results" aria-labelledby="response-title">
+        <h2 id="response-title"><span class="num">1</span>Queueing delay can exceed the latency benefit of prefix reuse</h2>
+        <p>
+          For a 1024-token prompt, reusing 512 cached tokens saved 102.5 ms at idle. At queue depth 2,
+          that cached path took 1157.1 ms, 4.8× the 240.1 ms time to first token (TTFT) of an uncached,
+          idle replica. Figure 1 shows the full response surface across all 27 valid combinations of
+          prompt length, cache reuse, and observed queue depth.
+        </p>
+        <figure>
+          <p class="figure-hint">Scroll horizontally to inspect the full-resolution chart.</p>
+          <div class="figure-scroll">
             <a href="assets/calibration-response.png" aria-label="Open the full-size calibration response chart">
               <img src="assets/calibration-response.png" width="2665" height="2225" decoding="async" alt="Nine-panel chart of TTFT by cached-prefix length across prompt lengths and queue depths. TTFT rises sharply as queue depth increases.">
             </a>
           </div>
           <figcaption>
-            TTFT response surface across 27 valid combinations of prompt length, cache reuse,
-            and observed queue depth.
-            <a href="assets/calibration-response.pdf">Download PDF</a>
+            <span class="label">Figure 1.</span> TTFT response surface across 27 valid combinations of prompt
+            length, cache reuse, and observed queue depth.
+            <a class="src" href="assets/calibration-response.pdf">[PDF]</a>
           </figcaption>
         </figure>
       </section>
 
-      <section class="shell findings" aria-labelledby="findings-title">
-        <div class="section-heading compact">
-          <div>
-            <p class="eyebrow">Interpretation</p>
-            <h2 id="findings-title">Idle cache reuse provides a measurable latency budget</h2>
+      <section class="sec" id="benefit" aria-labelledby="findings-title">
+        <h2 id="findings-title"><span class="num">2</span>Idle cache reuse provides a measurable latency budget</h2>
+        <p>
+          At idle, prefix reuse is worth a bounded and measurable amount of prefill time. Figure 2 reports
+          the absolute and relative saving for each prompt length and queue depth; Table 2 lists the three
+          quantities that constrain the routing decision.
+        </p>
+        <figure>
+          <p class="figure-hint">Scroll horizontally to inspect the full-resolution chart.</p>
+          <div class="figure-scroll">
+            <a href="assets/cache-benefit.png" aria-label="Open the full-size cache benefit chart">
+              <img src="assets/cache-benefit.png" width="2665" height="905" loading="lazy" decoding="async" alt="Chart showing TTFT savings from cache reuse for each prompt length and queue depth.">
+            </a>
           </div>
-        </div>
-        <div class="finding-layout">
-          <figure class="chart-frame">
-            <div class="chart-viewport chart-viewport-wide">
-              <a href="assets/cache-benefit.png" aria-label="Open the full-size cache benefit chart">
-                <img src="assets/cache-benefit.png" width="2665" height="905" loading="lazy" decoding="async" alt="Chart showing TTFT savings from cache reuse for each prompt length and queue depth.">
-              </a>
-            </div>
-            <figcaption>
-              Absolute and relative cache benefit by condition.
-              <a href="assets/cache-benefit.pdf">Download PDF</a>
-            </figcaption>
-          </figure>
+          <figcaption>
+            <span class="label">Figure 2.</span> Absolute and relative cache benefit by condition.
+            <a class="src" href="assets/cache-benefit.pdf">[PDF]</a>
+          </figcaption>
+        </figure>
 
-          <div class="finding-cards">
-            <article>
-              <p class="metric">102.5 ms</p>
-              <h3>maximum measured cache saving</h3>
-              <p>A 512-token cached prefix reduced the idle 1024-token prompt median from 240.1 ms to 137.6 ms.</p>
-            </article>
-            <article>
-              <p class="metric">+917.0 ms</p>
-              <h3>penalty for choosing cached + queued</h3>
-              <p>At depth 2, the cached path was 917.0 ms slower than sending the same prompt to an uncached idle replica.</p>
-            </article>
-            <article>
-              <p class="metric">0 → 2</p>
-              <h3>observed crossover interval</h3>
-              <p>The routing choice reverses between tested depths 0 and 2. Measuring depth 1 is the next step for a tighter boundary.</p>
-            </article>
+        <div class="table-block">
+          <p class="table-caption"><span class="label">Table 2.</span> Quantities bounding the routing decision, from the 1024-token prompt conditions.</p>
+          <div class="table-scroll">
+            <table class="data-table">
+              <colgroup>
+                <col class="col-name">
+                <col class="col-value">
+                <col>
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">Quantity</th>
+                  <th scope="col" class="num">Value</th>
+                  <th scope="col">Basis</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Maximum measured cache saving</th>
+                  <td class="num">102.5 ms</td>
+                  <td class="note">A 512-token cached prefix reduced the idle median from 240.1 ms to 137.6 ms.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Penalty for choosing cached and queued</th>
+                  <td class="num">+917.0 ms</td>
+                  <td class="note">At depth 2 the cached path was slower than the same prompt on an uncached idle replica.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Observed crossover interval</th>
+                  <td class="num">depth 0 → 2</td>
+                  <td class="note">The routing choice reverses between the tested depths. Depth 1 is the next calibration point.</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
 
-      <section class="shell discussion" id="discussion" aria-labelledby="discussion-title">
-        <div class="discussion-heading">
-          <div>
-            <p class="eyebrow">What this means</p>
-            <h2 id="discussion-title">A cache hit is a latency budget, not a routing rule</h2>
-          </div>
-          <p class="discussion-lede">
-            Cache locality should not be treated as a binary preference. A router should
-            choose the cache-holding replica only when its additional queueing cost is smaller
-            than the prefill time expected to be saved by reuse.
+      <section class="sec" id="discussion" aria-labelledby="discussion-title">
+        <h2 id="discussion-title"><span class="num">3</span>Routing should compare cache benefit against queueing cost</h2>
+        <p class="lede">
+          Cache locality should not be treated as a binary preference. A router should choose the
+          cache-holding replica only when its additional queueing cost is smaller than the prefill time
+          expected to be saved by reuse.
+        </p>
+
+        <div class="display-rule">
+          <p>
+            <span class="cond">Choose the cache-holding replica when</span>
+            additional queueing cost &lt; expected prefill time saved
           </p>
+          <span class="eqno">(1)</span>
         </div>
 
-        <div class="decision-rule" aria-label="Routing decision rule">
-          <span>Choose the cache-holding replica when</span>
-          <strong>additional queueing cost &lt; expected prefill time saved</strong>
-        </div>
+        <h3><span class="num">3.1</span>The experiment supplies an empirical cost model</h3>
+        <p>
+          The lookup turns prompt length, cached-prefix length, and queue depth into an expected TTFT.
+          The routing decision can therefore compare predicted latency instead of choosing a server from
+          cache hits alone.
+        </p>
 
-        <div class="discussion-grid">
-          <article>
-            <p class="discussion-index">01 · Interpretation</p>
-            <h3>The experiment supplies an empirical cost model</h3>
-            <p>
-              The lookup turns prompt length, cached-prefix length, and queue depth into an
-              expected TTFT. The routing decision can therefore compare predicted latency
-              instead of choosing a server from cache hits alone.
-            </p>
-          </article>
-          <article>
-            <p class="discussion-index">02 · Scope</p>
-            <h3>The measured boundary is system-specific</h3>
-            <p>
-              These values describe Qwen3-0.6B on vLLM-Metal and an Apple M3 Pro. This is a
-              single-server calibration, not evidence yet about stale state or multi-replica
-              routing behavior.
-            </p>
-          </article>
-          <article>
-            <p class="discussion-index">03 · Next step</p>
-            <h3>Refine the boundary, then test routing policies</h3>
-            <p>
-              Queue depths 0, 2, and 8 show that the decision reverses before depth 2, but do
-              not locate the exact crossover. Depth 1 is the next calibration point before the
-              lookup is used in the two-replica emulator.
-            </p>
-          </article>
-        </div>
+        <h3><span class="num">3.2</span>The measured boundary is system-specific</h3>
+        <p>
+          These values describe Qwen3-0.6B on vLLM-Metal and an Apple M3 Pro. This is a single-server
+          calibration, not evidence yet about stale state or multi-replica routing behavior.
+        </p>
 
-        <div class="comments-panel" aria-labelledby="comments-title">
-          <div class="comments-heading">
-            <div>
-              <p class="eyebrow">Public discussion</p>
-              <h3 id="comments-title">Questions or feedback?</h3>
-            </div>
-            <p>
-              Sign in with GitHub to comment. Messages are public and attached to this
-              Week 1–2 result in the repository’s General discussion.
-            </p>
+        <h3><span class="num">3.3</span>Refine the boundary, then test routing policies</h3>
+        <p>
+          Queue depths 0, 2, and 8 show that the decision reverses before depth 2, but do not locate the
+          exact crossover. Depth 1 is the next calibration point before the lookup is used in the
+          two-replica emulator.
+        </p>
+      </section>
+
+      <section class="sec" id="validation" aria-labelledby="validation-title">
+        <h2 id="validation-title"><span class="num">4</span>Independent validation stays close to calibration</h2>
+        <p>
+          A separately randomized five-trial run tested all 27 conditions with corrected suffix nonces and
+          no audit failures. Observed values track the calibration expectations within a few percent
+          (Figure 3, Table 3).
+        </p>
+        <figure>
+          <p class="figure-hint">Scroll horizontally to inspect the full-resolution chart.</p>
+          <div class="figure-scroll">
+            <a href="assets/calibration-validation.png" aria-label="Open the full-size calibration validation chart">
+              <img src="assets/calibration-validation.png" width="2225" height="1015" loading="lazy" decoding="async" alt="Observed versus expected TTFT validation chart with points close to the equality line.">
+            </a>
           </div>
-          <div class="comments-host" id="comments-thread">
-            <p class="comments-loading" role="status">Loading GitHub comments…</p>
-            <noscript>
-              <p>JavaScript is required for embedded comments. <a href="https://github.com/EleanorLiu12/cache-delay-eval/discussions">Open GitHub Discussions.</a></p>
-            </noscript>
-          </div>
+          <figcaption>
+            <span class="label">Figure 3.</span> Expected calibration values versus held-out observations.
+            <a class="src" href="assets/calibration-validation.pdf">[PDF]</a>
+          </figcaption>
+        </figure>
+
+        <div class="table-block">
+          <p class="table-caption"><span class="label">Table 3.</span> Held-out validation error against the calibration lookup.</p>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th scope="col">Statistic</th>
+                <th scope="col" class="num">MAE</th>
+                <th scope="col" class="num">MAPE</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Mean TTFT</th><td class="num">21.81 ms</td><td class="num">1.31%</td></tr>
+              <tr><th scope="row">Median TTFT</th><td class="num">25.05 ms</td><td class="num">1.07%</td></tr>
+              <tr><th scope="row">p95 TTFT</th><td class="num">55.48 ms</td><td class="num">3.48%</td></tr>
+            </tbody>
+          </table>
         </div>
       </section>
 
-      <section class="validation-band" id="validation" aria-labelledby="validation-title">
-        <div class="shell">
-          <div class="section-heading inverse">
-            <div>
-              <p class="eyebrow">Held-out check</p>
-              <h2 id="validation-title">Independent validation stays close to calibration</h2>
-            </div>
-            <p>
-              A separately randomized five-trial run tested all 27 conditions with corrected
-              suffix nonces and no audit failures.
-            </p>
-          </div>
-          <div class="validation-layout">
-            <figure class="chart-frame dark-frame">
-              <div class="chart-viewport chart-viewport-validation">
-                <a href="assets/calibration-validation.png" aria-label="Open the full-size calibration validation chart">
-                  <img src="assets/calibration-validation.png" width="2225" height="1015" loading="lazy" decoding="async" alt="Observed versus expected TTFT validation chart with points close to the equality line.">
-                </a>
-              </div>
-              <figcaption>
-                Expected calibration values versus held-out observations.
-                <a href="assets/calibration-validation.pdf">Download PDF</a>
-              </figcaption>
-            </figure>
-
-            <dl class="metrics-table" aria-label="Validation error summary">
-              <div class="metrics-header">
-                <dt>Statistic</dt>
-                <dd>MAE</dd>
-                <dd>MAPE</dd>
-              </div>
-              <div>
-                <dt>Mean TTFT</dt>
-                <dd>21.81 ms</dd>
-                <dd>1.31%</dd>
-              </div>
-              <div>
-                <dt>Median TTFT</dt>
-                <dd>25.05 ms</dd>
-                <dd>1.07%</dd>
-              </div>
-              <div>
-                <dt>p95 TTFT</dt>
-                <dd>55.48 ms</dd>
-                <dd>3.48%</dd>
-              </div>
-            </dl>
-          </div>
-        </div>
-      </section>
-
-      <section class="shell methods" id="methods" aria-labelledby="methods-title">
-        <div class="section-heading compact">
-          <div>
-            <p class="eyebrow">Experimental design</p>
-            <h2 id="methods-title">Controlled, audited, and resumable</h2>
-          </div>
-        </div>
-        <ol class="method-grid">
-          <li>
-            <span>01</span>
-            <h3>Exact prompts</h3>
-            <p>Token IDs fix prompt and block-aligned prefix lengths exactly for the server tokenizer.</p>
-          </li>
-          <li>
-            <span>02</span>
-            <h3>Observed queues</h3>
-            <p>Each probe begins only after server metrics confirm the requested running-plus-waiting depth.</p>
-          </li>
-          <li>
-            <span>03</span>
-            <h3>Manipulation checks</h3>
-            <p>Every accepted row matches its target prompt length, cache-hit tokens, and queue depth.</p>
-          </li>
-          <li>
-            <span>04</span>
-            <h3>Safe continuation</h3>
-            <p>Interrupted runs resume only after existing rows, configuration, and schedule identity are validated.</p>
-          </li>
+      <section class="sec" id="methods" aria-labelledby="methods-title">
+        <h2 id="methods-title"><span class="num">5</span>Calibration protocol and quality controls</h2>
+        <ol class="protocol">
+          <li><strong>Exact prompts.</strong> Token IDs fix prompt and block-aligned prefix lengths exactly for the server tokenizer.</li>
+          <li><strong>Observed queues.</strong> Each probe begins only after server metrics confirm the requested running-plus-waiting depth.</li>
+          <li><strong>Manipulation checks.</strong> Every accepted row matches its target prompt length, cache-hit tokens, and queue depth.</li>
+          <li><strong>Safe continuation.</strong> Interrupted runs resume only after existing rows, configuration, and schedule identity are validated.</li>
         </ol>
 
-        <aside class="integrity-note" aria-labelledby="integrity-title">
-          <div>
-            <p class="eyebrow">Protocol integrity</p>
-            <h3 id="integrity-title">Failed and system-contaminated attempts were excluded, not erased</h3>
-          </div>
+        <aside class="remark" aria-labelledby="integrity-title">
           <p>
-            An early validation run revealed 32 unintended shared tokens, and later attempts
-            encountered a desktop-wide latency shift under high GPU load. Those runs remain
-            preserved locally for auditability but do not contribute to the published lookup,
-            figures, or reported validation errors.
+            <strong id="integrity-title">Failed and system-contaminated attempts were excluded, not erased.</strong>
+            An early validation run revealed 32 unintended shared tokens, and later attempts encountered a
+            desktop-wide latency shift under high GPU load. Those runs remain preserved locally for
+            auditability but do not contribute to the published lookup, figures, or reported validation
+            errors.
           </p>
         </aside>
       </section>
 
-      <section class="data-section" id="data" aria-labelledby="data-title">
-        <div class="shell data-layout">
+      <section class="sec" id="data" aria-labelledby="data-title">
+        <h2 id="data-title"><span class="num">6</span>Published artifacts</h2>
+        <p>
+          The public package contains the condition-level lookup, a machine-readable validation report, and
+          publication-resolution figures. Raw failed runs are not included in the site package.
+        </p>
+        <dl class="artifact-list">
           <div>
-            <p class="eyebrow">Artifacts</p>
-            <h2 id="data-title">Inspect the published results</h2>
-            <p>
-              The public package contains the condition-level lookup, a machine-readable
-              validation report, and publication-resolution figures. Raw failed runs are not
-              included in the site package.
-            </p>
+            <dt><a href="assets/calibration-lookup.csv" download>Calibration lookup</a></dt>
+            <dd>Per-condition TTFT statistics for all 27 conditions.</dd>
+            <dd class="file">CSV</dd>
           </div>
-          <div class="download-list">
-            <a href="assets/calibration-lookup.csv" download>
-              <span><strong>Calibration lookup</strong><small>CSV · 27 conditions</small></span>
-              <span aria-hidden="true">↓</span>
-            </a>
-            <a href="assets/calibration-validation-report.json" download>
-              <span><strong>Validation report</strong><small>JSON · audit and errors</small></span>
-              <span aria-hidden="true">↓</span>
-            </a>
-            <a href="https://github.com/EleanorLiu12/cache-delay-eval">
-              <span><strong>Source repository</strong><small>Code, tests, and experiment configuration</small></span>
-              <span aria-hidden="true">↗</span>
-            </a>
+          <div>
+            <dt><a href="assets/calibration-validation-report.json" download>Validation report</a></dt>
+            <dd>Audit outcome and held-out error for every condition.</dd>
+            <dd class="file">JSON</dd>
           </div>
+          <div>
+            <dt><a href="https://github.com/EleanorLiu12/cache-delay-eval">Source repository</a></dt>
+            <dd>Code, tests, and experiment configuration.</dd>
+            <dd class="file">GitHub</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="comments" aria-labelledby="comments-title">
+        <h2 id="comments-title">Comments</h2>
+        <p>
+          Sign in with GitHub to comment. Messages are public and attached to this Week 1–2 result in the
+          repository’s General discussion.
+        </p>
+        <div class="comments-host" id="comments-thread">
+          <p class="comments-loading" role="status">Loading GitHub comments…</p>
+          <noscript>
+            <p>JavaScript is required for embedded comments. <a href="https://github.com/EleanorLiu12/cache-delay-eval/discussions">Open GitHub Discussions.</a></p>
+          </noscript>
         </div>
       </section>
     </main>
 
-    <footer>
-      <div class="shell footer-inner">
+    <footer class="colophon">
+      <div class="colophon-inner">
         <p>Cache Delay Evaluation · Week 1–2 calibration study</p>
         <p>Apple M3 Pro · Qwen/Qwen3-0.6B · vLLM-Metal</p>
       </div>
     </footer>
-      </div>
-    </div>
+
     <script>
       (() => {
         const button = document.querySelector(".theme-toggle");
@@ -409,7 +380,7 @@
           button.setAttribute("aria-pressed", String(isDark));
           button.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
           button.title = isDark ? "Switch to light mode" : "Switch to dark mode";
-          themeMeta.content = isDark ? "#09131f" : "#102338";
+          themeMeta.content = isDark ? "#17191b" : "#ffffff";
         };
 
         button.addEventListener("click", () => {

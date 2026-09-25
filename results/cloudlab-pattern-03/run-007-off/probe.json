@@ -1,0 +1,14 @@
+{
+  "ttft_ms": 36.539462999826355,
+  "e2e_ms": 76.20318499994028,
+  "usage": {
+    "prompt_tokens": 64,
+    "total_tokens": 68,
+    "completion_tokens": 4,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "cached_tokens": 0,
+  "finish_reason": "length"
+}

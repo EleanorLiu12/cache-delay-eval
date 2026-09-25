@@ -69,7 +69,7 @@ class TraceTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "trace.jsonl"
             header = TraceHeader(
-                "mooncake", "2026-09-03T00:00:00Z", "mooncake-trace", block_size=512
+                "synthetic", "2026-09-03T00:00:00Z", "synthetic-trace", block_size=512
             )
             requests = [
                 TraceRequest(
@@ -162,4 +162,3 @@ class TraceTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

@@ -1,0 +1,8 @@
+{
+  "bf16_kv_bytes_per_token": 147456,
+  "kv_bytes_by_capacity": {
+    "2048": 4831838208,
+    "3072": 7247757312
+  },
+  "note": "KV tensor estimate only; weights, graphs and runtime overhead excluded. Startup must still succeed."
+}

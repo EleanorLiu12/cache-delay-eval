@@ -1,0 +1,124 @@
+{
+  "config": {
+    "model": "Qwen/Qwen3-4B",
+    "model_revision": null,
+    "vllm_version": "0.28.0",
+    "traces": [
+      "results/pattern-screen/traces/P512-positive-seed100.jsonl",
+      "results/pattern-screen/traces/P512-negative-seed100.jsonl"
+    ],
+    "capacities": [
+      2048,
+      3072
+    ],
+    "block_size": 16,
+    "repetitions": 2,
+    "max_model_len": 32768,
+    "max_num_seqs": 16,
+    "max_num_batched_tokens": 2048,
+    "gpu_memory_utilization": 0.9,
+    "arrival_scale": 1.0,
+    "port": 8000,
+    "startup_timeout_s": 1200,
+    "request_timeout_s": 2400,
+    "max_dispatch_lag_ms": 50
+  },
+  "runs": [
+    {
+      "trace": "results/pattern-screen/traces/P512-positive-seed100.jsonl",
+      "capacity_blocks": 2048,
+      "repeat": 0,
+      "condition": "off"
+    },
+    {
+      "trace": "results/pattern-screen/traces/P512-positive-seed100.jsonl",
+      "capacity_blocks": 2048,
+      "repeat": 0,
+      "condition": "on"
+    },
+    {
+      "trace": "results/pattern-screen/traces/P512-positive-seed100.jsonl",
+      "capacity_blocks": 2048,
+      "repeat": 1,
+      "condition": "on"
+    },
+    {
+      "trace": "results/pattern-screen/traces/P512-positive-seed100.jsonl",
+      "capacity_blocks": 2048,
+      "repeat": 1,
+      "condition": "off"
+    },
+    {
+      "trace": "results/pattern-screen/traces/P512-positive-seed100.jsonl",
+      "capacity_blocks": 3072,
+      "repeat": 0,
+      "condition": "off"
+    },
+    {
+      "trace": "results/pattern-screen/traces/P512-positive-seed100.jsonl",
+      "capacity_blocks": 3072,
+      "repeat": 0,
+      "condition": "on"
+    },
+    {
+      "trace": "results/pattern-screen/traces/P512-positive-seed100.jsonl",
+      "capacity_blocks": 3072,
+      "repeat": 1,
+      "condition": "on"
+    },
+    {
+      "trace": "results/pattern-screen/traces/P512-positive-seed100.jsonl",
+      "capacity_blocks": 3072,
+      "repeat": 1,
+      "condition": "off"
+    },
+    {
+      "trace": "results/pattern-screen/traces/P512-negative-seed100.jsonl",
+      "capacity_blocks": 2048,
+      "repeat": 0,
+      "condition": "off"
+    },
+    {
+      "trace": "results/pattern-screen/traces/P512-negative-seed100.jsonl",
+      "capacity_blocks": 2048,
+      "repeat": 0,
+      "condition": "on"
+    },
+    {
+      "trace": "results/pattern-screen/traces/P512-negative-seed100.jsonl",
+      "capacity_blocks": 2048,
+      "repeat": 1,
+      "condition": "on"
+    },
+    {
+      "trace": "results/pattern-screen/traces/P512-negative-seed100.jsonl",
+      "capacity_blocks": 2048,
+      "repeat": 1,
+      "condition": "off"
+    },
+    {
+      "trace": "results/pattern-screen/traces/P512-negative-seed100.jsonl",
+      "capacity_blocks": 3072,
+      "repeat": 0,
+      "condition": "off"
+    },
+    {
+      "trace": "results/pattern-screen/traces/P512-negative-seed100.jsonl",
+      "capacity_blocks": 3072,
+      "repeat": 0,
+      "condition": "on"
+    },
+    {
+      "trace": "results/pattern-screen/traces/P512-negative-seed100.jsonl",
+      "capacity_blocks": 3072,
+      "repeat": 1,
+      "condition": "on"
+    },
+    {
+      "trace": "results/pattern-screen/traces/P512-negative-seed100.jsonl",
+      "capacity_blocks": 3072,
+      "repeat": 1,
+      "condition": "off"
+    }
+  ]
+}

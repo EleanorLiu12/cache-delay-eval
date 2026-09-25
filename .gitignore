@@ -1,9 +1,7 @@
 .DS_Store
 
-# Research materials kept outside the remote repository.
-docs/
+# Local paper drafts kept outside the remote repository.
 paper/
-*Proposal*.md
 
 # Local environments and tooling.
 .venv/
@@ -19,5 +17,7 @@ __pycache__/
 # Keep raw measurements in version control; ignore only scratch reruns.
 results/scratch-*
 
-# Generated static-site output.
-_site/
+# Disposable exports, dry-run plans and scratch files.
+output/
+tmp/
+results/pattern-plan*/

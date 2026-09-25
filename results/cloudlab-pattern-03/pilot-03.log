@@ -1,0 +1,16 @@
+[1/16] {'trace': 'results/pattern-screen/traces/P512-positive-seed100.jsonl', 'capacity_blocks': 2048, 'repeat': 0, 'condition': 'off'}
+[2/16] {'trace': 'results/pattern-screen/traces/P512-positive-seed100.jsonl', 'capacity_blocks': 2048, 'repeat': 0, 'condition': 'on'}
+[3/16] {'trace': 'results/pattern-screen/traces/P512-positive-seed100.jsonl', 'capacity_blocks': 2048, 'repeat': 1, 'condition': 'on'}
+[4/16] {'trace': 'results/pattern-screen/traces/P512-positive-seed100.jsonl', 'capacity_blocks': 2048, 'repeat': 1, 'condition': 'off'}
+[5/16] {'trace': 'results/pattern-screen/traces/P512-positive-seed100.jsonl', 'capacity_blocks': 3072, 'repeat': 0, 'condition': 'off'}
+[6/16] {'trace': 'results/pattern-screen/traces/P512-positive-seed100.jsonl', 'capacity_blocks': 3072, 'repeat': 0, 'condition': 'on'}
+[7/16] {'trace': 'results/pattern-screen/traces/P512-positive-seed100.jsonl', 'capacity_blocks': 3072, 'repeat': 1, 'condition': 'on'}
+[8/16] {'trace': 'results/pattern-screen/traces/P512-positive-seed100.jsonl', 'capacity_blocks': 3072, 'repeat': 1, 'condition': 'off'}
+[9/16] {'trace': 'results/pattern-screen/traces/P512-negative-seed100.jsonl', 'capacity_blocks': 2048, 'repeat': 0, 'condition': 'off'}
+[10/16] {'trace': 'results/pattern-screen/traces/P512-negative-seed100.jsonl', 'capacity_blocks': 2048, 'repeat': 0, 'condition': 'on'}
+[11/16] {'trace': 'results/pattern-screen/traces/P512-negative-seed100.jsonl', 'capacity_blocks': 2048, 'repeat': 1, 'condition': 'on'}
+[12/16] {'trace': 'results/pattern-screen/traces/P512-negative-seed100.jsonl', 'capacity_blocks': 2048, 'repeat': 1, 'condition': 'off'}
+[13/16] {'trace': 'results/pattern-screen/traces/P512-negative-seed100.jsonl', 'capacity_blocks': 3072, 'repeat': 0, 'condition': 'off'}
+[14/16] {'trace': 'results/pattern-screen/traces/P512-negative-seed100.jsonl', 'capacity_blocks': 3072, 'repeat': 0, 'condition': 'on'}
+[15/16] {'trace': 'results/pattern-screen/traces/P512-negative-seed100.jsonl', 'capacity_blocks': 3072, 'repeat': 1, 'condition': 'on'}
+[16/16] {'trace': 'results/pattern-screen/traces/P512-negative-seed100.jsonl', 'capacity_blocks': 3072, 'repeat': 1, 'condition': 'off'}

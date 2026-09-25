@@ -1,4 +1,3 @@
-"""Tools for evaluating delayed KV-cache routing metadata."""
+"""Find trace patterns where actual cache hit rate and TTFT increase together."""
 
 __version__ = "0.1.0"
-

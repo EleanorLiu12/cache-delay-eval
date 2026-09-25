@@ -1,0 +1,693 @@
+{
+  "purpose": "structural candidates, not evidence of latency harm",
+  "rho_definition": "prompt length versus unbounded historical prefix reuse",
+  "finite_cache_model": "serial prompt-only LRU; not a vLLM scheduler emulator",
+  "capacity_note": "Fixed diagnostic capacities override generator W metadata; GPU feasibility unverified.",
+  "selection": "three-turn archetype, exploration means; all held-out seeds exported",
+  "results": [
+    {
+      "P": 512,
+      "rho_mix": 0.0,
+      "exploration_rho_mean": 0.5813260858478723,
+      "exploration_rho_min": 0.5734528579932686,
+      "exploration_rho_max": 0.6039694149142503,
+      "exploration_spearman_mean": 0.969881939410673,
+      "label": "positive",
+      "seed": 100,
+      "trace": "traces/P512-positive-seed100.jsonl",
+      "requests": 420,
+      "oracle_rho": 0.5787795188469264,
+      "oracle_spearman": 0.9675804762491717,
+      "working_set_blocks": 5407,
+      "max_prompt_tokens": 6735,
+      "serial_lru": [
+        {
+          "capacity_blocks": 2048,
+          "request_mean_hit_rate": 0.6972992162530836,
+          "block_weighted_hit_rate": 0.6643693493404476,
+          "rho_pearson": -0.18742683608286562,
+          "rho_spearman": 0.2886697754618308,
+          "evicted_blocks": 29655,
+          "prompts_larger_than_capacity": 0,
+          "working_set_ratio": 2.64013671875
+        },
+        {
+          "capacity_blocks": 4096,
+          "request_mean_hit_rate": 0.9109698569396817,
+          "block_weighted_hit_rate": 0.9391899045078236,
+          "rho_pearson": 0.5138541275233649,
+          "rho_spearman": 0.9560790998137639,
+          "evicted_blocks": 1648,
+          "prompts_larger_than_capacity": 0,
+          "working_set_ratio": 1.320068359375
+        }
+      ]
+    },
+    {
+      "P": 512,
+      "rho_mix": 0.0,
+      "exploration_rho_mean": 0.5813260858478723,
+      "exploration_rho_min": 0.5734528579932686,
+      "exploration_rho_max": 0.6039694149142503,
+      "exploration_spearman_mean": 0.969881939410673,
+      "label": "positive",
+      "seed": 101,
+      "trace": "traces/P512-positive-seed101.jsonl",
+      "requests": 420,
+      "oracle_rho": 0.5797213971015668,
+      "oracle_spearman": 0.9715474315944438,
+      "working_set_blocks": 5401,
+      "max_prompt_tokens": 6701,
+      "serial_lru": [
+        {
+          "capacity_blocks": 2048,
+          "request_mean_hit_rate": 0.7466405146029369,
+          "block_weighted_hit_rate": 0.7286141933846008,
+          "rho_pearson": -0.1112886666072071,
+          "rho_spearman": 0.4437932958734421,
+          "evicted_blocks": 23608,
+          "prompts_larger_than_capacity": 0,
+          "working_set_ratio": 2.63720703125
+        },
+        {
+          "capacity_blocks": 4096,
+          "request_mean_hit_rate": 0.9072422886322563,
+          "block_weighted_hit_rate": 0.9360038926557855,
+          "rho_pearson": 0.4741962350886698,
+          "rho_spearman": 0.9566447579237223,
+          "evicted_blocks": 1954,
+          "prompts_larger_than_capacity": 0,
+          "working_set_ratio": 1.318603515625
+        }
+      ]
+    },
+    {
+      "P": 512,
+      "rho_mix": 0.0,
+      "exploration_rho_mean": 0.5813260858478723,
+      "exploration_rho_min": 0.5734528579932686,
+      "exploration_rho_max": 0.6039694149142503,
+      "exploration_spearman_mean": 0.969881939410673,
+      "label": "positive",
+      "seed": 102,
+      "trace": "traces/P512-positive-seed102.jsonl",
+      "requests": 420,
+      "oracle_rho": 0.58738181021671,
+      "oracle_spearman": 0.9700266199346244,
+      "working_set_blocks": 5370,
+      "max_prompt_tokens": 6661,
+      "serial_lru": [
+        {
+          "capacity_blocks": 2048,
+          "request_mean_hit_rate": 0.7024009731912289,
+          "block_weighted_hit_rate": 0.6567438325363397,
+          "rho_pearson": -0.26137339695067474,
+          "rho_spearman": 0.23346214960279646,
+          "evicted_blocks": 30469,
+          "prompts_larger_than_capacity": 0,
+          "working_set_ratio": 2.6220703125
+        },
+        {
+          "capacity_blocks": 4096,
+          "request_mean_hit_rate": 0.8988238474333258,
+          "block_weighted_hit_rate": 0.9209973503921631,
+          "rho_pearson": 0.30829237259690084,
+          "rho_spearman": 0.9046503935244639,
+          "evicted_blocks": 3388,
+          "prompts_larger_than_capacity": 0,
+          "working_set_ratio": 1.31103515625
+        }
+      ]
+    },
+    {
+      "P": 512,
+      "rho_mix": 0.3,
+      "exploration_rho_mean": -0.020921371405596016,
+      "exploration_rho_min": -0.25246114163880656,
+      "exploration_rho_max": 0.19296329511106564,
+      "exploration_spearman_mean": 0.8965619398152138,
+      "label": "near-zero",
+      "seed": 100,
+      "trace": "traces/P512-near-zero-seed100.jsonl",
+      "requests": 402,
+      "oracle_rho": -0.02424756310917339,
+      "oracle_spearman": 0.9128927489119261,
+      "working_set_blocks": 9820,
+      "max_prompt_tokens": 23098,
+      "serial_lru": [
+        {
+          "capacity_blocks": 2048,
+          "request_mean_hit_rate": 0.6496985721419474,
+          "block_weighted_hit_rate": 0.5752819961912202,
+          "rho_pearson": -0.2519426747963096,
+          "rho_spearman": 0.195687048292436,
+          "evicted_blocks": 41441,
+          "prompts_larger_than_capacity": 0,
+          "working_set_ratio": 4.794921875
+        },
+        {
+          "capacity_blocks": 4096,
+          "request_mean_hit_rate": 0.8962489034958844,
+          "block_weighted_hit_rate": 0.8690365740514674,
+          "rho_pearson": -0.22246087805525214,
+          "rho_spearman": 0.8711381839045935,
+          "evicted_blocks": 9314,
+          "prompts_larger_than_capacity": 0,
+          "working_set_ratio": 2.3974609375
+        }
+      ]
+    },
+    {
+      "P": 512,
+      "rho_mix": 0.3,
+      "exploration_rho_mean": -0.020921371405596016,
+      "exploration_rho_min": -0.25246114163880656,
+      "exploration_rho_max": 0.19296329511106564,
+      "exploration_spearman_mean": 0.8965619398152138,
+      "label": "near-zero",
+      "seed": 101,
+      "trace": "traces/P512-near-zero-seed101.jsonl",
+      "requests": 402,
+      "oracle_rho": 0.025119247561199827,
+      "oracle_spearman": 0.911910860890207,
+      "working_set_blocks": 9196,
+      "max_prompt_tokens": 21118,
+      "serial_lru": [
+        {
+          "capacity_blocks": 2048,
+          "request_mean_hit_rate": 0.7030330110654334,
+          "block_weighted_hit_rate": 0.6554776353333601,
+          "rho_pearson": -0.18068970642066956,
+          "rho_spearman": 0.3569488147156008,
+          "evicted_blocks": 32243,
+          "prompts_larger_than_capacity": 0,
+          "working_set_ratio": 4.490234375
+        },
+        {
+          "capacity_blocks": 4096,
+          "request_mean_hit_rate": 0.8865331145862847,
+          "block_weighted_hit_rate": 0.875678173853635,
+          "rho_pearson": -0.08505165679025894,
+          "rho_spearman": 0.8581251779431122,
+          "evicted_blocks": 8278,
+          "prompts_larger_than_capacity": 0,
+          "working_set_ratio": 2.2451171875
+        }
+      ]
+    },
+    {
+      "P": 512,
+      "rho_mix": 0.3,
+      "exploration_rho_mean": -0.020921371405596016,
+      "exploration_rho_min": -0.25246114163880656,
+      "exploration_rho_max": 0.19296329511106564,
+      "exploration_spearman_mean": 0.8965619398152138,
+      "label": "near-zero",
+      "seed": 102,
+      "trace": "traces/P512-near-zero-seed102.jsonl",
+      "requests": 411,
+      "oracle_rho": -0.14745887147486847,
+      "oracle_spearman": 0.8723286030195504,
+      "working_set_blocks": 13283,
+      "max_prompt_tokens": 24706,
+      "serial_lru": [
+        {
+          "capacity_blocks": 2048,
+          "request_mean_hit_rate": 0.6586510892254852,
+          "block_weighted_hit_rate": 0.5836669192707172,
+          "rho_pearson": -0.22350423917883327,
+          "rho_spearman": 0.2944370378734232,
+          "evicted_blocks": 44650,
+          "prompts_larger_than_capacity": 0,
+          "working_set_ratio": 6.48583984375
+        },
+        {
+          "capacity_blocks": 4096,
+          "request_mean_hit_rate": 0.8760646485418624,
+          "block_weighted_hit_rate": 0.82531984130522,
+          "rho_pearson": -0.2924985907637996,
+          "rho_spearman": 0.8041326490283399,
+          "evicted_blocks": 15497,
+          "prompts_larger_than_capacity": 0,
+          "working_set_ratio": 3.242919921875
+        }
+      ]
+    },
+    {
+      "P": 512,
+      "rho_mix": 0.8,
+      "exploration_rho_mean": -0.34686437743306,
+      "exploration_rho_min": -0.36844194639294303,
+      "exploration_rho_max": -0.3105485813956431,
+      "exploration_spearman_mean": 0.5590015709955263,
+      "label": "negative",
+      "seed": 100,
+      "trace": "traces/P512-negative-seed100.jsonl",
+      "requests": 426,
+      "oracle_rho": -0.3476259919948834,
+      "oracle_spearman": 0.5242955399018766,
+      "working_set_blocks": 48986,
+      "max_prompt_tokens": 24612,
+      "serial_lru": [
+        {
+          "capacity_blocks": 2048,
+          "request_mean_hit_rate": 0.533645127799292,
+          "block_weighted_hit_rate": 0.3109137558694748,
+          "rho_pearson": -0.583850711737895,
+          "rho_spearman": -0.12285834741118189,
+          "evicted_blocks": 137073,
+          "prompts_larger_than_capacity": 0,
+          "working_set_ratio": 23.9189453125
+        },
+        {
+          "capacity_blocks": 4096,
+          "request_mean_hit_rate": 0.645456994490671,
+          "block_weighted_hit_rate": 0.41615814395815587,
+          "rho_pearson": -0.6454652766395461,
+          "rho_spearman": -0.05465829132657629,
+          "evicted_blocks": 113777,
+          "prompts_larger_than_capacity": 0,
+          "working_set_ratio": 11.95947265625
+        }
+      ]
+    },
+    {
+      "P": 512,
+      "rho_mix": 0.8,
+      "exploration_rho_mean": -0.34686437743306,
+      "exploration_rho_min": -0.36844194639294303,
+      "exploration_rho_max": -0.3105485813956431,
+      "exploration_spearman_mean": 0.5590015709955263,
+      "label": "negative",
+      "seed": 101,
+      "trace": "traces/P512-negative-seed101.jsonl",
+      "requests": 426,
+      "oracle_rho": -0.35365719285734004,
+      "oracle_spearman": 0.7060910549541359,
+      "working_set_blocks": 29796,
+      "max_prompt_tokens": 23951,
+      "serial_lru": [
+        {
+          "capacity_blocks": 2048,
+          "request_mean_hit_rate": 0.5963177606752329,
+          "block_weighted_hit_rate": 0.4078226607297306,
+          "rho_pearson": -0.46476446179121284,
+          "rho_spearman": 0.08081279169592434,
+          "evicted_blocks": 90382,
+          "prompts_larger_than_capacity": 0,
+          "working_set_ratio": 14.548828125
+        },
+        {
+          "capacity_blocks": 4096,
+          "request_mean_hit_rate": 0.7666193905824943,
+          "block_weighted_hit_rate": 0.5474965563635199,
+          "rho_pearson": -0.6782937253684895,
+          "rho_spearman": 0.29840352387497465,
+          "evicted_blocks": 66533,
+          "prompts_larger_than_capacity": 0,
+          "working_set_ratio": 7.2744140625
+        }
+      ]
+    },
+    {
+      "P": 512,
+      "rho_mix": 0.8,
+      "exploration_rho_mean": -0.34686437743306,
+      "exploration_rho_min": -0.36844194639294303,
+      "exploration_rho_max": -0.3105485813956431,
+      "exploration_spearman_mean": 0.5590015709955263,
+      "label": "negative",
+      "seed": 102,
+      "trace": "traces/P512-negative-seed102.jsonl",
+      "requests": 402,
+      "oracle_rho": -0.3449547792808785,
+      "oracle_spearman": 0.6720927369471422,
+      "working_set_blocks": 31130,
+      "max_prompt_tokens": 22158,
+      "serial_lru": [
+        {
+          "capacity_blocks": 2048,
+          "request_mean_hit_rate": 0.5644534877659912,
+          "block_weighted_hit_rate": 0.3852772095191237,
+          "rho_pearson": -0.44886600358969203,
+          "rho_spearman": 0.013709867079810535,
+          "evicted_blocks": 92907,
+          "prompts_larger_than_capacity": 0,
+          "working_set_ratio": 15.2001953125
+        },
+        {
+          "capacity_blocks": 4096,
+          "request_mean_hit_rate": 0.7497242887336506,
+          "block_weighted_hit_rate": 0.5527487893932724,
+          "rho_pearson": -0.6013450185277706,
+          "rho_spearman": 0.28041713172710375,
+          "evicted_blocks": 64990,
+          "prompts_larger_than_capacity": 0,
+          "working_set_ratio": 7.60009765625
+        }
+      ]
+    },
+    {
+      "P": 8192,
+      "rho_mix": 0.0,
+      "exploration_rho_mean": 0.18966303857961714,
+      "exploration_rho_min": 0.16970744335331106,
+      "exploration_rho_max": 0.19385805937035444,
+      "exploration_spearman_mean": 0.7522157985832838,
+      "label": "positive",
+      "seed": 100,
+      "trace": "traces/P8192-positive-seed100.jsonl",
+      "requests": 420,
+      "oracle_rho": 0.1911493499844125,
+      "oracle_spearman": 0.760828232664654,
+      "working_set_blocks": 7327,
+      "max_prompt_tokens": 14415,
+      "serial_lru": [
+        {
+          "capacity_blocks": 2048,
+          "request_mean_hit_rate": 0.5239548931204522,
+          "block_weighted_hit_rate": 0.5146187571354262,
+          "rho_pearson": -0.13824480886134657,
+          "rho_spearman": -0.077945790899502,
+          "evicted_blocks": 141653,
+          "prompts_larger_than_capacity": 0,
+          "working_set_ratio": 3.57763671875
+        },
+        {
+          "capacity_blocks": 4096,
+          "request_mean_hit_rate": 0.8885005138275044,
+          "block_weighted_hit_rate": 0.8824926196893852,
+          "rho_pearson": -0.18470932890853944,
+          "rho_spearman": 0.2718435504360404,
+          "evicted_blocks": 30693,
+          "prompts_larger_than_capacity": 0,
+          "working_set_ratio": 1.788818359375
+        }
+      ]
+    },
+    {
+      "P": 8192,
+      "rho_mix": 0.0,
+      "exploration_rho_mean": 0.18966303857961714,
+      "exploration_rho_min": 0.16970744335331106,
+      "exploration_rho_max": 0.19385805937035444,
+      "exploration_spearman_mean": 0.7522157985832838,
+      "label": "positive",
+      "seed": 101,
+      "trace": "traces/P8192-positive-seed101.jsonl",
+      "requests": 420,
+      "oracle_rho": 0.19149540701948298,
+      "oracle_spearman": 0.7773933126494275,
+      "working_set_blocks": 7321,
+      "max_prompt_tokens": 14381,
+      "serial_lru": [
+        {
+          "capacity_blocks": 2048,
+          "request_mean_hit_rate": 0.5297754759172243,
+          "block_weighted_hit_rate": 0.5168925193407106,
+          "rho_pearson": -0.18935874416576262,
+          "rho_spearman": -0.11477847228330117,
+          "evicted_blocks": 141018,
+          "prompts_larger_than_capacity": 0,
+          "working_set_ratio": 3.57470703125
+        },
+        {
+          "capacity_blocks": 4096,
+          "request_mean_hit_rate": 0.9130818632575476,
+          "block_weighted_hit_rate": 0.9096904473267441,
+          "rho_pearson": -0.12132982955865215,
+          "rho_spearman": 0.4119566307321304,
+          "evicted_blocks": 22648,
+          "prompts_larger_than_capacity": 0,
+          "working_set_ratio": 1.787353515625
+        }
+      ]
+    },
+    {
+      "P": 8192,
+      "rho_mix": 0.0,
+      "exploration_rho_mean": 0.18966303857961714,
+      "exploration_rho_min": 0.16970744335331106,
+      "exploration_rho_max": 0.19385805937035444,
+      "exploration_spearman_mean": 0.7522157985832838,
+      "label": "positive",
+      "seed": 102,
+      "trace": "traces/P8192-positive-seed102.jsonl",
+      "requests": 420,
+      "oracle_rho": 0.19424852532038642,
+      "oracle_spearman": 0.7667692604996482,
+      "working_set_blocks": 7290,
+      "max_prompt_tokens": 14341,
+      "serial_lru": [
+        {
+          "capacity_blocks": 2048,
+          "request_mean_hit_rate": 0.5676735334896802,
+          "block_weighted_hit_rate": 0.5520650893764067,
+          "rho_pearson": -0.23815923119174773,
+          "rho_spearman": -0.176703398072013,
+          "evicted_blocks": 130689,
+          "prompts_larger_than_capacity": 0,
+          "working_set_ratio": 3.5595703125
+        },
+        {
+          "capacity_blocks": 4096,
+          "request_mean_hit_rate": 0.8871147881781598,
+          "block_weighted_hit_rate": 0.8786222163729073,
+          "rho_pearson": -0.24931866904061512,
+          "rho_spearman": 0.2079885888962616,
+          "evicted_blocks": 31872,
+          "prompts_larger_than_capacity": 0,
+          "working_set_ratio": 1.77978515625
+        }
+      ]
+    },
+    {
+      "P": 8192,
+      "rho_mix": 0.1,
+      "exploration_rho_mean": 0.016224364720420326,
+      "exploration_rho_min": -0.19408291810753703,
+      "exploration_rho_max": 0.1935007733434952,
+      "exploration_spearman_mean": 0.701621786307755,
+      "label": "near-zero",
+      "seed": 100,
+      "trace": "traces/P8192-near-zero-seed100.jsonl",
+      "requests": 420,
+      "oracle_rho": 0.1911493499844125,
+      "oracle_spearman": 0.760828232664654,
+      "working_set_blocks": 7327,
+      "max_prompt_tokens": 14415,
+      "serial_lru": [
+        {
+          "capacity_blocks": 2048,
+          "request_mean_hit_rate": 0.5239548931204522,
+          "block_weighted_hit_rate": 0.5146187571354262,
+          "rho_pearson": -0.13824480886134657,
+          "rho_spearman": -0.077945790899502,
+          "evicted_blocks": 141653,
+          "prompts_larger_than_capacity": 0,
+          "working_set_ratio": 3.57763671875
+        },
+        {
+          "capacity_blocks": 4096,
+          "request_mean_hit_rate": 0.8885005138275044,
+          "block_weighted_hit_rate": 0.8824926196893852,
+          "rho_pearson": -0.18470932890853944,
+          "rho_spearman": 0.2718435504360404,
+          "evicted_blocks": 30693,
+          "prompts_larger_than_capacity": 0,
+          "working_set_ratio": 1.788818359375
+        }
+      ]
+    },
+    {
+      "P": 8192,
+      "rho_mix": 0.1,
+      "exploration_rho_mean": 0.016224364720420326,
+      "exploration_rho_min": -0.19408291810753703,
+      "exploration_rho_max": 0.1935007733434952,
+      "exploration_spearman_mean": 0.701621786307755,
+      "label": "near-zero",
+      "seed": 101,
+      "trace": "traces/P8192-near-zero-seed101.jsonl",
+      "requests": 426,
+      "oracle_rho": -0.05945882959959716,
+      "oracle_spearman": 0.6718202808259811,
+      "working_set_blocks": 9768,
+      "max_prompt_tokens": 28877,
+      "serial_lru": [
+        {
+          "capacity_blocks": 2048,
+          "request_mean_hit_rate": 0.4990475499659844,
+          "block_weighted_hit_rate": 0.48286039632470357,
+          "rho_pearson": -0.1650326429246818,
+          "rho_spearman": -0.1723473945688926,
+          "evicted_blocks": 155994,
+          "prompts_larger_than_capacity": 0,
+          "working_set_ratio": 4.76953125
+        },
+        {
+          "capacity_blocks": 4096,
+          "request_mean_hit_rate": 0.8799715997961551,
+          "block_weighted_hit_rate": 0.868877778068637,
+          "rho_pearson": -0.22113362413875473,
+          "rho_spearman": 0.18471913663477937,
+          "evicted_blocks": 35976,
+          "prompts_larger_than_capacity": 0,
+          "working_set_ratio": 2.384765625
+        }
+      ]
+    },
+    {
+      "P": 8192,
+      "rho_mix": 0.1,
+      "exploration_rho_mean": 0.016224364720420326,
+      "exploration_rho_min": -0.19408291810753703,
+      "exploration_rho_max": 0.1935007733434952,
+      "exploration_spearman_mean": 0.701621786307755,
+      "label": "near-zero",
+      "seed": 102,
+      "trace": "traces/P8192-near-zero-seed102.jsonl",
+      "requests": 426,
+      "oracle_rho": -0.010494582070613849,
+      "oracle_spearman": 0.687804763906994,
+      "working_set_blocks": 9305,
+      "max_prompt_tokens": 24819,
+      "serial_lru": [
+        {
+          "capacity_blocks": 2048,
+          "request_mean_hit_rate": 0.5324517781423691,
+          "block_weighted_hit_rate": 0.5200056437111995,
+          "rho_pearson": -0.1448577308447781,
+          "rho_spearman": -0.10602319551219105,
+          "evicted_blocks": 144237,
+          "prompts_larger_than_capacity": 0,
+          "working_set_ratio": 4.54345703125
+        },
+        {
+          "capacity_blocks": 4096,
+          "request_mean_hit_rate": 0.873609452060951,
+          "block_weighted_hit_rate": 0.8627692247115801,
+          "rho_pearson": -0.2353291382750308,
+          "rho_spearman": 0.18489498603006432,
+          "evicted_blocks": 37727,
+          "prompts_larger_than_capacity": 0,
+          "working_set_ratio": 2.271728515625
+        }
+      ]
+    },
+    {
+      "P": 8192,
+      "rho_mix": 0.75,
+      "exploration_rho_mean": -0.4449201030899866,
+      "exploration_rho_min": -0.4874507935795155,
+      "exploration_rho_max": -0.3721077628191499,
+      "exploration_spearman_mean": -0.04443231315220836,
+      "label": "negative",
+      "seed": 100,
+      "trace": "traces/P8192-negative-seed100.jsonl",
+      "requests": 414,
+      "oracle_rho": -0.44085051237610723,
+      "oracle_spearman": -0.1780841053357121,
+      "working_set_blocks": 45533,
+      "max_prompt_tokens": 29388,
+      "serial_lru": [
+        {
+          "capacity_blocks": 2048,
+          "request_mean_hit_rate": 0.46568183430891014,
+          "block_weighted_hit_rate": 0.38976854006797396,
+          "rho_pearson": -0.4315247914565227,
+          "rho_spearman": -0.22373194984659164,
+          "evicted_blocks": 232622,
+          "prompts_larger_than_capacity": 0,
+          "working_set_ratio": 22.23291015625
+        },
+        {
+          "capacity_blocks": 4096,
+          "request_mean_hit_rate": 0.7335883920600185,
+          "block_weighted_hit_rate": 0.627490190061863,
+          "rho_pearson": -0.6800347946303608,
+          "rho_spearman": -0.1836037282474783,
+          "evicted_blocks": 139156,
+          "prompts_larger_than_capacity": 0,
+          "working_set_ratio": 11.116455078125
+        }
+      ]
+    },
+    {
+      "P": 8192,
+      "rho_mix": 0.75,
+      "exploration_rho_mean": -0.4449201030899866,
+      "exploration_rho_min": -0.4874507935795155,
+      "exploration_rho_max": -0.3721077628191499,
+      "exploration_spearman_mean": -0.04443231315220836,
+      "label": "negative",
+      "seed": 101,
+      "trace": "traces/P8192-negative-seed101.jsonl",
+      "requests": 417,
+      "oracle_rho": -0.48226884887604315,
+      "oracle_spearman": 0.004418591123173907,
+      "working_set_blocks": 38910,
+      "max_prompt_tokens": 30323,
+      "serial_lru": [
+        {
+          "capacity_blocks": 2048,
+          "request_mean_hit_rate": 0.4010475692152139,
+          "block_weighted_hit_rate": 0.34732848017757284,
+          "rho_pearson": -0.29104141598180755,
+          "rho_spearman": -0.11921478943811406,
+          "evicted_blocks": 240830,
+          "prompts_larger_than_capacity": 0,
+          "working_set_ratio": 18.9990234375
+        },
+        {
+          "capacity_blocks": 4096,
+          "request_mean_hit_rate": 0.752703261519569,
+          "block_weighted_hit_rate": 0.6546815754751713,
+          "rho_pearson": -0.6565360366854146,
+          "rho_spearman": -0.18620496450187243,
+          "evicted_blocks": 124407,
+          "prompts_larger_than_capacity": 0,
+          "working_set_ratio": 9.49951171875
+        }
+      ]
+    },
+    {
+      "P": 8192,
+      "rho_mix": 0.75,
+      "exploration_rho_mean": -0.4449201030899866,
+      "exploration_rho_min": -0.4874507935795155,
+      "exploration_rho_max": -0.3721077628191499,
+      "exploration_spearman_mean": -0.04443231315220836,
+      "label": "negative",
+      "seed": 102,
+      "trace": "traces/P8192-negative-seed102.jsonl",
+      "requests": 402,
+      "oracle_rho": -0.45537037509385814,
+      "oracle_spearman": 0.08418618447000323,
+      "working_set_blocks": 33050,
+      "max_prompt_tokens": 29838,
+      "serial_lru": [
+        {
+          "capacity_blocks": 2048,
+          "request_mean_hit_rate": 0.44221665229230417,
+          "block_weighted_hit_rate": 0.3997115949203864,
+          "rho_pearson": -0.23848857628552575,
+          "rho_spearman": -0.035117905658774456,
+          "evicted_blocks": 206509,
+          "prompts_larger_than_capacity": 0,
+          "working_set_ratio": 16.1376953125
+        },
+        {
+          "capacity_blocks": 4096,
+          "request_mean_hit_rate": 0.7612320894696596,
+          "block_weighted_hit_rate": 0.6833847588565113,
+          "rho_pearson": -0.5374660491225499,
+          "rho_spearman": -0.06048354741817159,
+          "evicted_blocks": 105905,
+          "prompts_larger_than_capacity": 0,
+          "working_set_ratio": 8.06884765625
+        }
+      ]
+    }
+  ]
+}

@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "cache-delay-eval"
 version = "0.1.0"
-description = "Trace-driven evaluation tools for stale KV-cache routing state"
+description = "Find workload patterns with higher prefix-cache hit rate and higher TTFT"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
@@ -13,15 +13,15 @@ authors = [{name = "Kejun Liu"}]
 dependencies = []
 
 [project.optional-dependencies]
-plots = ["matplotlib>=3.8"]
+live = ["aiohttp>=3.10,<4"]
+plots = ["matplotlib>=3.8,<4"]
 
 [project.scripts]
-cache-delay-generate-trace = "cache_delay_eval.generate_trace:main"
+cache-delay-generate-sessions = "cache_delay_eval.session_gen:main"
+cache-delay-screen-patterns = "cache_delay_eval.pattern_screen:main"
 cache-delay-validate-trace = "cache_delay_eval.trace:main"
-cache-delay-calibrate = "cache_delay_eval.calibration:main"
-cache-delay-summarize = "cache_delay_eval.summarize:main"
-cache-delay-audit = "cache_delay_eval.audit:main"
-cache-delay-analyze-calibration = "cache_delay_eval.analyze_calibration:main"
+cache-delay-pattern-pilot = "cache_delay_eval.paired_pilot:main"
+cache-delay-analyze-patterns = "cache_delay_eval.analyze_patterns:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

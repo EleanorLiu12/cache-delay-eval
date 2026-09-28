@@ -17,6 +17,11 @@ __pycache__/
 # Keep raw measurements in version control; ignore only scratch reruns.
 results/scratch-*
 
+# Downloaded public traces are refetched and hash-checked by scripts/fetch_*.py.
+data/
+# Per-request CPU metrics are recomputed from the pinned trace in seconds.
+results/qwen-trace-a-*/requests-*.jsonl
+
 # Disposable exports, dry-run plans and scratch files.
 output/
 tmp/

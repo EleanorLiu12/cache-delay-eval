@@ -21,6 +21,7 @@ results/scratch-*
 data/
 # Per-request CPU metrics are recomputed from the pinned trace in seconds.
 results/qwen-trace-a-*/requests-*.jsonl
+results/qwen-trace-b-*/requests-*.jsonl
 
 # Disposable exports, dry-run plans and scratch files.
 output/

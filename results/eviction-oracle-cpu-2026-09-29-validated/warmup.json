@@ -1,0 +1,110 @@
+{
+  "sum_ttft": 4300,
+  "mean_ttft": 4300.0,
+  "ttft": [
+    4300
+  ],
+  "progress": [
+    {
+      "computed": 41,
+      "blocks": [],
+      "outputs": [
+        4300
+      ],
+      "completed": 4300,
+      "cached_tokens": 0,
+      "preemptions": 0
+    }
+  ],
+  "events": [
+    {
+      "type": "allocation",
+      "time": 0,
+      "request_id": "117",
+      "candidates": [],
+      "victim_count": 0,
+      "victims": [],
+      "allocated": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "iteration",
+      "start": 0,
+      "end": 3300,
+      "signature": "[[\"prefill\",32,0]]",
+      "services": [
+        {
+          "index": 0,
+          "kind": "prefill",
+          "tokens": 32,
+          "context": 0,
+          "request_id": "117"
+        }
+      ]
+    },
+    {
+      "type": "allocation",
+      "time": 3300,
+      "request_id": "117",
+      "candidates": [],
+      "victim_count": 0,
+      "victims": [],
+      "allocated": [
+        2
+      ]
+    },
+    {
+      "type": "iteration",
+      "start": 3300,
+      "end": 4300,
+      "signature": "[[\"prefill\",9,32]]",
+      "services": [
+        {
+          "index": 0,
+          "kind": "prefill",
+          "tokens": 9,
+          "context": 32,
+          "request_id": "117"
+        }
+      ]
+    }
+  ],
+  "actions": [],
+  "final_cache": [
+    {
+      "identity": [
+        3636
+      ],
+      "refs": 0
+    },
+    {
+      "identity": [
+        3636,
+        3637
+      ],
+      "refs": 0
+    },
+    {
+      "identity": null,
+      "refs": 0
+    },
+    {
+      "identity": null,
+      "refs": 0
+    },
+    {
+      "identity": null,
+      "refs": 0
+    }
+  ],
+  "final_free_order": [
+    2,
+    3,
+    4,
+    1,
+    0
+  ],
+  "drain_time": 4300
+}

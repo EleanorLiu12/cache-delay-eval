@@ -1,0 +1,16 @@
+{
+  "source_scripts_sha256": "33f112fa11f927d879fee5603177a52266584d5a3c75db192e5a492e9c8c708b",
+  "seed": 699012,
+  "root_arrivals_s": {
+    "shard00000-row53831": 0.0,
+    "shard00000-row21197": 1.352853977991543,
+    "shard00000-row03337": 2.878451801102488,
+    "shard00000-row31529": 3.023299510507845,
+    "shard00000-row20555": 3.1526052418875485,
+    "shard00000-row50872": 3.452157800335376,
+    "shard00000-row09359": 3.6486570000582677,
+    "shard00000-row23728": 4.0861586952365645
+  },
+  "assumption": "Synthetic unit-rate Poisson session starts; first root at zero; no WildChat timestamp used",
+  "interpretation": "Calibration schedule template, not a calibrated load. Freeze a scaled copy and its hash before performance comparisons."
+}

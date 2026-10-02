@@ -1,0 +1,35 @@
+{
+  "version": "0.28.0",
+  "commit": "2cf0a6915ce544dc493a0990f2ea38d81601128a",
+  "prepared_utc": "2026-09-29T17:48:37.053243+00:00",
+  "source_url": "https://raw.githubusercontent.com/vllm-project/vllm/2cf0a6915ce544dc493a0990f2ea38d81601128a/",
+  "source_sha256": {
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "vllm/v1/core/sched/scheduler.py": "4b79ab760c3864af6838d555c01335deea3aac97c9be2be415fa0e5dab32f07e",
+    "vllm/v1/core/kv_cache_manager.py": "2d20c3d98845cfd8d88a2f66b8fc6402ea1fcfbee16879d2364a4a9e45b8fa47",
+    "vllm/v1/engine/input_processor.py": "f9a7946a16acc2374ff2bdfc22f212cb43461d9ef4d99c5e19a536339f11212f",
+    "vllm/v1/core/block_pool.py": "ddee56dccb2208411b3a035918e917ce8f56a9858471e9ca12b420d5d79bc69c",
+    "vllm/v1/core/kv_cache_utils.py": "088f2201bee86fade694e78141b6e99a5cd0cdd23c5c7ab3526dd119f76e4aec",
+    "vllm/entrypoints/openai/completion/serving.py": "c4348ccaf254e4a6b729f9c452aa02f899df64a1fb6d3ab7b7dde199f53dff40",
+    "vllm/v1/core/sched/request_queue.py": "4b8d938e5fb8152fe61030b8aa991f983fcac9a405c37ed8908045e05e82ae5e",
+    "vllm/config/scheduler.py": "3cf5d41a5d662ab0eada6f3128e2538abc0a250d6aef82acab7df7dd84e498bc",
+    "vllm/entrypoints/openai/chat_completion/serving.py": "a2440b6b76ad87de86bcf6fc7061ad5d02ab67c1c3c89ca7de3eeb29aa12aa2f",
+    "vllm/v1/engine/async_llm.py": "bceed0b3f5f0c834fef79525f2462a092f082390f0070526280abc95945837dd",
+    "vllm/v1/engine/parallel_sampling.py": "bf3f0a3c6640aaf706d1b6f7ec3a8e09a970f3dd9e7e96fa6a901779ea84f61d"
+  },
+  "patched_sha256": {
+    "vllm/v1/core/sched/scheduler.py": "b95b4b2eb78b1c76e3e7ec15d9434061284f76125ce3154ba00ee0ee50604dcb",
+    "vllm/v1/core/kv_cache_manager.py": "fb761dea137d28f08d16aec4091aae209b08953eafa3109115d3336878d3b8c1",
+    "vllm/v1/engine/input_processor.py": "6ae0e42b95123d5b07ab07be39f2be38f80dadf0fd54078ca358b44392e0b16b",
+    "vllm/v1/core/block_pool.py": "8add82d2a519c31e75fd8a78c84396a27199b5db61be039c06f418eb6327ce62",
+    "vllm/v1/core/cache_delay_telemetry.py": "dadeffc252434920840fb088980045de8609b3797430eeee1a1f968c8c335540"
+  },
+  "checks": {
+    "original_source_hashes": true,
+    "compile": true,
+    "original_ast_recovered_after_removing_telemetry": true
+  },
+  "applied": false,
+  "GPU_used": false,
+  "vllm_imported": false
+}

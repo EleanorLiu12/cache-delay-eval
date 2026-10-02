@@ -1,0 +1,2367 @@
+{
+  "instance": {
+    "name": "sufficient_capacity",
+    "requests": [
+      {
+        "request_id": "A",
+        "prompt": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "output": [
+          5,
+          6
+        ],
+        "arrival": 0
+      },
+      {
+        "request_id": "B",
+        "prompt": [
+          11
+        ],
+        "output": [
+          12,
+          13
+        ],
+        "arrival": 0
+      },
+      {
+        "request_id": "C",
+        "prompt": [
+          21
+        ],
+        "output": [
+          22,
+          23
+        ],
+        "arrival": 0
+      },
+      {
+        "request_id": "D",
+        "prompt": [
+          31
+        ],
+        "output": [
+          32,
+          33
+        ],
+        "arrival": 0
+      }
+    ],
+    "kv_blocks": 32,
+    "max_sequences": 4,
+    "token_budget": 4,
+    "prefill_chunk": 2,
+    "overhead_ticks": 1,
+    "prefill_token_ticks": 1,
+    "decode_token_ticks": 1,
+    "slack_percent": 0,
+    "epsilon_ticks": 1
+  },
+  "certificate": {
+    "status": "exact_restricted_toy_optimum",
+    "cost_revision": "toy_parallel_max_v1",
+    "units": "integer toy ticks (not seconds)",
+    "objective": "sum of first-token latency; divide by request count for mean",
+    "baseline_sum_ttft_ticks": 30,
+    "incumbent_sum_ttft_ticks": 30,
+    "lower_bound_sum_ttft_ticks": 30,
+    "optimality_gap_ticks": 0,
+    "regret_mean_ttft_ticks": 0.0,
+    "relative_regret": 0.0,
+    "visited_states": 97,
+    "enumerated_actions": 114,
+    "duplicate_states": 0,
+    "constraint_pruned": 18,
+    "completed_states": 6,
+    "termination_reason": "exhausted_all_reachable_legal_waiting_orders",
+    "baseline_included_as_feasible_candidate": true,
+    "constraint_limits": {
+      "completion": [
+        "11",
+        "9",
+        "9",
+        "13"
+      ],
+      "decode_duration": [
+        "3",
+        "3",
+        "3",
+        "3"
+      ],
+      "token_gap": [
+        "3",
+        "3",
+        "3",
+        "3"
+      ]
+    },
+    "horizon_ticks": "13",
+    "best_waiting_actions": [
+      [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      [
+        "D"
+      ],
+      [
+        "D"
+      ],
+      [],
+      []
+    ]
+  },
+  "baseline": {
+    "units": "toy ticks",
+    "request_count": 4,
+    "completed_requests": 4,
+    "unfinished_requests": 0,
+    "completed_output_tokens": 8,
+    "mean_ttft_ticks": 7.5,
+    "median_ttft_ticks": 7.0,
+    "p95_ttft_ticks": 9.7,
+    "max_ttft_ticks": 10,
+    "p99_ttft_ticks": null,
+    "p99_note": "Not reported for four-request instances",
+    "mean_inter_token_gap_ticks": 2.0,
+    "p95_inter_token_gap_ticks": 2.0,
+    "max_waiting_age_ticks": 6,
+    "max_time_without_service_ticks": 6,
+    "makespan_ticks": 12,
+    "drain_after_last_root_ticks": 12,
+    "completed_requests_per_tick": 0.3333333333333333,
+    "completed_output_tokens_per_tick": 0.6666666666666666,
+    "offered_root_rate_per_tick": null,
+    "root_arrivals": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "realized_turn_rate_per_tick": 0.3333333333333333,
+    "rate_note": "Finite roots; explicit arrivals replace a fitted offered rate. Throughput includes full drain.",
+    "cached_fraction": 0.0,
+    "preemptions": 0,
+    "recomputed_tokens": 0,
+    "constraint_violations": [],
+    "allocation_failures": [],
+    "per_request": [
+      {
+        "request_id": "A",
+        "session_id": "A",
+        "arrival": 0,
+        "admitted_at": 0,
+        "first_token": 8,
+        "completion": 10,
+        "ttft_ticks": 8,
+        "waiting_ticks": 0,
+        "response_latency_ticks": 10,
+        "session_completion_delay_ticks": 10,
+        "session_progress_ticks": 10,
+        "first_token_from_session_start_ticks": 8,
+        "decode_duration_ticks": 2,
+        "output_times": [
+          8,
+          10
+        ],
+        "inter_token_gaps_ticks": [
+          2
+        ],
+        "max_inter_token_gap_ticks": 2,
+        "time_per_output_token_ticks": 2.0,
+        "prompt_tokens": 4,
+        "output_tokens": 2,
+        "cached_tokens": 0,
+        "cached_fraction": 0.0,
+        "bypass_count": 0
+      },
+      {
+        "request_id": "B",
+        "session_id": "B",
+        "arrival": 0,
+        "admitted_at": 0,
+        "first_token": 6,
+        "completion": 8,
+        "ttft_ticks": 6,
+        "waiting_ticks": 0,
+        "response_latency_ticks": 8,
+        "session_completion_delay_ticks": 8,
+        "session_progress_ticks": 8,
+        "first_token_from_session_start_ticks": 6,
+        "decode_duration_ticks": 2,
+        "output_times": [
+          6,
+          8
+        ],
+        "inter_token_gaps_ticks": [
+          2
+        ],
+        "max_inter_token_gap_ticks": 2,
+        "time_per_output_token_ticks": 2.0,
+        "prompt_tokens": 1,
+        "output_tokens": 2,
+        "cached_tokens": 0,
+        "cached_fraction": 0.0,
+        "bypass_count": 0
+      },
+      {
+        "request_id": "C",
+        "session_id": "C",
+        "arrival": 0,
+        "admitted_at": 0,
+        "first_token": 6,
+        "completion": 8,
+        "ttft_ticks": 6,
+        "waiting_ticks": 0,
+        "response_latency_ticks": 8,
+        "session_completion_delay_ticks": 8,
+        "session_progress_ticks": 8,
+        "first_token_from_session_start_ticks": 6,
+        "decode_duration_ticks": 2,
+        "output_times": [
+          6,
+          8
+        ],
+        "inter_token_gaps_ticks": [
+          2
+        ],
+        "max_inter_token_gap_ticks": 2,
+        "time_per_output_token_ticks": 2.0,
+        "prompt_tokens": 1,
+        "output_tokens": 2,
+        "cached_tokens": 0,
+        "cached_fraction": 0.0,
+        "bypass_count": 0
+      },
+      {
+        "request_id": "D",
+        "session_id": "D",
+        "arrival": 0,
+        "admitted_at": 6,
+        "first_token": 10,
+        "completion": 12,
+        "ttft_ticks": 10,
+        "waiting_ticks": 6,
+        "response_latency_ticks": 12,
+        "session_completion_delay_ticks": 12,
+        "session_progress_ticks": 12,
+        "first_token_from_session_start_ticks": 10,
+        "decode_duration_ticks": 2,
+        "output_times": [
+          10,
+          12
+        ],
+        "inter_token_gaps_ticks": [
+          2
+        ],
+        "max_inter_token_gap_ticks": 2,
+        "time_per_output_token_ticks": 2.0,
+        "prompt_tokens": 1,
+        "output_tokens": 2,
+        "cached_tokens": 0,
+        "cached_fraction": 0.0,
+        "bypass_count": 0
+      }
+    ]
+  },
+  "oracle": {
+    "units": "toy ticks",
+    "request_count": 4,
+    "completed_requests": 4,
+    "unfinished_requests": 0,
+    "completed_output_tokens": 8,
+    "mean_ttft_ticks": 7.5,
+    "median_ttft_ticks": 7.0,
+    "p95_ttft_ticks": 9.7,
+    "max_ttft_ticks": 10,
+    "p99_ttft_ticks": null,
+    "p99_note": "Not reported for four-request instances",
+    "mean_inter_token_gap_ticks": 2.0,
+    "p95_inter_token_gap_ticks": 2.0,
+    "max_waiting_age_ticks": 6,
+    "max_time_without_service_ticks": 6,
+    "makespan_ticks": 12,
+    "drain_after_last_root_ticks": 12,
+    "completed_requests_per_tick": 0.3333333333333333,
+    "completed_output_tokens_per_tick": 0.6666666666666666,
+    "offered_root_rate_per_tick": null,
+    "root_arrivals": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "realized_turn_rate_per_tick": 0.3333333333333333,
+    "rate_note": "Finite roots; explicit arrivals replace a fitted offered rate. Throughput includes full drain.",
+    "cached_fraction": 0.0,
+    "preemptions": 0,
+    "recomputed_tokens": 0,
+    "constraint_violations": [],
+    "allocation_failures": [],
+    "per_request": [
+      {
+        "request_id": "A",
+        "session_id": "A",
+        "arrival": 0,
+        "admitted_at": 0,
+        "first_token": 8,
+        "completion": 10,
+        "ttft_ticks": 8,
+        "waiting_ticks": 0,
+        "response_latency_ticks": 10,
+        "session_completion_delay_ticks": 10,
+        "session_progress_ticks": 10,
+        "first_token_from_session_start_ticks": 8,
+        "decode_duration_ticks": 2,
+        "output_times": [
+          8,
+          10
+        ],
+        "inter_token_gaps_ticks": [
+          2
+        ],
+        "max_inter_token_gap_ticks": 2,
+        "time_per_output_token_ticks": 2.0,
+        "prompt_tokens": 4,
+        "output_tokens": 2,
+        "cached_tokens": 0,
+        "cached_fraction": 0.0,
+        "bypass_count": 0
+      },
+      {
+        "request_id": "B",
+        "session_id": "B",
+        "arrival": 0,
+        "admitted_at": 0,
+        "first_token": 6,
+        "completion": 8,
+        "ttft_ticks": 6,
+        "waiting_ticks": 0,
+        "response_latency_ticks": 8,
+        "session_completion_delay_ticks": 8,
+        "session_progress_ticks": 8,
+        "first_token_from_session_start_ticks": 6,
+        "decode_duration_ticks": 2,
+        "output_times": [
+          6,
+          8
+        ],
+        "inter_token_gaps_ticks": [
+          2
+        ],
+        "max_inter_token_gap_ticks": 2,
+        "time_per_output_token_ticks": 2.0,
+        "prompt_tokens": 1,
+        "output_tokens": 2,
+        "cached_tokens": 0,
+        "cached_fraction": 0.0,
+        "bypass_count": 0
+      },
+      {
+        "request_id": "C",
+        "session_id": "C",
+        "arrival": 0,
+        "admitted_at": 0,
+        "first_token": 6,
+        "completion": 8,
+        "ttft_ticks": 6,
+        "waiting_ticks": 0,
+        "response_latency_ticks": 8,
+        "session_completion_delay_ticks": 8,
+        "session_progress_ticks": 8,
+        "first_token_from_session_start_ticks": 6,
+        "decode_duration_ticks": 2,
+        "output_times": [
+          6,
+          8
+        ],
+        "inter_token_gaps_ticks": [
+          2
+        ],
+        "max_inter_token_gap_ticks": 2,
+        "time_per_output_token_ticks": 2.0,
+        "prompt_tokens": 1,
+        "output_tokens": 2,
+        "cached_tokens": 0,
+        "cached_fraction": 0.0,
+        "bypass_count": 0
+      },
+      {
+        "request_id": "D",
+        "session_id": "D",
+        "arrival": 0,
+        "admitted_at": 6,
+        "first_token": 10,
+        "completion": 12,
+        "ttft_ticks": 10,
+        "waiting_ticks": 6,
+        "response_latency_ticks": 12,
+        "session_completion_delay_ticks": 12,
+        "session_progress_ticks": 12,
+        "first_token_from_session_start_ticks": 10,
+        "decode_duration_ticks": 2,
+        "output_times": [
+          10,
+          12
+        ],
+        "inter_token_gaps_ticks": [
+          2
+        ],
+        "max_inter_token_gap_ticks": 2,
+        "time_per_output_token_ticks": 2.0,
+        "prompt_tokens": 1,
+        "output_tokens": 2,
+        "cached_tokens": 0,
+        "cached_fraction": 0.0,
+        "bypass_count": 0
+      }
+    ]
+  },
+  "baseline_events": [
+    {
+      "start": 0,
+      "end": 3,
+      "action": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "forced_idle": false,
+      "admissions": [
+        {
+          "request_id": "A",
+          "cached_tokens": 0,
+          "hit_block_ids": [],
+          "active_blocks": 0,
+          "free_blocks": 32,
+          "evictable_blocks": 0,
+          "protected_inactive_hit_blocks": 0,
+          "allocatable_blocks": 32,
+          "missing_prompt_blocks": 4,
+          "output_reservation_blocks": 2,
+          "required_new_blocks": 6,
+          "fits": true,
+          "failure_reason": null
+        },
+        {
+          "request_id": "B",
+          "cached_tokens": 0,
+          "hit_block_ids": [],
+          "active_blocks": 6,
+          "free_blocks": 26,
+          "evictable_blocks": 0,
+          "protected_inactive_hit_blocks": 0,
+          "allocatable_blocks": 26,
+          "missing_prompt_blocks": 1,
+          "output_reservation_blocks": 2,
+          "required_new_blocks": 3,
+          "fits": true,
+          "failure_reason": null
+        },
+        {
+          "request_id": "C",
+          "cached_tokens": 0,
+          "hit_block_ids": [],
+          "active_blocks": 9,
+          "free_blocks": 23,
+          "evictable_blocks": 0,
+          "protected_inactive_hit_blocks": 0,
+          "allocatable_blocks": 23,
+          "missing_prompt_blocks": 1,
+          "output_reservation_blocks": 2,
+          "required_new_blocks": 3,
+          "fits": true,
+          "failure_reason": null
+        }
+      ],
+      "evictions": [],
+      "stop": {
+        "reason": "token_budget",
+        "evaluated_request": null,
+        "unexamined": [
+          "D"
+        ]
+      },
+      "services": [
+        {
+          "request_id": "A",
+          "kind": "prefill",
+          "tokens": 2
+        },
+        {
+          "request_id": "B",
+          "kind": "prefill",
+          "tokens": 1
+        },
+        {
+          "request_id": "C",
+          "kind": "prefill",
+          "tokens": 1
+        }
+      ],
+      "physical_blocks": 12,
+      "active_blocks": 12,
+      "shared_active_blocks": 0,
+      "block_state": [
+        {
+          "block_id": 0,
+          "identity": [
+            1
+          ],
+          "computed": true,
+          "refs": [
+            0
+          ],
+          "touched": 1
+        },
+        {
+          "block_id": 1,
+          "identity": [
+            1,
+            2
+          ],
+          "computed": true,
+          "refs": [
+            0
+          ],
+          "touched": 2
+        },
+        {
+          "block_id": 2,
+          "identity": [
+            1,
+            2,
+            3
+          ],
+          "computed": false,
+          "refs": [
+            0
+          ],
+          "touched": 3
+        },
+        {
+          "block_id": 3,
+          "identity": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "computed": false,
+          "refs": [
+            0
+          ],
+          "touched": 4
+        },
+        {
+          "block_id": 4,
+          "identity": null,
+          "computed": false,
+          "refs": [
+            0
+          ],
+          "touched": 5
+        },
+        {
+          "block_id": 5,
+          "identity": null,
+          "computed": false,
+          "refs": [
+            0
+          ],
+          "touched": 6
+        },
+        {
+          "block_id": 6,
+          "identity": [
+            11
+          ],
+          "computed": true,
+          "refs": [
+            1
+          ],
+          "touched": 7
+        },
+        {
+          "block_id": 7,
+          "identity": null,
+          "computed": false,
+          "refs": [
+            1
+          ],
+          "touched": 8
+        },
+        {
+          "block_id": 8,
+          "identity": null,
+          "computed": false,
+          "refs": [
+            1
+          ],
+          "touched": 9
+        },
+        {
+          "block_id": 9,
+          "identity": [
+            21
+          ],
+          "computed": true,
+          "refs": [
+            2
+          ],
+          "touched": 10
+        },
+        {
+          "block_id": 10,
+          "identity": null,
+          "computed": false,
+          "refs": [
+            2
+          ],
+          "touched": 11
+        },
+        {
+          "block_id": 11,
+          "identity": null,
+          "computed": false,
+          "refs": [
+            2
+          ],
+          "touched": 12
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 6,
+      "action": [
+        "D"
+      ],
+      "forced_idle": false,
+      "admissions": [],
+      "evictions": [],
+      "stop": {
+        "reason": "token_budget",
+        "evaluated_request": null,
+        "unexamined": [
+          "D"
+        ]
+      },
+      "services": [
+        {
+          "request_id": "A",
+          "kind": "prefill",
+          "tokens": 2
+        },
+        {
+          "request_id": "B",
+          "kind": "decode",
+          "tokens": 1
+        },
+        {
+          "request_id": "C",
+          "kind": "decode",
+          "tokens": 1
+        }
+      ],
+      "physical_blocks": 12,
+      "active_blocks": 12,
+      "shared_active_blocks": 0,
+      "block_state": [
+        {
+          "block_id": 0,
+          "identity": [
+            1
+          ],
+          "computed": true,
+          "refs": [
+            0
+          ],
+          "touched": 1
+        },
+        {
+          "block_id": 1,
+          "identity": [
+            1,
+            2
+          ],
+          "computed": true,
+          "refs": [
+            0
+          ],
+          "touched": 2
+        },
+        {
+          "block_id": 2,
+          "identity": [
+            1,
+            2,
+            3
+          ],
+          "computed": true,
+          "refs": [
+            0
+          ],
+          "touched": 3
+        },
+        {
+          "block_id": 3,
+          "identity": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "computed": true,
+          "refs": [
+            0
+          ],
+          "touched": 4
+        },
+        {
+          "block_id": 4,
+          "identity": null,
+          "computed": false,
+          "refs": [
+            0
+          ],
+          "touched": 5
+        },
+        {
+          "block_id": 5,
+          "identity": null,
+          "computed": false,
+          "refs": [
+            0
+          ],
+          "touched": 6
+        },
+        {
+          "block_id": 6,
+          "identity": [
+            11
+          ],
+          "computed": true,
+          "refs": [
+            1
+          ],
+          "touched": 7
+        },
+        {
+          "block_id": 7,
+          "identity": [
+            11,
+            12
+          ],
+          "computed": true,
+          "refs": [
+            1
+          ],
+          "touched": 8
+        },
+        {
+          "block_id": 8,
+          "identity": null,
+          "computed": false,
+          "refs": [
+            1
+          ],
+          "touched": 9
+        },
+        {
+          "block_id": 9,
+          "identity": [
+            21
+          ],
+          "computed": true,
+          "refs": [
+            2
+          ],
+          "touched": 10
+        },
+        {
+          "block_id": 10,
+          "identity": [
+            21,
+            22
+          ],
+          "computed": true,
+          "refs": [
+            2
+          ],
+          "touched": 11
+        },
+        {
+          "block_id": 11,
+          "identity": null,
+          "computed": false,
+          "refs": [
+            2
+          ],
+          "touched": 12
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 8,
+      "action": [
+        "D"
+      ],
+      "forced_idle": false,
+      "admissions": [
+        {
+          "request_id": "D",
+          "cached_tokens": 0,
+          "hit_block_ids": [],
+          "active_blocks": 12,
+          "free_blocks": 20,
+          "evictable_blocks": 0,
+          "protected_inactive_hit_blocks": 0,
+          "allocatable_blocks": 20,
+          "missing_prompt_blocks": 1,
+          "output_reservation_blocks": 2,
+          "required_new_blocks": 3,
+          "fits": true,
+          "failure_reason": null
+        }
+      ],
+      "evictions": [],
+      "stop": null,
+      "services": [
+        {
+          "request_id": "A",
+          "kind": "decode",
+          "tokens": 1
+        },
+        {
+          "request_id": "B",
+          "kind": "decode",
+          "tokens": 1
+        },
+        {
+          "request_id": "C",
+          "kind": "decode",
+          "tokens": 1
+        },
+        {
+          "request_id": "D",
+          "kind": "prefill",
+          "tokens": 1
+        }
+      ],
+      "physical_blocks": 15,
+      "active_blocks": 9,
+      "shared_active_blocks": 0,
+      "block_state": [
+        {
+          "block_id": 0,
+          "identity": [
+            1
+          ],
+          "computed": true,
+          "refs": [
+            0
+          ],
+          "touched": 1
+        },
+        {
+          "block_id": 1,
+          "identity": [
+            1,
+            2
+          ],
+          "computed": true,
+          "refs": [
+            0
+          ],
+          "touched": 2
+        },
+        {
+          "block_id": 2,
+          "identity": [
+            1,
+            2,
+            3
+          ],
+          "computed": true,
+          "refs": [
+            0
+          ],
+          "touched": 3
+        },
+        {
+          "block_id": 3,
+          "identity": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "computed": true,
+          "refs": [
+            0
+          ],
+          "touched": 4
+        },
+        {
+          "block_id": 4,
+          "identity": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "computed": true,
+          "refs": [
+            0
+          ],
+          "touched": 5
+        },
+        {
+          "block_id": 5,
+          "identity": null,
+          "computed": false,
+          "refs": [
+            0
+          ],
+          "touched": 6
+        },
+        {
+          "block_id": 6,
+          "identity": [
+            11
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 16
+        },
+        {
+          "block_id": 7,
+          "identity": [
+            11,
+            12
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 17
+        },
+        {
+          "block_id": 8,
+          "identity": [
+            11,
+            12,
+            13
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 18
+        },
+        {
+          "block_id": 9,
+          "identity": [
+            21
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 19
+        },
+        {
+          "block_id": 10,
+          "identity": [
+            21,
+            22
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 20
+        },
+        {
+          "block_id": 11,
+          "identity": [
+            21,
+            22,
+            23
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 21
+        },
+        {
+          "block_id": 12,
+          "identity": [
+            31
+          ],
+          "computed": true,
+          "refs": [
+            3
+          ],
+          "touched": 13
+        },
+        {
+          "block_id": 13,
+          "identity": null,
+          "computed": false,
+          "refs": [
+            3
+          ],
+          "touched": 14
+        },
+        {
+          "block_id": 14,
+          "identity": null,
+          "computed": false,
+          "refs": [
+            3
+          ],
+          "touched": 15
+        }
+      ]
+    },
+    {
+      "start": 8,
+      "end": 10,
+      "action": [],
+      "forced_idle": false,
+      "admissions": [],
+      "evictions": [],
+      "stop": null,
+      "services": [
+        {
+          "request_id": "A",
+          "kind": "decode",
+          "tokens": 1
+        },
+        {
+          "request_id": "D",
+          "kind": "decode",
+          "tokens": 1
+        }
+      ],
+      "physical_blocks": 15,
+      "active_blocks": 3,
+      "shared_active_blocks": 0,
+      "block_state": [
+        {
+          "block_id": 0,
+          "identity": [
+            1
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 22
+        },
+        {
+          "block_id": 1,
+          "identity": [
+            1,
+            2
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 23
+        },
+        {
+          "block_id": 2,
+          "identity": [
+            1,
+            2,
+            3
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 24
+        },
+        {
+          "block_id": 3,
+          "identity": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 25
+        },
+        {
+          "block_id": 4,
+          "identity": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 26
+        },
+        {
+          "block_id": 5,
+          "identity": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 27
+        },
+        {
+          "block_id": 6,
+          "identity": [
+            11
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 16
+        },
+        {
+          "block_id": 7,
+          "identity": [
+            11,
+            12
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 17
+        },
+        {
+          "block_id": 8,
+          "identity": [
+            11,
+            12,
+            13
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 18
+        },
+        {
+          "block_id": 9,
+          "identity": [
+            21
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 19
+        },
+        {
+          "block_id": 10,
+          "identity": [
+            21,
+            22
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 20
+        },
+        {
+          "block_id": 11,
+          "identity": [
+            21,
+            22,
+            23
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 21
+        },
+        {
+          "block_id": 12,
+          "identity": [
+            31
+          ],
+          "computed": true,
+          "refs": [
+            3
+          ],
+          "touched": 13
+        },
+        {
+          "block_id": 13,
+          "identity": [
+            31,
+            32
+          ],
+          "computed": true,
+          "refs": [
+            3
+          ],
+          "touched": 14
+        },
+        {
+          "block_id": 14,
+          "identity": null,
+          "computed": false,
+          "refs": [
+            3
+          ],
+          "touched": 15
+        }
+      ]
+    },
+    {
+      "start": 10,
+      "end": 12,
+      "action": [],
+      "forced_idle": false,
+      "admissions": [],
+      "evictions": [],
+      "stop": null,
+      "services": [
+        {
+          "request_id": "D",
+          "kind": "decode",
+          "tokens": 1
+        }
+      ],
+      "physical_blocks": 15,
+      "active_blocks": 0,
+      "shared_active_blocks": 0,
+      "block_state": [
+        {
+          "block_id": 0,
+          "identity": [
+            1
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 22
+        },
+        {
+          "block_id": 1,
+          "identity": [
+            1,
+            2
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 23
+        },
+        {
+          "block_id": 2,
+          "identity": [
+            1,
+            2,
+            3
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 24
+        },
+        {
+          "block_id": 3,
+          "identity": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 25
+        },
+        {
+          "block_id": 4,
+          "identity": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 26
+        },
+        {
+          "block_id": 5,
+          "identity": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 27
+        },
+        {
+          "block_id": 6,
+          "identity": [
+            11
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 16
+        },
+        {
+          "block_id": 7,
+          "identity": [
+            11,
+            12
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 17
+        },
+        {
+          "block_id": 8,
+          "identity": [
+            11,
+            12,
+            13
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 18
+        },
+        {
+          "block_id": 9,
+          "identity": [
+            21
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 19
+        },
+        {
+          "block_id": 10,
+          "identity": [
+            21,
+            22
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 20
+        },
+        {
+          "block_id": 11,
+          "identity": [
+            21,
+            22,
+            23
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 21
+        },
+        {
+          "block_id": 12,
+          "identity": [
+            31
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 28
+        },
+        {
+          "block_id": 13,
+          "identity": [
+            31,
+            32
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 29
+        },
+        {
+          "block_id": 14,
+          "identity": [
+            31,
+            32,
+            33
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 30
+        }
+      ]
+    }
+  ],
+  "oracle_events": [
+    {
+      "start": 0,
+      "end": 3,
+      "action": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "forced_idle": false,
+      "admissions": [
+        {
+          "request_id": "A",
+          "cached_tokens": 0,
+          "hit_block_ids": [],
+          "active_blocks": 0,
+          "free_blocks": 32,
+          "evictable_blocks": 0,
+          "protected_inactive_hit_blocks": 0,
+          "allocatable_blocks": 32,
+          "missing_prompt_blocks": 4,
+          "output_reservation_blocks": 2,
+          "required_new_blocks": 6,
+          "fits": true,
+          "failure_reason": null
+        },
+        {
+          "request_id": "B",
+          "cached_tokens": 0,
+          "hit_block_ids": [],
+          "active_blocks": 6,
+          "free_blocks": 26,
+          "evictable_blocks": 0,
+          "protected_inactive_hit_blocks": 0,
+          "allocatable_blocks": 26,
+          "missing_prompt_blocks": 1,
+          "output_reservation_blocks": 2,
+          "required_new_blocks": 3,
+          "fits": true,
+          "failure_reason": null
+        },
+        {
+          "request_id": "C",
+          "cached_tokens": 0,
+          "hit_block_ids": [],
+          "active_blocks": 9,
+          "free_blocks": 23,
+          "evictable_blocks": 0,
+          "protected_inactive_hit_blocks": 0,
+          "allocatable_blocks": 23,
+          "missing_prompt_blocks": 1,
+          "output_reservation_blocks": 2,
+          "required_new_blocks": 3,
+          "fits": true,
+          "failure_reason": null
+        }
+      ],
+      "evictions": [],
+      "stop": {
+        "reason": "token_budget",
+        "evaluated_request": null,
+        "unexamined": [
+          "D"
+        ]
+      },
+      "services": [
+        {
+          "request_id": "A",
+          "kind": "prefill",
+          "tokens": 2
+        },
+        {
+          "request_id": "B",
+          "kind": "prefill",
+          "tokens": 1
+        },
+        {
+          "request_id": "C",
+          "kind": "prefill",
+          "tokens": 1
+        }
+      ],
+      "physical_blocks": 12,
+      "active_blocks": 12,
+      "shared_active_blocks": 0,
+      "block_state": [
+        {
+          "block_id": 0,
+          "identity": [
+            1
+          ],
+          "computed": true,
+          "refs": [
+            0
+          ],
+          "touched": 1
+        },
+        {
+          "block_id": 1,
+          "identity": [
+            1,
+            2
+          ],
+          "computed": true,
+          "refs": [
+            0
+          ],
+          "touched": 2
+        },
+        {
+          "block_id": 2,
+          "identity": [
+            1,
+            2,
+            3
+          ],
+          "computed": false,
+          "refs": [
+            0
+          ],
+          "touched": 3
+        },
+        {
+          "block_id": 3,
+          "identity": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "computed": false,
+          "refs": [
+            0
+          ],
+          "touched": 4
+        },
+        {
+          "block_id": 4,
+          "identity": null,
+          "computed": false,
+          "refs": [
+            0
+          ],
+          "touched": 5
+        },
+        {
+          "block_id": 5,
+          "identity": null,
+          "computed": false,
+          "refs": [
+            0
+          ],
+          "touched": 6
+        },
+        {
+          "block_id": 6,
+          "identity": [
+            11
+          ],
+          "computed": true,
+          "refs": [
+            1
+          ],
+          "touched": 7
+        },
+        {
+          "block_id": 7,
+          "identity": null,
+          "computed": false,
+          "refs": [
+            1
+          ],
+          "touched": 8
+        },
+        {
+          "block_id": 8,
+          "identity": null,
+          "computed": false,
+          "refs": [
+            1
+          ],
+          "touched": 9
+        },
+        {
+          "block_id": 9,
+          "identity": [
+            21
+          ],
+          "computed": true,
+          "refs": [
+            2
+          ],
+          "touched": 10
+        },
+        {
+          "block_id": 10,
+          "identity": null,
+          "computed": false,
+          "refs": [
+            2
+          ],
+          "touched": 11
+        },
+        {
+          "block_id": 11,
+          "identity": null,
+          "computed": false,
+          "refs": [
+            2
+          ],
+          "touched": 12
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 6,
+      "action": [
+        "D"
+      ],
+      "forced_idle": false,
+      "admissions": [],
+      "evictions": [],
+      "stop": {
+        "reason": "token_budget",
+        "evaluated_request": null,
+        "unexamined": [
+          "D"
+        ]
+      },
+      "services": [
+        {
+          "request_id": "A",
+          "kind": "prefill",
+          "tokens": 2
+        },
+        {
+          "request_id": "B",
+          "kind": "decode",
+          "tokens": 1
+        },
+        {
+          "request_id": "C",
+          "kind": "decode",
+          "tokens": 1
+        }
+      ],
+      "physical_blocks": 12,
+      "active_blocks": 12,
+      "shared_active_blocks": 0,
+      "block_state": [
+        {
+          "block_id": 0,
+          "identity": [
+            1
+          ],
+          "computed": true,
+          "refs": [
+            0
+          ],
+          "touched": 1
+        },
+        {
+          "block_id": 1,
+          "identity": [
+            1,
+            2
+          ],
+          "computed": true,
+          "refs": [
+            0
+          ],
+          "touched": 2
+        },
+        {
+          "block_id": 2,
+          "identity": [
+            1,
+            2,
+            3
+          ],
+          "computed": true,
+          "refs": [
+            0
+          ],
+          "touched": 3
+        },
+        {
+          "block_id": 3,
+          "identity": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "computed": true,
+          "refs": [
+            0
+          ],
+          "touched": 4
+        },
+        {
+          "block_id": 4,
+          "identity": null,
+          "computed": false,
+          "refs": [
+            0
+          ],
+          "touched": 5
+        },
+        {
+          "block_id": 5,
+          "identity": null,
+          "computed": false,
+          "refs": [
+            0
+          ],
+          "touched": 6
+        },
+        {
+          "block_id": 6,
+          "identity": [
+            11
+          ],
+          "computed": true,
+          "refs": [
+            1
+          ],
+          "touched": 7
+        },
+        {
+          "block_id": 7,
+          "identity": [
+            11,
+            12
+          ],
+          "computed": true,
+          "refs": [
+            1
+          ],
+          "touched": 8
+        },
+        {
+          "block_id": 8,
+          "identity": null,
+          "computed": false,
+          "refs": [
+            1
+          ],
+          "touched": 9
+        },
+        {
+          "block_id": 9,
+          "identity": [
+            21
+          ],
+          "computed": true,
+          "refs": [
+            2
+          ],
+          "touched": 10
+        },
+        {
+          "block_id": 10,
+          "identity": [
+            21,
+            22
+          ],
+          "computed": true,
+          "refs": [
+            2
+          ],
+          "touched": 11
+        },
+        {
+          "block_id": 11,
+          "identity": null,
+          "computed": false,
+          "refs": [
+            2
+          ],
+          "touched": 12
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 8,
+      "action": [
+        "D"
+      ],
+      "forced_idle": false,
+      "admissions": [
+        {
+          "request_id": "D",
+          "cached_tokens": 0,
+          "hit_block_ids": [],
+          "active_blocks": 12,
+          "free_blocks": 20,
+          "evictable_blocks": 0,
+          "protected_inactive_hit_blocks": 0,
+          "allocatable_blocks": 20,
+          "missing_prompt_blocks": 1,
+          "output_reservation_blocks": 2,
+          "required_new_blocks": 3,
+          "fits": true,
+          "failure_reason": null
+        }
+      ],
+      "evictions": [],
+      "stop": null,
+      "services": [
+        {
+          "request_id": "A",
+          "kind": "decode",
+          "tokens": 1
+        },
+        {
+          "request_id": "B",
+          "kind": "decode",
+          "tokens": 1
+        },
+        {
+          "request_id": "C",
+          "kind": "decode",
+          "tokens": 1
+        },
+        {
+          "request_id": "D",
+          "kind": "prefill",
+          "tokens": 1
+        }
+      ],
+      "physical_blocks": 15,
+      "active_blocks": 9,
+      "shared_active_blocks": 0,
+      "block_state": [
+        {
+          "block_id": 0,
+          "identity": [
+            1
+          ],
+          "computed": true,
+          "refs": [
+            0
+          ],
+          "touched": 1
+        },
+        {
+          "block_id": 1,
+          "identity": [
+            1,
+            2
+          ],
+          "computed": true,
+          "refs": [
+            0
+          ],
+          "touched": 2
+        },
+        {
+          "block_id": 2,
+          "identity": [
+            1,
+            2,
+            3
+          ],
+          "computed": true,
+          "refs": [
+            0
+          ],
+          "touched": 3
+        },
+        {
+          "block_id": 3,
+          "identity": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "computed": true,
+          "refs": [
+            0
+          ],
+          "touched": 4
+        },
+        {
+          "block_id": 4,
+          "identity": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "computed": true,
+          "refs": [
+            0
+          ],
+          "touched": 5
+        },
+        {
+          "block_id": 5,
+          "identity": null,
+          "computed": false,
+          "refs": [
+            0
+          ],
+          "touched": 6
+        },
+        {
+          "block_id": 6,
+          "identity": [
+            11
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 16
+        },
+        {
+          "block_id": 7,
+          "identity": [
+            11,
+            12
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 17
+        },
+        {
+          "block_id": 8,
+          "identity": [
+            11,
+            12,
+            13
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 18
+        },
+        {
+          "block_id": 9,
+          "identity": [
+            21
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 19
+        },
+        {
+          "block_id": 10,
+          "identity": [
+            21,
+            22
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 20
+        },
+        {
+          "block_id": 11,
+          "identity": [
+            21,
+            22,
+            23
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 21
+        },
+        {
+          "block_id": 12,
+          "identity": [
+            31
+          ],
+          "computed": true,
+          "refs": [
+            3
+          ],
+          "touched": 13
+        },
+        {
+          "block_id": 13,
+          "identity": null,
+          "computed": false,
+          "refs": [
+            3
+          ],
+          "touched": 14
+        },
+        {
+          "block_id": 14,
+          "identity": null,
+          "computed": false,
+          "refs": [
+            3
+          ],
+          "touched": 15
+        }
+      ]
+    },
+    {
+      "start": 8,
+      "end": 10,
+      "action": [],
+      "forced_idle": false,
+      "admissions": [],
+      "evictions": [],
+      "stop": null,
+      "services": [
+        {
+          "request_id": "A",
+          "kind": "decode",
+          "tokens": 1
+        },
+        {
+          "request_id": "D",
+          "kind": "decode",
+          "tokens": 1
+        }
+      ],
+      "physical_blocks": 15,
+      "active_blocks": 3,
+      "shared_active_blocks": 0,
+      "block_state": [
+        {
+          "block_id": 0,
+          "identity": [
+            1
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 22
+        },
+        {
+          "block_id": 1,
+          "identity": [
+            1,
+            2
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 23
+        },
+        {
+          "block_id": 2,
+          "identity": [
+            1,
+            2,
+            3
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 24
+        },
+        {
+          "block_id": 3,
+          "identity": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 25
+        },
+        {
+          "block_id": 4,
+          "identity": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 26
+        },
+        {
+          "block_id": 5,
+          "identity": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 27
+        },
+        {
+          "block_id": 6,
+          "identity": [
+            11
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 16
+        },
+        {
+          "block_id": 7,
+          "identity": [
+            11,
+            12
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 17
+        },
+        {
+          "block_id": 8,
+          "identity": [
+            11,
+            12,
+            13
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 18
+        },
+        {
+          "block_id": 9,
+          "identity": [
+            21
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 19
+        },
+        {
+          "block_id": 10,
+          "identity": [
+            21,
+            22
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 20
+        },
+        {
+          "block_id": 11,
+          "identity": [
+            21,
+            22,
+            23
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 21
+        },
+        {
+          "block_id": 12,
+          "identity": [
+            31
+          ],
+          "computed": true,
+          "refs": [
+            3
+          ],
+          "touched": 13
+        },
+        {
+          "block_id": 13,
+          "identity": [
+            31,
+            32
+          ],
+          "computed": true,
+          "refs": [
+            3
+          ],
+          "touched": 14
+        },
+        {
+          "block_id": 14,
+          "identity": null,
+          "computed": false,
+          "refs": [
+            3
+          ],
+          "touched": 15
+        }
+      ]
+    },
+    {
+      "start": 10,
+      "end": 12,
+      "action": [],
+      "forced_idle": false,
+      "admissions": [],
+      "evictions": [],
+      "stop": null,
+      "services": [
+        {
+          "request_id": "D",
+          "kind": "decode",
+          "tokens": 1
+        }
+      ],
+      "physical_blocks": 15,
+      "active_blocks": 0,
+      "shared_active_blocks": 0,
+      "block_state": [
+        {
+          "block_id": 0,
+          "identity": [
+            1
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 22
+        },
+        {
+          "block_id": 1,
+          "identity": [
+            1,
+            2
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 23
+        },
+        {
+          "block_id": 2,
+          "identity": [
+            1,
+            2,
+            3
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 24
+        },
+        {
+          "block_id": 3,
+          "identity": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 25
+        },
+        {
+          "block_id": 4,
+          "identity": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 26
+        },
+        {
+          "block_id": 5,
+          "identity": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 27
+        },
+        {
+          "block_id": 6,
+          "identity": [
+            11
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 16
+        },
+        {
+          "block_id": 7,
+          "identity": [
+            11,
+            12
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 17
+        },
+        {
+          "block_id": 8,
+          "identity": [
+            11,
+            12,
+            13
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 18
+        },
+        {
+          "block_id": 9,
+          "identity": [
+            21
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 19
+        },
+        {
+          "block_id": 10,
+          "identity": [
+            21,
+            22
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 20
+        },
+        {
+          "block_id": 11,
+          "identity": [
+            21,
+            22,
+            23
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 21
+        },
+        {
+          "block_id": 12,
+          "identity": [
+            31
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 28
+        },
+        {
+          "block_id": 13,
+          "identity": [
+            31,
+            32
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 29
+        },
+        {
+          "block_id": 14,
+          "identity": [
+            31,
+            32,
+            33
+          ],
+          "computed": true,
+          "refs": [],
+          "touched": 30
+        }
+      ]
+    }
+  ]
+}

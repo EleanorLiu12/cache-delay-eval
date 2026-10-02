@@ -1,0 +1,354 @@
+{
+  "qwen_a": {
+    "dataset": "Qwen-Bailian Trace A",
+    "source": "data/qwen-bailian/5f7439c51ec248a0c585f7d90a41a6f57773b912/qwen_traceA_blksz_16.jsonl",
+    "source_records": 43058,
+    "source_fields": [
+      "chat_id",
+      "hash_ids",
+      "input_length",
+      "output_length",
+      "parent_chat_id",
+      "timestamp",
+      "turn",
+      "type"
+    ],
+    "source_type_composition": [
+      {
+        "source_label": "file",
+        "request_share": {
+          "numerator": 1510,
+          "denominator": 43058,
+          "fraction": 0.035068976729063124
+        },
+        "observed_components": 748,
+        "multi_request_components": 341
+      },
+      {
+        "source_label": "image",
+        "request_share": {
+          "numerator": 1617,
+          "denominator": 43058,
+          "fraction": 0.037553996934367596
+        },
+        "observed_components": 1482,
+        "multi_request_components": 67
+      },
+      {
+        "source_label": "search",
+        "request_share": {
+          "numerator": 8187,
+          "denominator": 43058,
+          "fraction": 0.19013888243764224
+        },
+        "observed_components": 4424,
+        "multi_request_components": 1865
+      },
+      {
+        "source_label": "text",
+        "request_share": {
+          "numerator": 31744,
+          "denominator": 43058,
+          "fraction": 0.7372381438989271
+        },
+        "observed_components": 16447,
+        "multi_request_components": 6739
+      }
+    ],
+    "prefix_statistics": {
+      "all_types": {
+        "historical_input_overlap_ge_50pct": {
+          "numerator": 28898,
+          "denominator": 43058,
+          "fraction": 0.671141251335408
+        },
+        "multi_request_components": {
+          "numerator": 9012,
+          "denominator": 23101,
+          "fraction": 0.3901129821219861
+        }
+      },
+      "observed_root_text": {
+        "historical_input_overlap_ge_50pct": {
+          "numerator": 22720,
+          "denominator": 31744,
+          "fraction": 0.7157258064516129
+        },
+        "multi_request_components": {
+          "numerator": 6739,
+          "denominator": 16447,
+          "fraction": 0.40974037818447134
+        }
+      }
+    },
+    "verified_task_labels": false,
+    "target_trace_class_prevalence": null,
+    "actual_hit_ttft_pairs": 0,
+    "limitation": "Source type labels and input overlap do not identify application purpose or measured cache-hit/TTFT behavior."
+  },
+  "qwen_b": {
+    "dataset": "Qwen-Bailian Trace B",
+    "source": "data/qwen-bailian-trace-b/5f7439c51ec248a0c585f7d90a41a6f57773b912/qwen_traceB_blksz_16.jsonl",
+    "source_records": 172800,
+    "source_fields": [
+      "chat_id",
+      "hash_ids",
+      "input_length",
+      "output_length",
+      "parent_chat_id",
+      "timestamp",
+      "turn",
+      "type"
+    ],
+    "source_type_composition": [
+      {
+        "source_label": "api",
+        "request_share": {
+          "numerator": 150936,
+          "denominator": 172800,
+          "fraction": 0.8734722222222222
+        },
+        "observed_components": 150936,
+        "multi_request_components": 0
+      },
+      {
+        "source_label": "text",
+        "request_share": {
+          "numerator": 21864,
+          "denominator": 172800,
+          "fraction": 0.12652777777777777
+        },
+        "observed_components": 21864,
+        "multi_request_components": 0
+      }
+    ],
+    "prefix_statistics": {
+      "all_types": {
+        "historical_input_overlap_ge_50pct": {
+          "numerator": 111972,
+          "denominator": 172800,
+          "fraction": 0.6479861111111112
+        },
+        "multi_request_components": {
+          "numerator": 0,
+          "denominator": 172800,
+          "fraction": 0.0
+        }
+      },
+      "observed_root_api": {
+        "historical_input_overlap_ge_50pct": {
+          "numerator": 103444,
+          "denominator": 150936,
+          "fraction": 0.6853500821540256
+        },
+        "multi_request_components": {
+          "numerator": 0,
+          "denominator": 150936,
+          "fraction": 0.0
+        }
+      },
+      "observed_root_text": {
+        "historical_input_overlap_ge_50pct": {
+          "numerator": 8442,
+          "denominator": 21864,
+          "fraction": 0.38611416026344675
+        },
+        "multi_request_components": {
+          "numerator": 0,
+          "denominator": 21864,
+          "fraction": 0.0
+        }
+      }
+    },
+    "verified_task_labels": false,
+    "target_trace_class_prevalence": null,
+    "actual_hit_ttft_pairs": 0,
+    "limitation": "Source type labels and input overlap do not identify application purpose or measured cache-hit/TTFT behavior."
+  },
+  "wildchat": {
+    "sample_conversations": 200,
+    "multi_turn_conversations": {
+      "numerator": 110,
+      "denominator": 200,
+      "fraction": 0.55
+    },
+    "user_turns": 606,
+    "missing_user_arrivals": {
+      "numerator": 606,
+      "denominator": 606,
+      "fraction": 1.0
+    },
+    "rendered_prompts": 581,
+    "sampling_scope": "Fixed 200-row sample from one shard; not corpus-wide.",
+    "source_fields": [
+      "conversation",
+      "conversation_hash",
+      "language",
+      "model",
+      "redacted",
+      "timestamp",
+      "toxic",
+      "turn"
+    ],
+    "message_fields": [
+      "content",
+      "language",
+      "redacted",
+      "role",
+      "timestamp",
+      "toxic",
+      "turn_identifier"
+    ],
+    "coding_document_task_classification": "not performed in retained analyses",
+    "actual_hit_ttft_pairs": 0,
+    "target_trace_class_prevalence": null
+  },
+  "gpu": {
+    "report_quote": "Long prompts arrived early. Later requests often reused more cached context but still waited long for their first token.",
+    "synthetic": true,
+    "cache_on_run_results": [
+      {
+        "run": "run-001-on",
+        "trace": "results/pattern-screen/traces/P512-positive-seed100.jsonl",
+        "capacity": 2048,
+        "repeat": 0,
+        "requests": 420,
+        "pearson": -0.49153609388903974,
+        "spearman": -0.19798267192637306
+      },
+      {
+        "run": "run-002-on",
+        "trace": "results/pattern-screen/traces/P512-positive-seed100.jsonl",
+        "capacity": 2048,
+        "repeat": 1,
+        "requests": 420,
+        "pearson": -0.4906687078187863,
+        "spearman": -0.2030855168178828
+      },
+      {
+        "run": "run-005-on",
+        "trace": "results/pattern-screen/traces/P512-positive-seed100.jsonl",
+        "capacity": 3072,
+        "repeat": 0,
+        "requests": 420,
+        "pearson": -0.6814705354434551,
+        "spearman": 0.15665525287129753
+      },
+      {
+        "run": "run-006-on",
+        "trace": "results/pattern-screen/traces/P512-positive-seed100.jsonl",
+        "capacity": 3072,
+        "repeat": 1,
+        "requests": 420,
+        "pearson": -0.6848883149586334,
+        "spearman": 0.16090147306557703
+      },
+      {
+        "run": "run-009-on",
+        "trace": "results/pattern-screen/traces/P512-negative-seed100.jsonl",
+        "capacity": 2048,
+        "repeat": 0,
+        "requests": 426,
+        "pearson": 0.5302289013866803,
+        "spearman": 0.36165484146073607
+      },
+      {
+        "run": "run-010-on",
+        "trace": "results/pattern-screen/traces/P512-negative-seed100.jsonl",
+        "capacity": 2048,
+        "repeat": 1,
+        "requests": 426,
+        "pearson": 0.530380562602659,
+        "spearman": 0.3618319130144015
+      },
+      {
+        "run": "run-013-on",
+        "trace": "results/pattern-screen/traces/P512-negative-seed100.jsonl",
+        "capacity": 3072,
+        "repeat": 0,
+        "requests": 426,
+        "pearson": 0.5224493585646922,
+        "spearman": 0.27225417578628164
+      },
+      {
+        "run": "run-014-on",
+        "trace": "results/pattern-screen/traces/P512-negative-seed100.jsonl",
+        "capacity": 3072,
+        "repeat": 1,
+        "requests": 426,
+        "pearson": 0.5224550552989358,
+        "spearman": 0.2722521550685488
+      }
+    ],
+    "mixed_trace_design": {
+      "source": "results/pattern-screen/traces/P512-negative-seed100.jsonl",
+      "sessions": {
+        "deep_short": 10,
+        "shallow_long": 42
+      },
+      "short_input_many_turn": {
+        "first_user_tokens": 150,
+        "name": "deep_short",
+        "output_tokens": 50,
+        "turns": 30,
+        "user_tokens": 150
+      },
+      "long_input_few_turn": {
+        "first_user_tokens": 16000,
+        "name": "shallow_long",
+        "output_tokens": 300,
+        "turns": 3,
+        "user_tokens": 300
+      },
+      "requests": 426,
+      "seed": 100
+    },
+    "representative": {
+      "requests": 426,
+      "server_mean_seconds": {
+        "request_queue_time": 540.5280530400258,
+        "request_prefill_time": 0.8847516562934391,
+        "time_to_first_token": 541.4764158608208
+      },
+      "children": 374,
+      "children_dispatched_before_parent_completion": 374,
+      "preemptions": 14.0
+    },
+    "formal_class_membership_rule_in_original_report": false,
+    "interpretation": "Evidence for a candidate class from one generated seed, multiple capacities and repetitions; no real-application prevalence."
+  },
+  "oracle": {
+    "available_cpu_points": [
+      {
+        "progress_budget_pct": 0,
+        "stock_mean_ttft_ticks": 2525,
+        "oracle_mean_ttft_ticks": 2525,
+        "regret_ticks": 0,
+        "relative_regret": 0.0
+      },
+      {
+        "progress_budget_pct": 5,
+        "stock_mean_ttft_ticks": 2525,
+        "oracle_mean_ttft_ticks": 2525,
+        "regret_ticks": 0,
+        "relative_regret": 0.0
+      },
+      {
+        "progress_budget_pct": 10,
+        "stock_mean_ttft_ticks": 2525,
+        "oracle_mean_ttft_ticks": 2525,
+        "regret_ticks": 0,
+        "relative_regret": 0.0
+      }
+    ],
+    "independent_windows": 1,
+    "hardware_validated": false,
+    "other_eviction_policies_compared": false,
+    "limitation": "Restricted root-only model with synthetic costs; not hardware regret."
+  },
+  "other_sources": {
+    "BurstGPT": "Schema investigation only; no retained corpus or prevalence result.",
+    "ServeGen": "Schema investigation only; input/timestamp semantics unresolved."
+  },
+  "target_class_prevalence": "Not measured; do not substitute prefix-overlap or long-predecessor proxy rates."
+}

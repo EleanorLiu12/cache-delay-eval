@@ -1,0 +1,6241 @@
+{
+  "analysis": "Complete Trace B input structure; no measured cache hits or latency",
+  "created_at_utc": "2026-09-29T00:07:32.209656+00:00",
+  "input": "data/qwen-bailian-trace-b/5f7439c51ec248a0c585f7d90a41a6f57773b912/qwen_traceB_blksz_16.jsonl",
+  "input_sha256": "68e3f98e2d601d60d0abf4b89bc8a3654372abab7b1cde6373a13d0054379d59",
+  "source_manifest": "data/qwen-bailian-trace-b/5f7439c51ec248a0c585f7d90a41a6f57773b912/manifest.json",
+  "source_revision": "5f7439c51ec248a0c585f7d90a41a6f57773b912",
+  "python_version": "3.13.0 (v3.13.0:60403a5409f, Oct  7 2024, 00:37:40) [Clang 15.0.0 (clang-1500.3.9.4)]",
+  "command": [
+    "/Users/kejunliu/Downloads/CS 699/project/src/cache_delay_eval/analyze_qwen_trace_b.py",
+    "--input",
+    "data/qwen-bailian-trace-b/5f7439c51ec248a0c585f7d90a41a6f57773b912/qwen_traceB_blksz_16.jsonl",
+    "--manifest",
+    "data/qwen-bailian-trace-b/5f7439c51ec248a0c585f7d90a41a6f57773b912/manifest.json",
+    "--output-dir",
+    "results/qwen-trace-b-2026-09-28"
+  ],
+  "methods": {
+    "block_size": 16,
+    "final_partial_block": "excluded",
+    "history": "cohort-local inputs at strictly earlier arrivals; simultaneous inputs excluded",
+    "historical_retention": "unlimited observed input history; no residency or completion assumptions",
+    "session_unit": "connected observed parent component; singleton roots need not be independent user sessions",
+    "depth": "observed parent-path node count, reported separately from source turn",
+    "quantiles": "nearest rank, ceil(p*n)-1",
+    "observation_interval": "[0, floor(max_timestamp)+1); partial end bins excluded from dispersion",
+    "population": "entire pinned Trace B; no sampling; cohorts kept separate",
+    "cohort_selection": "all records, plus observed-root components uniform in each discovered exact type label",
+    "failures": "zero outputs audited; no error/status field, so successful completion cannot be established",
+    "cooccurrence": "legacy descriptive grid retained for comparability; improved disjoint comparisons are separate temporal results"
+  },
+  "quality": {
+    "valid_records": 172800,
+    "schema_issues": {
+      "out_of_order_adjacent_arrivals": 0,
+      "equal_adjacent_arrivals": 2227
+    },
+    "invalid_examples": [],
+    "fields": [
+      "chat_id",
+      "hash_ids",
+      "input_length",
+      "output_length",
+      "parent_chat_id",
+      "timestamp",
+      "turn",
+      "type"
+    ],
+    "actual_request_types": {
+      "api": 150936,
+      "text": 21864
+    },
+    "unique_ids": 172800,
+    "duplicate_ids": 0,
+    "minimum_id": 0,
+    "maximum_id": 172799,
+    "lineage": {
+      "roots": 172800,
+      "root_turn_not_one": 0,
+      "missing_parent_edges": 0,
+      "observed_edges": 0,
+      "parent_not_earlier_in_file": 0,
+      "parent_not_strictly_earlier_in_time": 0,
+      "nonconsecutive_turn_edges": 0,
+      "branching_parents": 0,
+      "mixed_type_components": 0,
+      "components_without_observed_root": 0,
+      "components": 172800,
+      "singleton_components": 172800,
+      "branching_components": 0,
+      "maximum_children": 0,
+      "declared_turn_counts": {
+        "1": 172800
+      },
+      "observed_request_path_depth": {
+        "count": 172800,
+        "mean": 1,
+        "minimum": 1,
+        "p25": 1,
+        "p50": 1,
+        "p75": 1,
+        "p90": 1,
+        "p95": 1,
+        "p99": 1,
+        "maximum": 1
+      },
+      "component_maximum_path_depth": {
+        "count": 172800,
+        "mean": 1,
+        "minimum": 1,
+        "p25": 1,
+        "p50": 1,
+        "p75": 1,
+        "p90": 1,
+        "p95": 1,
+        "p99": 1,
+        "maximum": 1
+      },
+      "observed_children_distribution": {
+        "0": 172800
+      },
+      "branch_examples": [],
+      "depth_definition": "1 for a node whose parent is absent or -1; one plus observed parent's depth otherwise",
+      "cycles": 0
+    },
+    "partial_final_block_records": 161936,
+    "full_hash_count_consistent_records": 172800,
+    "zero_output_records": 0,
+    "observed_timestamp_minimum": 0.0,
+    "observed_timestamp_maximum": 7199.97,
+    "distinct_timestamps": 170573,
+    "tied_timestamp_groups": 2207,
+    "requests_at_tied_timestamps": 4434,
+    "maximum_timestamp_multiplicity": 3,
+    "source_has_completion_or_failure_status": false
+  },
+  "cohorts": {
+    "all_types": {
+      "requests": 172800,
+      "components": 172800,
+      "types": {
+        "api": 150936,
+        "text": 21864
+      },
+      "singleton_components": 172800,
+      "multi_request_components": 0,
+      "component_size": {
+        "count": 172800,
+        "mean": 1,
+        "minimum": 1,
+        "p25": 1,
+        "p50": 1,
+        "p75": 1,
+        "p90": 1,
+        "p95": 1,
+        "p99": 1,
+        "maximum": 1
+      },
+      "component_max_turn": {
+        "count": 172800,
+        "mean": 1,
+        "minimum": 1,
+        "p25": 1,
+        "p50": 1,
+        "p75": 1,
+        "p90": 1,
+        "p95": 1,
+        "p99": 1,
+        "maximum": 1
+      },
+      "component_observed_arrival_span_s": {
+        "count": 172800,
+        "mean": 0.0,
+        "minimum": 0.0,
+        "p25": 0.0,
+        "p50": 0.0,
+        "p75": 0.0,
+        "p90": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "maximum": 0.0
+      },
+      "input_tokens": {
+        "count": 172800,
+        "mean": 914.5203298611111,
+        "minimum": 19,
+        "p25": 281,
+        "p50": 574,
+        "p75": 1195,
+        "p90": 1720,
+        "p95": 2491,
+        "p99": 6294,
+        "maximum": 66446
+      },
+      "output_tokens": {
+        "count": 172800,
+        "mean": 91.62747685185185,
+        "minimum": 1,
+        "p25": 12,
+        "p50": 39,
+        "p75": 94,
+        "p90": 180,
+        "p95": 328,
+        "p99": 1006,
+        "maximum": 8192
+      },
+      "parent_edges": 0,
+      "parent_full_blocks_retained": {
+        "numerator": 0,
+        "denominator": 0,
+        "fraction": null
+      },
+      "growth": {
+        "numerator": 0,
+        "denominator": 0,
+        "fraction": null
+      },
+      "contraction": {
+        "numerator": 0,
+        "denominator": 0,
+        "fraction": null
+      },
+      "parent_arrival_gap_s": {
+        "count": 0
+      },
+      "input_growth_tokens": {
+        "count": 0
+      },
+      "input_minus_parent_input_and_output": {
+        "count": 0
+      },
+      "prefix_opportunity": {
+        "potential_reuse_fraction": {
+          "distribution": {
+            "count": 172800,
+            "mean": 0.5778761108894853,
+            "minimum": 0.0,
+            "p25": 0.31024930747922436,
+            "p50": 0.676056338028169,
+            "p75": 0.8658823529411764,
+            "p90": 0.9437890353920888,
+            "p95": 0.9748096074985354,
+            "p99": 0.9953917050691244,
+            "maximum": 1.0
+          },
+          "thresholds": {
+            "0.25": {
+              "numerator": 134941,
+              "denominator": 172800,
+              "fraction": 0.7809085648148149
+            },
+            "0.5": {
+              "numerator": 111972,
+              "denominator": 172800,
+              "fraction": 0.6479861111111112
+            },
+            "0.75": {
+              "numerator": 62517,
+              "denominator": 172800,
+              "fraction": 0.36178819444444443
+            }
+          },
+          "any_match": {
+            "numerator": 170516,
+            "denominator": 172800,
+            "fraction": 0.9867824074074074
+          }
+        },
+        "within_component_reuse_fraction": {
+          "distribution": {
+            "count": 172800,
+            "mean": 0.0,
+            "minimum": 0.0,
+            "p25": 0.0,
+            "p50": 0.0,
+            "p75": 0.0,
+            "p90": 0.0,
+            "p95": 0.0,
+            "p99": 0.0,
+            "maximum": 0.0
+          },
+          "thresholds": {
+            "0.25": {
+              "numerator": 0,
+              "denominator": 172800,
+              "fraction": 0.0
+            },
+            "0.5": {
+              "numerator": 0,
+              "denominator": 172800,
+              "fraction": 0.0
+            },
+            "0.75": {
+              "numerator": 0,
+              "denominator": 172800,
+              "fraction": 0.0
+            }
+          },
+          "any_match": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          }
+        },
+        "cross_component_reuse_fraction": {
+          "distribution": {
+            "count": 172800,
+            "mean": 0.5778761108894853,
+            "minimum": 0.0,
+            "p25": 0.31024930747922436,
+            "p50": 0.676056338028169,
+            "p75": 0.8658823529411764,
+            "p90": 0.9437890353920888,
+            "p95": 0.9748096074985354,
+            "p99": 0.9953917050691244,
+            "maximum": 1.0
+          },
+          "thresholds": {
+            "0.25": {
+              "numerator": 134941,
+              "denominator": 172800,
+              "fraction": 0.7809085648148149
+            },
+            "0.5": {
+              "numerator": 111972,
+              "denominator": 172800,
+              "fraction": 0.6479861111111112
+            },
+            "0.75": {
+              "numerator": 62517,
+              "denominator": 172800,
+              "fraction": 0.36178819444444443
+            }
+          },
+          "any_match": {
+            "numerator": 170516,
+            "denominator": 172800,
+            "fraction": 0.9867824074074074
+          }
+        }
+      },
+      "leading_prefix_groups": [
+        {
+          "prefix_tokens": 16,
+          "eligible_requests": 172800,
+          "distinct_prefixes": 2283,
+          "most_common_prefix_request_count": 24534,
+          "requests_in_prefix_groups_with_multiple_records": 171521
+        },
+        {
+          "prefix_tokens": 64,
+          "eligible_requests": 170102,
+          "distinct_prefixes": 32437,
+          "most_common_prefix_request_count": 24534,
+          "requests_in_prefix_groups_with_multiple_records": 140079
+        },
+        {
+          "prefix_tokens": 256,
+          "eligible_requests": 133451,
+          "distinct_prefixes": 40961,
+          "most_common_prefix_request_count": 24534,
+          "requests_in_prefix_groups_with_multiple_records": 95008
+        },
+        {
+          "prefix_tokens": 512,
+          "eligible_requests": 89727,
+          "distinct_prefixes": 27962,
+          "most_common_prefix_request_count": 24534,
+          "requests_in_prefix_groups_with_multiple_records": 62794
+        },
+        {
+          "prefix_tokens": 1024,
+          "eligible_requests": 62557,
+          "distinct_prefixes": 43999,
+          "most_common_prefix_request_count": 1743,
+          "requests_in_prefix_groups_with_multiple_records": 19047
+        }
+      ],
+      "thresholds": {
+        "long_input_at_least": 1720,
+        "short_input_at_most": 574
+      },
+      "prevalence_grid": [
+        {
+          "reuse_threshold": 0.25,
+          "window_seconds": 1,
+          "preceding_long_requires_reuse_below_25pct": false,
+          "long_context_all_requests": {
+            "numerator": 150586,
+            "denominator": 172800,
+            "fraction": 0.8714467592592593
+          },
+          "high_reuse": {
+            "numerator": 134941,
+            "denominator": 172800,
+            "fraction": 0.7809085648148149
+          },
+          "event_requests": {
+            "numerator": 117251,
+            "denominator": 172800,
+            "fraction": 0.6785358796296296
+          },
+          "event_given_high_reuse": {
+            "numerator": 117251,
+            "denominator": 134941,
+            "fraction": 0.8689056698853573
+          },
+          "event_components": {
+            "numerator": 117251,
+            "denominator": 172800,
+            "fraction": 0.6785358796296296
+          },
+          "short_high_reuse_requests": {
+            "numerator": 68530,
+            "denominator": 172800,
+            "fraction": 0.3965856481481482
+          },
+          "short_event_requests": {
+            "numerator": 59631,
+            "denominator": 172800,
+            "fraction": 0.34508680555555554
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 59631,
+            "denominator": 68530,
+            "fraction": 0.8701444622792938
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.25,
+          "window_seconds": 10,
+          "preceding_long_requires_reuse_below_25pct": false,
+          "long_context_all_requests": {
+            "numerator": 172794,
+            "denominator": 172800,
+            "fraction": 0.9999652777777778
+          },
+          "high_reuse": {
+            "numerator": 134941,
+            "denominator": 172800,
+            "fraction": 0.7809085648148149
+          },
+          "event_requests": {
+            "numerator": 134941,
+            "denominator": 172800,
+            "fraction": 0.7809085648148149
+          },
+          "event_given_high_reuse": {
+            "numerator": 134941,
+            "denominator": 134941,
+            "fraction": 1.0
+          },
+          "event_components": {
+            "numerator": 134941,
+            "denominator": 172800,
+            "fraction": 0.7809085648148149
+          },
+          "short_high_reuse_requests": {
+            "numerator": 68530,
+            "denominator": 172800,
+            "fraction": 0.3965856481481482
+          },
+          "short_event_requests": {
+            "numerator": 68530,
+            "denominator": 172800,
+            "fraction": 0.3965856481481482
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 68530,
+            "denominator": 68530,
+            "fraction": 1.0
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.25,
+          "window_seconds": 60,
+          "preceding_long_requires_reuse_below_25pct": false,
+          "long_context_all_requests": {
+            "numerator": 172794,
+            "denominator": 172800,
+            "fraction": 0.9999652777777778
+          },
+          "high_reuse": {
+            "numerator": 134941,
+            "denominator": 172800,
+            "fraction": 0.7809085648148149
+          },
+          "event_requests": {
+            "numerator": 134941,
+            "denominator": 172800,
+            "fraction": 0.7809085648148149
+          },
+          "event_given_high_reuse": {
+            "numerator": 134941,
+            "denominator": 134941,
+            "fraction": 1.0
+          },
+          "event_components": {
+            "numerator": 134941,
+            "denominator": 172800,
+            "fraction": 0.7809085648148149
+          },
+          "short_high_reuse_requests": {
+            "numerator": 68530,
+            "denominator": 172800,
+            "fraction": 0.3965856481481482
+          },
+          "short_event_requests": {
+            "numerator": 68530,
+            "denominator": 172800,
+            "fraction": 0.3965856481481482
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 68530,
+            "denominator": 68530,
+            "fraction": 1.0
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.5,
+          "window_seconds": 1,
+          "preceding_long_requires_reuse_below_25pct": false,
+          "long_context_all_requests": {
+            "numerator": 150586,
+            "denominator": 172800,
+            "fraction": 0.8714467592592593
+          },
+          "high_reuse": {
+            "numerator": 111972,
+            "denominator": 172800,
+            "fraction": 0.6479861111111112
+          },
+          "event_requests": {
+            "numerator": 97297,
+            "denominator": 172800,
+            "fraction": 0.5630613425925926
+          },
+          "event_given_high_reuse": {
+            "numerator": 97297,
+            "denominator": 111972,
+            "fraction": 0.8689404493980638
+          },
+          "event_components": {
+            "numerator": 97297,
+            "denominator": 172800,
+            "fraction": 0.5630613425925926
+          },
+          "short_high_reuse_requests": {
+            "numerator": 51755,
+            "denominator": 172800,
+            "fraction": 0.29950810185185184
+          },
+          "short_event_requests": {
+            "numerator": 45055,
+            "denominator": 172800,
+            "fraction": 0.2607349537037037
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 45055,
+            "denominator": 51755,
+            "fraction": 0.870543908801082
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.5,
+          "window_seconds": 10,
+          "preceding_long_requires_reuse_below_25pct": false,
+          "long_context_all_requests": {
+            "numerator": 172794,
+            "denominator": 172800,
+            "fraction": 0.9999652777777778
+          },
+          "high_reuse": {
+            "numerator": 111972,
+            "denominator": 172800,
+            "fraction": 0.6479861111111112
+          },
+          "event_requests": {
+            "numerator": 111972,
+            "denominator": 172800,
+            "fraction": 0.6479861111111112
+          },
+          "event_given_high_reuse": {
+            "numerator": 111972,
+            "denominator": 111972,
+            "fraction": 1.0
+          },
+          "event_components": {
+            "numerator": 111972,
+            "denominator": 172800,
+            "fraction": 0.6479861111111112
+          },
+          "short_high_reuse_requests": {
+            "numerator": 51755,
+            "denominator": 172800,
+            "fraction": 0.29950810185185184
+          },
+          "short_event_requests": {
+            "numerator": 51755,
+            "denominator": 172800,
+            "fraction": 0.29950810185185184
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 51755,
+            "denominator": 51755,
+            "fraction": 1.0
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.5,
+          "window_seconds": 60,
+          "preceding_long_requires_reuse_below_25pct": false,
+          "long_context_all_requests": {
+            "numerator": 172794,
+            "denominator": 172800,
+            "fraction": 0.9999652777777778
+          },
+          "high_reuse": {
+            "numerator": 111972,
+            "denominator": 172800,
+            "fraction": 0.6479861111111112
+          },
+          "event_requests": {
+            "numerator": 111972,
+            "denominator": 172800,
+            "fraction": 0.6479861111111112
+          },
+          "event_given_high_reuse": {
+            "numerator": 111972,
+            "denominator": 111972,
+            "fraction": 1.0
+          },
+          "event_components": {
+            "numerator": 111972,
+            "denominator": 172800,
+            "fraction": 0.6479861111111112
+          },
+          "short_high_reuse_requests": {
+            "numerator": 51755,
+            "denominator": 172800,
+            "fraction": 0.29950810185185184
+          },
+          "short_event_requests": {
+            "numerator": 51755,
+            "denominator": 172800,
+            "fraction": 0.29950810185185184
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 51755,
+            "denominator": 51755,
+            "fraction": 1.0
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.75,
+          "window_seconds": 1,
+          "preceding_long_requires_reuse_below_25pct": false,
+          "long_context_all_requests": {
+            "numerator": 150586,
+            "denominator": 172800,
+            "fraction": 0.8714467592592593
+          },
+          "high_reuse": {
+            "numerator": 62517,
+            "denominator": 172800,
+            "fraction": 0.36178819444444443
+          },
+          "event_requests": {
+            "numerator": 54398,
+            "denominator": 172800,
+            "fraction": 0.31480324074074073
+          },
+          "event_given_high_reuse": {
+            "numerator": 54398,
+            "denominator": 62517,
+            "fraction": 0.8701313242797959
+          },
+          "event_components": {
+            "numerator": 54398,
+            "denominator": 172800,
+            "fraction": 0.31480324074074073
+          },
+          "short_high_reuse_requests": {
+            "numerator": 34018,
+            "denominator": 172800,
+            "fraction": 0.19686342592592593
+          },
+          "short_event_requests": {
+            "numerator": 29642,
+            "denominator": 172800,
+            "fraction": 0.17153935185185185
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 29642,
+            "denominator": 34018,
+            "fraction": 0.8713622200011758
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.75,
+          "window_seconds": 10,
+          "preceding_long_requires_reuse_below_25pct": false,
+          "long_context_all_requests": {
+            "numerator": 172794,
+            "denominator": 172800,
+            "fraction": 0.9999652777777778
+          },
+          "high_reuse": {
+            "numerator": 62517,
+            "denominator": 172800,
+            "fraction": 0.36178819444444443
+          },
+          "event_requests": {
+            "numerator": 62517,
+            "denominator": 172800,
+            "fraction": 0.36178819444444443
+          },
+          "event_given_high_reuse": {
+            "numerator": 62517,
+            "denominator": 62517,
+            "fraction": 1.0
+          },
+          "event_components": {
+            "numerator": 62517,
+            "denominator": 172800,
+            "fraction": 0.36178819444444443
+          },
+          "short_high_reuse_requests": {
+            "numerator": 34018,
+            "denominator": 172800,
+            "fraction": 0.19686342592592593
+          },
+          "short_event_requests": {
+            "numerator": 34018,
+            "denominator": 172800,
+            "fraction": 0.19686342592592593
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 34018,
+            "denominator": 34018,
+            "fraction": 1.0
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.75,
+          "window_seconds": 60,
+          "preceding_long_requires_reuse_below_25pct": false,
+          "long_context_all_requests": {
+            "numerator": 172794,
+            "denominator": 172800,
+            "fraction": 0.9999652777777778
+          },
+          "high_reuse": {
+            "numerator": 62517,
+            "denominator": 172800,
+            "fraction": 0.36178819444444443
+          },
+          "event_requests": {
+            "numerator": 62517,
+            "denominator": 172800,
+            "fraction": 0.36178819444444443
+          },
+          "event_given_high_reuse": {
+            "numerator": 62517,
+            "denominator": 62517,
+            "fraction": 1.0
+          },
+          "event_components": {
+            "numerator": 62517,
+            "denominator": 172800,
+            "fraction": 0.36178819444444443
+          },
+          "short_high_reuse_requests": {
+            "numerator": 34018,
+            "denominator": 172800,
+            "fraction": 0.19686342592592593
+          },
+          "short_event_requests": {
+            "numerator": 34018,
+            "denominator": 172800,
+            "fraction": 0.19686342592592593
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 34018,
+            "denominator": 34018,
+            "fraction": 1.0
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.25,
+          "window_seconds": 1,
+          "preceding_long_requires_reuse_below_25pct": true,
+          "long_context_all_requests": {
+            "numerator": 104097,
+            "denominator": 172800,
+            "fraction": 0.6024131944444444
+          },
+          "high_reuse": {
+            "numerator": 134941,
+            "denominator": 172800,
+            "fraction": 0.7809085648148149
+          },
+          "event_requests": {
+            "numerator": 80116,
+            "denominator": 172800,
+            "fraction": 0.4636342592592593
+          },
+          "event_given_high_reuse": {
+            "numerator": 80116,
+            "denominator": 134941,
+            "fraction": 0.5937113256904869
+          },
+          "event_components": {
+            "numerator": 80116,
+            "denominator": 172800,
+            "fraction": 0.4636342592592593
+          },
+          "short_high_reuse_requests": {
+            "numerator": 68530,
+            "denominator": 172800,
+            "fraction": 0.3965856481481482
+          },
+          "short_event_requests": {
+            "numerator": 40987,
+            "denominator": 172800,
+            "fraction": 0.23719328703703704
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 40987,
+            "denominator": 68530,
+            "fraction": 0.598088428425507
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.25,
+          "window_seconds": 10,
+          "preceding_long_requires_reuse_below_25pct": true,
+          "long_context_all_requests": {
+            "numerator": 172621,
+            "denominator": 172800,
+            "fraction": 0.9989641203703704
+          },
+          "high_reuse": {
+            "numerator": 134941,
+            "denominator": 172800,
+            "fraction": 0.7809085648148149
+          },
+          "event_requests": {
+            "numerator": 134800,
+            "denominator": 172800,
+            "fraction": 0.7800925925925926
+          },
+          "event_given_high_reuse": {
+            "numerator": 134800,
+            "denominator": 134941,
+            "fraction": 0.9989550988950726
+          },
+          "event_components": {
+            "numerator": 134800,
+            "denominator": 172800,
+            "fraction": 0.7800925925925926
+          },
+          "short_high_reuse_requests": {
+            "numerator": 68530,
+            "denominator": 172800,
+            "fraction": 0.3965856481481482
+          },
+          "short_event_requests": {
+            "numerator": 68472,
+            "denominator": 172800,
+            "fraction": 0.39625
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 68472,
+            "denominator": 68530,
+            "fraction": 0.9991536553334306
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.25,
+          "window_seconds": 60,
+          "preceding_long_requires_reuse_below_25pct": true,
+          "long_context_all_requests": {
+            "numerator": 172794,
+            "denominator": 172800,
+            "fraction": 0.9999652777777778
+          },
+          "high_reuse": {
+            "numerator": 134941,
+            "denominator": 172800,
+            "fraction": 0.7809085648148149
+          },
+          "event_requests": {
+            "numerator": 134941,
+            "denominator": 172800,
+            "fraction": 0.7809085648148149
+          },
+          "event_given_high_reuse": {
+            "numerator": 134941,
+            "denominator": 134941,
+            "fraction": 1.0
+          },
+          "event_components": {
+            "numerator": 134941,
+            "denominator": 172800,
+            "fraction": 0.7809085648148149
+          },
+          "short_high_reuse_requests": {
+            "numerator": 68530,
+            "denominator": 172800,
+            "fraction": 0.3965856481481482
+          },
+          "short_event_requests": {
+            "numerator": 68530,
+            "denominator": 172800,
+            "fraction": 0.3965856481481482
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 68530,
+            "denominator": 68530,
+            "fraction": 1.0
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.5,
+          "window_seconds": 1,
+          "preceding_long_requires_reuse_below_25pct": true,
+          "long_context_all_requests": {
+            "numerator": 104097,
+            "denominator": 172800,
+            "fraction": 0.6024131944444444
+          },
+          "high_reuse": {
+            "numerator": 111972,
+            "denominator": 172800,
+            "fraction": 0.6479861111111112
+          },
+          "event_requests": {
+            "numerator": 66417,
+            "denominator": 172800,
+            "fraction": 0.3843576388888889
+          },
+          "event_given_high_reuse": {
+            "numerator": 66417,
+            "denominator": 111972,
+            "fraction": 0.5931572178758976
+          },
+          "event_components": {
+            "numerator": 66417,
+            "denominator": 172800,
+            "fraction": 0.3843576388888889
+          },
+          "short_high_reuse_requests": {
+            "numerator": 51755,
+            "denominator": 172800,
+            "fraction": 0.29950810185185184
+          },
+          "short_event_requests": {
+            "numerator": 30986,
+            "denominator": 172800,
+            "fraction": 0.17931712962962962
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 30986,
+            "denominator": 51755,
+            "fraction": 0.5987054390880108
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.5,
+          "window_seconds": 10,
+          "preceding_long_requires_reuse_below_25pct": true,
+          "long_context_all_requests": {
+            "numerator": 172621,
+            "denominator": 172800,
+            "fraction": 0.9989641203703704
+          },
+          "high_reuse": {
+            "numerator": 111972,
+            "denominator": 172800,
+            "fraction": 0.6479861111111112
+          },
+          "event_requests": {
+            "numerator": 111852,
+            "denominator": 172800,
+            "fraction": 0.6472916666666667
+          },
+          "event_given_high_reuse": {
+            "numerator": 111852,
+            "denominator": 111972,
+            "fraction": 0.9989283035044475
+          },
+          "event_components": {
+            "numerator": 111852,
+            "denominator": 172800,
+            "fraction": 0.6472916666666667
+          },
+          "short_high_reuse_requests": {
+            "numerator": 51755,
+            "denominator": 172800,
+            "fraction": 0.29950810185185184
+          },
+          "short_event_requests": {
+            "numerator": 51710,
+            "denominator": 172800,
+            "fraction": 0.2992476851851852
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 51710,
+            "denominator": 51755,
+            "fraction": 0.999130518790455
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.5,
+          "window_seconds": 60,
+          "preceding_long_requires_reuse_below_25pct": true,
+          "long_context_all_requests": {
+            "numerator": 172794,
+            "denominator": 172800,
+            "fraction": 0.9999652777777778
+          },
+          "high_reuse": {
+            "numerator": 111972,
+            "denominator": 172800,
+            "fraction": 0.6479861111111112
+          },
+          "event_requests": {
+            "numerator": 111972,
+            "denominator": 172800,
+            "fraction": 0.6479861111111112
+          },
+          "event_given_high_reuse": {
+            "numerator": 111972,
+            "denominator": 111972,
+            "fraction": 1.0
+          },
+          "event_components": {
+            "numerator": 111972,
+            "denominator": 172800,
+            "fraction": 0.6479861111111112
+          },
+          "short_high_reuse_requests": {
+            "numerator": 51755,
+            "denominator": 172800,
+            "fraction": 0.29950810185185184
+          },
+          "short_event_requests": {
+            "numerator": 51755,
+            "denominator": 172800,
+            "fraction": 0.29950810185185184
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 51755,
+            "denominator": 51755,
+            "fraction": 1.0
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.75,
+          "window_seconds": 1,
+          "preceding_long_requires_reuse_below_25pct": true,
+          "long_context_all_requests": {
+            "numerator": 104097,
+            "denominator": 172800,
+            "fraction": 0.6024131944444444
+          },
+          "high_reuse": {
+            "numerator": 62517,
+            "denominator": 172800,
+            "fraction": 0.36178819444444443
+          },
+          "event_requests": {
+            "numerator": 37201,
+            "denominator": 172800,
+            "fraction": 0.2152835648148148
+          },
+          "event_given_high_reuse": {
+            "numerator": 37201,
+            "denominator": 62517,
+            "fraction": 0.5950541452724859
+          },
+          "event_components": {
+            "numerator": 37201,
+            "denominator": 172800,
+            "fraction": 0.2152835648148148
+          },
+          "short_high_reuse_requests": {
+            "numerator": 34018,
+            "denominator": 172800,
+            "fraction": 0.19686342592592593
+          },
+          "short_event_requests": {
+            "numerator": 20393,
+            "denominator": 172800,
+            "fraction": 0.11801504629629629
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 20393,
+            "denominator": 34018,
+            "fraction": 0.5994767476042095
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.75,
+          "window_seconds": 10,
+          "preceding_long_requires_reuse_below_25pct": true,
+          "long_context_all_requests": {
+            "numerator": 172621,
+            "denominator": 172800,
+            "fraction": 0.9989641203703704
+          },
+          "high_reuse": {
+            "numerator": 62517,
+            "denominator": 172800,
+            "fraction": 0.36178819444444443
+          },
+          "event_requests": {
+            "numerator": 62449,
+            "denominator": 172800,
+            "fraction": 0.36139467592592595
+          },
+          "event_given_high_reuse": {
+            "numerator": 62449,
+            "denominator": 62517,
+            "fraction": 0.9989122958555273
+          },
+          "event_components": {
+            "numerator": 62449,
+            "denominator": 172800,
+            "fraction": 0.36139467592592595
+          },
+          "short_high_reuse_requests": {
+            "numerator": 34018,
+            "denominator": 172800,
+            "fraction": 0.19686342592592593
+          },
+          "short_event_requests": {
+            "numerator": 33985,
+            "denominator": 172800,
+            "fraction": 0.1966724537037037
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 33985,
+            "denominator": 34018,
+            "fraction": 0.9990299253336469
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.75,
+          "window_seconds": 60,
+          "preceding_long_requires_reuse_below_25pct": true,
+          "long_context_all_requests": {
+            "numerator": 172794,
+            "denominator": 172800,
+            "fraction": 0.9999652777777778
+          },
+          "high_reuse": {
+            "numerator": 62517,
+            "denominator": 172800,
+            "fraction": 0.36178819444444443
+          },
+          "event_requests": {
+            "numerator": 62517,
+            "denominator": 172800,
+            "fraction": 0.36178819444444443
+          },
+          "event_given_high_reuse": {
+            "numerator": 62517,
+            "denominator": 62517,
+            "fraction": 1.0
+          },
+          "event_components": {
+            "numerator": 62517,
+            "denominator": 172800,
+            "fraction": 0.36178819444444443
+          },
+          "short_high_reuse_requests": {
+            "numerator": 34018,
+            "denominator": 172800,
+            "fraction": 0.19686342592592593
+          },
+          "short_event_requests": {
+            "numerator": 34018,
+            "denominator": 172800,
+            "fraction": 0.19686342592592593
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 34018,
+            "denominator": 34018,
+            "fraction": 1.0
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        }
+      ],
+      "temporal_thirds": [
+        {
+          "start_s": 0.0,
+          "end_s": 2400.0,
+          "requests": 54703,
+          "historical_reuse": {
+            "count": 54703,
+            "mean": 0.5739919647846126,
+            "minimum": 0.0,
+            "p25": 0.3004694835680751,
+            "p50": 0.6777408637873754,
+            "p75": 0.8556149732620321,
+            "p90": 0.9386666666666666,
+            "p95": 0.9728841413311422,
+            "p99": 0.9932390903503381,
+            "maximum": 1.0
+          },
+          "event": {
+            "reuse_threshold": 0.5,
+            "window_seconds": 10,
+            "preceding_long_requires_reuse_below_25pct": false,
+            "long_context_all_requests": {
+              "numerator": 54697,
+              "denominator": 54703,
+              "fraction": 0.999890316801638
+            },
+            "high_reuse": {
+              "numerator": 35314,
+              "denominator": 54703,
+              "fraction": 0.6455587444929894
+            },
+            "event_requests": {
+              "numerator": 35314,
+              "denominator": 54703,
+              "fraction": 0.6455587444929894
+            },
+            "event_given_high_reuse": {
+              "numerator": 35314,
+              "denominator": 35314,
+              "fraction": 1.0
+            },
+            "event_components": {
+              "numerator": 35314,
+              "denominator": 54703,
+              "fraction": 0.6455587444929894
+            },
+            "short_high_reuse_requests": {
+              "numerator": 15035,
+              "denominator": 54703,
+              "fraction": 0.27484781456227264
+            },
+            "short_event_requests": {
+              "numerator": 15035,
+              "denominator": 54703,
+              "fraction": 0.27484781456227264
+            },
+            "short_event_given_short_high_reuse": {
+              "numerator": 15035,
+              "denominator": 15035,
+              "fraction": 1.0
+            },
+            "continuation_high_reuse_requests": {
+              "numerator": 0,
+              "denominator": 54703,
+              "fraction": 0.0
+            },
+            "continuation_event_requests": {
+              "numerator": 0,
+              "denominator": 54703,
+              "fraction": 0.0
+            },
+            "event_given_high_reuse_continuation": {
+              "numerator": 0,
+              "denominator": 0,
+              "fraction": null
+            },
+            "within_component_high_reuse_requests": {
+              "numerator": 0,
+              "denominator": 54703,
+              "fraction": 0.0
+            },
+            "within_component_event_requests": {
+              "numerator": 0,
+              "denominator": 54703,
+              "fraction": 0.0
+            },
+            "event_given_within_component_high_reuse": {
+              "numerator": 0,
+              "denominator": 0,
+              "fraction": null
+            }
+          }
+        },
+        {
+          "start_s": 2400.0,
+          "end_s": 4800.0,
+          "requests": 58139,
+          "historical_reuse": {
+            "count": 58139,
+            "mean": 0.5763099403501958,
+            "minimum": 0.0,
+            "p25": 0.30939226519337015,
+            "p50": 0.6743801652892562,
+            "p75": 0.8641350210970464,
+            "p90": 0.9444444444444444,
+            "p95": 0.975886524822695,
+            "p99": 0.995850622406639,
+            "maximum": 1.0
+          },
+          "event": {
+            "reuse_threshold": 0.5,
+            "window_seconds": 10,
+            "preceding_long_requires_reuse_below_25pct": false,
+            "long_context_all_requests": {
+              "numerator": 58139,
+              "denominator": 58139,
+              "fraction": 1.0
+            },
+            "high_reuse": {
+              "numerator": 37682,
+              "denominator": 58139,
+              "fraction": 0.6481363628545382
+            },
+            "event_requests": {
+              "numerator": 37682,
+              "denominator": 58139,
+              "fraction": 0.6481363628545382
+            },
+            "event_given_high_reuse": {
+              "numerator": 37682,
+              "denominator": 37682,
+              "fraction": 1.0
+            },
+            "event_components": {
+              "numerator": 37682,
+              "denominator": 58139,
+              "fraction": 0.6481363628545382
+            },
+            "short_high_reuse_requests": {
+              "numerator": 17630,
+              "denominator": 58139,
+              "fraction": 0.30323878979686614
+            },
+            "short_event_requests": {
+              "numerator": 17630,
+              "denominator": 58139,
+              "fraction": 0.30323878979686614
+            },
+            "short_event_given_short_high_reuse": {
+              "numerator": 17630,
+              "denominator": 17630,
+              "fraction": 1.0
+            },
+            "continuation_high_reuse_requests": {
+              "numerator": 0,
+              "denominator": 58139,
+              "fraction": 0.0
+            },
+            "continuation_event_requests": {
+              "numerator": 0,
+              "denominator": 58139,
+              "fraction": 0.0
+            },
+            "event_given_high_reuse_continuation": {
+              "numerator": 0,
+              "denominator": 0,
+              "fraction": null
+            },
+            "within_component_high_reuse_requests": {
+              "numerator": 0,
+              "denominator": 58139,
+              "fraction": 0.0
+            },
+            "within_component_event_requests": {
+              "numerator": 0,
+              "denominator": 58139,
+              "fraction": 0.0
+            },
+            "event_given_within_component_high_reuse": {
+              "numerator": 0,
+              "denominator": 0,
+              "fraction": null
+            }
+          }
+        },
+        {
+          "start_s": 4800.0,
+          "end_s": 7200.0,
+          "requests": 59958,
+          "historical_reuse": {
+            "count": 59958,
+            "mean": 0.5829384884430828,
+            "minimum": 0.0,
+            "p25": 0.3146067415730337,
+            "p50": 0.6764705882352942,
+            "p75": 0.8741092636579573,
+            "p90": 0.9476584022038568,
+            "p95": 0.975609756097561,
+            "p99": 0.9960348929421095,
+            "maximum": 1.0
+          },
+          "event": {
+            "reuse_threshold": 0.5,
+            "window_seconds": 10,
+            "preceding_long_requires_reuse_below_25pct": false,
+            "long_context_all_requests": {
+              "numerator": 59958,
+              "denominator": 59958,
+              "fraction": 1.0
+            },
+            "high_reuse": {
+              "numerator": 38976,
+              "denominator": 59958,
+              "fraction": 0.6500550385269689
+            },
+            "event_requests": {
+              "numerator": 38976,
+              "denominator": 59958,
+              "fraction": 0.6500550385269689
+            },
+            "event_given_high_reuse": {
+              "numerator": 38976,
+              "denominator": 38976,
+              "fraction": 1.0
+            },
+            "event_components": {
+              "numerator": 38976,
+              "denominator": 59958,
+              "fraction": 0.6500550385269689
+            },
+            "short_high_reuse_requests": {
+              "numerator": 19090,
+              "denominator": 59958,
+              "fraction": 0.3183895393442076
+            },
+            "short_event_requests": {
+              "numerator": 19090,
+              "denominator": 59958,
+              "fraction": 0.3183895393442076
+            },
+            "short_event_given_short_high_reuse": {
+              "numerator": 19090,
+              "denominator": 19090,
+              "fraction": 1.0
+            },
+            "continuation_high_reuse_requests": {
+              "numerator": 0,
+              "denominator": 59958,
+              "fraction": 0.0
+            },
+            "continuation_event_requests": {
+              "numerator": 0,
+              "denominator": 59958,
+              "fraction": 0.0
+            },
+            "event_given_high_reuse_continuation": {
+              "numerator": 0,
+              "denominator": 0,
+              "fraction": null
+            },
+            "within_component_high_reuse_requests": {
+              "numerator": 0,
+              "denominator": 59958,
+              "fraction": 0.0
+            },
+            "within_component_event_requests": {
+              "numerator": 0,
+              "denominator": 59958,
+              "fraction": 0.0
+            },
+            "event_given_within_component_high_reuse": {
+              "numerator": 0,
+              "denominator": 0,
+              "fraction": null
+            }
+          }
+        }
+      ],
+      "arrivals": {
+        "interval_start_s": 0,
+        "interval_end_s": 7200,
+        "requests_per_second": 24.0,
+        "interarrival_s": {
+          "count": 172799,
+          "mean": 0.041666734182489486,
+          "minimum": 0.0,
+          "p25": 0.011000000000422006,
+          "p50": 0.02800000000002001,
+          "p75": 0.05700000000001637,
+          "p90": 0.09699999999975262,
+          "p95": 0.12799999999970169,
+          "p99": 0.20300000000003138,
+          "maximum": 0.5140000000001237
+        },
+        "interarrival_coefficient_of_variation": 1.044769399923386,
+        "bins": {
+          "1": {
+            "full_bin_request_counts": {
+              "count": 7200,
+              "mean": 24,
+              "minimum": 6,
+              "p25": 19,
+              "p50": 24,
+              "p75": 28,
+              "p90": 33,
+              "p95": 36,
+              "p99": 41,
+              "maximum": 52
+            },
+            "variance_to_mean": 1.8127893518518519,
+            "peak_to_mean": 2.1666666666666665,
+            "empty_full_bins": 0
+          },
+          "10": {
+            "full_bin_request_counts": {
+              "count": 720,
+              "mean": 240,
+              "minimum": 131,
+              "p25": 208,
+              "p50": 237,
+              "p75": 272,
+              "p90": 302,
+              "p95": 316,
+              "p99": 339,
+              "maximum": 370
+            },
+            "variance_to_mean": 8.147303240740742,
+            "peak_to_mean": 1.5416666666666667,
+            "empty_full_bins": 0
+          },
+          "60": {
+            "full_bin_request_counts": {
+              "count": 120,
+              "mean": 1440,
+              "minimum": 966,
+              "p25": 1267,
+              "p50": 1410,
+              "p75": 1594,
+              "p90": 1773,
+              "p95": 1866,
+              "p99": 1938,
+              "maximum": 1961
+            },
+            "variance_to_mean": 37.80813657407408,
+            "peak_to_mean": 1.3618055555555555,
+            "empty_full_bins": 0
+          }
+        }
+      },
+      "pilot_context_limit_audit": {
+        "limit_tokens": 32768,
+        "exceeding_requests": 16,
+        "affected_components": 16,
+        "requests_in_affected_components": 16
+      },
+      "included_requests": {
+        "numerator": 172800,
+        "denominator": 172800,
+        "fraction": 1.0
+      },
+      "excluded_requests": 0,
+      "initial_vs_continuation": {
+        "initial": {
+          "requests": 172800,
+          "components": 172800,
+          "input_tokens": {
+            "count": 172800,
+            "mean": 914.5203298611111,
+            "minimum": 19,
+            "p25": 281,
+            "p50": 574,
+            "p75": 1195,
+            "p90": 1720,
+            "p95": 2491,
+            "p99": 6294,
+            "maximum": 66446
+          },
+          "output_tokens": {
+            "count": 172800,
+            "mean": 91.62747685185185,
+            "minimum": 1,
+            "p25": 12,
+            "p50": 39,
+            "p75": 94,
+            "p90": 180,
+            "p95": 328,
+            "p99": 1006,
+            "maximum": 8192
+          },
+          "historical_overlap_at_least_50pct": {
+            "numerator": 111972,
+            "denominator": 172800,
+            "fraction": 0.6479861111111112
+          },
+          "within_component_overlap_at_least_50pct": {
+            "numerator": 0,
+            "denominator": 172800,
+            "fraction": 0.0
+          },
+          "cross_component_overlap_at_least_50pct": {
+            "numerator": 111972,
+            "denominator": 172800,
+            "fraction": 0.6479861111111112
+          }
+        },
+        "continuation": {
+          "requests": 0,
+          "components": 0,
+          "input_tokens": {
+            "count": 0
+          },
+          "output_tokens": {
+            "count": 0
+          },
+          "historical_overlap_at_least_50pct": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_overlap_at_least_50pct": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "cross_component_overlap_at_least_50pct": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        }
+      },
+      "observed_path_depth": {
+        "count": 172800,
+        "mean": 1,
+        "minimum": 1,
+        "p25": 1,
+        "p50": 1,
+        "p75": 1,
+        "p90": 1,
+        "p95": 1,
+        "p99": 1,
+        "maximum": 1
+      }
+    },
+    "observed_root_api": {
+      "requests": 150936,
+      "components": 150936,
+      "types": {
+        "api": 150936
+      },
+      "singleton_components": 150936,
+      "multi_request_components": 0,
+      "component_size": {
+        "count": 150936,
+        "mean": 1,
+        "minimum": 1,
+        "p25": 1,
+        "p50": 1,
+        "p75": 1,
+        "p90": 1,
+        "p95": 1,
+        "p99": 1,
+        "maximum": 1
+      },
+      "component_max_turn": {
+        "count": 150936,
+        "mean": 1,
+        "minimum": 1,
+        "p25": 1,
+        "p50": 1,
+        "p75": 1,
+        "p90": 1,
+        "p95": 1,
+        "p99": 1,
+        "maximum": 1
+      },
+      "component_observed_arrival_span_s": {
+        "count": 150936,
+        "mean": 0.0,
+        "minimum": 0.0,
+        "p25": 0.0,
+        "p50": 0.0,
+        "p75": 0.0,
+        "p90": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "maximum": 0.0
+      },
+      "input_tokens": {
+        "count": 150936,
+        "mean": 909.5783312132295,
+        "minimum": 19,
+        "p25": 270,
+        "p50": 589,
+        "p75": 1198,
+        "p90": 1709,
+        "p95": 2444,
+        "p99": 5764,
+        "maximum": 66446
+      },
+      "output_tokens": {
+        "count": 150936,
+        "mean": 88.74626331690253,
+        "minimum": 1,
+        "p25": 10,
+        "p50": 37,
+        "p75": 94,
+        "p90": 171,
+        "p95": 309,
+        "p99": 979,
+        "maximum": 8192
+      },
+      "parent_edges": 0,
+      "parent_full_blocks_retained": {
+        "numerator": 0,
+        "denominator": 0,
+        "fraction": null
+      },
+      "growth": {
+        "numerator": 0,
+        "denominator": 0,
+        "fraction": null
+      },
+      "contraction": {
+        "numerator": 0,
+        "denominator": 0,
+        "fraction": null
+      },
+      "parent_arrival_gap_s": {
+        "count": 0
+      },
+      "input_growth_tokens": {
+        "count": 0
+      },
+      "input_minus_parent_input_and_output": {
+        "count": 0
+      },
+      "prefix_opportunity": {
+        "potential_reuse_fraction": {
+          "distribution": {
+            "count": 150936,
+            "mean": 0.5925984425249966,
+            "minimum": 0.0,
+            "p25": 0.3181818181818182,
+            "p50": 0.6824644549763034,
+            "p75": 0.8687782805429864,
+            "p90": 0.9411764705882353,
+            "p95": 0.9753810082063306,
+            "p99": 0.9957081545064378,
+            "maximum": 1.0
+          },
+          "thresholds": {
+            "0.25": {
+              "numerator": 118943,
+              "denominator": 150936,
+              "fraction": 0.7880359887634494
+            },
+            "0.5": {
+              "numerator": 103444,
+              "denominator": 150936,
+              "fraction": 0.6853500821540256
+            },
+            "0.75": {
+              "numerator": 56297,
+              "denominator": 150936,
+              "fraction": 0.37298590130916415
+            }
+          },
+          "any_match": {
+            "numerator": 149530,
+            "denominator": 150936,
+            "fraction": 0.9906847935548841
+          }
+        },
+        "within_component_reuse_fraction": {
+          "distribution": {
+            "count": 150936,
+            "mean": 0.0,
+            "minimum": 0.0,
+            "p25": 0.0,
+            "p50": 0.0,
+            "p75": 0.0,
+            "p90": 0.0,
+            "p95": 0.0,
+            "p99": 0.0,
+            "maximum": 0.0
+          },
+          "thresholds": {
+            "0.25": {
+              "numerator": 0,
+              "denominator": 150936,
+              "fraction": 0.0
+            },
+            "0.5": {
+              "numerator": 0,
+              "denominator": 150936,
+              "fraction": 0.0
+            },
+            "0.75": {
+              "numerator": 0,
+              "denominator": 150936,
+              "fraction": 0.0
+            }
+          },
+          "any_match": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          }
+        },
+        "cross_component_reuse_fraction": {
+          "distribution": {
+            "count": 150936,
+            "mean": 0.5925984425249966,
+            "minimum": 0.0,
+            "p25": 0.3181818181818182,
+            "p50": 0.6824644549763034,
+            "p75": 0.8687782805429864,
+            "p90": 0.9411764705882353,
+            "p95": 0.9753810082063306,
+            "p99": 0.9957081545064378,
+            "maximum": 1.0
+          },
+          "thresholds": {
+            "0.25": {
+              "numerator": 118943,
+              "denominator": 150936,
+              "fraction": 0.7880359887634494
+            },
+            "0.5": {
+              "numerator": 103444,
+              "denominator": 150936,
+              "fraction": 0.6853500821540256
+            },
+            "0.75": {
+              "numerator": 56297,
+              "denominator": 150936,
+              "fraction": 0.37298590130916415
+            }
+          },
+          "any_match": {
+            "numerator": 149530,
+            "denominator": 150936,
+            "fraction": 0.9906847935548841
+          }
+        }
+      },
+      "leading_prefix_groups": [
+        {
+          "prefix_tokens": 16,
+          "eligible_requests": 150936,
+          "distinct_prefixes": 1405,
+          "most_common_prefix_request_count": 24534,
+          "requests_in_prefix_groups_with_multiple_records": 150071
+        },
+        {
+          "prefix_tokens": 64,
+          "eligible_requests": 148461,
+          "distinct_prefixes": 30435,
+          "most_common_prefix_request_count": 24534,
+          "requests_in_prefix_groups_with_multiple_records": 119874
+        },
+        {
+          "prefix_tokens": 256,
+          "eligible_requests": 114124,
+          "distinct_prefixes": 30871,
+          "most_common_prefix_request_count": 24534,
+          "requests_in_prefix_groups_with_multiple_records": 84616
+        },
+        {
+          "prefix_tokens": 512,
+          "eligible_requests": 79226,
+          "distinct_prefixes": 22012,
+          "most_common_prefix_request_count": 24534,
+          "requests_in_prefix_groups_with_multiple_records": 57889
+        },
+        {
+          "prefix_tokens": 1024,
+          "eligible_requests": 56980,
+          "distinct_prefixes": 40344,
+          "most_common_prefix_request_count": 1743,
+          "requests_in_prefix_groups_with_multiple_records": 16943
+        }
+      ],
+      "thresholds": {
+        "long_input_at_least": 1709,
+        "short_input_at_most": 589
+      },
+      "prevalence_grid": [
+        {
+          "reuse_threshold": 0.25,
+          "window_seconds": 1,
+          "preceding_long_requires_reuse_below_25pct": false,
+          "long_context_all_requests": {
+            "numerator": 124390,
+            "denominator": 150936,
+            "fraction": 0.824124132082472
+          },
+          "high_reuse": {
+            "numerator": 118943,
+            "denominator": 150936,
+            "fraction": 0.7880359887634494
+          },
+          "event_requests": {
+            "numerator": 97462,
+            "denominator": 150936,
+            "fraction": 0.6457173901521175
+          },
+          "event_given_high_reuse": {
+            "numerator": 97462,
+            "denominator": 118943,
+            "fraction": 0.8194008895016941
+          },
+          "event_components": {
+            "numerator": 97462,
+            "denominator": 150936,
+            "fraction": 0.6457173901521175
+          },
+          "short_high_reuse_requests": {
+            "numerator": 59188,
+            "denominator": 150936,
+            "fraction": 0.39213971484602744
+          },
+          "short_event_requests": {
+            "numerator": 48590,
+            "denominator": 150936,
+            "fraction": 0.3219245243016908
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 48590,
+            "denominator": 59188,
+            "fraction": 0.8209434344799622
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.25,
+          "window_seconds": 10,
+          "preceding_long_requires_reuse_below_25pct": false,
+          "long_context_all_requests": {
+            "numerator": 150931,
+            "denominator": 150936,
+            "fraction": 0.9999668733767955
+          },
+          "high_reuse": {
+            "numerator": 118943,
+            "denominator": 150936,
+            "fraction": 0.7880359887634494
+          },
+          "event_requests": {
+            "numerator": 118943,
+            "denominator": 150936,
+            "fraction": 0.7880359887634494
+          },
+          "event_given_high_reuse": {
+            "numerator": 118943,
+            "denominator": 118943,
+            "fraction": 1.0
+          },
+          "event_components": {
+            "numerator": 118943,
+            "denominator": 150936,
+            "fraction": 0.7880359887634494
+          },
+          "short_high_reuse_requests": {
+            "numerator": 59188,
+            "denominator": 150936,
+            "fraction": 0.39213971484602744
+          },
+          "short_event_requests": {
+            "numerator": 59188,
+            "denominator": 150936,
+            "fraction": 0.39213971484602744
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 59188,
+            "denominator": 59188,
+            "fraction": 1.0
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.25,
+          "window_seconds": 60,
+          "preceding_long_requires_reuse_below_25pct": false,
+          "long_context_all_requests": {
+            "numerator": 150931,
+            "denominator": 150936,
+            "fraction": 0.9999668733767955
+          },
+          "high_reuse": {
+            "numerator": 118943,
+            "denominator": 150936,
+            "fraction": 0.7880359887634494
+          },
+          "event_requests": {
+            "numerator": 118943,
+            "denominator": 150936,
+            "fraction": 0.7880359887634494
+          },
+          "event_given_high_reuse": {
+            "numerator": 118943,
+            "denominator": 118943,
+            "fraction": 1.0
+          },
+          "event_components": {
+            "numerator": 118943,
+            "denominator": 150936,
+            "fraction": 0.7880359887634494
+          },
+          "short_high_reuse_requests": {
+            "numerator": 59188,
+            "denominator": 150936,
+            "fraction": 0.39213971484602744
+          },
+          "short_event_requests": {
+            "numerator": 59188,
+            "denominator": 150936,
+            "fraction": 0.39213971484602744
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 59188,
+            "denominator": 59188,
+            "fraction": 1.0
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.5,
+          "window_seconds": 1,
+          "preceding_long_requires_reuse_below_25pct": false,
+          "long_context_all_requests": {
+            "numerator": 124390,
+            "denominator": 150936,
+            "fraction": 0.824124132082472
+          },
+          "high_reuse": {
+            "numerator": 103444,
+            "denominator": 150936,
+            "fraction": 0.6853500821540256
+          },
+          "event_requests": {
+            "numerator": 84785,
+            "denominator": 150936,
+            "fraction": 0.5617281496793343
+          },
+          "event_given_high_reuse": {
+            "numerator": 84785,
+            "denominator": 103444,
+            "fraction": 0.8196222110513901
+          },
+          "event_components": {
+            "numerator": 84785,
+            "denominator": 150936,
+            "fraction": 0.5617281496793343
+          },
+          "short_high_reuse_requests": {
+            "numerator": 47983,
+            "denominator": 150936,
+            "fraction": 0.31790295224466
+          },
+          "short_event_requests": {
+            "numerator": 39453,
+            "denominator": 150936,
+            "fraction": 0.2613889330577198
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 39453,
+            "denominator": 47983,
+            "fraction": 0.8222287060000417
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.5,
+          "window_seconds": 10,
+          "preceding_long_requires_reuse_below_25pct": false,
+          "long_context_all_requests": {
+            "numerator": 150931,
+            "denominator": 150936,
+            "fraction": 0.9999668733767955
+          },
+          "high_reuse": {
+            "numerator": 103444,
+            "denominator": 150936,
+            "fraction": 0.6853500821540256
+          },
+          "event_requests": {
+            "numerator": 103444,
+            "denominator": 150936,
+            "fraction": 0.6853500821540256
+          },
+          "event_given_high_reuse": {
+            "numerator": 103444,
+            "denominator": 103444,
+            "fraction": 1.0
+          },
+          "event_components": {
+            "numerator": 103444,
+            "denominator": 150936,
+            "fraction": 0.6853500821540256
+          },
+          "short_high_reuse_requests": {
+            "numerator": 47983,
+            "denominator": 150936,
+            "fraction": 0.31790295224466
+          },
+          "short_event_requests": {
+            "numerator": 47983,
+            "denominator": 150936,
+            "fraction": 0.31790295224466
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 47983,
+            "denominator": 47983,
+            "fraction": 1.0
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.5,
+          "window_seconds": 60,
+          "preceding_long_requires_reuse_below_25pct": false,
+          "long_context_all_requests": {
+            "numerator": 150931,
+            "denominator": 150936,
+            "fraction": 0.9999668733767955
+          },
+          "high_reuse": {
+            "numerator": 103444,
+            "denominator": 150936,
+            "fraction": 0.6853500821540256
+          },
+          "event_requests": {
+            "numerator": 103444,
+            "denominator": 150936,
+            "fraction": 0.6853500821540256
+          },
+          "event_given_high_reuse": {
+            "numerator": 103444,
+            "denominator": 103444,
+            "fraction": 1.0
+          },
+          "event_components": {
+            "numerator": 103444,
+            "denominator": 150936,
+            "fraction": 0.6853500821540256
+          },
+          "short_high_reuse_requests": {
+            "numerator": 47983,
+            "denominator": 150936,
+            "fraction": 0.31790295224466
+          },
+          "short_event_requests": {
+            "numerator": 47983,
+            "denominator": 150936,
+            "fraction": 0.31790295224466
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 47983,
+            "denominator": 47983,
+            "fraction": 1.0
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.75,
+          "window_seconds": 1,
+          "preceding_long_requires_reuse_below_25pct": false,
+          "long_context_all_requests": {
+            "numerator": 124390,
+            "denominator": 150936,
+            "fraction": 0.824124132082472
+          },
+          "high_reuse": {
+            "numerator": 56297,
+            "denominator": 150936,
+            "fraction": 0.37298590130916415
+          },
+          "event_requests": {
+            "numerator": 46271,
+            "denominator": 150936,
+            "fraction": 0.3065603964594265
+          },
+          "event_given_high_reuse": {
+            "numerator": 46271,
+            "denominator": 56297,
+            "fraction": 0.8219088050873048
+          },
+          "event_components": {
+            "numerator": 46271,
+            "denominator": 150936,
+            "fraction": 0.3065603964594265
+          },
+          "short_high_reuse_requests": {
+            "numerator": 31113,
+            "denominator": 150936,
+            "fraction": 0.20613372555255208
+          },
+          "short_event_requests": {
+            "numerator": 25604,
+            "denominator": 150936,
+            "fraction": 0.16963481210579318
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 25604,
+            "denominator": 31113,
+            "fraction": 0.8229357503294443
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.75,
+          "window_seconds": 10,
+          "preceding_long_requires_reuse_below_25pct": false,
+          "long_context_all_requests": {
+            "numerator": 150931,
+            "denominator": 150936,
+            "fraction": 0.9999668733767955
+          },
+          "high_reuse": {
+            "numerator": 56297,
+            "denominator": 150936,
+            "fraction": 0.37298590130916415
+          },
+          "event_requests": {
+            "numerator": 56297,
+            "denominator": 150936,
+            "fraction": 0.37298590130916415
+          },
+          "event_given_high_reuse": {
+            "numerator": 56297,
+            "denominator": 56297,
+            "fraction": 1.0
+          },
+          "event_components": {
+            "numerator": 56297,
+            "denominator": 150936,
+            "fraction": 0.37298590130916415
+          },
+          "short_high_reuse_requests": {
+            "numerator": 31113,
+            "denominator": 150936,
+            "fraction": 0.20613372555255208
+          },
+          "short_event_requests": {
+            "numerator": 31113,
+            "denominator": 150936,
+            "fraction": 0.20613372555255208
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 31113,
+            "denominator": 31113,
+            "fraction": 1.0
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.75,
+          "window_seconds": 60,
+          "preceding_long_requires_reuse_below_25pct": false,
+          "long_context_all_requests": {
+            "numerator": 150931,
+            "denominator": 150936,
+            "fraction": 0.9999668733767955
+          },
+          "high_reuse": {
+            "numerator": 56297,
+            "denominator": 150936,
+            "fraction": 0.37298590130916415
+          },
+          "event_requests": {
+            "numerator": 56297,
+            "denominator": 150936,
+            "fraction": 0.37298590130916415
+          },
+          "event_given_high_reuse": {
+            "numerator": 56297,
+            "denominator": 56297,
+            "fraction": 1.0
+          },
+          "event_components": {
+            "numerator": 56297,
+            "denominator": 150936,
+            "fraction": 0.37298590130916415
+          },
+          "short_high_reuse_requests": {
+            "numerator": 31113,
+            "denominator": 150936,
+            "fraction": 0.20613372555255208
+          },
+          "short_event_requests": {
+            "numerator": 31113,
+            "denominator": 150936,
+            "fraction": 0.20613372555255208
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 31113,
+            "denominator": 31113,
+            "fraction": 1.0
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.25,
+          "window_seconds": 1,
+          "preceding_long_requires_reuse_below_25pct": true,
+          "long_context_all_requests": {
+            "numerator": 77295,
+            "denominator": 150936,
+            "fraction": 0.5121044681189378
+          },
+          "high_reuse": {
+            "numerator": 118943,
+            "denominator": 150936,
+            "fraction": 0.7880359887634494
+          },
+          "event_requests": {
+            "numerator": 59285,
+            "denominator": 150936,
+            "fraction": 0.3927823713361955
+          },
+          "event_given_high_reuse": {
+            "numerator": 59285,
+            "denominator": 118943,
+            "fraction": 0.4984320220609872
+          },
+          "event_components": {
+            "numerator": 59285,
+            "denominator": 150936,
+            "fraction": 0.3927823713361955
+          },
+          "short_high_reuse_requests": {
+            "numerator": 59188,
+            "denominator": 150936,
+            "fraction": 0.39213971484602744
+          },
+          "short_event_requests": {
+            "numerator": 29783,
+            "denominator": 150936,
+            "fraction": 0.19732204378014523
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 29783,
+            "denominator": 59188,
+            "fraction": 0.5031932148408461
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.25,
+          "window_seconds": 10,
+          "preceding_long_requires_reuse_below_25pct": true,
+          "long_context_all_requests": {
+            "numerator": 149023,
+            "denominator": 150936,
+            "fraction": 0.9873257539619441
+          },
+          "high_reuse": {
+            "numerator": 118943,
+            "denominator": 150936,
+            "fraction": 0.7880359887634494
+          },
+          "event_requests": {
+            "numerator": 117366,
+            "denominator": 150936,
+            "fraction": 0.7775878518047384
+          },
+          "event_given_high_reuse": {
+            "numerator": 117366,
+            "denominator": 118943,
+            "fraction": 0.9867415484727979
+          },
+          "event_components": {
+            "numerator": 117366,
+            "denominator": 150936,
+            "fraction": 0.7775878518047384
+          },
+          "short_high_reuse_requests": {
+            "numerator": 59188,
+            "denominator": 150936,
+            "fraction": 0.39213971484602744
+          },
+          "short_event_requests": {
+            "numerator": 58437,
+            "denominator": 150936,
+            "fraction": 0.387164096040706
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 58437,
+            "denominator": 59188,
+            "fraction": 0.9873116172197067
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.25,
+          "window_seconds": 60,
+          "preceding_long_requires_reuse_below_25pct": true,
+          "long_context_all_requests": {
+            "numerator": 150931,
+            "denominator": 150936,
+            "fraction": 0.9999668733767955
+          },
+          "high_reuse": {
+            "numerator": 118943,
+            "denominator": 150936,
+            "fraction": 0.7880359887634494
+          },
+          "event_requests": {
+            "numerator": 118943,
+            "denominator": 150936,
+            "fraction": 0.7880359887634494
+          },
+          "event_given_high_reuse": {
+            "numerator": 118943,
+            "denominator": 118943,
+            "fraction": 1.0
+          },
+          "event_components": {
+            "numerator": 118943,
+            "denominator": 150936,
+            "fraction": 0.7880359887634494
+          },
+          "short_high_reuse_requests": {
+            "numerator": 59188,
+            "denominator": 150936,
+            "fraction": 0.39213971484602744
+          },
+          "short_event_requests": {
+            "numerator": 59188,
+            "denominator": 150936,
+            "fraction": 0.39213971484602744
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 59188,
+            "denominator": 59188,
+            "fraction": 1.0
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.5,
+          "window_seconds": 1,
+          "preceding_long_requires_reuse_below_25pct": true,
+          "long_context_all_requests": {
+            "numerator": 77295,
+            "denominator": 150936,
+            "fraction": 0.5121044681189378
+          },
+          "high_reuse": {
+            "numerator": 103444,
+            "denominator": 150936,
+            "fraction": 0.6853500821540256
+          },
+          "event_requests": {
+            "numerator": 51486,
+            "denominator": 150936,
+            "fraction": 0.3411114644617586
+          },
+          "event_given_high_reuse": {
+            "numerator": 51486,
+            "denominator": 103444,
+            "fraction": 0.4977185723676579
+          },
+          "event_components": {
+            "numerator": 51486,
+            "denominator": 150936,
+            "fraction": 0.3411114644617586
+          },
+          "short_high_reuse_requests": {
+            "numerator": 47983,
+            "denominator": 150936,
+            "fraction": 0.31790295224466
+          },
+          "short_event_requests": {
+            "numerator": 24148,
+            "denominator": 150936,
+            "fraction": 0.159988339428632
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 24148,
+            "denominator": 47983,
+            "fraction": 0.5032615718066815
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.5,
+          "window_seconds": 10,
+          "preceding_long_requires_reuse_below_25pct": true,
+          "long_context_all_requests": {
+            "numerator": 149023,
+            "denominator": 150936,
+            "fraction": 0.9873257539619441
+          },
+          "high_reuse": {
+            "numerator": 103444,
+            "denominator": 150936,
+            "fraction": 0.6853500821540256
+          },
+          "event_requests": {
+            "numerator": 102055,
+            "denominator": 150936,
+            "fraction": 0.6761475062278052
+          },
+          "event_given_high_reuse": {
+            "numerator": 102055,
+            "denominator": 103444,
+            "fraction": 0.9865724449943931
+          },
+          "event_components": {
+            "numerator": 102055,
+            "denominator": 150936,
+            "fraction": 0.6761475062278052
+          },
+          "short_high_reuse_requests": {
+            "numerator": 47983,
+            "denominator": 150936,
+            "fraction": 0.31790295224466
+          },
+          "short_event_requests": {
+            "numerator": 47360,
+            "denominator": 150936,
+            "fraction": 0.31377537499337466
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 47360,
+            "denominator": 47983,
+            "fraction": 0.9870162349165329
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.5,
+          "window_seconds": 60,
+          "preceding_long_requires_reuse_below_25pct": true,
+          "long_context_all_requests": {
+            "numerator": 150931,
+            "denominator": 150936,
+            "fraction": 0.9999668733767955
+          },
+          "high_reuse": {
+            "numerator": 103444,
+            "denominator": 150936,
+            "fraction": 0.6853500821540256
+          },
+          "event_requests": {
+            "numerator": 103444,
+            "denominator": 150936,
+            "fraction": 0.6853500821540256
+          },
+          "event_given_high_reuse": {
+            "numerator": 103444,
+            "denominator": 103444,
+            "fraction": 1.0
+          },
+          "event_components": {
+            "numerator": 103444,
+            "denominator": 150936,
+            "fraction": 0.6853500821540256
+          },
+          "short_high_reuse_requests": {
+            "numerator": 47983,
+            "denominator": 150936,
+            "fraction": 0.31790295224466
+          },
+          "short_event_requests": {
+            "numerator": 47983,
+            "denominator": 150936,
+            "fraction": 0.31790295224466
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 47983,
+            "denominator": 47983,
+            "fraction": 1.0
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.75,
+          "window_seconds": 1,
+          "preceding_long_requires_reuse_below_25pct": true,
+          "long_context_all_requests": {
+            "numerator": 77295,
+            "denominator": 150936,
+            "fraction": 0.5121044681189378
+          },
+          "high_reuse": {
+            "numerator": 56297,
+            "denominator": 150936,
+            "fraction": 0.37298590130916415
+          },
+          "event_requests": {
+            "numerator": 28128,
+            "denominator": 150936,
+            "fraction": 0.18635713149944347
+          },
+          "event_given_high_reuse": {
+            "numerator": 28128,
+            "denominator": 56297,
+            "fraction": 0.4996358598149102
+          },
+          "event_components": {
+            "numerator": 28128,
+            "denominator": 150936,
+            "fraction": 0.18635713149944347
+          },
+          "short_high_reuse_requests": {
+            "numerator": 31113,
+            "denominator": 150936,
+            "fraction": 0.20613372555255208
+          },
+          "short_event_requests": {
+            "numerator": 15677,
+            "denominator": 150936,
+            "fraction": 0.10386521439550538
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 15677,
+            "denominator": 31113,
+            "fraction": 0.5038729791405522
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.75,
+          "window_seconds": 10,
+          "preceding_long_requires_reuse_below_25pct": true,
+          "long_context_all_requests": {
+            "numerator": 149023,
+            "denominator": 150936,
+            "fraction": 0.9873257539619441
+          },
+          "high_reuse": {
+            "numerator": 56297,
+            "denominator": 150936,
+            "fraction": 0.37298590130916415
+          },
+          "event_requests": {
+            "numerator": 55595,
+            "denominator": 150936,
+            "fraction": 0.36833492341124713
+          },
+          "event_given_high_reuse": {
+            "numerator": 55595,
+            "denominator": 56297,
+            "fraction": 0.9875304190276569
+          },
+          "event_components": {
+            "numerator": 55595,
+            "denominator": 150936,
+            "fraction": 0.36833492341124713
+          },
+          "short_high_reuse_requests": {
+            "numerator": 31113,
+            "denominator": 150936,
+            "fraction": 0.20613372555255208
+          },
+          "short_event_requests": {
+            "numerator": 30710,
+            "denominator": 150936,
+            "fraction": 0.2034637197222664
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 30710,
+            "denominator": 31113,
+            "fraction": 0.9870472149905184
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.75,
+          "window_seconds": 60,
+          "preceding_long_requires_reuse_below_25pct": true,
+          "long_context_all_requests": {
+            "numerator": 150931,
+            "denominator": 150936,
+            "fraction": 0.9999668733767955
+          },
+          "high_reuse": {
+            "numerator": 56297,
+            "denominator": 150936,
+            "fraction": 0.37298590130916415
+          },
+          "event_requests": {
+            "numerator": 56297,
+            "denominator": 150936,
+            "fraction": 0.37298590130916415
+          },
+          "event_given_high_reuse": {
+            "numerator": 56297,
+            "denominator": 56297,
+            "fraction": 1.0
+          },
+          "event_components": {
+            "numerator": 56297,
+            "denominator": 150936,
+            "fraction": 0.37298590130916415
+          },
+          "short_high_reuse_requests": {
+            "numerator": 31113,
+            "denominator": 150936,
+            "fraction": 0.20613372555255208
+          },
+          "short_event_requests": {
+            "numerator": 31113,
+            "denominator": 150936,
+            "fraction": 0.20613372555255208
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 31113,
+            "denominator": 31113,
+            "fraction": 1.0
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        }
+      ],
+      "temporal_thirds": [
+        {
+          "start_s": 0.0,
+          "end_s": 2400.0,
+          "requests": 48210,
+          "historical_reuse": {
+            "count": 48210,
+            "mean": 0.5899759556857889,
+            "minimum": 0.0,
+            "p25": 0.32323232323232326,
+            "p50": 0.6834170854271356,
+            "p75": 0.8602150537634409,
+            "p90": 0.9373297002724795,
+            "p95": 0.9731258840169731,
+            "p99": 0.9936708860759493,
+            "maximum": 1.0
+          },
+          "event": {
+            "reuse_threshold": 0.5,
+            "window_seconds": 10,
+            "preceding_long_requires_reuse_below_25pct": false,
+            "long_context_all_requests": {
+              "numerator": 48205,
+              "denominator": 48210,
+              "fraction": 0.9998962870773699
+            },
+            "high_reuse": {
+              "numerator": 32884,
+              "denominator": 48210,
+              "fraction": 0.6820991495540344
+            },
+            "event_requests": {
+              "numerator": 32884,
+              "denominator": 48210,
+              "fraction": 0.6820991495540344
+            },
+            "event_given_high_reuse": {
+              "numerator": 32884,
+              "denominator": 32884,
+              "fraction": 1.0
+            },
+            "event_components": {
+              "numerator": 32884,
+              "denominator": 48210,
+              "fraction": 0.6820991495540344
+            },
+            "short_high_reuse_requests": {
+              "numerator": 13941,
+              "denominator": 48210,
+              "fraction": 0.2891723708774113
+            },
+            "short_event_requests": {
+              "numerator": 13941,
+              "denominator": 48210,
+              "fraction": 0.2891723708774113
+            },
+            "short_event_given_short_high_reuse": {
+              "numerator": 13941,
+              "denominator": 13941,
+              "fraction": 1.0
+            },
+            "continuation_high_reuse_requests": {
+              "numerator": 0,
+              "denominator": 48210,
+              "fraction": 0.0
+            },
+            "continuation_event_requests": {
+              "numerator": 0,
+              "denominator": 48210,
+              "fraction": 0.0
+            },
+            "event_given_high_reuse_continuation": {
+              "numerator": 0,
+              "denominator": 0,
+              "fraction": null
+            },
+            "within_component_high_reuse_requests": {
+              "numerator": 0,
+              "denominator": 48210,
+              "fraction": 0.0
+            },
+            "within_component_event_requests": {
+              "numerator": 0,
+              "denominator": 48210,
+              "fraction": 0.0
+            },
+            "event_given_within_component_high_reuse": {
+              "numerator": 0,
+              "denominator": 0,
+              "fraction": null
+            }
+          }
+        },
+        {
+          "start_s": 2400.0,
+          "end_s": 4800.0,
+          "requests": 50600,
+          "historical_reuse": {
+            "count": 50600,
+            "mean": 0.5902428789875805,
+            "minimum": 0.0,
+            "p25": 0.3146067415730337,
+            "p50": 0.6808510638297872,
+            "p75": 0.8670618120237087,
+            "p90": 0.9420849420849421,
+            "p95": 0.9765258215962441,
+            "p99": 0.9962264150943396,
+            "maximum": 1.0
+          },
+          "event": {
+            "reuse_threshold": 0.5,
+            "window_seconds": 10,
+            "preceding_long_requires_reuse_below_25pct": false,
+            "long_context_all_requests": {
+              "numerator": 50600,
+              "denominator": 50600,
+              "fraction": 1.0
+            },
+            "high_reuse": {
+              "numerator": 34662,
+              "denominator": 50600,
+              "fraction": 0.6850197628458498
+            },
+            "event_requests": {
+              "numerator": 34662,
+              "denominator": 50600,
+              "fraction": 0.6850197628458498
+            },
+            "event_given_high_reuse": {
+              "numerator": 34662,
+              "denominator": 34662,
+              "fraction": 1.0
+            },
+            "event_components": {
+              "numerator": 34662,
+              "denominator": 50600,
+              "fraction": 0.6850197628458498
+            },
+            "short_high_reuse_requests": {
+              "numerator": 16188,
+              "denominator": 50600,
+              "fraction": 0.3199209486166008
+            },
+            "short_event_requests": {
+              "numerator": 16188,
+              "denominator": 50600,
+              "fraction": 0.3199209486166008
+            },
+            "short_event_given_short_high_reuse": {
+              "numerator": 16188,
+              "denominator": 16188,
+              "fraction": 1.0
+            },
+            "continuation_high_reuse_requests": {
+              "numerator": 0,
+              "denominator": 50600,
+              "fraction": 0.0
+            },
+            "continuation_event_requests": {
+              "numerator": 0,
+              "denominator": 50600,
+              "fraction": 0.0
+            },
+            "event_given_high_reuse_continuation": {
+              "numerator": 0,
+              "denominator": 0,
+              "fraction": null
+            },
+            "within_component_high_reuse_requests": {
+              "numerator": 0,
+              "denominator": 50600,
+              "fraction": 0.0
+            },
+            "within_component_event_requests": {
+              "numerator": 0,
+              "denominator": 50600,
+              "fraction": 0.0
+            },
+            "event_given_within_component_high_reuse": {
+              "numerator": 0,
+              "denominator": 0,
+              "fraction": null
+            }
+          }
+        },
+        {
+          "start_s": 4800.0,
+          "end_s": 7200.0,
+          "requests": 52126,
+          "historical_reuse": {
+            "count": 52126,
+            "mean": 0.5973105172192271,
+            "minimum": 0.0,
+            "p25": 0.31840796019900497,
+            "p50": 0.6834170854271356,
+            "p75": 0.8760806916426513,
+            "p90": 0.9456010745466756,
+            "p95": 0.9759530791788856,
+            "p99": 0.9966758202052319,
+            "maximum": 1.0
+          },
+          "event": {
+            "reuse_threshold": 0.5,
+            "window_seconds": 10,
+            "preceding_long_requires_reuse_below_25pct": false,
+            "long_context_all_requests": {
+              "numerator": 52126,
+              "denominator": 52126,
+              "fraction": 1.0
+            },
+            "high_reuse": {
+              "numerator": 35898,
+              "denominator": 52126,
+              "fraction": 0.6886774354448836
+            },
+            "event_requests": {
+              "numerator": 35898,
+              "denominator": 52126,
+              "fraction": 0.6886774354448836
+            },
+            "event_given_high_reuse": {
+              "numerator": 35898,
+              "denominator": 35898,
+              "fraction": 1.0
+            },
+            "event_components": {
+              "numerator": 35898,
+              "denominator": 52126,
+              "fraction": 0.6886774354448836
+            },
+            "short_high_reuse_requests": {
+              "numerator": 17854,
+              "denominator": 52126,
+              "fraction": 0.342516210720178
+            },
+            "short_event_requests": {
+              "numerator": 17854,
+              "denominator": 52126,
+              "fraction": 0.342516210720178
+            },
+            "short_event_given_short_high_reuse": {
+              "numerator": 17854,
+              "denominator": 17854,
+              "fraction": 1.0
+            },
+            "continuation_high_reuse_requests": {
+              "numerator": 0,
+              "denominator": 52126,
+              "fraction": 0.0
+            },
+            "continuation_event_requests": {
+              "numerator": 0,
+              "denominator": 52126,
+              "fraction": 0.0
+            },
+            "event_given_high_reuse_continuation": {
+              "numerator": 0,
+              "denominator": 0,
+              "fraction": null
+            },
+            "within_component_high_reuse_requests": {
+              "numerator": 0,
+              "denominator": 52126,
+              "fraction": 0.0
+            },
+            "within_component_event_requests": {
+              "numerator": 0,
+              "denominator": 52126,
+              "fraction": 0.0
+            },
+            "event_given_within_component_high_reuse": {
+              "numerator": 0,
+              "denominator": 0,
+              "fraction": null
+            }
+          }
+        }
+      ],
+      "arrivals": {
+        "interval_start_s": 0,
+        "interval_end_s": 7200,
+        "requests_per_second": 20.963333333333335,
+        "interarrival_s": {
+          "count": 150935,
+          "mean": 0.047702454699042635,
+          "minimum": 0.0,
+          "p25": 0.012999999999919964,
+          "p50": 0.032000000000152795,
+          "p75": 0.06500000000005457,
+          "p90": 0.11099999999987631,
+          "p95": 0.14799999999922875,
+          "p99": 0.23400000000037835,
+          "maximum": 0.6449999999999818
+        },
+        "interarrival_coefficient_of_variation": 1.0553059317503197,
+        "bins": {
+          "1": {
+            "full_bin_request_counts": {
+              "count": 7200,
+              "mean": 20.963333333333335,
+              "minimum": 3,
+              "p25": 16,
+              "p50": 21,
+              "p75": 25,
+              "p90": 29,
+              "p95": 32,
+              "p99": 37,
+              "maximum": 50
+            },
+            "variance_to_mean": 1.9174903270260242,
+            "peak_to_mean": 2.3851168707266655,
+            "empty_full_bins": 0
+          },
+          "10": {
+            "full_bin_request_counts": {
+              "count": 720,
+              "mean": 209.63333333333333,
+              "minimum": 110,
+              "p25": 176,
+              "p50": 205,
+              "p75": 242,
+              "p90": 272,
+              "p95": 283,
+              "p99": 308,
+              "maximum": 341
+            },
+            "variance_to_mean": 9.127028674405045,
+            "peak_to_mean": 1.626649705835586,
+            "empty_full_bins": 0
+          },
+          "60": {
+            "full_bin_request_counts": {
+              "count": 120,
+              "mean": 1257.8,
+              "minimum": 825,
+              "p25": 1077,
+              "p50": 1210,
+              "p75": 1420,
+              "p90": 1576,
+              "p95": 1681,
+              "p99": 1732,
+              "maximum": 1760
+            },
+            "variance_to_mean": 42.20886468436954,
+            "peak_to_mean": 1.3992685641596438,
+            "empty_full_bins": 0
+          }
+        }
+      },
+      "pilot_context_limit_audit": {
+        "limit_tokens": 32768,
+        "exceeding_requests": 7,
+        "affected_components": 7,
+        "requests_in_affected_components": 7
+      },
+      "included_requests": {
+        "numerator": 150936,
+        "denominator": 172800,
+        "fraction": 0.8734722222222222
+      },
+      "excluded_requests": 21864,
+      "initial_vs_continuation": {
+        "initial": {
+          "requests": 150936,
+          "components": 150936,
+          "input_tokens": {
+            "count": 150936,
+            "mean": 909.5783312132295,
+            "minimum": 19,
+            "p25": 270,
+            "p50": 589,
+            "p75": 1198,
+            "p90": 1709,
+            "p95": 2444,
+            "p99": 5764,
+            "maximum": 66446
+          },
+          "output_tokens": {
+            "count": 150936,
+            "mean": 88.74626331690253,
+            "minimum": 1,
+            "p25": 10,
+            "p50": 37,
+            "p75": 94,
+            "p90": 171,
+            "p95": 309,
+            "p99": 979,
+            "maximum": 8192
+          },
+          "historical_overlap_at_least_50pct": {
+            "numerator": 103444,
+            "denominator": 150936,
+            "fraction": 0.6853500821540256
+          },
+          "within_component_overlap_at_least_50pct": {
+            "numerator": 0,
+            "denominator": 150936,
+            "fraction": 0.0
+          },
+          "cross_component_overlap_at_least_50pct": {
+            "numerator": 103444,
+            "denominator": 150936,
+            "fraction": 0.6853500821540256
+          }
+        },
+        "continuation": {
+          "requests": 0,
+          "components": 0,
+          "input_tokens": {
+            "count": 0
+          },
+          "output_tokens": {
+            "count": 0
+          },
+          "historical_overlap_at_least_50pct": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_overlap_at_least_50pct": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "cross_component_overlap_at_least_50pct": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        }
+      },
+      "observed_path_depth": {
+        "count": 150936,
+        "mean": 1,
+        "minimum": 1,
+        "p25": 1,
+        "p50": 1,
+        "p75": 1,
+        "p90": 1,
+        "p95": 1,
+        "p99": 1,
+        "maximum": 1
+      }
+    },
+    "observed_root_text": {
+      "requests": 21864,
+      "components": 21864,
+      "types": {
+        "text": 21864
+      },
+      "singleton_components": 21864,
+      "multi_request_components": 0,
+      "component_size": {
+        "count": 21864,
+        "mean": 1,
+        "minimum": 1,
+        "p25": 1,
+        "p50": 1,
+        "p75": 1,
+        "p90": 1,
+        "p95": 1,
+        "p99": 1,
+        "maximum": 1
+      },
+      "component_max_turn": {
+        "count": 21864,
+        "mean": 1,
+        "minimum": 1,
+        "p25": 1,
+        "p50": 1,
+        "p75": 1,
+        "p90": 1,
+        "p95": 1,
+        "p99": 1,
+        "maximum": 1
+      },
+      "component_observed_arrival_span_s": {
+        "count": 21864,
+        "mean": 0.0,
+        "minimum": 0.0,
+        "p25": 0.0,
+        "p50": 0.0,
+        "p75": 0.0,
+        "p90": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "maximum": 0.0
+      },
+      "input_tokens": {
+        "count": 21864,
+        "mean": 948.636937431394,
+        "minimum": 20,
+        "p25": 282,
+        "p50": 479,
+        "p75": 1043,
+        "p90": 1861,
+        "p95": 2837,
+        "p99": 7697,
+        "maximum": 59159
+      },
+      "output_tokens": {
+        "count": 21864,
+        "mean": 111.51765459202342,
+        "minimum": 1,
+        "p25": 23,
+        "p50": 46,
+        "p75": 93,
+        "p90": 262,
+        "p95": 464,
+        "p99": 1087,
+        "maximum": 5400
+      },
+      "parent_edges": 0,
+      "parent_full_blocks_retained": {
+        "numerator": 0,
+        "denominator": 0,
+        "fraction": null
+      },
+      "growth": {
+        "numerator": 0,
+        "denominator": 0,
+        "fraction": null
+      },
+      "contraction": {
+        "numerator": 0,
+        "denominator": 0,
+        "fraction": null
+      },
+      "parent_arrival_gap_s": {
+        "count": 0
+      },
+      "input_growth_tokens": {
+        "count": 0
+      },
+      "input_minus_parent_input_and_output": {
+        "count": 0
+      },
+      "prefix_opportunity": {
+        "potential_reuse_fraction": {
+          "distribution": {
+            "count": 21864,
+            "mean": 0.47251000209373895,
+            "minimum": 0.0,
+            "p25": 0.2277580071174377,
+            "p50": 0.3416370106761566,
+            "p75": 0.8067226890756303,
+            "p90": 0.9540034071550255,
+            "p95": 0.9714285714285714,
+            "p99": 0.9922480620155039,
+            "maximum": 1.0
+          },
+          "thresholds": {
+            "0.25": {
+              "numerator": 15906,
+              "denominator": 21864,
+              "fraction": 0.7274972557628979
+            },
+            "0.5": {
+              "numerator": 8442,
+              "denominator": 21864,
+              "fraction": 0.38611416026344675
+            },
+            "0.75": {
+              "numerator": 6122,
+              "denominator": 21864,
+              "fraction": 0.28000365898280277
+            }
+          },
+          "any_match": {
+            "numerator": 20905,
+            "denominator": 21864,
+            "fraction": 0.9561379436516648
+          }
+        },
+        "within_component_reuse_fraction": {
+          "distribution": {
+            "count": 21864,
+            "mean": 0.0,
+            "minimum": 0.0,
+            "p25": 0.0,
+            "p50": 0.0,
+            "p75": 0.0,
+            "p90": 0.0,
+            "p95": 0.0,
+            "p99": 0.0,
+            "maximum": 0.0
+          },
+          "thresholds": {
+            "0.25": {
+              "numerator": 0,
+              "denominator": 21864,
+              "fraction": 0.0
+            },
+            "0.5": {
+              "numerator": 0,
+              "denominator": 21864,
+              "fraction": 0.0
+            },
+            "0.75": {
+              "numerator": 0,
+              "denominator": 21864,
+              "fraction": 0.0
+            }
+          },
+          "any_match": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          }
+        },
+        "cross_component_reuse_fraction": {
+          "distribution": {
+            "count": 21864,
+            "mean": 0.47251000209373895,
+            "minimum": 0.0,
+            "p25": 0.2277580071174377,
+            "p50": 0.3416370106761566,
+            "p75": 0.8067226890756303,
+            "p90": 0.9540034071550255,
+            "p95": 0.9714285714285714,
+            "p99": 0.9922480620155039,
+            "maximum": 1.0
+          },
+          "thresholds": {
+            "0.25": {
+              "numerator": 15906,
+              "denominator": 21864,
+              "fraction": 0.7274972557628979
+            },
+            "0.5": {
+              "numerator": 8442,
+              "denominator": 21864,
+              "fraction": 0.38611416026344675
+            },
+            "0.75": {
+              "numerator": 6122,
+              "denominator": 21864,
+              "fraction": 0.28000365898280277
+            }
+          },
+          "any_match": {
+            "numerator": 20905,
+            "denominator": 21864,
+            "fraction": 0.9561379436516648
+          }
+        }
+      },
+      "leading_prefix_groups": [
+        {
+          "prefix_tokens": 16,
+          "eligible_requests": 21864,
+          "distinct_prefixes": 959,
+          "most_common_prefix_request_count": 7431,
+          "requests_in_prefix_groups_with_multiple_records": 21435
+        },
+        {
+          "prefix_tokens": 64,
+          "eligible_requests": 21641,
+          "distinct_prefixes": 2095,
+          "most_common_prefix_request_count": 7431,
+          "requests_in_prefix_groups_with_multiple_records": 20173
+        },
+        {
+          "prefix_tokens": 256,
+          "eligible_requests": 19327,
+          "distinct_prefixes": 10161,
+          "most_common_prefix_request_count": 444,
+          "requests_in_prefix_groups_with_multiple_records": 10358
+        },
+        {
+          "prefix_tokens": 512,
+          "eligible_requests": 10501,
+          "distinct_prefixes": 6003,
+          "most_common_prefix_request_count": 444,
+          "requests_in_prefix_groups_with_multiple_records": 4879
+        },
+        {
+          "prefix_tokens": 1024,
+          "eligible_requests": 5577,
+          "distinct_prefixes": 3679,
+          "most_common_prefix_request_count": 383,
+          "requests_in_prefix_groups_with_multiple_records": 2090
+        }
+      ],
+      "thresholds": {
+        "long_input_at_least": 1861,
+        "short_input_at_most": 479
+      },
+      "prevalence_grid": [
+        {
+          "reuse_threshold": 0.25,
+          "window_seconds": 1,
+          "preceding_long_requires_reuse_below_25pct": false,
+          "long_context_all_requests": {
+            "numerator": 5660,
+            "denominator": 21864,
+            "fraction": 0.2588730332967435
+          },
+          "high_reuse": {
+            "numerator": 15906,
+            "denominator": 21864,
+            "fraction": 0.7274972557628979
+          },
+          "event_requests": {
+            "numerator": 4133,
+            "denominator": 21864,
+            "fraction": 0.18903219904866447
+          },
+          "event_given_high_reuse": {
+            "numerator": 4133,
+            "denominator": 15906,
+            "fraction": 0.25983905444486355
+          },
+          "event_components": {
+            "numerator": 4133,
+            "denominator": 21864,
+            "fraction": 0.18903219904866447
+          },
+          "short_high_reuse_requests": {
+            "numerator": 9344,
+            "denominator": 21864,
+            "fraction": 0.42736919136480056
+          },
+          "short_event_requests": {
+            "numerator": 2419,
+            "denominator": 21864,
+            "fraction": 0.11063849249908525
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 2419,
+            "denominator": 9344,
+            "fraction": 0.2588827054794521
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.25,
+          "window_seconds": 10,
+          "preceding_long_requires_reuse_below_25pct": false,
+          "long_context_all_requests": {
+            "numerator": 20523,
+            "denominator": 21864,
+            "fraction": 0.9386663007683864
+          },
+          "high_reuse": {
+            "numerator": 15906,
+            "denominator": 21864,
+            "fraction": 0.7274972557628979
+          },
+          "event_requests": {
+            "numerator": 14937,
+            "denominator": 21864,
+            "fraction": 0.6831778265642151
+          },
+          "event_given_high_reuse": {
+            "numerator": 14937,
+            "denominator": 15906,
+            "fraction": 0.9390795926065636
+          },
+          "event_components": {
+            "numerator": 14937,
+            "denominator": 21864,
+            "fraction": 0.6831778265642151
+          },
+          "short_high_reuse_requests": {
+            "numerator": 9344,
+            "denominator": 21864,
+            "fraction": 0.42736919136480056
+          },
+          "short_event_requests": {
+            "numerator": 8759,
+            "denominator": 21864,
+            "fraction": 0.4006128796194658
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 8759,
+            "denominator": 9344,
+            "fraction": 0.9373929794520548
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.25,
+          "window_seconds": 60,
+          "preceding_long_requires_reuse_below_25pct": false,
+          "long_context_all_requests": {
+            "numerator": 21859,
+            "denominator": 21864,
+            "fraction": 0.9997713135748262
+          },
+          "high_reuse": {
+            "numerator": 15906,
+            "denominator": 21864,
+            "fraction": 0.7274972557628979
+          },
+          "event_requests": {
+            "numerator": 15906,
+            "denominator": 21864,
+            "fraction": 0.7274972557628979
+          },
+          "event_given_high_reuse": {
+            "numerator": 15906,
+            "denominator": 15906,
+            "fraction": 1.0
+          },
+          "event_components": {
+            "numerator": 15906,
+            "denominator": 21864,
+            "fraction": 0.7274972557628979
+          },
+          "short_high_reuse_requests": {
+            "numerator": 9344,
+            "denominator": 21864,
+            "fraction": 0.42736919136480056
+          },
+          "short_event_requests": {
+            "numerator": 9344,
+            "denominator": 21864,
+            "fraction": 0.42736919136480056
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 9344,
+            "denominator": 9344,
+            "fraction": 1.0
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.5,
+          "window_seconds": 1,
+          "preceding_long_requires_reuse_below_25pct": false,
+          "long_context_all_requests": {
+            "numerator": 5660,
+            "denominator": 21864,
+            "fraction": 0.2588730332967435
+          },
+          "high_reuse": {
+            "numerator": 8442,
+            "denominator": 21864,
+            "fraction": 0.38611416026344675
+          },
+          "event_requests": {
+            "numerator": 2205,
+            "denominator": 21864,
+            "fraction": 0.10085071350164654
+          },
+          "event_given_high_reuse": {
+            "numerator": 2205,
+            "denominator": 8442,
+            "fraction": 0.26119402985074625
+          },
+          "event_components": {
+            "numerator": 2205,
+            "denominator": 21864,
+            "fraction": 0.10085071350164654
+          },
+          "short_high_reuse_requests": {
+            "numerator": 3803,
+            "denominator": 21864,
+            "fraction": 0.17393889498719356
+          },
+          "short_event_requests": {
+            "numerator": 991,
+            "denominator": 21864,
+            "fraction": 0.04532564946944749
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 991,
+            "denominator": 3803,
+            "fraction": 0.26058374967131215
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.5,
+          "window_seconds": 10,
+          "preceding_long_requires_reuse_below_25pct": false,
+          "long_context_all_requests": {
+            "numerator": 20523,
+            "denominator": 21864,
+            "fraction": 0.9386663007683864
+          },
+          "high_reuse": {
+            "numerator": 8442,
+            "denominator": 21864,
+            "fraction": 0.38611416026344675
+          },
+          "event_requests": {
+            "numerator": 7952,
+            "denominator": 21864,
+            "fraction": 0.3637028905964142
+          },
+          "event_given_high_reuse": {
+            "numerator": 7952,
+            "denominator": 8442,
+            "fraction": 0.9419568822553898
+          },
+          "event_components": {
+            "numerator": 7952,
+            "denominator": 21864,
+            "fraction": 0.3637028905964142
+          },
+          "short_high_reuse_requests": {
+            "numerator": 3803,
+            "denominator": 21864,
+            "fraction": 0.17393889498719356
+          },
+          "short_event_requests": {
+            "numerator": 3579,
+            "denominator": 21864,
+            "fraction": 0.16369374313940724
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 3579,
+            "denominator": 3803,
+            "fraction": 0.9410991322640021
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.5,
+          "window_seconds": 60,
+          "preceding_long_requires_reuse_below_25pct": false,
+          "long_context_all_requests": {
+            "numerator": 21859,
+            "denominator": 21864,
+            "fraction": 0.9997713135748262
+          },
+          "high_reuse": {
+            "numerator": 8442,
+            "denominator": 21864,
+            "fraction": 0.38611416026344675
+          },
+          "event_requests": {
+            "numerator": 8442,
+            "denominator": 21864,
+            "fraction": 0.38611416026344675
+          },
+          "event_given_high_reuse": {
+            "numerator": 8442,
+            "denominator": 8442,
+            "fraction": 1.0
+          },
+          "event_components": {
+            "numerator": 8442,
+            "denominator": 21864,
+            "fraction": 0.38611416026344675
+          },
+          "short_high_reuse_requests": {
+            "numerator": 3803,
+            "denominator": 21864,
+            "fraction": 0.17393889498719356
+          },
+          "short_event_requests": {
+            "numerator": 3803,
+            "denominator": 21864,
+            "fraction": 0.17393889498719356
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 3803,
+            "denominator": 3803,
+            "fraction": 1.0
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.75,
+          "window_seconds": 1,
+          "preceding_long_requires_reuse_below_25pct": false,
+          "long_context_all_requests": {
+            "numerator": 5660,
+            "denominator": 21864,
+            "fraction": 0.2588730332967435
+          },
+          "high_reuse": {
+            "numerator": 6122,
+            "denominator": 21864,
+            "fraction": 0.28000365898280277
+          },
+          "event_requests": {
+            "numerator": 1621,
+            "denominator": 21864,
+            "fraction": 0.0741401390413465
+          },
+          "event_given_high_reuse": {
+            "numerator": 1621,
+            "denominator": 6122,
+            "fraction": 0.2647827507350539
+          },
+          "event_components": {
+            "numerator": 1621,
+            "denominator": 21864,
+            "fraction": 0.0741401390413465
+          },
+          "short_high_reuse_requests": {
+            "numerator": 2899,
+            "denominator": 21864,
+            "fraction": 0.13259238931577022
+          },
+          "short_event_requests": {
+            "numerator": 757,
+            "denominator": 21864,
+            "fraction": 0.034623124771313574
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 757,
+            "denominator": 2899,
+            "fraction": 0.26112452569851674
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.75,
+          "window_seconds": 10,
+          "preceding_long_requires_reuse_below_25pct": false,
+          "long_context_all_requests": {
+            "numerator": 20523,
+            "denominator": 21864,
+            "fraction": 0.9386663007683864
+          },
+          "high_reuse": {
+            "numerator": 6122,
+            "denominator": 21864,
+            "fraction": 0.28000365898280277
+          },
+          "event_requests": {
+            "numerator": 5755,
+            "denominator": 21864,
+            "fraction": 0.2632180753750457
+          },
+          "event_given_high_reuse": {
+            "numerator": 5755,
+            "denominator": 6122,
+            "fraction": 0.9400522704998366
+          },
+          "event_components": {
+            "numerator": 5755,
+            "denominator": 21864,
+            "fraction": 0.2632180753750457
+          },
+          "short_high_reuse_requests": {
+            "numerator": 2899,
+            "denominator": 21864,
+            "fraction": 0.13259238931577022
+          },
+          "short_event_requests": {
+            "numerator": 2724,
+            "denominator": 21864,
+            "fraction": 0.12458836443468715
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 2724,
+            "denominator": 2899,
+            "fraction": 0.9396343566747154
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.75,
+          "window_seconds": 60,
+          "preceding_long_requires_reuse_below_25pct": false,
+          "long_context_all_requests": {
+            "numerator": 21859,
+            "denominator": 21864,
+            "fraction": 0.9997713135748262
+          },
+          "high_reuse": {
+            "numerator": 6122,
+            "denominator": 21864,
+            "fraction": 0.28000365898280277
+          },
+          "event_requests": {
+            "numerator": 6122,
+            "denominator": 21864,
+            "fraction": 0.28000365898280277
+          },
+          "event_given_high_reuse": {
+            "numerator": 6122,
+            "denominator": 6122,
+            "fraction": 1.0
+          },
+          "event_components": {
+            "numerator": 6122,
+            "denominator": 21864,
+            "fraction": 0.28000365898280277
+          },
+          "short_high_reuse_requests": {
+            "numerator": 2899,
+            "denominator": 21864,
+            "fraction": 0.13259238931577022
+          },
+          "short_event_requests": {
+            "numerator": 2899,
+            "denominator": 21864,
+            "fraction": 0.13259238931577022
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 2899,
+            "denominator": 2899,
+            "fraction": 1.0
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.25,
+          "window_seconds": 1,
+          "preceding_long_requires_reuse_below_25pct": true,
+          "long_context_all_requests": {
+            "numerator": 3797,
+            "denominator": 21864,
+            "fraction": 0.173664471276985
+          },
+          "high_reuse": {
+            "numerator": 15906,
+            "denominator": 21864,
+            "fraction": 0.7274972557628979
+          },
+          "event_requests": {
+            "numerator": 2785,
+            "denominator": 21864,
+            "fraction": 0.12737833882180755
+          },
+          "event_given_high_reuse": {
+            "numerator": 2785,
+            "denominator": 15906,
+            "fraction": 0.17509116056833898
+          },
+          "event_components": {
+            "numerator": 2785,
+            "denominator": 21864,
+            "fraction": 0.12737833882180755
+          },
+          "short_high_reuse_requests": {
+            "numerator": 9344,
+            "denominator": 21864,
+            "fraction": 0.42736919136480056
+          },
+          "short_event_requests": {
+            "numerator": 1637,
+            "denominator": 21864,
+            "fraction": 0.07487193560190267
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 1637,
+            "denominator": 9344,
+            "fraction": 0.17519263698630136
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.25,
+          "window_seconds": 10,
+          "preceding_long_requires_reuse_below_25pct": true,
+          "long_context_all_requests": {
+            "numerator": 18501,
+            "denominator": 21864,
+            "fraction": 0.846185510428101
+          },
+          "high_reuse": {
+            "numerator": 15906,
+            "denominator": 21864,
+            "fraction": 0.7274972557628979
+          },
+          "event_requests": {
+            "numerator": 13441,
+            "denominator": 21864,
+            "fraction": 0.6147548481522137
+          },
+          "event_given_high_reuse": {
+            "numerator": 13441,
+            "denominator": 15906,
+            "fraction": 0.8450270338237144
+          },
+          "event_components": {
+            "numerator": 13441,
+            "denominator": 21864,
+            "fraction": 0.6147548481522137
+          },
+          "short_high_reuse_requests": {
+            "numerator": 9344,
+            "denominator": 21864,
+            "fraction": 0.42736919136480056
+          },
+          "short_event_requests": {
+            "numerator": 7855,
+            "denominator": 21864,
+            "fraction": 0.35926637394804245
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 7855,
+            "denominator": 9344,
+            "fraction": 0.840646404109589
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.25,
+          "window_seconds": 60,
+          "preceding_long_requires_reuse_below_25pct": true,
+          "long_context_all_requests": {
+            "numerator": 21859,
+            "denominator": 21864,
+            "fraction": 0.9997713135748262
+          },
+          "high_reuse": {
+            "numerator": 15906,
+            "denominator": 21864,
+            "fraction": 0.7274972557628979
+          },
+          "event_requests": {
+            "numerator": 15906,
+            "denominator": 21864,
+            "fraction": 0.7274972557628979
+          },
+          "event_given_high_reuse": {
+            "numerator": 15906,
+            "denominator": 15906,
+            "fraction": 1.0
+          },
+          "event_components": {
+            "numerator": 15906,
+            "denominator": 21864,
+            "fraction": 0.7274972557628979
+          },
+          "short_high_reuse_requests": {
+            "numerator": 9344,
+            "denominator": 21864,
+            "fraction": 0.42736919136480056
+          },
+          "short_event_requests": {
+            "numerator": 9344,
+            "denominator": 21864,
+            "fraction": 0.42736919136480056
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 9344,
+            "denominator": 9344,
+            "fraction": 1.0
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.5,
+          "window_seconds": 1,
+          "preceding_long_requires_reuse_below_25pct": true,
+          "long_context_all_requests": {
+            "numerator": 3797,
+            "denominator": 21864,
+            "fraction": 0.173664471276985
+          },
+          "high_reuse": {
+            "numerator": 8442,
+            "denominator": 21864,
+            "fraction": 0.38611416026344675
+          },
+          "event_requests": {
+            "numerator": 1491,
+            "denominator": 21864,
+            "fraction": 0.06819429198682767
+          },
+          "event_given_high_reuse": {
+            "numerator": 1491,
+            "denominator": 8442,
+            "fraction": 0.17661691542288557
+          },
+          "event_components": {
+            "numerator": 1491,
+            "denominator": 21864,
+            "fraction": 0.06819429198682767
+          },
+          "short_high_reuse_requests": {
+            "numerator": 3803,
+            "denominator": 21864,
+            "fraction": 0.17393889498719356
+          },
+          "short_event_requests": {
+            "numerator": 677,
+            "denominator": 21864,
+            "fraction": 0.030964141968532748
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 677,
+            "denominator": 3803,
+            "fraction": 0.17801735471995792
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.5,
+          "window_seconds": 10,
+          "preceding_long_requires_reuse_below_25pct": true,
+          "long_context_all_requests": {
+            "numerator": 18501,
+            "denominator": 21864,
+            "fraction": 0.846185510428101
+          },
+          "high_reuse": {
+            "numerator": 8442,
+            "denominator": 21864,
+            "fraction": 0.38611416026344675
+          },
+          "event_requests": {
+            "numerator": 7177,
+            "denominator": 21864,
+            "fraction": 0.32825649469447493
+          },
+          "event_given_high_reuse": {
+            "numerator": 7177,
+            "denominator": 8442,
+            "fraction": 0.8501539919450367
+          },
+          "event_components": {
+            "numerator": 7177,
+            "denominator": 21864,
+            "fraction": 0.32825649469447493
+          },
+          "short_high_reuse_requests": {
+            "numerator": 3803,
+            "denominator": 21864,
+            "fraction": 0.17393889498719356
+          },
+          "short_event_requests": {
+            "numerator": 3220,
+            "denominator": 21864,
+            "fraction": 0.1472740578119283
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 3220,
+            "denominator": 3803,
+            "fraction": 0.8466999737049697
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.5,
+          "window_seconds": 60,
+          "preceding_long_requires_reuse_below_25pct": true,
+          "long_context_all_requests": {
+            "numerator": 21859,
+            "denominator": 21864,
+            "fraction": 0.9997713135748262
+          },
+          "high_reuse": {
+            "numerator": 8442,
+            "denominator": 21864,
+            "fraction": 0.38611416026344675
+          },
+          "event_requests": {
+            "numerator": 8442,
+            "denominator": 21864,
+            "fraction": 0.38611416026344675
+          },
+          "event_given_high_reuse": {
+            "numerator": 8442,
+            "denominator": 8442,
+            "fraction": 1.0
+          },
+          "event_components": {
+            "numerator": 8442,
+            "denominator": 21864,
+            "fraction": 0.38611416026344675
+          },
+          "short_high_reuse_requests": {
+            "numerator": 3803,
+            "denominator": 21864,
+            "fraction": 0.17393889498719356
+          },
+          "short_event_requests": {
+            "numerator": 3803,
+            "denominator": 21864,
+            "fraction": 0.17393889498719356
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 3803,
+            "denominator": 3803,
+            "fraction": 1.0
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.75,
+          "window_seconds": 1,
+          "preceding_long_requires_reuse_below_25pct": true,
+          "long_context_all_requests": {
+            "numerator": 3797,
+            "denominator": 21864,
+            "fraction": 0.173664471276985
+          },
+          "high_reuse": {
+            "numerator": 6122,
+            "denominator": 21864,
+            "fraction": 0.28000365898280277
+          },
+          "event_requests": {
+            "numerator": 1077,
+            "denominator": 21864,
+            "fraction": 0.049259055982436885
+          },
+          "event_given_high_reuse": {
+            "numerator": 1077,
+            "denominator": 6122,
+            "fraction": 0.17592290101274094
+          },
+          "event_components": {
+            "numerator": 1077,
+            "denominator": 21864,
+            "fraction": 0.049259055982436885
+          },
+          "short_high_reuse_requests": {
+            "numerator": 2899,
+            "denominator": 21864,
+            "fraction": 0.13259238931577022
+          },
+          "short_event_requests": {
+            "numerator": 501,
+            "denominator": 21864,
+            "fraction": 0.022914379802414928
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 501,
+            "denominator": 2899,
+            "fraction": 0.17281821317695756
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.75,
+          "window_seconds": 10,
+          "preceding_long_requires_reuse_below_25pct": true,
+          "long_context_all_requests": {
+            "numerator": 18501,
+            "denominator": 21864,
+            "fraction": 0.846185510428101
+          },
+          "high_reuse": {
+            "numerator": 6122,
+            "denominator": 21864,
+            "fraction": 0.28000365898280277
+          },
+          "event_requests": {
+            "numerator": 5181,
+            "denominator": 21864,
+            "fraction": 0.23696487376509331
+          },
+          "event_given_high_reuse": {
+            "numerator": 5181,
+            "denominator": 6122,
+            "fraction": 0.8462920614178373
+          },
+          "event_components": {
+            "numerator": 5181,
+            "denominator": 21864,
+            "fraction": 0.23696487376509331
+          },
+          "short_high_reuse_requests": {
+            "numerator": 2899,
+            "denominator": 21864,
+            "fraction": 0.13259238931577022
+          },
+          "short_event_requests": {
+            "numerator": 2443,
+            "denominator": 21864,
+            "fraction": 0.1117361873399195
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 2443,
+            "denominator": 2899,
+            "fraction": 0.8427043808209728
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        },
+        {
+          "reuse_threshold": 0.75,
+          "window_seconds": 60,
+          "preceding_long_requires_reuse_below_25pct": true,
+          "long_context_all_requests": {
+            "numerator": 21859,
+            "denominator": 21864,
+            "fraction": 0.9997713135748262
+          },
+          "high_reuse": {
+            "numerator": 6122,
+            "denominator": 21864,
+            "fraction": 0.28000365898280277
+          },
+          "event_requests": {
+            "numerator": 6122,
+            "denominator": 21864,
+            "fraction": 0.28000365898280277
+          },
+          "event_given_high_reuse": {
+            "numerator": 6122,
+            "denominator": 6122,
+            "fraction": 1.0
+          },
+          "event_components": {
+            "numerator": 6122,
+            "denominator": 21864,
+            "fraction": 0.28000365898280277
+          },
+          "short_high_reuse_requests": {
+            "numerator": 2899,
+            "denominator": 21864,
+            "fraction": 0.13259238931577022
+          },
+          "short_event_requests": {
+            "numerator": 2899,
+            "denominator": 21864,
+            "fraction": 0.13259238931577022
+          },
+          "short_event_given_short_high_reuse": {
+            "numerator": 2899,
+            "denominator": 2899,
+            "fraction": 1.0
+          },
+          "continuation_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "continuation_event_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "event_given_high_reuse_continuation": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_high_reuse_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "within_component_event_requests": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "event_given_within_component_high_reuse": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        }
+      ],
+      "temporal_thirds": [
+        {
+          "start_s": 0.0,
+          "end_s": 2400.0,
+          "requests": 6493,
+          "historical_reuse": {
+            "count": 6493,
+            "mean": 0.4480566775704885,
+            "minimum": 0.0,
+            "p25": 0.21993127147766323,
+            "p50": 0.3416370106761566,
+            "p75": 0.7580025608194623,
+            "p90": 0.9488372093023256,
+            "p95": 0.970873786407767,
+            "p99": 0.9911504424778761,
+            "maximum": 1.0
+          },
+          "event": {
+            "reuse_threshold": 0.5,
+            "window_seconds": 10,
+            "preceding_long_requires_reuse_below_25pct": false,
+            "long_context_all_requests": {
+              "numerator": 5907,
+              "denominator": 6493,
+              "fraction": 0.9097489604189126
+            },
+            "high_reuse": {
+              "numerator": 2378,
+              "denominator": 6493,
+              "fraction": 0.36624056676420763
+            },
+            "event_requests": {
+              "numerator": 2176,
+              "denominator": 6493,
+              "fraction": 0.3351301401509318
+            },
+            "event_given_high_reuse": {
+              "numerator": 2176,
+              "denominator": 2378,
+              "fraction": 0.9150546677880572
+            },
+            "event_components": {
+              "numerator": 2176,
+              "denominator": 6493,
+              "fraction": 0.3351301401509318
+            },
+            "short_high_reuse_requests": {
+              "numerator": 1105,
+              "denominator": 6493,
+              "fraction": 0.17018327429539504
+            },
+            "short_event_requests": {
+              "numerator": 1010,
+              "denominator": 6493,
+              "fraction": 0.1555521330663792
+            },
+            "short_event_given_short_high_reuse": {
+              "numerator": 1010,
+              "denominator": 1105,
+              "fraction": 0.9140271493212669
+            },
+            "continuation_high_reuse_requests": {
+              "numerator": 0,
+              "denominator": 6493,
+              "fraction": 0.0
+            },
+            "continuation_event_requests": {
+              "numerator": 0,
+              "denominator": 6493,
+              "fraction": 0.0
+            },
+            "event_given_high_reuse_continuation": {
+              "numerator": 0,
+              "denominator": 0,
+              "fraction": null
+            },
+            "within_component_high_reuse_requests": {
+              "numerator": 0,
+              "denominator": 6493,
+              "fraction": 0.0
+            },
+            "within_component_event_requests": {
+              "numerator": 0,
+              "denominator": 6493,
+              "fraction": 0.0
+            },
+            "event_given_within_component_high_reuse": {
+              "numerator": 0,
+              "denominator": 0,
+              "fraction": null
+            }
+          }
+        },
+        {
+          "start_s": 2400.0,
+          "end_s": 4800.0,
+          "requests": 7539,
+          "historical_reuse": {
+            "count": 7539,
+            "mean": 0.4803295022474777,
+            "minimum": 0.0,
+            "p25": 0.2408429503261415,
+            "p50": 0.3416370106761566,
+            "p75": 0.8115942028985508,
+            "p90": 0.9515096065873742,
+            "p95": 0.9714285714285714,
+            "p99": 0.991494532199271,
+            "maximum": 1.0
+          },
+          "event": {
+            "reuse_threshold": 0.5,
+            "window_seconds": 10,
+            "preceding_long_requires_reuse_below_25pct": false,
+            "long_context_all_requests": {
+              "numerator": 7242,
+              "denominator": 7539,
+              "fraction": 0.9606048547552726
+            },
+            "high_reuse": {
+              "numerator": 3001,
+              "denominator": 7539,
+              "fraction": 0.39806340363443427
+            },
+            "event_requests": {
+              "numerator": 2895,
+              "denominator": 7539,
+              "fraction": 0.38400318344608037
+            },
+            "event_given_high_reuse": {
+              "numerator": 2895,
+              "denominator": 3001,
+              "fraction": 0.9646784405198268
+            },
+            "event_components": {
+              "numerator": 2895,
+              "denominator": 7539,
+              "fraction": 0.38400318344608037
+            },
+            "short_high_reuse_requests": {
+              "numerator": 1371,
+              "denominator": 7539,
+              "fraction": 0.18185435734182254
+            },
+            "short_event_requests": {
+              "numerator": 1330,
+              "denominator": 7539,
+              "fraction": 0.1764159702878366
+            },
+            "short_event_given_short_high_reuse": {
+              "numerator": 1330,
+              "denominator": 1371,
+              "fraction": 0.9700948212983224
+            },
+            "continuation_high_reuse_requests": {
+              "numerator": 0,
+              "denominator": 7539,
+              "fraction": 0.0
+            },
+            "continuation_event_requests": {
+              "numerator": 0,
+              "denominator": 7539,
+              "fraction": 0.0
+            },
+            "event_given_high_reuse_continuation": {
+              "numerator": 0,
+              "denominator": 0,
+              "fraction": null
+            },
+            "within_component_high_reuse_requests": {
+              "numerator": 0,
+              "denominator": 7539,
+              "fraction": 0.0
+            },
+            "within_component_event_requests": {
+              "numerator": 0,
+              "denominator": 7539,
+              "fraction": 0.0
+            },
+            "event_given_within_component_high_reuse": {
+              "numerator": 0,
+              "denominator": 0,
+              "fraction": null
+            }
+          }
+        },
+        {
+          "start_s": 4800.0,
+          "end_s": 7200.0,
+          "requests": 7832,
+          "historical_reuse": {
+            "count": 7832,
+            "mean": 0.4852556895899631,
+            "minimum": 0.0,
+            "p25": 0.2644628099173554,
+            "p50": 0.3416370106761566,
+            "p75": 0.8369829683698297,
+            "p90": 0.957983193277311,
+            "p95": 0.9725490196078431,
+            "p99": 0.993103448275862,
+            "maximum": 1.0
+          },
+          "event": {
+            "reuse_threshold": 0.5,
+            "window_seconds": 10,
+            "preceding_long_requires_reuse_below_25pct": false,
+            "long_context_all_requests": {
+              "numerator": 7374,
+              "denominator": 7832,
+              "fraction": 0.9415219611848825
+            },
+            "high_reuse": {
+              "numerator": 3063,
+              "denominator": 7832,
+              "fraction": 0.3910878447395301
+            },
+            "event_requests": {
+              "numerator": 2881,
+              "denominator": 7832,
+              "fraction": 0.36784984678243104
+            },
+            "event_given_high_reuse": {
+              "numerator": 2881,
+              "denominator": 3063,
+              "fraction": 0.940581129611492
+            },
+            "event_components": {
+              "numerator": 2881,
+              "denominator": 7832,
+              "fraction": 0.36784984678243104
+            },
+            "short_high_reuse_requests": {
+              "numerator": 1327,
+              "denominator": 7832,
+              "fraction": 0.16943309499489276
+            },
+            "short_event_requests": {
+              "numerator": 1239,
+              "denominator": 7832,
+              "fraction": 0.15819713993871298
+            },
+            "short_event_given_short_high_reuse": {
+              "numerator": 1239,
+              "denominator": 1327,
+              "fraction": 0.9336850037678975
+            },
+            "continuation_high_reuse_requests": {
+              "numerator": 0,
+              "denominator": 7832,
+              "fraction": 0.0
+            },
+            "continuation_event_requests": {
+              "numerator": 0,
+              "denominator": 7832,
+              "fraction": 0.0
+            },
+            "event_given_high_reuse_continuation": {
+              "numerator": 0,
+              "denominator": 0,
+              "fraction": null
+            },
+            "within_component_high_reuse_requests": {
+              "numerator": 0,
+              "denominator": 7832,
+              "fraction": 0.0
+            },
+            "within_component_event_requests": {
+              "numerator": 0,
+              "denominator": 7832,
+              "fraction": 0.0
+            },
+            "event_given_within_component_high_reuse": {
+              "numerator": 0,
+              "denominator": 0,
+              "fraction": null
+            }
+          }
+        }
+      ],
+      "arrivals": {
+        "interval_start_s": 0,
+        "interval_end_s": 7200,
+        "requests_per_second": 3.0366666666666666,
+        "interarrival_s": {
+          "count": 21863,
+          "mean": 0.3293195810273064,
+          "minimum": 0.0,
+          "p25": 0.0929999999998472,
+          "p50": 0.2239999999999327,
+          "p75": 0.45699999999987995,
+          "p90": 0.7589999999995598,
+          "p95": 0.9980000000000473,
+          "p99": 1.550000000000182,
+          "maximum": 3.699999999999818
+        },
+        "interarrival_coefficient_of_variation": 1.0189527111187682,
+        "bins": {
+          "1": {
+            "full_bin_request_counts": {
+              "count": 7200,
+              "mean": 3.0366666666666666,
+              "minimum": 0,
+              "p25": 2,
+              "p50": 3,
+              "p75": 4,
+              "p90": 5,
+              "p95": 6,
+              "p99": 8,
+              "maximum": 13
+            },
+            "variance_to_mean": 1.0619429198682766,
+            "peak_to_mean": 4.281009879253568,
+            "empty_full_bins": 369
+          },
+          "10": {
+            "full_bin_request_counts": {
+              "count": 720,
+              "mean": 30.366666666666667,
+              "minimum": 15,
+              "p25": 26,
+              "p50": 30,
+              "p75": 35,
+              "p90": 39,
+              "p95": 41,
+              "p99": 45,
+              "maximum": 51
+            },
+            "variance_to_mean": 1.28856567874131,
+            "peak_to_mean": 1.6794731064763995,
+            "empty_full_bins": 0
+          },
+          "60": {
+            "full_bin_request_counts": {
+              "count": 120,
+              "mean": 182.2,
+              "minimum": 138,
+              "p25": 166,
+              "p50": 185,
+              "p75": 198,
+              "p90": 206,
+              "p95": 211,
+              "p99": 229,
+              "maximum": 230
+            },
+            "variance_to_mean": 2.1869374313940724,
+            "peak_to_mean": 1.2623490669593853,
+            "empty_full_bins": 0
+          }
+        }
+      },
+      "pilot_context_limit_audit": {
+        "limit_tokens": 32768,
+        "exceeding_requests": 9,
+        "affected_components": 9,
+        "requests_in_affected_components": 9
+      },
+      "included_requests": {
+        "numerator": 21864,
+        "denominator": 172800,
+        "fraction": 0.12652777777777777
+      },
+      "excluded_requests": 150936,
+      "initial_vs_continuation": {
+        "initial": {
+          "requests": 21864,
+          "components": 21864,
+          "input_tokens": {
+            "count": 21864,
+            "mean": 948.636937431394,
+            "minimum": 20,
+            "p25": 282,
+            "p50": 479,
+            "p75": 1043,
+            "p90": 1861,
+            "p95": 2837,
+            "p99": 7697,
+            "maximum": 59159
+          },
+          "output_tokens": {
+            "count": 21864,
+            "mean": 111.51765459202342,
+            "minimum": 1,
+            "p25": 23,
+            "p50": 46,
+            "p75": 93,
+            "p90": 262,
+            "p95": 464,
+            "p99": 1087,
+            "maximum": 5400
+          },
+          "historical_overlap_at_least_50pct": {
+            "numerator": 8442,
+            "denominator": 21864,
+            "fraction": 0.38611416026344675
+          },
+          "within_component_overlap_at_least_50pct": {
+            "numerator": 0,
+            "denominator": 21864,
+            "fraction": 0.0
+          },
+          "cross_component_overlap_at_least_50pct": {
+            "numerator": 8442,
+            "denominator": 21864,
+            "fraction": 0.38611416026344675
+          }
+        },
+        "continuation": {
+          "requests": 0,
+          "components": 0,
+          "input_tokens": {
+            "count": 0
+          },
+          "output_tokens": {
+            "count": 0
+          },
+          "historical_overlap_at_least_50pct": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "within_component_overlap_at_least_50pct": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          },
+          "cross_component_overlap_at_least_50pct": {
+            "numerator": 0,
+            "denominator": 0,
+            "fraction": null
+          }
+        }
+      },
+      "observed_path_depth": {
+        "count": 21864,
+        "mean": 1,
+        "minimum": 1,
+        "p25": 1,
+        "p50": 1,
+        "p75": 1,
+        "p90": 1,
+        "p95": 1,
+        "p99": 1,
+        "maximum": 1
+      }
+    }
+  },
+  "analysis_wall_seconds": 23.726016249973327
+}

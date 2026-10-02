@@ -1,0 +1,651 @@
+{
+  "source_run": "results/cloudlab-pattern-03/run-009-on",
+  "synthetic": true,
+  "requests": 426,
+  "cache_hit_definition": "cached_tokens / prompt_tokens, measured per request",
+  "client_ttft_definition": "client time to first streamed generated token ID",
+  "pearson": 0.5302289013866803,
+  "server_mean_seconds": {
+    "request_queue_time": 540.5280530400258,
+    "time_to_first_token": 541.4764158608208,
+    "request_prefill_time": 0.8847516562934391
+  },
+  "queue_share_of_server_ttft_pct": 99.82485611690265,
+  "server_ttft_minus_queue_seconds": 0.948362820794955,
+  "children": 374,
+  "children_dispatched_before_parent_completion": 374,
+  "preemption_counter_delta": 14.0,
+  "peak_sampled_waiting": 379,
+  "server_log_samples": [
+    {
+      "line": 178,
+      "log_timestamp": "09-22 19:51:10",
+      "running": 1,
+      "waiting": 30,
+      "kv_usage_pct": 43.8,
+      "minutes_since_first_sample": 0.0
+    },
+    {
+      "line": 220,
+      "log_timestamp": "09-22 19:51:20",
+      "running": 2,
+      "waiting": 71,
+      "kv_usage_pct": 97.5,
+      "minutes_since_first_sample": 0.16666666666666666
+    },
+    {
+      "line": 276,
+      "log_timestamp": "09-22 19:51:30",
+      "running": 0,
+      "waiting": 125,
+      "kv_usage_pct": 0.0,
+      "minutes_since_first_sample": 0.3333333333333333
+    },
+    {
+      "line": 324,
+      "log_timestamp": "09-22 19:51:40",
+      "running": 2,
+      "waiting": 169,
+      "kv_usage_pct": 60.1,
+      "minutes_since_first_sample": 0.5
+    },
+    {
+      "line": 350,
+      "log_timestamp": "09-22 19:51:50",
+      "running": 1,
+      "waiting": 193,
+      "kv_usage_pct": 61.7,
+      "minutes_since_first_sample": 0.6666666666666666
+    },
+    {
+      "line": 373,
+      "log_timestamp": "09-22 19:52:00",
+      "running": 1,
+      "waiting": 212,
+      "kv_usage_pct": 12.5,
+      "minutes_since_first_sample": 0.8333333333333334
+    },
+    {
+      "line": 397,
+      "log_timestamp": "09-22 19:52:10",
+      "running": 1,
+      "waiting": 232,
+      "kv_usage_pct": 26.6,
+      "minutes_since_first_sample": 1.0
+    },
+    {
+      "line": 418,
+      "log_timestamp": "09-22 19:52:20",
+      "running": 1,
+      "waiting": 252,
+      "kv_usage_pct": 57.8,
+      "minutes_since_first_sample": 1.1666666666666667
+    },
+    {
+      "line": 440,
+      "log_timestamp": "09-22 19:52:30",
+      "running": 2,
+      "waiting": 270,
+      "kv_usage_pct": 88.0,
+      "minutes_since_first_sample": 1.3333333333333333
+    },
+    {
+      "line": 462,
+      "log_timestamp": "09-22 19:52:40",
+      "running": 1,
+      "waiting": 290,
+      "kv_usage_pct": 61.3,
+      "minutes_since_first_sample": 1.5
+    },
+    {
+      "line": 482,
+      "log_timestamp": "09-22 19:52:50",
+      "running": 2,
+      "waiting": 307,
+      "kv_usage_pct": 95.2,
+      "minutes_since_first_sample": 1.6666666666666667
+    },
+    {
+      "line": 502,
+      "log_timestamp": "09-22 19:53:00",
+      "running": 2,
+      "waiting": 324,
+      "kv_usage_pct": 98.7,
+      "minutes_since_first_sample": 1.8333333333333333
+    },
+    {
+      "line": 520,
+      "log_timestamp": "09-22 19:53:10",
+      "running": 2,
+      "waiting": 337,
+      "kv_usage_pct": 92.7,
+      "minutes_since_first_sample": 2.0
+    },
+    {
+      "line": 529,
+      "log_timestamp": "09-22 19:53:20",
+      "running": 1,
+      "waiting": 344,
+      "kv_usage_pct": 59.3,
+      "minutes_since_first_sample": 2.1666666666666665
+    },
+    {
+      "line": 539,
+      "log_timestamp": "09-22 19:53:30",
+      "running": 2,
+      "waiting": 351,
+      "kv_usage_pct": 99.9,
+      "minutes_since_first_sample": 2.3333333333333335
+    },
+    {
+      "line": 551,
+      "log_timestamp": "09-22 19:53:40",
+      "running": 2,
+      "waiting": 359,
+      "kv_usage_pct": 51.6,
+      "minutes_since_first_sample": 2.5
+    },
+    {
+      "line": 561,
+      "log_timestamp": "09-22 19:53:50",
+      "running": 1,
+      "waiting": 366,
+      "kv_usage_pct": 52.3,
+      "minutes_since_first_sample": 2.6666666666666665
+    },
+    {
+      "line": 570,
+      "log_timestamp": "09-22 19:54:00",
+      "running": 3,
+      "waiting": 371,
+      "kv_usage_pct": 99.7,
+      "minutes_since_first_sample": 2.8333333333333335
+    },
+    {
+      "line": 576,
+      "log_timestamp": "09-22 19:54:10",
+      "running": 1,
+      "waiting": 372,
+      "kv_usage_pct": 62.9,
+      "minutes_since_first_sample": 3.0
+    },
+    {
+      "line": 585,
+      "log_timestamp": "09-22 19:54:20",
+      "running": 1,
+      "waiting": 379,
+      "kv_usage_pct": 61.3,
+      "minutes_since_first_sample": 3.1666666666666665
+    },
+    {
+      "line": 588,
+      "log_timestamp": "09-22 19:54:30",
+      "running": 1,
+      "waiting": 378,
+      "kv_usage_pct": 39.1,
+      "minutes_since_first_sample": 3.3333333333333335
+    },
+    {
+      "line": 590,
+      "log_timestamp": "09-22 19:54:40",
+      "running": 1,
+      "waiting": 378,
+      "kv_usage_pct": 48.9,
+      "minutes_since_first_sample": 3.5
+    },
+    {
+      "line": 591,
+      "log_timestamp": "09-22 19:54:50",
+      "running": 3,
+      "waiting": 374,
+      "kv_usage_pct": 97.5,
+      "minutes_since_first_sample": 3.6666666666666665
+    },
+    {
+      "line": 592,
+      "log_timestamp": "09-22 19:55:00",
+      "running": 3,
+      "waiting": 370,
+      "kv_usage_pct": 64.8,
+      "minutes_since_first_sample": 3.8333333333333335
+    },
+    {
+      "line": 593,
+      "log_timestamp": "09-22 19:55:10",
+      "running": 3,
+      "waiting": 367,
+      "kv_usage_pct": 88.4,
+      "minutes_since_first_sample": 4.0
+    },
+    {
+      "line": 594,
+      "log_timestamp": "09-22 19:55:20",
+      "running": 2,
+      "waiting": 365,
+      "kv_usage_pct": 90.7,
+      "minutes_since_first_sample": 4.166666666666667
+    },
+    {
+      "line": 595,
+      "log_timestamp": "09-22 19:55:30",
+      "running": 2,
+      "waiting": 361,
+      "kv_usage_pct": 83.5,
+      "minutes_since_first_sample": 4.333333333333333
+    },
+    {
+      "line": 596,
+      "log_timestamp": "09-22 19:55:40",
+      "running": 1,
+      "waiting": 359,
+      "kv_usage_pct": 50.8,
+      "minutes_since_first_sample": 4.5
+    },
+    {
+      "line": 597,
+      "log_timestamp": "09-22 19:55:50",
+      "running": 1,
+      "waiting": 358,
+      "kv_usage_pct": 58.8,
+      "minutes_since_first_sample": 4.666666666666667
+    },
+    {
+      "line": 598,
+      "log_timestamp": "09-22 19:56:00",
+      "running": 1,
+      "waiting": 356,
+      "kv_usage_pct": 64.1,
+      "minutes_since_first_sample": 4.833333333333333
+    },
+    {
+      "line": 599,
+      "log_timestamp": "09-22 19:56:10",
+      "running": 1,
+      "waiting": 355,
+      "kv_usage_pct": 63.8,
+      "minutes_since_first_sample": 5.0
+    },
+    {
+      "line": 600,
+      "log_timestamp": "09-22 19:56:20",
+      "running": 2,
+      "waiting": 352,
+      "kv_usage_pct": 68.7,
+      "minutes_since_first_sample": 5.166666666666667
+    },
+    {
+      "line": 601,
+      "log_timestamp": "09-22 19:56:30",
+      "running": 1,
+      "waiting": 352,
+      "kv_usage_pct": 36.0,
+      "minutes_since_first_sample": 5.333333333333333
+    },
+    {
+      "line": 602,
+      "log_timestamp": "09-22 19:56:40",
+      "running": 1,
+      "waiting": 349,
+      "kv_usage_pct": 63.8,
+      "minutes_since_first_sample": 5.5
+    },
+    {
+      "line": 603,
+      "log_timestamp": "09-22 19:56:50",
+      "running": 2,
+      "waiting": 345,
+      "kv_usage_pct": 97.3,
+      "minutes_since_first_sample": 5.666666666666667
+    },
+    {
+      "line": 604,
+      "log_timestamp": "09-22 19:57:00",
+      "running": 1,
+      "waiting": 343,
+      "kv_usage_pct": 43.8,
+      "minutes_since_first_sample": 5.833333333333333
+    },
+    {
+      "line": 605,
+      "log_timestamp": "09-22 19:57:10",
+      "running": 1,
+      "waiting": 342,
+      "kv_usage_pct": 52.0,
+      "minutes_since_first_sample": 6.0
+    },
+    {
+      "line": 606,
+      "log_timestamp": "09-22 19:57:20",
+      "running": 1,
+      "waiting": 340,
+      "kv_usage_pct": 54.5,
+      "minutes_since_first_sample": 6.166666666666667
+    },
+    {
+      "line": 607,
+      "log_timestamp": "09-22 19:57:30",
+      "running": 1,
+      "waiting": 338,
+      "kv_usage_pct": 56.3,
+      "minutes_since_first_sample": 6.333333333333333
+    },
+    {
+      "line": 608,
+      "log_timestamp": "09-22 19:57:40",
+      "running": 1,
+      "waiting": 337,
+      "kv_usage_pct": 47.4,
+      "minutes_since_first_sample": 6.5
+    },
+    {
+      "line": 609,
+      "log_timestamp": "09-22 19:57:50",
+      "running": 2,
+      "waiting": 335,
+      "kv_usage_pct": 93.8,
+      "minutes_since_first_sample": 6.666666666666667
+    },
+    {
+      "line": 610,
+      "log_timestamp": "09-22 19:58:00",
+      "running": 1,
+      "waiting": 333,
+      "kv_usage_pct": 50.8,
+      "minutes_since_first_sample": 6.833333333333333
+    },
+    {
+      "line": 611,
+      "log_timestamp": "09-22 19:58:10",
+      "running": 1,
+      "waiting": 331,
+      "kv_usage_pct": 25.0,
+      "minutes_since_first_sample": 7.0
+    },
+    {
+      "line": 612,
+      "log_timestamp": "09-22 19:58:20",
+      "running": 1,
+      "waiting": 327,
+      "kv_usage_pct": 39.1,
+      "minutes_since_first_sample": 7.166666666666667
+    },
+    {
+      "line": 613,
+      "log_timestamp": "09-22 19:58:30",
+      "running": 1,
+      "waiting": 326,
+      "kv_usage_pct": 68.8,
+      "minutes_since_first_sample": 7.333333333333333
+    },
+    {
+      "line": 614,
+      "log_timestamp": "09-22 19:58:40",
+      "running": 1,
+      "waiting": 324,
+      "kv_usage_pct": 49.2,
+      "minutes_since_first_sample": 7.5
+    },
+    {
+      "line": 615,
+      "log_timestamp": "09-22 19:58:50",
+      "running": 1,
+      "waiting": 322,
+      "kv_usage_pct": 26.6,
+      "minutes_since_first_sample": 7.666666666666667
+    },
+    {
+      "line": 616,
+      "log_timestamp": "09-22 19:59:00",
+      "running": 2,
+      "waiting": 320,
+      "kv_usage_pct": 86.5,
+      "minutes_since_first_sample": 7.833333333333333
+    },
+    {
+      "line": 617,
+      "log_timestamp": "09-22 19:59:10",
+      "running": 1,
+      "waiting": 318,
+      "kv_usage_pct": 20.3,
+      "minutes_since_first_sample": 8.0
+    },
+    {
+      "line": 618,
+      "log_timestamp": "09-22 19:59:20",
+      "running": 2,
+      "waiting": 316,
+      "kv_usage_pct": 81.3,
+      "minutes_since_first_sample": 8.166666666666666
+    },
+    {
+      "line": 619,
+      "log_timestamp": "09-22 19:59:30",
+      "running": 1,
+      "waiting": 315,
+      "kv_usage_pct": 44.0,
+      "minutes_since_first_sample": 8.333333333333334
+    },
+    {
+      "line": 620,
+      "log_timestamp": "09-22 19:59:40",
+      "running": 1,
+      "waiting": 313,
+      "kv_usage_pct": 37.5,
+      "minutes_since_first_sample": 8.5
+    },
+    {
+      "line": 621,
+      "log_timestamp": "09-22 19:59:50",
+      "running": 1,
+      "waiting": 310,
+      "kv_usage_pct": 51.6,
+      "minutes_since_first_sample": 8.666666666666666
+    },
+    {
+      "line": 622,
+      "log_timestamp": "09-22 20:00:00",
+      "running": 1,
+      "waiting": 306,
+      "kv_usage_pct": 60.1,
+      "minutes_since_first_sample": 8.833333333333334
+    },
+    {
+      "line": 623,
+      "log_timestamp": "09-22 20:00:10",
+      "running": 1,
+      "waiting": 305,
+      "kv_usage_pct": 52.9,
+      "minutes_since_first_sample": 9.0
+    },
+    {
+      "line": 624,
+      "log_timestamp": "09-22 20:00:20",
+      "running": 1,
+      "waiting": 303,
+      "kv_usage_pct": 32.8,
+      "minutes_since_first_sample": 9.166666666666666
+    },
+    {
+      "line": 625,
+      "log_timestamp": "09-22 20:00:30",
+      "running": 1,
+      "waiting": 302,
+      "kv_usage_pct": 73.6,
+      "minutes_since_first_sample": 9.333333333333334
+    },
+    {
+      "line": 626,
+      "log_timestamp": "09-22 20:00:40",
+      "running": 1,
+      "waiting": 300,
+      "kv_usage_pct": 32.8,
+      "minutes_since_first_sample": 9.5
+    },
+    {
+      "line": 627,
+      "log_timestamp": "09-22 20:00:50",
+      "running": 1,
+      "waiting": 299,
+      "kv_usage_pct": 54.3,
+      "minutes_since_first_sample": 9.666666666666666
+    },
+    {
+      "line": 628,
+      "log_timestamp": "09-22 20:01:00",
+      "running": 1,
+      "waiting": 298,
+      "kv_usage_pct": 62.2,
+      "minutes_since_first_sample": 9.833333333333334
+    },
+    {
+      "line": 629,
+      "log_timestamp": "09-22 20:01:10",
+      "running": 1,
+      "waiting": 296,
+      "kv_usage_pct": 18.8,
+      "minutes_since_first_sample": 10.0
+    },
+    {
+      "line": 630,
+      "log_timestamp": "09-22 20:01:20",
+      "running": 1,
+      "waiting": 293,
+      "kv_usage_pct": 59.1,
+      "minutes_since_first_sample": 10.166666666666666
+    },
+    {
+      "line": 631,
+      "log_timestamp": "09-22 20:01:30",
+      "running": 3,
+      "waiting": 288,
+      "kv_usage_pct": 57.9,
+      "minutes_since_first_sample": 10.333333333333334
+    },
+    {
+      "line": 632,
+      "log_timestamp": "09-22 20:01:40",
+      "running": 2,
+      "waiting": 286,
+      "kv_usage_pct": 100.0,
+      "minutes_since_first_sample": 10.5
+    },
+    {
+      "line": 633,
+      "log_timestamp": "09-22 20:01:50",
+      "running": 1,
+      "waiting": 284,
+      "kv_usage_pct": 75.6,
+      "minutes_since_first_sample": 10.666666666666666
+    },
+    {
+      "line": 634,
+      "log_timestamp": "09-22 20:02:00",
+      "running": 1,
+      "waiting": 280,
+      "kv_usage_pct": 60.6,
+      "minutes_since_first_sample": 10.833333333333334
+    },
+    {
+      "line": 635,
+      "log_timestamp": "09-22 20:02:10",
+      "running": 2,
+      "waiting": 277,
+      "kv_usage_pct": 56.3,
+      "minutes_since_first_sample": 11.0
+    },
+    {
+      "line": 636,
+      "log_timestamp": "09-22 20:02:20",
+      "running": 2,
+      "waiting": 268,
+      "kv_usage_pct": 66.8,
+      "minutes_since_first_sample": 11.166666666666666
+    },
+    {
+      "line": 637,
+      "log_timestamp": "09-22 20:02:30",
+      "running": 1,
+      "waiting": 265,
+      "kv_usage_pct": 55.9,
+      "minutes_since_first_sample": 11.333333333333334
+    },
+    {
+      "line": 638,
+      "log_timestamp": "09-22 20:02:40",
+      "running": 2,
+      "waiting": 259,
+      "kv_usage_pct": 99.4,
+      "minutes_since_first_sample": 11.5
+    },
+    {
+      "line": 639,
+      "log_timestamp": "09-22 20:02:50",
+      "running": 1,
+      "waiting": 253,
+      "kv_usage_pct": 26.6,
+      "minutes_since_first_sample": 11.666666666666666
+    },
+    {
+      "line": 640,
+      "log_timestamp": "09-22 20:03:00",
+      "running": 1,
+      "waiting": 240,
+      "kv_usage_pct": 54.5,
+      "minutes_since_first_sample": 11.833333333333334
+    },
+    {
+      "line": 641,
+      "log_timestamp": "09-22 20:03:10",
+      "running": 1,
+      "waiting": 236,
+      "kv_usage_pct": 45.3,
+      "minutes_since_first_sample": 12.0
+    },
+    {
+      "line": 642,
+      "log_timestamp": "09-22 20:03:20",
+      "running": 1,
+      "waiting": 230,
+      "kv_usage_pct": 47.7,
+      "minutes_since_first_sample": 12.166666666666666
+    },
+    {
+      "line": 643,
+      "log_timestamp": "09-22 20:03:30",
+      "running": 10,
+      "waiting": 207,
+      "kv_usage_pct": 97.9,
+      "minutes_since_first_sample": 12.333333333333334
+    },
+    {
+      "line": 644,
+      "log_timestamp": "09-22 20:03:40",
+      "running": 16,
+      "waiting": 159,
+      "kv_usage_pct": 77.7,
+      "minutes_since_first_sample": 12.5
+    },
+    {
+      "line": 645,
+      "log_timestamp": "09-22 20:03:50",
+      "running": 16,
+      "waiting": 90,
+      "kv_usage_pct": 96.8,
+      "minutes_since_first_sample": 12.666666666666666
+    },
+    {
+      "line": 646,
+      "log_timestamp": "09-22 20:04:00",
+      "running": 16,
+      "waiting": 28,
+      "kv_usage_pct": 81.9,
+      "minutes_since_first_sample": 12.833333333333334
+    }
+  ],
+  "input_sha256": {
+    "results/cloudlab-pattern-03/run-009-on/requests.jsonl": "a485cff01d8650903aa82a0213a6929bcabf8b0520138053aafea8746ca445d5",
+    "results/cloudlab-pattern-03/run-009-on/metrics-before.txt": "1300f200abe7550321d91a9a68ff4957e65a11edd89264723e478596742cd2fd",
+    "results/cloudlab-pattern-03/run-009-on/metrics-after.txt": "3d83750359c2c88080b1830898469c0f066e1075c71814557e90f549b7add4ca",
+    "results/cloudlab-pattern-03/run-009-on/server.log": "6705aa12ba4979d566222bbf3deacdc2b9b9a94c3c23d1d5b4e7bbc3146f63e5"
+  }
+}

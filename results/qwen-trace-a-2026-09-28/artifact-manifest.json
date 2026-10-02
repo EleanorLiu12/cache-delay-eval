@@ -1,0 +1,92 @@
+{
+  "kind": "CPU structural analysis of unmodified published Trace A",
+  "finalized_at_utc": "2026-09-28T18:53:30.102811+00:00",
+  "repository_head": "a0108905f27a53e99d7cbd595c11b05bf1a84859",
+  "source_manifest": "../../data/qwen-bailian/5f7439c51ec248a0c585f7d90a41a6f57773b912/manifest.json",
+  "files": {
+    "analysis.json": {
+      "bytes": 128582,
+      "sha256": "6ff0d000de9e532921337f8feecd6b519a81e9efcacbae18eb533b1958292034"
+    },
+    "arrival-bins-all_types.json": {
+      "bytes": 1504068,
+      "sha256": "0262dd8ccb17b4a264520592cf34b06c69c2f31bd4a24957136d79d10f8c97a7"
+    },
+    "arrival-bins-observed_root_text.json": {
+      "bytes": 1497519,
+      "sha256": "48e719fc641fbfa616ab4c47d87007be66fe27ab67333a51ab2abb4865954a14"
+    },
+    "code/analyze_qwen_trace.py": {
+      "bytes": 23144,
+      "sha256": "0b2195c6f611c7e4c12991f45e4e7ed5dd8b419c79d939e9d936ed8dc92f8d29"
+    },
+    "code/fetch_qwen_trace_a.py": {
+      "bytes": 3407,
+      "sha256": "67510868a35a97bfd116c929abdff559e4215a323cde6b149a4fd0728fdf2503"
+    },
+    "code/plot_qwen_trace.py": {
+      "bytes": 9748,
+      "sha256": "a9194c6372d4867c73995a0cad0b6872605278e33acd5e6e92d4bd0bfc5f9dac"
+    },
+    "code/test_qwen_analysis.py": {
+      "bytes": 4452,
+      "sha256": "9dc1b2bb6558d52affb0dea0f8f71a53090a78d013384c2ee92ad8d062892a8e"
+    },
+    "figures/qwen-trace-a-structure.png": {
+      "bytes": 477410,
+      "sha256": "a54ef99a99cc5d0e9dcb5486a51f1050e2c4d57bae3711a48b6358b4fbbbf3c6"
+    },
+    "figures/qwen-trace-a-structure.svg": {
+      "bytes": 221974,
+      "sha256": "6a552fec366b38918bdca1b62a9acc3bdd55399e9e4f5a65e9c0494bc6705478"
+    },
+    "report.md": {
+      "bytes": 14722,
+      "sha256": "f8417a12b2fb403707cae0eb90dc3e69b06a3f8973f822bea4133d08916cd9ce"
+    },
+    "requests-all_types.jsonl": {
+      "bytes": 30337993,
+      "sha256": "e7adf11f0b3813834000351a55d3af560db82bda1e81967c9dc76d72e5c41c49"
+    },
+    "requests-observed_root_text.jsonl": {
+      "bytes": 22402970,
+      "sha256": "c71399421f5301bb2d52c12f669538cb16dfa4df426ca190616d4ae874e8d8bc"
+    }
+  },
+  "code_sources": {
+    "src/cache_delay_eval/analyze_qwen_trace.py": {
+      "bytes": 23144,
+      "sha256": "0b2195c6f611c7e4c12991f45e4e7ed5dd8b419c79d939e9d936ed8dc92f8d29"
+    },
+    "scripts/fetch_qwen_trace_a.py": {
+      "bytes": 3407,
+      "sha256": "67510868a35a97bfd116c929abdff559e4215a323cde6b149a4fd0728fdf2503"
+    },
+    "scripts/plot_qwen_trace.py": {
+      "bytes": 9748,
+      "sha256": "a9194c6372d4867c73995a0cad0b6872605278e33acd5e6e92d4bd0bfc5f9dac"
+    },
+    "tests/test_qwen_analysis.py": {
+      "bytes": 4452,
+      "sha256": "9dc1b2bb6558d52affb0dea0f8f71a53090a78d013384c2ee92ad8d062892a8e"
+    }
+  },
+  "environment": {
+    "python": "3.13.0",
+    "system": "Darwin",
+    "machine": "arm64",
+    "gpu_used": false
+  },
+  "validation": {
+    "unit_test_command": ".venv/bin/python -m unittest discover -s tests -v",
+    "unit_tests_passed": 46,
+    "independent_audit": "Dataset counts, parent lineage, block counts, and source SHA-256 independently checked; prefix search also compared against exhaustive randomized cases.",
+    "figure_review": "Rendered PNG inspected for labels, layout and numerical agreement."
+  },
+  "limitations": [
+    "No model inference or cache simulation.",
+    "No TTFT, completion time or GPU queue observed.",
+    "Observed input history is not finite-cache residency.",
+    "No inference of single-GPU co-location from cluster arrivals."
+  ]
+}

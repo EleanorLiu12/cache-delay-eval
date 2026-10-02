@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "report_english": true,
+  "local_links_valid": true,
+  "source_hashes_verified": 10,
+  "structural_values_match_independent_validation": true,
+  "oracle_points_match_original_results": true,
+  "scope": "Presentation only; no new performance or prevalence measurements",
+  "report_sha256": "ab68535cd2f467837a246d3103847aa7d0a7d2d02addda066ea64ef0182394fa"
+}

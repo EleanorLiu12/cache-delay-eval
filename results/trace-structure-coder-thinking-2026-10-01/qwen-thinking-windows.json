@@ -1,0 +1,562 @@
+{
+  "thinking": [
+    {
+      "index": 0,
+      "start_s": "0.0",
+      "end_s": "300.0",
+      "requests": 1122,
+      "eligible_roots": 701,
+      "long_roots": 84,
+      "short_chains": 31,
+      "match": true,
+      "witness": {
+        "long_root": "7",
+        "long_root_line": 8,
+        "long_root_tokens": 8087,
+        "long_root_time_s": "0.184",
+        "long_observed_requests": 2,
+        "short_root": "2",
+        "short_root_line": 3,
+        "short_root_tokens": 293,
+        "short_sequence": [
+          "2",
+          "42",
+          "48",
+          "175",
+          "186",
+          "205"
+        ],
+        "short_sequence_lines": [
+          3,
+          43,
+          49,
+          176,
+          187,
+          206
+        ],
+        "later_continuations": [
+          {
+            "parent": "42",
+            "child": "48",
+            "child_line": 49,
+            "time_s": "10.972",
+            "retained_parent_tokens": 576,
+            "child_tokens": 676
+          },
+          {
+            "parent": "175",
+            "child": "186",
+            "child_line": 187,
+            "time_s": "37.31",
+            "retained_parent_tokens": 1440,
+            "child_tokens": 1557
+          }
+        ]
+      }
+    },
+    {
+      "index": 1,
+      "start_s": "300.0",
+      "end_s": "600.0",
+      "requests": 699,
+      "eligible_roots": 484,
+      "long_roots": 54,
+      "short_chains": 3,
+      "match": true,
+      "witness": {
+        "long_root": "1142",
+        "long_root_line": 1143,
+        "long_root_tokens": 14743,
+        "long_root_time_s": "301.866",
+        "long_observed_requests": 1,
+        "short_root": "1153",
+        "short_root_line": 1154,
+        "short_root_tokens": 308,
+        "short_sequence": [
+          "1153",
+          "1277",
+          "1389",
+          "1494"
+        ],
+        "short_sequence_lines": [
+          1154,
+          1278,
+          1390,
+          1495
+        ],
+        "later_continuations": [
+          {
+            "parent": "1277",
+            "child": "1389",
+            "child_line": 1390,
+            "time_s": "363.436",
+            "retained_parent_tokens": 1664,
+            "child_tokens": 2841
+          },
+          {
+            "parent": "1389",
+            "child": "1494",
+            "child_line": 1495,
+            "time_s": "392.216",
+            "retained_parent_tokens": 2832,
+            "child_tokens": 3842
+          }
+        ]
+      }
+    },
+    {
+      "index": 2,
+      "start_s": "600.0",
+      "end_s": "900.0",
+      "requests": 219,
+      "eligible_roots": 203,
+      "long_roots": 56,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 3,
+      "start_s": "900.0",
+      "end_s": "1200.0",
+      "requests": 243,
+      "eligible_roots": 223,
+      "long_roots": 52,
+      "short_chains": 1,
+      "match": true,
+      "witness": {
+        "long_root": "2041",
+        "long_root_line": 2042,
+        "long_root_tokens": 5204,
+        "long_root_time_s": "901.653",
+        "long_observed_requests": 1,
+        "short_root": "2119",
+        "short_root_line": 2120,
+        "short_root_tokens": 1055,
+        "short_sequence": [
+          "2119",
+          "2169",
+          "2174",
+          "2262"
+        ],
+        "short_sequence_lines": [
+          2120,
+          2170,
+          2175,
+          2263
+        ],
+        "later_continuations": [
+          {
+            "parent": "2169",
+            "child": "2174",
+            "child_line": 2175,
+            "time_s": "1076.414",
+            "retained_parent_tokens": 3120,
+            "child_tokens": 3480
+          },
+          {
+            "parent": "2174",
+            "child": "2262",
+            "child_line": 2263,
+            "time_s": "1173.327",
+            "retained_parent_tokens": 3472,
+            "child_tokens": 5717
+          }
+        ]
+      }
+    },
+    {
+      "index": 4,
+      "start_s": "1200.0",
+      "end_s": "1500.0",
+      "requests": 241,
+      "eligible_roots": 224,
+      "long_roots": 42,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 5,
+      "start_s": "1500.0",
+      "end_s": "1800.0",
+      "requests": 184,
+      "eligible_roots": 162,
+      "long_roots": 39,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 6,
+      "start_s": "1800.0",
+      "end_s": "2100.0",
+      "requests": 457,
+      "eligible_roots": 422,
+      "long_roots": 67,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 7,
+      "start_s": "2100.0",
+      "end_s": "2400.0",
+      "requests": 465,
+      "eligible_roots": 449,
+      "long_roots": 102,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 8,
+      "start_s": "2400.0",
+      "end_s": "2700.0",
+      "requests": 430,
+      "eligible_roots": 407,
+      "long_roots": 49,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 9,
+      "start_s": "2700.0",
+      "end_s": "3000.0",
+      "requests": 448,
+      "eligible_roots": 436,
+      "long_roots": 71,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 10,
+      "start_s": "3000.0",
+      "end_s": "3300.0",
+      "requests": 557,
+      "eligible_roots": 509,
+      "long_roots": 85,
+      "short_chains": 1,
+      "match": true,
+      "witness": {
+        "long_root": "4526",
+        "long_root_line": 4527,
+        "long_root_tokens": 9820,
+        "long_root_time_s": "3015.361",
+        "long_observed_requests": 1,
+        "short_root": "4717",
+        "short_root_line": 4718,
+        "short_root_tokens": 1778,
+        "short_sequence": [
+          "4717",
+          "4762",
+          "4812",
+          "4856",
+          "4992",
+          "5038"
+        ],
+        "short_sequence_lines": [
+          4718,
+          4763,
+          4813,
+          4857,
+          4993,
+          5039
+        ],
+        "later_continuations": [
+          {
+            "parent": "4717",
+            "child": "4762",
+            "child_line": 4763,
+            "time_s": "3146.559",
+            "retained_parent_tokens": 1776,
+            "child_tokens": 2411
+          },
+          {
+            "parent": "4812",
+            "child": "4856",
+            "child_line": 4857,
+            "time_s": "3194.476",
+            "retained_parent_tokens": 5408,
+            "child_tokens": 6170
+          }
+        ]
+      }
+    },
+    {
+      "index": 11,
+      "start_s": "3300.0",
+      "end_s": "3600.0",
+      "requests": 519,
+      "eligible_roots": 485,
+      "long_roots": 45,
+      "short_chains": 1,
+      "match": true,
+      "witness": {
+        "long_root": "5069",
+        "long_root_line": 5070,
+        "long_root_tokens": 50925,
+        "long_root_time_s": "3303.262",
+        "long_observed_requests": 1,
+        "short_root": "5352",
+        "short_root_line": 5353,
+        "short_root_tokens": 1789,
+        "short_sequence": [
+          "5352",
+          "5464",
+          "5508",
+          "5552"
+        ],
+        "short_sequence_lines": [
+          5353,
+          5465,
+          5509,
+          5553
+        ],
+        "later_continuations": [
+          {
+            "parent": "5464",
+            "child": "5508",
+            "child_line": 5509,
+            "time_s": "3556.618",
+            "retained_parent_tokens": 7616,
+            "child_tokens": 7771
+          },
+          {
+            "parent": "5508",
+            "child": "5552",
+            "child_line": 5553,
+            "time_s": "3583.012",
+            "retained_parent_tokens": 7760,
+            "child_tokens": 10025
+          }
+        ]
+      }
+    },
+    {
+      "index": 12,
+      "start_s": "3600.0",
+      "end_s": "3900.0",
+      "requests": 549,
+      "eligible_roots": 505,
+      "long_roots": 126,
+      "short_chains": 1,
+      "match": true,
+      "witness": {
+        "long_root": "5606",
+        "long_root_line": 5607,
+        "long_root_tokens": 16870,
+        "long_root_time_s": "3618.283",
+        "long_observed_requests": 1,
+        "short_root": "6007",
+        "short_root_line": 6008,
+        "short_root_tokens": 632,
+        "short_sequence": [
+          "6007",
+          "6031",
+          "6039",
+          "6056"
+        ],
+        "short_sequence_lines": [
+          6008,
+          6032,
+          6040,
+          6057
+        ],
+        "later_continuations": [
+          {
+            "parent": "6007",
+            "child": "6031",
+            "child_line": 6032,
+            "time_s": "3853.448",
+            "retained_parent_tokens": 624,
+            "child_tokens": 754
+          },
+          {
+            "parent": "6031",
+            "child": "6039",
+            "child_line": 6040,
+            "time_s": "3856.145",
+            "retained_parent_tokens": 752,
+            "child_tokens": 876
+          }
+        ]
+      }
+    },
+    {
+      "index": 13,
+      "start_s": "3900.0",
+      "end_s": "4200.0",
+      "requests": 616,
+      "eligible_roots": 581,
+      "long_roots": 130,
+      "short_chains": 1,
+      "match": true,
+      "witness": {
+        "long_root": "6133",
+        "long_root_line": 6134,
+        "long_root_tokens": 10235,
+        "long_root_time_s": "3902.28",
+        "long_observed_requests": 1,
+        "short_root": "6422",
+        "short_root_line": 6423,
+        "short_root_tokens": 899,
+        "short_sequence": [
+          "6422",
+          "6445",
+          "6462",
+          "6497"
+        ],
+        "short_sequence_lines": [
+          6423,
+          6446,
+          6463,
+          6498
+        ],
+        "later_continuations": [
+          {
+            "parent": "6445",
+            "child": "6462",
+            "child_line": 6463,
+            "time_s": "4046.856",
+            "retained_parent_tokens": 3152,
+            "child_tokens": 5803
+          },
+          {
+            "parent": "6462",
+            "child": "6497",
+            "child_line": 6498,
+            "time_s": "4065.531",
+            "retained_parent_tokens": 5792,
+            "child_tokens": 8563
+          }
+        ]
+      }
+    },
+    {
+      "index": 14,
+      "start_s": "4200.0",
+      "end_s": "4500.0",
+      "requests": 635,
+      "eligible_roots": 613,
+      "long_roots": 181,
+      "short_chains": 1,
+      "match": false
+    },
+    {
+      "index": 15,
+      "start_s": "4500.0",
+      "end_s": "4800.0",
+      "requests": 683,
+      "eligible_roots": 655,
+      "long_roots": 225,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 16,
+      "start_s": "4800.0",
+      "end_s": "5100.0",
+      "requests": 484,
+      "eligible_roots": 459,
+      "long_roots": 181,
+      "short_chains": 1,
+      "match": true,
+      "witness": {
+        "long_root": "8068",
+        "long_root_line": 8069,
+        "long_root_tokens": 6721,
+        "long_root_time_s": "4801.176",
+        "long_observed_requests": 1,
+        "short_root": "8404",
+        "short_root_line": 8405,
+        "short_root_tokens": 884,
+        "short_sequence": [
+          "8404",
+          "8410",
+          "8503",
+          "8512"
+        ],
+        "short_sequence_lines": [
+          8405,
+          8411,
+          8504,
+          8513
+        ],
+        "later_continuations": [
+          {
+            "parent": "8410",
+            "child": "8503",
+            "child_line": 8504,
+            "time_s": "5065.755",
+            "retained_parent_tokens": 3456,
+            "child_tokens": 3653
+          },
+          {
+            "parent": "8503",
+            "child": "8512",
+            "child_line": 8513,
+            "time_s": "5069.975",
+            "retained_parent_tokens": 3648,
+            "child_tokens": 4047
+          }
+        ]
+      }
+    },
+    {
+      "index": 17,
+      "start_s": "5100.0",
+      "end_s": "5400.0",
+      "requests": 429,
+      "eligible_roots": 405,
+      "long_roots": 208,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 18,
+      "start_s": "5400.0",
+      "end_s": "5700.0",
+      "requests": 358,
+      "eligible_roots": 318,
+      "long_roots": 154,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 19,
+      "start_s": "5700.0",
+      "end_s": "6000.0",
+      "requests": 305,
+      "eligible_roots": 275,
+      "long_roots": 56,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 20,
+      "start_s": "6000.0",
+      "end_s": "6300.0",
+      "requests": 291,
+      "eligible_roots": 271,
+      "long_roots": 54,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 21,
+      "start_s": "6300.0",
+      "end_s": "6600.0",
+      "requests": 305,
+      "eligible_roots": 286,
+      "long_roots": 54,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 22,
+      "start_s": "6600.0",
+      "end_s": "6900.0",
+      "requests": 325,
+      "eligible_roots": 305,
+      "long_roots": 58,
+      "short_chains": 0,
+      "match": false
+    }
+  ]
+}

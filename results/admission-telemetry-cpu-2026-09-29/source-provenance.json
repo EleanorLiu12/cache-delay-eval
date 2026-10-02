@@ -1,0 +1,86 @@
+{
+  "tag": "v0.28.0",
+  "commit": "2cf0a6915ce544dc493a0990f2ea38d81601128a",
+  "fetched_utc": "2026-09-29T15:12:26.026201+00:00",
+  "transport": "curl HTTPS certificate verification enabled",
+  "files": [
+    {
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/2cf0a6915ce544dc493a0990f2ea38d81601128a/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357
+    },
+    {
+      "path": "vllm/config/scheduler.py",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/2cf0a6915ce544dc493a0990f2ea38d81601128a/vllm/config/scheduler.py",
+      "sha256": "3cf5d41a5d662ab0eada6f3128e2538abc0a250d6aef82acab7df7dd84e498bc",
+      "bytes": 12302
+    },
+    {
+      "path": "vllm/entrypoints/generate/base/serving.py",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/2cf0a6915ce544dc493a0990f2ea38d81601128a/vllm/entrypoints/generate/base/serving.py",
+      "sha256": "09b0237bd37c7dd719ed04e5b447efbb54941e0c19825e62138c8f6db4d3064e",
+      "bytes": 12673
+    },
+    {
+      "path": "vllm/entrypoints/openai/chat_completion/serving.py",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/2cf0a6915ce544dc493a0990f2ea38d81601128a/vllm/entrypoints/openai/chat_completion/serving.py",
+      "sha256": "a2440b6b76ad87de86bcf6fc7061ad5d02ab67c1c3c89ca7de3eeb29aa12aa2f",
+      "bytes": 54837
+    },
+    {
+      "path": "vllm/v1/core/block_pool.py",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/2cf0a6915ce544dc493a0990f2ea38d81601128a/vllm/v1/core/block_pool.py",
+      "sha256": "ddee56dccb2208411b3a035918e917ce8f56a9858471e9ca12b420d5d79bc69c",
+      "bytes": 33243
+    },
+    {
+      "path": "vllm/v1/core/kv_cache_manager.py",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/2cf0a6915ce544dc493a0990f2ea38d81601128a/vllm/v1/core/kv_cache_manager.py",
+      "sha256": "2d20c3d98845cfd8d88a2f66b8fc6402ea1fcfbee16879d2364a4a9e45b8fa47",
+      "bytes": 38949
+    },
+    {
+      "path": "vllm/v1/core/sched/request_queue.py",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/2cf0a6915ce544dc493a0990f2ea38d81601128a/vllm/v1/core/sched/request_queue.py",
+      "sha256": "4b8d938e5fb8152fe61030b8aa991f983fcac9a405c37ed8908045e05e82ae5e",
+      "bytes": 6989
+    },
+    {
+      "path": "vllm/v1/core/sched/scheduler.py",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/2cf0a6915ce544dc493a0990f2ea38d81601128a/vllm/v1/core/sched/scheduler.py",
+      "sha256": "4b79ab760c3864af6838d555c01335deea3aac97c9be2be415fa0e5dab32f07e",
+      "bytes": 141223
+    },
+    {
+      "path": "vllm/v1/engine/async_llm.py",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/2cf0a6915ce544dc493a0990f2ea38d81601128a/vllm/v1/engine/async_llm.py",
+      "sha256": "bceed0b3f5f0c834fef79525f2462a092f082390f0070526280abc95945837dd",
+      "bytes": 47095
+    },
+    {
+      "path": "vllm/v1/engine/input_processor.py",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/2cf0a6915ce544dc493a0990f2ea38d81601128a/vllm/v1/engine/input_processor.py",
+      "sha256": "f9a7946a16acc2374ff2bdfc22f212cb43461d9ef4d99c5e19a536339f11212f",
+      "bytes": 22200
+    },
+    {
+      "path": "vllm/v1/engine/parallel_sampling.py",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/2cf0a6915ce544dc493a0990f2ea38d81601128a/vllm/v1/engine/parallel_sampling.py",
+      "sha256": "bf3f0a3c6640aaf706d1b6f7ec3a8e09a970f3dd9e7e96fa6a901779ea84f61d",
+      "bytes": 5481
+    },
+    {
+      "path": "vllm/entrypoints/openai/completion/serving.py",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/2cf0a6915ce544dc493a0990f2ea38d81601128a/vllm/entrypoints/openai/completion/serving.py",
+      "sha256": "c4348ccaf254e4a6b729f9c452aa02f899df64a1fb6d3ab7b7dde199f53dff40",
+      "bytes": 29949
+    },
+    {
+      "path": "vllm/entrypoints/serve/engine/serving.py",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/2cf0a6915ce544dc493a0990f2ea38d81601128a/vllm/entrypoints/serve/engine/serving.py",
+      "sha256": "623628204bc479dbe464c0902d52c7b3d2f834a61227b49ab4c42f367f91f559",
+      "bytes": 7254
+    }
+  ]
+}

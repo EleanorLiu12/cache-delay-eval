@@ -1,0 +1,16 @@
+{
+  "input_sha256": "b959eb1d319b30de57c08264f97ba1d73cb7ace76af066ce6aefd076ac2b411c",
+  "script_sha256": "d442a44c8db76090f62bad32a9b727ff4cf4f42b457bc8bcf4e9d81156ade106",
+  "pairs_checked": 19900,
+  "pairs_with_shared_leading_messages": [
+    {
+      "left": "shard00000-row59150",
+      "right": "shard00000-row27806",
+      "shared_leading_messages": 1,
+      "shared_complete_exchanges": 0,
+      "shared_original_turn_ids": []
+    }
+  ],
+  "pairs_with_shared_complete_exchange": 0,
+  "interpretation": "A shared first user message alone can be a repeated prompt from distinct source exchanges. Preserve it as observed prefix sharing, without merging conversations."
+}

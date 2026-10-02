@@ -1,0 +1,474 @@
+{
+  "planned_requests": 153,
+  "recorded_requests": 153,
+  "submitted_requests": 153,
+  "status_counts": {
+    "ok": 153,
+    "error": 0,
+    "blocked": 0,
+    "context_overflow": 0,
+    "cancelled": 0
+  },
+  "parent_dependency_violations": [],
+  "late_dispatches": 0,
+  "missing_cache_usage": 0,
+  "completed_sessions": 64,
+  "sessions": [
+    {
+      "session_id": "shard00000-row39667",
+      "planned_turns": 1,
+      "completed": true,
+      "completion_s": 0.011900292010977864,
+      "session_latency_s": 0.011900292010977864
+    },
+    {
+      "session_id": "shard00000-row52341",
+      "planned_turns": 1,
+      "completed": true,
+      "completion_s": 0.027213375084102154,
+      "session_latency_s": 0.025213375084102152
+    },
+    {
+      "session_id": "shard00000-row21766",
+      "planned_turns": 1,
+      "completed": true,
+      "completion_s": 0.013887583976611495,
+      "session_latency_s": 0.009887583976611495
+    },
+    {
+      "session_id": "shard00000-row55064",
+      "planned_turns": 1,
+      "completed": true,
+      "completion_s": 0.017947333864867687,
+      "session_latency_s": 0.011947333864867687
+    },
+    {
+      "session_id": "shard00000-row20217",
+      "planned_turns": 1,
+      "completed": true,
+      "completion_s": 0.019408874912187457,
+      "session_latency_s": 0.011408874912187457
+    },
+    {
+      "session_id": "shard00000-row14374",
+      "planned_turns": 1,
+      "completed": true,
+      "completion_s": 0.020169249968603253,
+      "session_latency_s": 0.010169249968603253
+    },
+    {
+      "session_id": "shard00000-row45471",
+      "planned_turns": 1,
+      "completed": true,
+      "completion_s": 0.023263833951205015,
+      "session_latency_s": 0.011263833951205015
+    },
+    {
+      "session_id": "shard00000-row17210",
+      "planned_turns": 1,
+      "completed": true,
+      "completion_s": 0.027979624923318624,
+      "session_latency_s": 0.013979624923318624
+    },
+    {
+      "session_id": "shard00000-row25064",
+      "planned_turns": 1,
+      "completed": true,
+      "completion_s": 0.029531874926760793,
+      "session_latency_s": 0.013531874926760792
+    },
+    {
+      "session_id": "shard00000-row03401",
+      "planned_turns": 1,
+      "completed": true,
+      "completion_s": 0.0284985420294106,
+      "session_latency_s": 0.010498542029410599
+    },
+    {
+      "session_id": "shard00000-row24526",
+      "planned_turns": 1,
+      "completed": true,
+      "completion_s": 0.030022500082850456,
+      "session_latency_s": 0.010022500082850456
+    },
+    {
+      "session_id": "shard00000-row31933",
+      "planned_turns": 1,
+      "completed": true,
+      "completion_s": 0.03254870907403529,
+      "session_latency_s": 0.010548709074035288
+    },
+    {
+      "session_id": "shard00000-row46442",
+      "planned_turns": 1,
+      "completed": true,
+      "completion_s": 0.03400945896282792,
+      "session_latency_s": 0.01000945896282792
+    },
+    {
+      "session_id": "shard00000-row44082",
+      "planned_turns": 4,
+      "completed": true,
+      "completion_s": 0.07546045887283981,
+      "session_latency_s": 0.049460458872839806
+    },
+    {
+      "session_id": "shard00000-row45887",
+      "planned_turns": 8,
+      "completed": true,
+      "completion_s": 0.1333787920884788,
+      "session_latency_s": 0.1053787920884788
+    },
+    {
+      "session_id": "shard00000-row02296",
+      "planned_turns": 3,
+      "completed": true,
+      "completion_s": 0.06421612505801022,
+      "session_latency_s": 0.03421612505801022
+    },
+    {
+      "session_id": "shard00000-row58057",
+      "planned_turns": 1,
+      "completed": true,
+      "completion_s": 0.041439499938860536,
+      "session_latency_s": 0.009439499938860535
+    },
+    {
+      "session_id": "shard00000-row25730",
+      "planned_turns": 1,
+      "completed": true,
+      "completion_s": 0.04366870899684727,
+      "session_latency_s": 0.00966870899684727
+    },
+    {
+      "session_id": "shard00000-row47659",
+      "planned_turns": 1,
+      "completed": true,
+      "completion_s": 0.04548504203557968,
+      "session_latency_s": 0.009485042035579677
+    },
+    {
+      "session_id": "shard00000-row13138",
+      "planned_turns": 1,
+      "completed": true,
+      "completion_s": 0.04779729200527072,
+      "session_latency_s": 0.00979729200527072
+    },
+    {
+      "session_id": "shard00000-row24268",
+      "planned_turns": 2,
+      "completed": true,
+      "completion_s": 0.0618902500718832,
+      "session_latency_s": 0.0218902500718832
+    },
+    {
+      "session_id": "shard00000-row24155",
+      "planned_turns": 1,
+      "completed": true,
+      "completion_s": 0.05171249993145466,
+      "session_latency_s": 0.009712499931454656
+    },
+    {
+      "session_id": "shard00000-row26178",
+      "planned_turns": 5,
+      "completed": true,
+      "completion_s": 0.11136641702614725,
+      "session_latency_s": 0.06736641702614725
+    },
+    {
+      "session_id": "shard00000-row41410",
+      "planned_turns": 1,
+      "completed": true,
+      "completion_s": 0.05509812501259148,
+      "session_latency_s": 0.009098125012591482
+    },
+    {
+      "session_id": "shard00000-row52855",
+      "planned_turns": 1,
+      "completed": true,
+      "completion_s": 0.05817049997858703,
+      "session_latency_s": 0.01017049997858703
+    },
+    {
+      "session_id": "shard00000-row17818",
+      "planned_turns": 1,
+      "completed": true,
+      "completion_s": 0.060073249973356724,
+      "session_latency_s": 0.010073249973356721
+    },
+    {
+      "session_id": "shard00000-row15272",
+      "planned_turns": 2,
+      "completed": true,
+      "completion_s": 0.07571533392183483,
+      "session_latency_s": 0.023715333921834822
+    },
+    {
+      "session_id": "shard00000-row10769",
+      "planned_turns": 2,
+      "completed": true,
+      "completion_s": 0.07797808386385441,
+      "session_latency_s": 0.02397808386385441
+    },
+    {
+      "session_id": "shard00000-row29037",
+      "planned_turns": 1,
+      "completed": true,
+      "completion_s": 0.06570529192686081,
+      "session_latency_s": 0.009705291926860808
+    },
+    {
+      "session_id": "shard00000-row40920",
+      "planned_turns": 5,
+      "completed": true,
+      "completion_s": 0.1254698750562966,
+      "session_latency_s": 0.06746987505629659
+    },
+    {
+      "session_id": "shard00000-row48707",
+      "planned_turns": 2,
+      "completed": true,
+      "completion_s": 0.08830933389253914,
+      "session_latency_s": 0.028309333892539146
+    },
+    {
+      "session_id": "shard00000-row58868",
+      "planned_turns": 1,
+      "completed": true,
+      "completion_s": 0.07366812508553267,
+      "session_latency_s": 0.011668125085532666
+    },
+    {
+      "session_id": "shard00000-row57979",
+      "planned_turns": 2,
+      "completed": true,
+      "completion_s": 0.08853716705925763,
+      "session_latency_s": 0.024537167059257625
+    },
+    {
+      "session_id": "shard00000-row31436",
+      "planned_turns": 1,
+      "completed": true,
+      "completion_s": 0.07783745904453099,
+      "session_latency_s": 0.011837459044530985
+    },
+    {
+      "session_id": "shard00000-row08555",
+      "planned_turns": 2,
+      "completed": true,
+      "completion_s": 0.10818187496624887,
+      "session_latency_s": 0.040181874966248865
+    },
+    {
+      "session_id": "shard00000-row32924",
+      "planned_turns": 11,
+      "completed": true,
+      "completion_s": 0.21025308407843113,
+      "session_latency_s": 0.14025308407843112
+    },
+    {
+      "session_id": "shard00000-row06394",
+      "planned_turns": 4,
+      "completed": true,
+      "completion_s": 0.1257265000604093,
+      "session_latency_s": 0.0537265000604093
+    },
+    {
+      "session_id": "shard00000-row05100",
+      "planned_turns": 2,
+      "completed": true,
+      "completion_s": 0.10099145886488259,
+      "session_latency_s": 0.026991458864882592
+    },
+    {
+      "session_id": "shard00000-row47051",
+      "planned_turns": 11,
+      "completed": true,
+      "completion_s": 0.2145138750784099,
+      "session_latency_s": 0.1385138750784099
+    },
+    {
+      "session_id": "shard00000-row55145",
+      "planned_turns": 1,
+      "completed": true,
+      "completion_s": 0.08685966697521508,
+      "session_latency_s": 0.008859666975215078
+    },
+    {
+      "session_id": "shard00000-row31271",
+      "planned_turns": 3,
+      "completed": true,
+      "completion_s": 0.1191114999819547,
+      "session_latency_s": 0.03911149998195469
+    },
+    {
+      "session_id": "shard00000-row47265",
+      "planned_turns": 1,
+      "completed": true,
+      "completion_s": 0.09115191688761115,
+      "session_latency_s": 0.009151916887611147
+    },
+    {
+      "session_id": "shard00000-row31310",
+      "planned_turns": 1,
+      "completed": true,
+      "completion_s": 0.09320366708561778,
+      "session_latency_s": 0.009203667085617775
+    },
+    {
+      "session_id": "shard00000-row41158",
+      "planned_turns": 6,
+      "completed": true,
+      "completion_s": 0.16200524987652898,
+      "session_latency_s": 0.07600524987652897
+    },
+    {
+      "session_id": "shard00000-row51180",
+      "planned_turns": 1,
+      "completed": true,
+      "completion_s": 0.09994483389891684,
+      "session_latency_s": 0.011944833898916846
+    },
+    {
+      "session_id": "shard00000-row55908",
+      "planned_turns": 1,
+      "completed": true,
+      "completion_s": 0.10188041697256267,
+      "session_latency_s": 0.011880416972562674
+    },
+    {
+      "session_id": "shard00000-row45355",
+      "planned_turns": 3,
+      "completed": true,
+      "completion_s": 0.1292347500566393,
+      "session_latency_s": 0.037234750056639315
+    },
+    {
+      "session_id": "shard00000-row10537",
+      "planned_turns": 3,
+      "completed": true,
+      "completion_s": 0.1315362500026822,
+      "session_latency_s": 0.03753625000268221
+    },
+    {
+      "session_id": "shard00000-row23251",
+      "planned_turns": 1,
+      "completed": true,
+      "completion_s": 0.10988308396190405,
+      "session_latency_s": 0.013883083961904047
+    },
+    {
+      "session_id": "shard00000-row18667",
+      "planned_turns": 10,
+      "completed": true,
+      "completion_s": 0.22837237501516938,
+      "session_latency_s": 0.13037237501516938
+    },
+    {
+      "session_id": "shard00000-row33566",
+      "planned_turns": 1,
+      "completed": true,
+      "completion_s": 0.11175141693092883,
+      "session_latency_s": 0.01175141693092882
+    },
+    {
+      "session_id": "shard00000-row05660",
+      "planned_turns": 2,
+      "completed": true,
+      "completion_s": 0.12964150006882846,
+      "session_latency_s": 0.027641500068828456
+    },
+    {
+      "session_id": "shard00000-row09523",
+      "planned_turns": 2,
+      "completed": true,
+      "completion_s": 0.12610845896415412,
+      "session_latency_s": 0.022108458964154115
+    },
+    {
+      "session_id": "shard00000-row48645",
+      "planned_turns": 2,
+      "completed": true,
+      "completion_s": 0.12982550007291138,
+      "session_latency_s": 0.023825500072911385
+    },
+    {
+      "session_id": "shard00000-row02502",
+      "planned_turns": 1,
+      "completed": true,
+      "completion_s": 0.11807858408428729,
+      "session_latency_s": 0.010078584084287287
+    },
+    {
+      "session_id": "shard00000-row29938",
+      "planned_turns": 1,
+      "completed": true,
+      "completion_s": 0.12116716685704887,
+      "session_latency_s": 0.011167166857048869
+    },
+    {
+      "session_id": "shard00000-row25191",
+      "planned_turns": 1,
+      "completed": true,
+      "completion_s": 0.12145433388650417,
+      "session_latency_s": 0.009454333886504171
+    },
+    {
+      "session_id": "shard00000-row24731",
+      "planned_turns": 3,
+      "completed": true,
+      "completion_s": 0.14793804194778204,
+      "session_latency_s": 0.033938041947782036
+    },
+    {
+      "session_id": "shard00000-row17577",
+      "planned_turns": 2,
+      "completed": true,
+      "completion_s": 0.13888570899143815,
+      "session_latency_s": 0.022885708991438145
+    },
+    {
+      "session_id": "shard00000-row45965",
+      "planned_turns": 2,
+      "completed": true,
+      "completion_s": 0.13986795907840133,
+      "session_latency_s": 0.02186795907840132
+    },
+    {
+      "session_id": "shard00000-row38635",
+      "planned_turns": 1,
+      "completed": true,
+      "completion_s": 0.1300309170037508,
+      "session_latency_s": 0.010030917003750806
+    },
+    {
+      "session_id": "shard00000-row32336",
+      "planned_turns": 3,
+      "completed": true,
+      "completion_s": 0.15533949993550777,
+      "session_latency_s": 0.03333949993550778
+    },
+    {
+      "session_id": "shard00000-row07849",
+      "planned_turns": 11,
+      "completed": true,
+      "completion_s": 0.2620492500718683,
+      "session_latency_s": 0.1380492500718683
+    },
+    {
+      "session_id": "shard00000-row01995",
+      "planned_turns": 1,
+      "completed": true,
+      "completion_s": 0.1352133338805288,
+      "session_latency_s": 0.009213333880528807
+    }
+  ],
+  "interrupted": false,
+  "valid": true,
+  "successful_request_metrics": {
+    "denominator": 153,
+    "mean_client_ttft_ms": 4.971786805434651,
+    "mean_release_to_first_token_ms": 6.129885753580166
+  },
+  "interpretation": "Latency averages exclude failed/blocked turns; status denominators and complete-session outcomes must accompany them. Mock-server values are correctness checks, not model performance."
+}

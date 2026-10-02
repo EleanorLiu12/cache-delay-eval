@@ -1,0 +1,106 @@
+{
+  "dataset": "Qwen-Bailian Trace B",
+  "revision": "5f7439c51ec248a0c585f7d90a41a6f57773b912",
+  "source": "/Users/kejunliu/Downloads/CS 699/project/data/qwen-bailian-trace-b/5f7439c51ec248a0c585f7d90a41a6f57773b912/qwen_traceB_blksz_16.jsonl",
+  "source_url": "https://media.githubusercontent.com/media/alibaba-edu/qwen-bailian-usagetraces-anon/5f7439c51ec248a0c585f7d90a41a6f57773b912/qwen_traceB_blksz_16.jsonl",
+  "source_sha256": "68e3f98e2d601d60d0abf4b89bc8a3654372abab7b1cde6373a13d0054379d59",
+  "total_rows": 172800,
+  "eligible_roots": 1485,
+  "selection": "first five source-order API roots with input+output <=64; first warms, next four evaluated",
+  "selected": [
+    {
+      "source_line": 92,
+      "raw": {
+        "chat_id": 91,
+        "parent_chat_id": -1,
+        "timestamp": 3.864,
+        "input_length": 45,
+        "output_length": 1,
+        "type": "api",
+        "turn": 1,
+        "hash_ids": [
+          3636,
+          3637,
+          3638
+        ]
+      }
+    },
+    {
+      "source_line": 93,
+      "raw": {
+        "chat_id": 92,
+        "parent_chat_id": -1,
+        "timestamp": 3.872,
+        "input_length": 48,
+        "output_length": 1,
+        "type": "api",
+        "turn": 1,
+        "hash_ids": [
+          3636,
+          3637,
+          3639
+        ]
+      }
+    },
+    {
+      "source_line": 105,
+      "raw": {
+        "chat_id": 104,
+        "parent_chat_id": -1,
+        "timestamp": 4.349,
+        "input_length": 42,
+        "output_length": 1,
+        "type": "api",
+        "turn": 1,
+        "hash_ids": [
+          3636,
+          3637,
+          4044
+        ]
+      }
+    },
+    {
+      "source_line": 116,
+      "raw": {
+        "chat_id": 115,
+        "parent_chat_id": -1,
+        "timestamp": 4.722,
+        "input_length": 41,
+        "output_length": 1,
+        "type": "api",
+        "turn": 1,
+        "hash_ids": [
+          3636,
+          3637,
+          4148
+        ]
+      }
+    },
+    {
+      "source_line": 118,
+      "raw": {
+        "chat_id": 117,
+        "parent_chat_id": -1,
+        "timestamp": 4.752,
+        "input_length": 41,
+        "output_length": 1,
+        "type": "api",
+        "turn": 1,
+        "hash_ids": [
+          3636,
+          3637,
+          4148
+        ]
+      }
+    }
+  ],
+  "sampled_window_count": 1,
+  "selection_depends_on_oracle_outcome": false,
+  "boundary": "filtered root-only micro-workload; intervening traffic excluded; quiescent cache after one recorded warmup",
+  "initial_state": "warmup cache contents/free order preserved; clock reset at first evaluation root",
+  "arrival_transform": "source decimal seconds relative to first evaluation root, exact integer microsecond ticks; no rescaling",
+  "output_assumption": "source output lengths preserved; generated token identities unavailable; output-containing blocks remain uncached",
+  "interpretation": "real block-content identities/lengths, structural model only; no original tokens or production engine state",
+  "hardware_config": "4 usable blocks for tractable search; NOT the 2048-block A30 configuration",
+  "cost_status": "uncalibrated synthetic costs; ticks must not be reported as measured microseconds"
+}

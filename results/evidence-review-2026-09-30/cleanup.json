@@ -1,0 +1,168 @@
+{
+  "authorized_cleanup": true,
+  "date": "2026-09-30",
+  "removed": [
+    {
+      "path": "results/meeting-2026-10-01-audit-2026-09-30",
+      "reason": "Withdrawn presentation, charts and derived tables: the plotted structural proxy did not identify the target trace class. Canonical source results remain retained.",
+      "files": [
+        {
+          "path": "results/meeting-2026-10-01-audit-2026-09-30/a-pattern-membership.jsonl.gz",
+          "bytes": 583953,
+          "sha256": "005bc5789bdf61b4a561efc182f605794a398c2c50724dd6a7c8320684c62461"
+        },
+        {
+          "path": "results/meeting-2026-10-01-audit-2026-09-30/analyze.py",
+          "bytes": 16091,
+          "sha256": "9a51e04d8769295432c2469c9b7c72d1ff0ec42b80e1e3175a8ffe1c981db549"
+        },
+        {
+          "path": "results/meeting-2026-10-01-audit-2026-09-30/b-pattern-membership.jsonl.gz",
+          "bytes": 2477154,
+          "sha256": "581982732b9ffe6398b28c873cbe3438dc97c7043da4fd4caebcdf13b0a59419"
+        },
+        {
+          "path": "results/meeting-2026-10-01-audit-2026-09-30/evidence-audit.md",
+          "bytes": 14810,
+          "sha256": "4d845b592bb80d9a2ae179e4a040c1b24288f92b685936fd0c4f9350f99be780"
+        },
+        {
+          "path": "results/meeting-2026-10-01-audit-2026-09-30/figures/dataset-pattern-prevalence.png",
+          "bytes": 175824,
+          "sha256": "4a16272258c2e58531cd006c9e0500ad03fe82211fa7d0b254e994043458a29a"
+        },
+        {
+          "path": "results/meeting-2026-10-01-audit-2026-09-30/figures/dataset-pattern-prevalence.svg",
+          "bytes": 11765,
+          "sha256": "cee1a637fee2a179a4720d86d94ef235f1f2f6c87737f4a9d2f1eb35da15ea09"
+        },
+        {
+          "path": "results/meeting-2026-10-01-audit-2026-09-30/figures/window-sensitivity.png",
+          "bytes": 154052,
+          "sha256": "d024e4889e576314c9ab5febe342babc06e5db86c359f6c2ae9d26bb2e4b3ec5"
+        },
+        {
+          "path": "results/meeting-2026-10-01-audit-2026-09-30/figures/window-sensitivity.svg",
+          "bytes": 19085,
+          "sha256": "05963c58d2d0fade0022b0b027e910b2fb1938b6fb5bacc0c1b8a554c7d71ec3"
+        },
+        {
+          "path": "results/meeting-2026-10-01-audit-2026-09-30/input-manifest.json",
+          "bytes": 6486,
+          "sha256": "3097ae5f0d65ef8d312cd473c5b73f97fcf6509159603f5c9d03a99752349a38"
+        },
+        {
+          "path": "results/meeting-2026-10-01-audit-2026-09-30/meeting-one-page.md",
+          "bytes": 2715,
+          "sha256": "6138f600c037af6b9367711fd09e72062c748096986f4a270521c8acdf8f95f2"
+        },
+        {
+          "path": "results/meeting-2026-10-01-audit-2026-09-30/pattern-rules.md",
+          "bytes": 5633,
+          "sha256": "4129f545254b5b18240dde8e794fd20a1b54102da0e08b7b35843000b21c3cbc"
+        },
+        {
+          "path": "results/meeting-2026-10-01-audit-2026-09-30/plot.py",
+          "bytes": 4795,
+          "sha256": "33d2b3e570f5f3e97b3f20a8035564021308a17a375fa25f0aadd191ccdbbba8"
+        },
+        {
+          "path": "results/meeting-2026-10-01-audit-2026-09-30/slow-request-audit.json",
+          "bytes": 5062,
+          "sha256": "9f3d0bfaa3c2ae8ad210864cbdf0df5284f29925b20a9bf4377ddc3297e4b5d8"
+        },
+        {
+          "path": "results/meeting-2026-10-01-audit-2026-09-30/statistics.json",
+          "bytes": 83069,
+          "sha256": "d51bda1b78f8f0600258f5528018ffbbdd5e95c5ad25d4d56cd5a0569a13e615"
+        },
+        {
+          "path": "results/meeting-2026-10-01-audit-2026-09-30/verification.json",
+          "bytes": 1786,
+          "sha256": "207b28f786a5ea036adfeea26d28bbb578da915151a5154ae86dd52f4a4b9445"
+        }
+      ]
+    },
+    {
+      "path": "results/scratch-qwen-trace-a-initial",
+      "reason": "Unvalidated initial scratch outputs superseded by the retained Qwen A structural analysis and independent validation.",
+      "files": [
+        {
+          "path": "results/scratch-qwen-trace-a-initial/analysis.json",
+          "bytes": 82780,
+          "sha256": "d14d1752c41dea77139b7cf8312221043a68f2402c0e3c2809234552c4e2909f"
+        },
+        {
+          "path": "results/scratch-qwen-trace-a-initial/arrival-bins-all_types.json",
+          "bytes": 1504068,
+          "sha256": "0262dd8ccb17b4a264520592cf34b06c69c2f31bd4a24957136d79d10f8c97a7"
+        },
+        {
+          "path": "results/scratch-qwen-trace-a-initial/arrival-bins-observed_root_text.json",
+          "bytes": 1497519,
+          "sha256": "48e719fc641fbfa616ab4c47d87007be66fe27ab67333a51ab2abb4865954a14"
+        },
+        {
+          "path": "results/scratch-qwen-trace-a-initial/requests-all_types.jsonl",
+          "bytes": 30318036,
+          "sha256": "208aaaf766a3f59636ddec60dab2208ba01ca68c91e7d5b159f8ff8b90ac716d"
+        },
+        {
+          "path": "results/scratch-qwen-trace-a-initial/requests-observed_root_text.jsonl",
+          "bytes": 22387673,
+          "sha256": "ee16f5f1d982ec65fe2910dabcc037e3b042ac36c3e2b40a0f570c3fe1c8c775"
+        }
+      ]
+    },
+    {
+      "path": "results/cpu-meeting-2026-10-01/meeting-brief.md",
+      "reason": "Redundant meeting brief with obsolete replay-implementation prerequisites; canonical CPU statistics and reproduction materials retained.",
+      "files": [
+        {
+          "path": "results/cpu-meeting-2026-10-01/meeting-brief.md",
+          "bytes": 5794,
+          "sha256": "395e7b1756f5d0b6e1b928e5ed35294ab66ebb722249384a05a33bd7722b9267"
+        }
+      ]
+    }
+  ],
+  "original_datasets_deleted": false,
+  "retained_dependencies": [
+    "results/admission-telemetry-cpu-2026-09-29/source",
+    "results/eviction-oracle-cpu-2026-09-29-window",
+    "results/qwen-temporal-2026-09-28",
+    "results/qwen-independent-validation-2026-09-28"
+  ],
+  "retention_reason": "Pinned source and Oracle fixture are used by tests; preliminary temporal outputs remain dependencies of the retained historical packaging comparison.",
+  "completed_date": "2026-10-01",
+  "revised_live_documents": [
+    {
+      "path": "docs/research-plan.md",
+      "previous_sha256": "67d62428dbbdd7fc99e272e6e5a9dab015ab4767bcc9a553902642dcb02194b0",
+      "reason": "Consolidated current evidence and plan after withdrawing the misaligned proxy presentation.",
+      "current_sha256": "d1951d6e9ccc9eb1726983906043e5a24ad9f53f81242e2d9958a6fbce99cec4"
+    },
+    {
+      "path": "docs/research-progress.md",
+      "previous_sha256": "67b3c0bdd3cfe55bba9bb7fa0298e548e1f32063de9907a3c4b83bb34f9cf1d9",
+      "reason": "Consolidated current evidence and plan after withdrawing the misaligned proxy presentation.",
+      "current_sha256": "3e841867d67012ed49184c34e4d281835cb954a5fc555b638f4d9a460c80bcc9"
+    },
+    {
+      "path": "docs/research.md",
+      "previous_sha256": "8ba7156ca2841d6d6854daa1e8be3fcd636e9c20f8d62499d328ba80d2b0a7e2",
+      "reason": "Consolidated current evidence and plan after withdrawing the misaligned proxy presentation.",
+      "current_sha256": "2682bf9d00fff93aff3b897a0823fada82445e9c9f637e510ccb35cf6516bec5"
+    },
+    {
+      "path": "README.md",
+      "current_sha256": "4137f4f7ef0e7ec1ef0557813e3e86960c0ccbfb45978edd312b0fd0bfb3546c",
+      "reason": "Updated active navigation and dataset status after evidence review."
+    },
+    {
+      "path": "docs/dataset-investigation.md",
+      "current_sha256": "835ccfa3d08385ef703f60250bdc0c610110ac6728d38a8be2bb3be0de065253",
+      "reason": "Updated active navigation and dataset status after evidence review."
+    }
+  ]
+}

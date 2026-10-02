@@ -1,0 +1,75 @@
+{
+  "dataset": "Qwen-Bailian Trace B",
+  "repository": "https://github.com/alibaba-edu/qwen-bailian-usagetraces-anon",
+  "revision": "5f7439c51ec248a0c585f7d90a41a6f57773b912",
+  "license": "Apache-2.0",
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/alibaba-edu/qwen-bailian-usagetraces-anon/5f7439c51ec248a0c585f7d90a41a6f57773b912/qwen_traceB_blksz_16.jsonl",
+      "file": "trace-lfs-pointer.txt",
+      "bytes": 133,
+      "sha256": "e5087a9596633d958e4461f6365ba2deb196844844c6ff4ffcb4c69e270dc5b2",
+      "retrieved_at_utc": "2026-09-28T21:28:12.030977+00:00",
+      "headers": {
+        "ETag": "\"baaa9631526bc5cd7511c76d95d5cc54da184ab073ec76a7816621cf2c76afc1\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8"
+      }
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alibaba-edu/qwen-bailian-usagetraces-anon/5f7439c51ec248a0c585f7d90a41a6f57773b912/README.md",
+      "file": "upstream-README.md",
+      "bytes": 6628,
+      "sha256": "9815b81e4157885ab446ecca397df92a89d3797af4721d19306ad414307f0f04",
+      "retrieved_at_utc": "2026-09-28T21:28:12.258945+00:00",
+      "headers": {
+        "ETag": "\"e9f078b35fb11227904744c20ce2accfafbbe61eb214f2f4c3c1cecd40d38377\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8"
+      }
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alibaba-edu/qwen-bailian-usagetraces-anon/5f7439c51ec248a0c585f7d90a41a6f57773b912/docs/qa-context-growth-pattern.md",
+      "file": "upstream-context-faq.md",
+      "bytes": 1122,
+      "sha256": "896e3e3396f22ed517f496df7c610277b1a6c43892c64af2b057bd455b9796cc",
+      "retrieved_at_utc": "2026-09-28T21:28:12.550338+00:00",
+      "headers": {
+        "ETag": "\"db0be5021857da1ffd555364f91490915e285229f24af373bcf0056f2a3e0aa6\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8"
+      }
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alibaba-edu/qwen-bailian-usagetraces-anon/5f7439c51ec248a0c585f7d90a41a6f57773b912/LICENSE",
+      "file": "LICENSE",
+      "bytes": 11357,
+      "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+      "retrieved_at_utc": "2026-09-28T21:28:12.928844+00:00",
+      "headers": {
+        "ETag": "\"d5566fd272a807854f4bda1c1ba4d81a9c4325dfeec669b7db401aab63e91b94\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8"
+      }
+    },
+    {
+      "url": "https://media.githubusercontent.com/media/alibaba-edu/qwen-bailian-usagetraces-anon/5f7439c51ec248a0c585f7d90a41a6f57773b912/qwen_traceB_blksz_16.jsonl",
+      "file": "qwen_traceB_blksz_16.jsonl",
+      "bytes": 96209982,
+      "sha256": "68e3f98e2d601d60d0abf4b89bc8a3654372abab7b1cde6373a13d0054379d59",
+      "retrieved_at_utc": "2026-09-28T21:28:16.702723+00:00",
+      "headers": {
+        "ETag": "\"68e3f98e2d601d60d0abf4b89bc8a3654372abab7b1cde6373a13d0054379d59\"",
+        "Last-Modified": "Mon, 28 Sep 2026 21:28:13 GMT",
+        "Content-Type": "application/octet-stream"
+      }
+    }
+  ],
+  "acquired_at_utc": "2026-09-28T21:28:16.702742+00:00",
+  "expected_trace_sha256": "68e3f98e2d601d60d0abf4b89bc8a3654372abab7b1cde6373a13d0054379d59",
+  "expected_trace_bytes": 96209982,
+  "verification_authority": "freshly acquired LFS pointer at the pinned publisher revision",
+  "matches_previously_inspected_metadata": true,
+  "trace_verified_against_lfs_pointer": true,
+  "transformation": "none; original source bytes retained"
+}

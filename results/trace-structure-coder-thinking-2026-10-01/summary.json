@@ -1,0 +1,143 @@
+{
+  "rule_protocol_sha256": "3c4dd16d383314fc39f94ffec0504346cfb6b928e6475d704751c8a1a16dab43",
+  "rule_analysis_sha256": "70819be6744ffa6905ef3563416ae3b472bef4f3e63e685cb7ea5ab35cd8d416",
+  "scenario_source": "Publisher README scenario table; not inferred from request content",
+  "rows": [
+    {
+      "trace": "Qwen-Bailian Trace A",
+      "scenario": "To-C: chat-style interactive services",
+      "type_label": "file",
+      "positive_windows": 4,
+      "total_windows": 23,
+      "percent": 17.391304347826086,
+      "wilson95_percent": [
+        6.9785403506127714,
+        37.138054785295665
+      ],
+      "source_requests": 1510,
+      "eligible_chains": 748,
+      "excluded_chains": 0,
+      "trace_sha256": "07cedc9ed8aff301994ac68ed4aede8123b7603673575eeba9dd677de663db17",
+      "origin": "copied from ../trace-structure-2026-10-01/summary.json"
+    },
+    {
+      "trace": "Qwen-Bailian Trace A",
+      "scenario": "To-C: chat-style interactive services",
+      "type_label": "image",
+      "positive_windows": 0,
+      "total_windows": 23,
+      "percent": 0.0,
+      "wilson95_percent": [
+        0.0,
+        14.312112541726274
+      ],
+      "source_requests": 1617,
+      "eligible_chains": 1482,
+      "excluded_chains": 0,
+      "trace_sha256": "07cedc9ed8aff301994ac68ed4aede8123b7603673575eeba9dd677de663db17",
+      "origin": "copied from ../trace-structure-2026-10-01/summary.json"
+    },
+    {
+      "trace": "Qwen-Bailian Trace A",
+      "scenario": "To-C: chat-style interactive services",
+      "type_label": "search",
+      "positive_windows": 5,
+      "total_windows": 23,
+      "percent": 21.73913043478261,
+      "wilson95_percent": [
+        9.663835601719065,
+        41.90388018273492
+      ],
+      "source_requests": 8187,
+      "eligible_chains": 4424,
+      "excluded_chains": 0,
+      "trace_sha256": "07cedc9ed8aff301994ac68ed4aede8123b7603673575eeba9dd677de663db17",
+      "origin": "copied from ../trace-structure-2026-10-01/summary.json"
+    },
+    {
+      "trace": "Qwen-Bailian Trace A",
+      "scenario": "To-C: chat-style interactive services",
+      "type_label": "text",
+      "positive_windows": 20,
+      "total_windows": 23,
+      "percent": 86.95652173913044,
+      "wilson95_percent": [
+        67.87210202698179,
+        95.46242348565531
+      ],
+      "source_requests": 31744,
+      "eligible_chains": 16447,
+      "excluded_chains": 0,
+      "trace_sha256": "07cedc9ed8aff301994ac68ed4aede8123b7603673575eeba9dd677de663db17",
+      "origin": "copied from ../trace-structure-2026-10-01/summary.json"
+    },
+    {
+      "trace": "Qwen-Bailian Trace B",
+      "scenario": "To-B: API-driven task automation",
+      "type_label": "api",
+      "positive_windows": 0,
+      "total_windows": 23,
+      "percent": 0.0,
+      "wilson95_percent": [
+        0.0,
+        14.312112541726274
+      ],
+      "source_requests": 150936,
+      "eligible_chains": 150936,
+      "excluded_chains": 0,
+      "trace_sha256": "68e3f98e2d601d60d0abf4b89bc8a3654372abab7b1cde6373a13d0054379d59",
+      "origin": "copied from ../trace-structure-2026-10-01/summary.json"
+    },
+    {
+      "trace": "Qwen-Bailian Trace B",
+      "scenario": "To-B: API-driven task automation",
+      "type_label": "text",
+      "positive_windows": 0,
+      "total_windows": 23,
+      "percent": 0.0,
+      "wilson95_percent": [
+        0.0,
+        14.312112541726274
+      ],
+      "source_requests": 21864,
+      "eligible_chains": 21864,
+      "excluded_chains": 0,
+      "trace_sha256": "68e3f98e2d601d60d0abf4b89bc8a3654372abab7b1cde6373a13d0054379d59",
+      "origin": "copied from ../trace-structure-2026-10-01/summary.json"
+    },
+    {
+      "trace": "Qwen-Bailian Coder trace",
+      "scenario": "Code generation",
+      "type_label": "coder",
+      "positive_windows": 22,
+      "total_windows": 23,
+      "percent": 95.65217391304348,
+      "wilson95_percent": [
+        79.00841350594088,
+        99.22835330378734
+      ],
+      "source_requests": 43011,
+      "eligible_chains": 26406,
+      "excluded_chains": 0,
+      "trace_sha256": "3d74974cebb7bccb69b1ca6ea210a44d9a3033443c0271ed015327284dea1aff",
+      "origin": "computed in this run"
+    },
+    {
+      "trace": "Qwen-Bailian Thinking trace",
+      "scenario": "Reasoning-intensive chat",
+      "type_label": "thinking",
+      "positive_windows": 8,
+      "total_windows": 23,
+      "percent": 34.78260869565217,
+      "wilson95_percent": [
+        18.811054636982238,
+        55.11002309310836
+      ],
+      "source_requests": 10812,
+      "eligible_chains": 9612,
+      "excluded_chains": 0,
+      "trace_sha256": "41ac36d9d1b54d084eeb6b05e9d142ba9d02f8bf79cfc9fff418d8ab7cdee906",
+      "origin": "computed in this run"
+    }
+  ]
+}

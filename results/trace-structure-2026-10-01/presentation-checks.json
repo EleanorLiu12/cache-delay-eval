@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "authored_text_english": true,
+  "local_links_valid": true,
+  "protocol_unchanged_since_counting": true,
+  "statistics_validation": "validation.json",
+  "figure_visual_review": "completed",
+  "artifact_sha256": {
+    "analyze.py": "70819be6744ffa6905ef3563416ae3b472bef4f3e63e685cb7ea5ab35cd8d416",
+    "full-sensitivity.png": "39d09e0ee5ffd34c5c4efce01abc851a7bf364182701c9782f1c089fd237138d",
+    "plot.py": "d7e83ed42697232e4053b2bfee144f4361d6cafe9721da9cae5153333493793a",
+    "protocol.md": "3c4dd16d383314fc39f94ffec0504346cfb6b928e6475d704751c8a1a16dab43",
+    "qwen-a-sensitivity.json": "02c64bcde975f3518cdc91f06aae08bd7686e598f1a9b9eec0feae286c78e594",
+    "qwen-a-windows.json": "862cdbf564db17bf3e4e03bb75f664d7693b5e4397f5eff900d2b8dd7dea1bfd",
+    "qwen-b-sensitivity.json": "e199e6b2ef8490608fd8e1ab18df65dc23aa1b7cff2a2dbd0f369f458f84320d",
+    "qwen-b-windows.json": "655179a881c986a39f8441a9f7ac8fe9cacf12e782bf032e64580f33500ff971",
+    "report.md": "21e887d5667d14a7059174f7e4466043c286e0ce32a836698065c16400fd8aeb",
+    "run-manifest.json": "07569215d489bc822d6c276df6c83a9b2f9384208f44e93b77bbefcec34e26d0",
+    "structural-rates.png": "5d840a71f7a969bc6c1d9bd7dcfe9d06e6288ed07c9f6b75d78d22411b26a1e0",
+    "structural-rates.svg": "7dfb5ed877a4db443c0d0f87cd4253af8dade924bef572c2b64f018a236731ec",
+    "summary.json": "c59de56e1efa210eec708b253938a153305a5d413f0fbb3139f75d693650b669",
+    "synthetic-negative-sensitivity.json": "e8dd477ce8f2bc13bff25c0ca4674b00bbecadce715ce0f74bfdf59bf55b002a",
+    "synthetic-negative-windows.json": "715ec77277d5cbea3d3da8fdc9bb02d66ef75ff29c95ea215ec56cb9bcf73633",
+    "synthetic-positive-sensitivity.json": "22d4c27374efbbd9320a2d968a2a95cd3e6e7e6aa525578ebfb5921be2aecf13",
+    "synthetic-positive-windows.json": "ad1749208795272f5367959721b7d01a98e076cc9d3d7dbe272bfe5337931e52",
+    "validate.py": "372c558800f57e0caffec2ba1d7761a8f60d1c565568babf0a12b2117a38123b",
+    "validation.json": "67fcf3596438fb12ba260bac3996c31ecc5a7e00c5f2dabaf5b422ded7298f8e"
+  },
+  "dataset_summary_checked_against_retained_sources": true
+}

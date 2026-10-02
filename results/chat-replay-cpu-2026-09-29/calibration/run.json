@@ -1,0 +1,132 @@
+{
+  "type": "run_meta",
+  "created_at_utc": "2026-09-29T15:18:24.147079+00:00",
+  "config": {
+    "model": "Qwen/Qwen3-4B",
+    "run_id": "calibration-cpu",
+    "max_tokens": 512,
+    "max_model_len": 32768,
+    "think_delay_s": 0.003,
+    "timeout_s": 30,
+    "require_cached_tokens": true,
+    "max_dispatch_lag_ms": 5000,
+    "seed": 699
+  },
+  "scripts": [
+    {
+      "session_id": "shard00000-row53831",
+      "user_messages": [
+        "На форуме к статье https://postsovet.ru/uchenyye_predpolozhili_chto_chernyye_dyry_mogut_byt_gigant_skimi_kvantovymi_komp_yuterami-1200344.html развернулась нешуточная дискуссия. Напиши 30 комментариев с этого форума в виде оживленной дискуссии.\n"
+      ],
+      "root_arrival_s": 0.0,
+      "source_transcript_sha256": "22c19ef0b1b640e9484e98ebee904738ad4a6eb9185a56989db1f84d44d0b3bb"
+    },
+    {
+      "session_id": "shard00000-row21197",
+      "user_messages": [
+        "\n\nI’m working on a rust program. Why should the id variable have an option, such as :   pub id: option<AccountId> \n\n\n\nHere is the code: \nuse serde::{Deserialize, Serialize};\n#[derive(Serialize, Deserialize, Debug, Clone)]\npub struct Account {\n    pub id: option<AccountId>,\n    pub email: String,\n    pub password: String,\n}\n#[derive(Deserialize, Serialize, Debug, Clone, PartialEq, Eq, Hash)] pub struct AccountId(pub i32); \n#[derive(Deserialize, Serialize, Debug, Clone)]\npub struct NewAccount {\n    pub email: String,\n    pub password: String,\n}\n",
+        "please explain rust's clap and show an example",
+        "please write a list of points from this section of the book and make better explanations: We saw that the dev flag is used by default with cargo build. This command will sim- ply use a default profile with the name dev (http://mng.bz/WMY0). The settings can be changed inside your Cargo.toml file, but the default parameters are shown here:\n[profile.dev]\nopt-level = 0\ndebug = true\nsplit-debuginfo = '...'  # Platform-specific.\ndebug-assertions = true\noverflow-checks = true\nlto = false\npanic = 'unwind'\nincremental = true\ncodegen-units = 256\nrpath = false\ncargo build\ncargo build --release\n[profile.dev]\n• Optimized for debugging\n• Zero optimizations (level 0)\n[profile.release]\n• Optimized for generating small, efficient binaries\n• All optimizations (level 3)\nFigure 10.2 Cargo uses the dev profile by default, and will optimize the binary if the --release flag is attached.\n10.2 Compiling your web service for different environments 309\nThe first setting, opt-level (http://mng.bz/82BP), is important. With the value set to 0, the compiler doesn’t apply any optimization when compiling your code. This results in faster compile times but also larger binaries.\nIt is not always straightforward, but generally 3 stands for all optimizations and should result in the fastest produced binary, while 1 and 2 offer “basic optimization” and “some optimization.”\nThe release profile (http://mng.bz/E0AJ) looks as follows:\n        [profile.release]\n        opt-level = 3\n        debug = false\n        split-debuginfo = '...'  # Platform-specific.\n        debug-assertions = false\n        overflow-checks = false\n        lto = false\n        panic = 'unwind'\n        incremental = false\n        codegen-units = 16\n        rpath = false\nThe Cargo documentation has a great up-to-date explanation of the settings (http:// mng.bz/N5QD). It is good to know that you can add a [profile.dev] or [profile .release] section to your Cargo.toml file and add individual settings via the key- value pair.\nSince the optimization depends largely on your environment and codebase, you can either take the default settings or play around with values to see if you gain a smaller binary size or a more performant one.\nThe general advice is to use the –-release flag when you compile your codebase before you ship it to a production environment. The binary size will be smaller, and your code should run more efficiently with that profile."
+      ],
+      "root_arrival_s": 0.002,
+      "source_transcript_sha256": "772028198fee4d609f56b4ff36f025409e32a50ab5e761cac99861138be6fb74"
+    },
+    {
+      "session_id": "shard00000-row03337",
+      "user_messages": [
+        "What will the conclusion to Will Wight's Cradle series be about?",
+        "Explain the difference between cluster analysis and latent-class analysis mixture modeling like explaining to a 10 year old",
+        "What is the fastest way to do a systematic review in PRISMA standards? List in in 10 or less steps and estimate how many hours for each.",
+        "How many hours does an average research study in neuropsychology take?",
+        "Recommend 10 bullet points of information for someone in neuropsychology looking to learn about the gut-brain axis, and microbiome as they relate to neuropsychology. Provide time estimates for average reading speed.",
+        "How do clinical psychology PhD students determine which APPIC pre-doctoral internship sites are most likely to transition them to post-doctoral positions after graduation? Provide a list of known adult neuropsychology-track internship sites that offer this.",
+        "How can a Phd student entering APPIC matching apply their clinical practicum hours from a clinical psychology terminal masters program without listing them separate from their doctoral hours? Does it matter if the masters hours were supervised by a board certified psychologist?",
+        "Who would win in a fight - ichigo or naruto?"
+      ],
+      "root_arrival_s": 0.004,
+      "source_transcript_sha256": "f9317b76a5384309e371fa4fabdf69c3f447b2787b8f867646258d0d95768dd7"
+    },
+    {
+      "session_id": "shard00000-row31529",
+      "user_messages": [
+        "انتالپی رو در ترمودینامیک کامل توضیح بده"
+      ],
+      "root_arrival_s": 0.006,
+      "source_transcript_sha256": "b05e98304a87e3cfde60dad83108b22d9c39159f4260059d5edeb4f9fdd7ab3d"
+    },
+    {
+      "session_id": "shard00000-row20555",
+      "user_messages": [
+        "\n- 金額処理画面を作成する\n- 百円ボタン、二百円ボタン\n- ボタンを押下する\n- Stripe APIを呼び、金銭を処理する\n-位置APIから取得する位置データを画面に表示する\n- PDFを出力する」\n上記を基にhtmlを作ってください"
+      ],
+      "root_arrival_s": 0.008,
+      "source_transcript_sha256": "9ebde760e362630d561ea3c6374a055e5ac8dbb38c519c1b5133da1f3037dd1d"
+    },
+    {
+      "session_id": "shard00000-row50872",
+      "user_messages": [
+        "Você poderia resumir como foi o Grande Prêmio da Colômbia de 2005 com mais detalhes, disputado no Autódromo de Bogotá."
+      ],
+      "root_arrival_s": 0.01,
+      "source_transcript_sha256": "b386d966f7fb58e1a509bf54eb50f9c2d5bed7f140de9e5cd84bfdbda64ad886"
+    },
+    {
+      "session_id": "shard00000-row09359",
+      "user_messages": [
+        "придумай правдоподобную историю про то почему я опоздал",
+        "как называется фундаментная балка"
+      ],
+      "root_arrival_s": 0.012,
+      "source_transcript_sha256": "f0ed48e161f51dc3eeb7db695a24ae3f42f425adc059d00b9e77b25348cb9c1d"
+    },
+    {
+      "session_id": "shard00000-row23728",
+      "user_messages": [
+        "Реши задачу\nКаждый день в бар поставляется свежесваренное пиво. Спрос равномерно распределяется от 200 до 500 литров в день. Бар платит производителю 44 руб. за литр пива, а продает – по 105 руб. за литр. Непроданное пиво не подлежит реализации на следующий день, поскольку оно портится. Дефицит спроса оценивается в 92 руб. за литр (поставка из соседнего бара). Требуется определить оптимальный размер партии разовой закупки.\n\nОптимальный размер партии разовой закупки (m), литров в день",
+        "Каждый день в бар поставляется свежесваренное пиво. Спрос равномерно распределяется от 80 до 150 литров в день. Бар платит производителю 52 руб. за литр пива, а продает – по 185 руб. за литр. Непроданное пиво не подлежит реализации на следующий день, поскольку оно портится. Дефицит спроса оценивается в 110 руб. за литр (поставка из соседнего бара). Требуется определить оптимальный размер партии разовой закупки.\n\nОптимальный размер партии разовой закупки (m), литров в день",
+        "найди x \n129=115 - x * 115 * 70",
+        "Каждый день в бар поставляется свежесваренное пиво. Спрос равномерно распределяется от 80 до 150 литров в день. Бар платит производителю 52 руб. за литр пива, а продает – по 185 руб. за литр. Непроданное пиво не подлежит реализации на следующий день, поскольку оно портится. Дефицит спроса оценивается в 110 руб. за литр (поставка из соседнего бара). Требуется определить оптимальный размер партии разовой закупки.\n\nОптимальный размер разовой закупки (m), литров в день",
+        "Каждый день в бар поставляется свежесваренное пиво. Спрос равномерно распределяется от 80 до 150 литров в день. Бар платит производителю 52 руб. за литр пива, а продает – по 185 руб. за литр. Непроданное пиво не подлежит реализации на следующий день, поскольку оно портится. Дефицит спроса оценивается в 110 руб. за литр. Требуется определить оптимальный размер партии разовой закупки.\n\nОптимальный размер разовой закупки (m), литров в день",
+        "Формула Оптимальный размер разовой закупки (m) с учетом дефицита спроса",
+        "Реши по формуле выше эту задачу\nКаждый день в бар поставляется свежесваренное пиво. Спрос равномерно распределяется от 80 до 150 литров в день. Бар платит производителю 52 руб. за литр пива, а продает – по 185 руб. за литр. Непроданное пиво не подлежит реализации на следующий день, поскольку оно портится. Дефицит спроса оценивается в 110 руб. за литр. Требуется определить оптимальный размер партии разовой закупки."
+      ],
+      "root_arrival_s": 0.014,
+      "source_transcript_sha256": "e91091932ed4f12b102af28c92c8331659daad5981585cab22065120963fdc40"
+    }
+  ],
+  "scripts_sha256": "dc9d6a6109545b7dcafbd20afea41d8f3723c088dbc742d3b2cee603612e946a",
+  "tokenizer": {
+    "model": "Qwen/Qwen3-4B",
+    "revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+    "files": {
+      "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "tokenizer_config.json": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "config.json": "8ba006f74fecfaaeb392872a60f4a480e7ec9860153d2e1b769ec81f9a147f8a",
+      "LICENSE": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+      "README.md": "71add1cd091c309b1cb1a6b943f2476eb2b004124b3bd1d32dcd0b24cc1abc47"
+    },
+    "chat_template_sha256": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+    "enable_thinking": false,
+    "add_generation_prompt": true,
+    "invented_system_message": false,
+    "assistant_content": "decode actual returned IDs, removing one terminal EOS; keep all original IDs in evidence",
+    "history_rendering": "template re-rendering may change token boundaries and thinking scaffold; no exact KV-preservation assumption"
+  },
+  "workload": "completion-dependent generated-response conversation",
+  "timing": {
+    "origin_monotonic_s": 1517422.3199265,
+    "sampled_monotonic_s": 1517422.27004325,
+    "sampled_unix_s": 1790695104.1471949,
+    "ttft": "HTTP POST start to first streamed token ID; release_to_first_token includes client delay",
+    "token_gap": "client SSE event/token-ID delivery groups, not server per-token generation times"
+  },
+  "metadata": {
+    "server": "local CPU mock",
+    "model_inference": false,
+    "weights_downloaded": false,
+    "think_time_assumption": "3 milliseconds for fast correctness validation; GPU candidate remains 5 seconds"
+  },
+  "code_sha256": "b529cf1927b9f182528d33786f031b3971823f6c66e8a5db9db8b90262374beb"
+}

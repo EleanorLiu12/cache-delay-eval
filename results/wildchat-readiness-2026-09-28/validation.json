@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "sampled_rows_compared_to_original": 200,
+  "source_messages_compared": 1212,
+  "reconstructed_prompts_retokenized": 581,
+  "user_assistant_pairs_sharing_turn_identifier": 606,
+  "repeated_exchange_identifiers_within_conversations": 0,
+  "interpretation": "Each user/assistant exchange shares one turn_identifier; repeated message-level IDs are expected and do not indicate duplicate exchanges.",
+  "empty_content_messages_by_role": {
+    "user": 6
+  },
+  "selections": {
+    "smoke": {
+      "sessions": 8,
+      "all_original_user_turns_preserved": 43
+    },
+    "experiment": {
+      "sessions": 64,
+      "all_original_user_turns_preserved": 153
+    }
+  },
+  "validator_sha256": "da8d3d9f68bfcc5d0f08036dba6ccab14deb754e13677c8068cf27c6a836fc54"
+}

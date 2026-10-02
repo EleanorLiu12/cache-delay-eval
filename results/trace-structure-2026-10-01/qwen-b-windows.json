@@ -1,0 +1,466 @@
+{
+  "api": [
+    {
+      "index": 0,
+      "start_s": "0.0",
+      "end_s": "300.0",
+      "requests": 6056,
+      "eligible_roots": 6056,
+      "long_roots": 73,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 1,
+      "start_s": "300.0",
+      "end_s": "600.0",
+      "requests": 4856,
+      "eligible_roots": 4856,
+      "long_roots": 72,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 2,
+      "start_s": "600.0",
+      "end_s": "900.0",
+      "requests": 6555,
+      "eligible_roots": 6555,
+      "long_roots": 92,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 3,
+      "start_s": "900.0",
+      "end_s": "1200.0",
+      "requests": 5609,
+      "eligible_roots": 5609,
+      "long_roots": 102,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 4,
+      "start_s": "1200.0",
+      "end_s": "1500.0",
+      "requests": 6830,
+      "eligible_roots": 6830,
+      "long_roots": 85,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 5,
+      "start_s": "1500.0",
+      "end_s": "1800.0",
+      "requests": 5590,
+      "eligible_roots": 5590,
+      "long_roots": 98,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 6,
+      "start_s": "1800.0",
+      "end_s": "2100.0",
+      "requests": 6942,
+      "eligible_roots": 6942,
+      "long_roots": 102,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 7,
+      "start_s": "2100.0",
+      "end_s": "2400.0",
+      "requests": 5772,
+      "eligible_roots": 5772,
+      "long_roots": 124,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 8,
+      "start_s": "2400.0",
+      "end_s": "2700.0",
+      "requests": 5706,
+      "eligible_roots": 5706,
+      "long_roots": 84,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 9,
+      "start_s": "2700.0",
+      "end_s": "3000.0",
+      "requests": 4853,
+      "eligible_roots": 4853,
+      "long_roots": 84,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 10,
+      "start_s": "3000.0",
+      "end_s": "3300.0",
+      "requests": 7017,
+      "eligible_roots": 7017,
+      "long_roots": 116,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 11,
+      "start_s": "3300.0",
+      "end_s": "3600.0",
+      "requests": 5966,
+      "eligible_roots": 5966,
+      "long_roots": 91,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 12,
+      "start_s": "3600.0",
+      "end_s": "3900.0",
+      "requests": 8137,
+      "eligible_roots": 8137,
+      "long_roots": 98,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 13,
+      "start_s": "3900.0",
+      "end_s": "4200.0",
+      "requests": 5611,
+      "eligible_roots": 5611,
+      "long_roots": 116,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 14,
+      "start_s": "4200.0",
+      "end_s": "4500.0",
+      "requests": 6277,
+      "eligible_roots": 6277,
+      "long_roots": 99,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 15,
+      "start_s": "4500.0",
+      "end_s": "4800.0",
+      "requests": 7033,
+      "eligible_roots": 7033,
+      "long_roots": 95,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 16,
+      "start_s": "4800.0",
+      "end_s": "5100.0",
+      "requests": 6736,
+      "eligible_roots": 6736,
+      "long_roots": 256,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 17,
+      "start_s": "5100.0",
+      "end_s": "5400.0",
+      "requests": 6660,
+      "eligible_roots": 6660,
+      "long_roots": 111,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 18,
+      "start_s": "5400.0",
+      "end_s": "5700.0",
+      "requests": 5975,
+      "eligible_roots": 5975,
+      "long_roots": 115,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 19,
+      "start_s": "5700.0",
+      "end_s": "6000.0",
+      "requests": 7402,
+      "eligible_roots": 7402,
+      "long_roots": 95,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 20,
+      "start_s": "6000.0",
+      "end_s": "6300.0",
+      "requests": 6369,
+      "eligible_roots": 6369,
+      "long_roots": 96,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 21,
+      "start_s": "6300.0",
+      "end_s": "6600.0",
+      "requests": 7691,
+      "eligible_roots": 7691,
+      "long_roots": 110,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 22,
+      "start_s": "6600.0",
+      "end_s": "6900.0",
+      "requests": 5645,
+      "eligible_roots": 5645,
+      "long_roots": 111,
+      "short_chains": 0,
+      "match": false
+    }
+  ],
+  "text": [
+    {
+      "index": 0,
+      "start_s": "0.0",
+      "end_s": "300.0",
+      "requests": 796,
+      "eligible_roots": 796,
+      "long_roots": 20,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 1,
+      "start_s": "300.0",
+      "end_s": "600.0",
+      "requests": 784,
+      "eligible_roots": 784,
+      "long_roots": 18,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 2,
+      "start_s": "600.0",
+      "end_s": "900.0",
+      "requests": 813,
+      "eligible_roots": 813,
+      "long_roots": 25,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 3,
+      "start_s": "900.0",
+      "end_s": "1200.0",
+      "requests": 785,
+      "eligible_roots": 785,
+      "long_roots": 17,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 4,
+      "start_s": "1200.0",
+      "end_s": "1500.0",
+      "requests": 780,
+      "eligible_roots": 780,
+      "long_roots": 17,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 5,
+      "start_s": "1500.0",
+      "end_s": "1800.0",
+      "requests": 808,
+      "eligible_roots": 808,
+      "long_roots": 21,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 6,
+      "start_s": "1800.0",
+      "end_s": "2100.0",
+      "requests": 827,
+      "eligible_roots": 827,
+      "long_roots": 18,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 7,
+      "start_s": "2100.0",
+      "end_s": "2400.0",
+      "requests": 900,
+      "eligible_roots": 900,
+      "long_roots": 20,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 8,
+      "start_s": "2400.0",
+      "end_s": "2700.0",
+      "requests": 852,
+      "eligible_roots": 852,
+      "long_roots": 17,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 9,
+      "start_s": "2700.0",
+      "end_s": "3000.0",
+      "requests": 890,
+      "eligible_roots": 890,
+      "long_roots": 24,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 10,
+      "start_s": "3000.0",
+      "end_s": "3300.0",
+      "requests": 968,
+      "eligible_roots": 968,
+      "long_roots": 28,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 11,
+      "start_s": "3300.0",
+      "end_s": "3600.0",
+      "requests": 955,
+      "eligible_roots": 955,
+      "long_roots": 32,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 12,
+      "start_s": "3600.0",
+      "end_s": "3900.0",
+      "requests": 962,
+      "eligible_roots": 962,
+      "long_roots": 45,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 13,
+      "start_s": "3900.0",
+      "end_s": "4200.0",
+      "requests": 1006,
+      "eligible_roots": 1006,
+      "long_roots": 32,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 14,
+      "start_s": "4200.0",
+      "end_s": "4500.0",
+      "requests": 980,
+      "eligible_roots": 980,
+      "long_roots": 57,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 15,
+      "start_s": "4500.0",
+      "end_s": "4800.0",
+      "requests": 926,
+      "eligible_roots": 926,
+      "long_roots": 40,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 16,
+      "start_s": "4800.0",
+      "end_s": "5100.0",
+      "requests": 1001,
+      "eligible_roots": 1001,
+      "long_roots": 47,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 17,
+      "start_s": "5100.0",
+      "end_s": "5400.0",
+      "requests": 943,
+      "eligible_roots": 943,
+      "long_roots": 26,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 18,
+      "start_s": "5400.0",
+      "end_s": "5700.0",
+      "requests": 953,
+      "eligible_roots": 953,
+      "long_roots": 28,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 19,
+      "start_s": "5700.0",
+      "end_s": "6000.0",
+      "requests": 993,
+      "eligible_roots": 993,
+      "long_roots": 25,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 20,
+      "start_s": "6000.0",
+      "end_s": "6300.0",
+      "requests": 1039,
+      "eligible_roots": 1039,
+      "long_roots": 27,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 21,
+      "start_s": "6300.0",
+      "end_s": "6600.0",
+      "requests": 974,
+      "eligible_roots": 974,
+      "long_roots": 33,
+      "short_chains": 0,
+      "match": false
+    },
+    {
+      "index": 22,
+      "start_s": "6600.0",
+      "end_s": "6900.0",
+      "requests": 971,
+      "eligible_roots": 971,
+      "long_roots": 26,
+      "short_chains": 0,
+      "match": false
+    }
+  ]
+}

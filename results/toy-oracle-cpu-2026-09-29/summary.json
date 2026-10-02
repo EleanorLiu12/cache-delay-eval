@@ -1,0 +1,879 @@
+{
+  "units": "toy ticks; no hardware calibration",
+  "GPU_used": false,
+  "results": [
+    {
+      "case": "no_sharing_control",
+      "slack_percent": 0,
+      "baseline_mean_ttft": 8.5,
+      "oracle_mean_ttft": 8.5,
+      "baseline_makespan": 14,
+      "oracle_makespan": 14,
+      "status": "exact_restricted_toy_optimum",
+      "cost_revision": "toy_parallel_max_v1",
+      "units": "integer toy ticks (not seconds)",
+      "objective": "sum of first-token latency; divide by request count for mean",
+      "baseline_sum_ttft_ticks": 34,
+      "incumbent_sum_ttft_ticks": 34,
+      "lower_bound_sum_ttft_ticks": 34,
+      "optimality_gap_ticks": 0,
+      "regret_mean_ttft_ticks": 0.0,
+      "relative_regret": 0.0,
+      "visited_states": 49,
+      "enumerated_actions": 104,
+      "duplicate_states": 36,
+      "constraint_pruned": 20,
+      "completed_states": 4,
+      "termination_reason": "exhausted_all_reachable_legal_waiting_orders",
+      "baseline_included_as_feasible_candidate": true,
+      "constraint_limits": {
+        "completion": [
+          "8",
+          "8",
+          "15",
+          "15"
+        ],
+        "decode_duration": [
+          "3",
+          "3",
+          "3",
+          "3"
+        ],
+        "token_gap": [
+          "3",
+          "3",
+          "3",
+          "3"
+        ]
+      },
+      "horizon_ticks": "15",
+      "best_waiting_actions": [
+        [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [],
+        []
+      ]
+    },
+    {
+      "case": "no_sharing_control",
+      "slack_percent": 5,
+      "baseline_mean_ttft": 8.5,
+      "oracle_mean_ttft": 8.5,
+      "baseline_makespan": 14,
+      "oracle_makespan": 14,
+      "status": "exact_restricted_toy_optimum",
+      "cost_revision": "toy_parallel_max_v1",
+      "units": "integer toy ticks (not seconds)",
+      "objective": "sum of first-token latency; divide by request count for mean",
+      "baseline_sum_ttft_ticks": 34,
+      "incumbent_sum_ttft_ticks": 34,
+      "lower_bound_sum_ttft_ticks": 34,
+      "optimality_gap_ticks": 0,
+      "regret_mean_ttft_ticks": 0.0,
+      "relative_regret": 0.0,
+      "visited_states": 49,
+      "enumerated_actions": 104,
+      "duplicate_states": 36,
+      "constraint_pruned": 20,
+      "completed_states": 4,
+      "termination_reason": "exhausted_all_reachable_legal_waiting_orders",
+      "baseline_included_as_feasible_candidate": true,
+      "constraint_limits": {
+        "completion": [
+          "8",
+          "8",
+          "15",
+          "15"
+        ],
+        "decode_duration": [
+          "3",
+          "3",
+          "3",
+          "3"
+        ],
+        "token_gap": [
+          "3",
+          "3",
+          "3",
+          "3"
+        ]
+      },
+      "horizon_ticks": "15",
+      "best_waiting_actions": [
+        [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [],
+        []
+      ]
+    },
+    {
+      "case": "no_sharing_control",
+      "slack_percent": 10,
+      "baseline_mean_ttft": 8.5,
+      "oracle_mean_ttft": 8.5,
+      "baseline_makespan": 14,
+      "oracle_makespan": 14,
+      "status": "exact_restricted_toy_optimum",
+      "cost_revision": "toy_parallel_max_v1",
+      "units": "integer toy ticks (not seconds)",
+      "objective": "sum of first-token latency; divide by request count for mean",
+      "baseline_sum_ttft_ticks": 34,
+      "incumbent_sum_ttft_ticks": 34,
+      "lower_bound_sum_ttft_ticks": 34,
+      "optimality_gap_ticks": 0,
+      "regret_mean_ttft_ticks": 0.0,
+      "relative_regret": 0.0,
+      "visited_states": 49,
+      "enumerated_actions": 104,
+      "duplicate_states": 36,
+      "constraint_pruned": 20,
+      "completed_states": 4,
+      "termination_reason": "exhausted_all_reachable_legal_waiting_orders",
+      "baseline_included_as_feasible_candidate": true,
+      "constraint_limits": {
+        "completion": [
+          "8",
+          "8",
+          "77/5",
+          "77/5"
+        ],
+        "decode_duration": [
+          "3",
+          "3",
+          "3",
+          "3"
+        ],
+        "token_gap": [
+          "3",
+          "3",
+          "3",
+          "3"
+        ]
+      },
+      "horizon_ticks": "77/5",
+      "best_waiting_actions": [
+        [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [],
+        []
+      ]
+    },
+    {
+      "case": "sufficient_capacity",
+      "slack_percent": 0,
+      "baseline_mean_ttft": 7.5,
+      "oracle_mean_ttft": 7.5,
+      "baseline_makespan": 12,
+      "oracle_makespan": 12,
+      "status": "exact_restricted_toy_optimum",
+      "cost_revision": "toy_parallel_max_v1",
+      "units": "integer toy ticks (not seconds)",
+      "objective": "sum of first-token latency; divide by request count for mean",
+      "baseline_sum_ttft_ticks": 30,
+      "incumbent_sum_ttft_ticks": 30,
+      "lower_bound_sum_ttft_ticks": 30,
+      "optimality_gap_ticks": 0,
+      "regret_mean_ttft_ticks": 0.0,
+      "relative_regret": 0.0,
+      "visited_states": 97,
+      "enumerated_actions": 114,
+      "duplicate_states": 0,
+      "constraint_pruned": 18,
+      "completed_states": 6,
+      "termination_reason": "exhausted_all_reachable_legal_waiting_orders",
+      "baseline_included_as_feasible_candidate": true,
+      "constraint_limits": {
+        "completion": [
+          "11",
+          "9",
+          "9",
+          "13"
+        ],
+        "decode_duration": [
+          "3",
+          "3",
+          "3",
+          "3"
+        ],
+        "token_gap": [
+          "3",
+          "3",
+          "3",
+          "3"
+        ]
+      },
+      "horizon_ticks": "13",
+      "best_waiting_actions": [
+        [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        [
+          "D"
+        ],
+        [
+          "D"
+        ],
+        [],
+        []
+      ]
+    },
+    {
+      "case": "sufficient_capacity",
+      "slack_percent": 5,
+      "baseline_mean_ttft": 7.5,
+      "oracle_mean_ttft": 7.5,
+      "baseline_makespan": 12,
+      "oracle_makespan": 12,
+      "status": "exact_restricted_toy_optimum",
+      "cost_revision": "toy_parallel_max_v1",
+      "units": "integer toy ticks (not seconds)",
+      "objective": "sum of first-token latency; divide by request count for mean",
+      "baseline_sum_ttft_ticks": 30,
+      "incumbent_sum_ttft_ticks": 30,
+      "lower_bound_sum_ttft_ticks": 30,
+      "optimality_gap_ticks": 0,
+      "regret_mean_ttft_ticks": 0.0,
+      "relative_regret": 0.0,
+      "visited_states": 97,
+      "enumerated_actions": 114,
+      "duplicate_states": 0,
+      "constraint_pruned": 18,
+      "completed_states": 6,
+      "termination_reason": "exhausted_all_reachable_legal_waiting_orders",
+      "baseline_included_as_feasible_candidate": true,
+      "constraint_limits": {
+        "completion": [
+          "11",
+          "9",
+          "9",
+          "13"
+        ],
+        "decode_duration": [
+          "3",
+          "3",
+          "3",
+          "3"
+        ],
+        "token_gap": [
+          "3",
+          "3",
+          "3",
+          "3"
+        ]
+      },
+      "horizon_ticks": "13",
+      "best_waiting_actions": [
+        [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        [
+          "D"
+        ],
+        [
+          "D"
+        ],
+        [],
+        []
+      ]
+    },
+    {
+      "case": "sufficient_capacity",
+      "slack_percent": 10,
+      "baseline_mean_ttft": 7.5,
+      "oracle_mean_ttft": 7.5,
+      "baseline_makespan": 12,
+      "oracle_makespan": 12,
+      "status": "exact_restricted_toy_optimum",
+      "cost_revision": "toy_parallel_max_v1",
+      "units": "integer toy ticks (not seconds)",
+      "objective": "sum of first-token latency; divide by request count for mean",
+      "baseline_sum_ttft_ticks": 30,
+      "incumbent_sum_ttft_ticks": 30,
+      "lower_bound_sum_ttft_ticks": 30,
+      "optimality_gap_ticks": 0,
+      "regret_mean_ttft_ticks": 0.0,
+      "relative_regret": 0.0,
+      "visited_states": 97,
+      "enumerated_actions": 114,
+      "duplicate_states": 0,
+      "constraint_pruned": 18,
+      "completed_states": 6,
+      "termination_reason": "exhausted_all_reachable_legal_waiting_orders",
+      "baseline_included_as_feasible_candidate": true,
+      "constraint_limits": {
+        "completion": [
+          "11",
+          "9",
+          "9",
+          "66/5"
+        ],
+        "decode_duration": [
+          "3",
+          "3",
+          "3",
+          "3"
+        ],
+        "token_gap": [
+          "3",
+          "3",
+          "3",
+          "3"
+        ]
+      },
+      "horizon_ticks": "66/5",
+      "best_waiting_actions": [
+        [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        [
+          "D"
+        ],
+        [
+          "D"
+        ],
+        [],
+        []
+      ]
+    },
+    {
+      "case": "sharing_with_eviction",
+      "slack_percent": 0,
+      "baseline_mean_ttft": 14.25,
+      "oracle_mean_ttft": 14.25,
+      "baseline_makespan": 32,
+      "oracle_makespan": 32,
+      "status": "exact_restricted_toy_optimum",
+      "cost_revision": "toy_parallel_max_v1",
+      "units": "integer toy ticks (not seconds)",
+      "objective": "sum of first-token latency; divide by request count for mean",
+      "baseline_sum_ttft_ticks": 57,
+      "incumbent_sum_ttft_ticks": 57,
+      "lower_bound_sum_ttft_ticks": 57,
+      "optimality_gap_ticks": 0,
+      "regret_mean_ttft_ticks": 0.0,
+      "relative_regret": 0.0,
+      "visited_states": 28,
+      "enumerated_actions": 39,
+      "duplicate_states": 7,
+      "constraint_pruned": 5,
+      "completed_states": 1,
+      "termination_reason": "exhausted_all_reachable_legal_waiting_orders",
+      "baseline_included_as_feasible_candidate": true,
+      "constraint_limits": {
+        "completion": [
+          "10",
+          "18",
+          "29",
+          "33"
+        ],
+        "decode_duration": [
+          "3",
+          "1",
+          "1",
+          "1"
+        ],
+        "token_gap": [
+          "3",
+          "1",
+          "1",
+          "1"
+        ]
+      },
+      "horizon_ticks": "33",
+      "best_waiting_actions": [
+        [
+          "seed"
+        ],
+        [],
+        [],
+        [],
+        [
+          "unrelated",
+          "reuse_a",
+          "reuse_b"
+        ],
+        [
+          "reuse_a",
+          "reuse_b"
+        ],
+        [
+          "reuse_a",
+          "reuse_b"
+        ],
+        [
+          "reuse_a",
+          "reuse_b"
+        ],
+        [
+          "reuse_b"
+        ],
+        [
+          "reuse_b"
+        ],
+        [
+          "reuse_b"
+        ],
+        [
+          "reuse_b"
+        ],
+        []
+      ]
+    },
+    {
+      "case": "sharing_with_eviction",
+      "slack_percent": 5,
+      "baseline_mean_ttft": 14.25,
+      "oracle_mean_ttft": 14.25,
+      "baseline_makespan": 32,
+      "oracle_makespan": 32,
+      "status": "exact_restricted_toy_optimum",
+      "cost_revision": "toy_parallel_max_v1",
+      "units": "integer toy ticks (not seconds)",
+      "objective": "sum of first-token latency; divide by request count for mean",
+      "baseline_sum_ttft_ticks": 57,
+      "incumbent_sum_ttft_ticks": 57,
+      "lower_bound_sum_ttft_ticks": 57,
+      "optimality_gap_ticks": 0,
+      "regret_mean_ttft_ticks": 0.0,
+      "relative_regret": 0.0,
+      "visited_states": 28,
+      "enumerated_actions": 39,
+      "duplicate_states": 7,
+      "constraint_pruned": 5,
+      "completed_states": 1,
+      "termination_reason": "exhausted_all_reachable_legal_waiting_orders",
+      "baseline_included_as_feasible_candidate": true,
+      "constraint_limits": {
+        "completion": [
+          "10",
+          "18",
+          "29",
+          "663/20"
+        ],
+        "decode_duration": [
+          "3",
+          "1",
+          "1",
+          "1"
+        ],
+        "token_gap": [
+          "3",
+          "1",
+          "1",
+          "1"
+        ]
+      },
+      "horizon_ticks": "663/20",
+      "best_waiting_actions": [
+        [
+          "seed"
+        ],
+        [],
+        [],
+        [],
+        [
+          "unrelated",
+          "reuse_a",
+          "reuse_b"
+        ],
+        [
+          "reuse_a",
+          "reuse_b"
+        ],
+        [
+          "reuse_a",
+          "reuse_b"
+        ],
+        [
+          "reuse_a",
+          "reuse_b"
+        ],
+        [
+          "reuse_b"
+        ],
+        [
+          "reuse_b"
+        ],
+        [
+          "reuse_b"
+        ],
+        [
+          "reuse_b"
+        ],
+        []
+      ]
+    },
+    {
+      "case": "sharing_with_eviction",
+      "slack_percent": 10,
+      "baseline_mean_ttft": 14.25,
+      "oracle_mean_ttft": 14.25,
+      "baseline_makespan": 32,
+      "oracle_makespan": 32,
+      "status": "exact_restricted_toy_optimum",
+      "cost_revision": "toy_parallel_max_v1",
+      "units": "integer toy ticks (not seconds)",
+      "objective": "sum of first-token latency; divide by request count for mean",
+      "baseline_sum_ttft_ticks": 57,
+      "incumbent_sum_ttft_ticks": 57,
+      "lower_bound_sum_ttft_ticks": 57,
+      "optimality_gap_ticks": 0,
+      "regret_mean_ttft_ticks": 0.0,
+      "relative_regret": 0.0,
+      "visited_states": 28,
+      "enumerated_actions": 39,
+      "duplicate_states": 7,
+      "constraint_pruned": 5,
+      "completed_states": 1,
+      "termination_reason": "exhausted_all_reachable_legal_waiting_orders",
+      "baseline_included_as_feasible_candidate": true,
+      "constraint_limits": {
+        "completion": [
+          "10",
+          "18",
+          "299/10",
+          "343/10"
+        ],
+        "decode_duration": [
+          "3",
+          "1",
+          "1",
+          "1"
+        ],
+        "token_gap": [
+          "3",
+          "1",
+          "1",
+          "1"
+        ]
+      },
+      "horizon_ticks": "343/10",
+      "best_waiting_actions": [
+        [
+          "seed"
+        ],
+        [],
+        [],
+        [],
+        [
+          "unrelated",
+          "reuse_a",
+          "reuse_b"
+        ],
+        [
+          "reuse_a",
+          "reuse_b"
+        ],
+        [
+          "reuse_a",
+          "reuse_b"
+        ],
+        [
+          "reuse_a",
+          "reuse_b"
+        ],
+        [
+          "reuse_b"
+        ],
+        [
+          "reuse_b"
+        ],
+        [
+          "reuse_b"
+        ],
+        [
+          "reuse_b"
+        ],
+        []
+      ]
+    },
+    {
+      "case": "full_prompt_head_failure",
+      "slack_percent": 0,
+      "baseline_mean_ttft": 18.5,
+      "oracle_mean_ttft": 11.25,
+      "baseline_makespan": 24,
+      "oracle_makespan": 24,
+      "status": "exact_restricted_toy_optimum",
+      "cost_revision": "toy_parallel_max_v1",
+      "units": "integer toy ticks (not seconds)",
+      "objective": "sum of first-token latency; divide by request count for mean",
+      "baseline_sum_ttft_ticks": 74,
+      "incumbent_sum_ttft_ticks": 45,
+      "lower_bound_sum_ttft_ticks": 45,
+      "optimality_gap_ticks": 0,
+      "regret_mean_ttft_ticks": 7.25,
+      "relative_regret": 0.3918918918918919,
+      "visited_states": 463,
+      "enumerated_actions": 567,
+      "duplicate_states": 58,
+      "constraint_pruned": 47,
+      "completed_states": 55,
+      "termination_reason": "exhausted_all_reachable_legal_waiting_orders",
+      "baseline_included_as_feasible_candidate": true,
+      "constraint_limits": {
+        "completion": [
+          "14",
+          "25",
+          "20",
+          "25"
+        ],
+        "decode_duration": [
+          "7",
+          "1",
+          "1",
+          "1"
+        ],
+        "token_gap": [
+          "3",
+          "1",
+          "1",
+          "1"
+        ]
+      },
+      "horizon_ticks": "25",
+      "best_waiting_actions": [
+        [
+          "running",
+          "small_a",
+          "large_head",
+          "small_b"
+        ],
+        [
+          "large_head",
+          "small_b"
+        ],
+        [
+          "small_b",
+          "large_head"
+        ],
+        [
+          "large_head"
+        ],
+        [
+          "large_head"
+        ],
+        [
+          "large_head"
+        ],
+        [
+          "large_head"
+        ],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "case": "full_prompt_head_failure",
+      "slack_percent": 5,
+      "baseline_mean_ttft": 18.5,
+      "oracle_mean_ttft": 11.25,
+      "baseline_makespan": 24,
+      "oracle_makespan": 24,
+      "status": "exact_restricted_toy_optimum",
+      "cost_revision": "toy_parallel_max_v1",
+      "units": "integer toy ticks (not seconds)",
+      "objective": "sum of first-token latency; divide by request count for mean",
+      "baseline_sum_ttft_ticks": 74,
+      "incumbent_sum_ttft_ticks": 45,
+      "lower_bound_sum_ttft_ticks": 45,
+      "optimality_gap_ticks": 0,
+      "regret_mean_ttft_ticks": 7.25,
+      "relative_regret": 0.3918918918918919,
+      "visited_states": 463,
+      "enumerated_actions": 567,
+      "duplicate_states": 58,
+      "constraint_pruned": 47,
+      "completed_states": 55,
+      "termination_reason": "exhausted_all_reachable_legal_waiting_orders",
+      "baseline_included_as_feasible_candidate": true,
+      "constraint_limits": {
+        "completion": [
+          "14",
+          "126/5",
+          "20",
+          "126/5"
+        ],
+        "decode_duration": [
+          "7",
+          "1",
+          "1",
+          "1"
+        ],
+        "token_gap": [
+          "3",
+          "1",
+          "1",
+          "1"
+        ]
+      },
+      "horizon_ticks": "126/5",
+      "best_waiting_actions": [
+        [
+          "running",
+          "small_a",
+          "large_head",
+          "small_b"
+        ],
+        [
+          "large_head",
+          "small_b"
+        ],
+        [
+          "small_b",
+          "large_head"
+        ],
+        [
+          "large_head"
+        ],
+        [
+          "large_head"
+        ],
+        [
+          "large_head"
+        ],
+        [
+          "large_head"
+        ],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "case": "full_prompt_head_failure",
+      "slack_percent": 10,
+      "baseline_mean_ttft": 18.5,
+      "oracle_mean_ttft": 11.25,
+      "baseline_makespan": 24,
+      "oracle_makespan": 24,
+      "status": "exact_restricted_toy_optimum",
+      "cost_revision": "toy_parallel_max_v1",
+      "units": "integer toy ticks (not seconds)",
+      "objective": "sum of first-token latency; divide by request count for mean",
+      "baseline_sum_ttft_ticks": 74,
+      "incumbent_sum_ttft_ticks": 45,
+      "lower_bound_sum_ttft_ticks": 45,
+      "optimality_gap_ticks": 0,
+      "regret_mean_ttft_ticks": 7.25,
+      "relative_regret": 0.3918918918918919,
+      "visited_states": 467,
+      "enumerated_actions": 569,
+      "duplicate_states": 58,
+      "constraint_pruned": 45,
+      "completed_states": 57,
+      "termination_reason": "exhausted_all_reachable_legal_waiting_orders",
+      "baseline_included_as_feasible_candidate": true,
+      "constraint_limits": {
+        "completion": [
+          "143/10",
+          "132/5",
+          "209/10",
+          "132/5"
+        ],
+        "decode_duration": [
+          "7",
+          "1",
+          "1",
+          "1"
+        ],
+        "token_gap": [
+          "3",
+          "1",
+          "1",
+          "1"
+        ]
+      },
+      "horizon_ticks": "132/5",
+      "best_waiting_actions": [
+        [
+          "running",
+          "small_a",
+          "large_head",
+          "small_b"
+        ],
+        [
+          "large_head",
+          "small_b"
+        ],
+        [
+          "small_b",
+          "large_head"
+        ],
+        [
+          "large_head"
+        ],
+        [
+          "large_head"
+        ],
+        [
+          "large_head"
+        ],
+        [
+          "large_head"
+        ],
+        [],
+        [],
+        []
+      ]
+    }
+  ]
+}

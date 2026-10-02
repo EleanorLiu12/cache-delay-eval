@@ -1,0 +1,24 @@
+{
+  "status": "exact_structural_model_optimum",
+  "exact": true,
+  "visited_nodes": 10,
+  "pruned": 4,
+  "completed_leaves": 3,
+  "termination": "all_legal_ordered_victims_exhausted",
+  "lower_bound_sum_ttft_ticks": 10100,
+  "incumbent_sum_ttft_ticks": 10100,
+  "optimality_gap_ticks": 0,
+  "mean_ttft_reduction_ticks": 0.0,
+  "relative_reduction": 0.0,
+  "cost_revision": "uncalibrated_affine_v1",
+  "units": "integer model ticks",
+  "baseline_included": true,
+  "hardware_validated": false,
+  "baseline_mean_ttft_ticks": 2525.0,
+  "oracle_mean_ttft_ticks": 2525.0,
+  "baseline_evictions": 2,
+  "code_sha256": {
+    "/Users/kejunliu/Downloads/CS 699/project/scripts/run_eviction_oracle.py": "083661f20c7e5da404852acf9e1d9c2591a58e1d9b2a19b4780339529beafcb3",
+    "/Users/kejunliu/Downloads/CS 699/project/src/cache_delay_eval/eviction_oracle.py": "9c213a6d1498527e4cd98850d4b2f0c621a5d58182e5cdec4ad3a680779317d0"
+  }
+}

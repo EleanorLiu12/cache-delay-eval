@@ -1,0 +1,16 @@
+{
+  "source_scripts_sha256": "e7d2e5a09af7218136854068b39855708834f11a306a0cf754aba5aacb5a7621",
+  "seed": 699010,
+  "root_arrivals_s": {
+    "shard00000-row59150": 0.0,
+    "shard00000-row26591": 0.002,
+    "shard00000-row23580": 0.004,
+    "shard00000-row40719": 0.006,
+    "shard00000-row21496": 0.008,
+    "shard00000-row21882": 0.01,
+    "shard00000-row59238": 0.012,
+    "shard00000-row36453": 0.014
+  },
+  "assumption": "CPU mock validation only: deterministic roots two milliseconds apart; no production arrival claim",
+  "interpretation": "Calibration schedule template, not a calibrated load. Freeze a scaled copy and its hash before performance comparisons."
+}

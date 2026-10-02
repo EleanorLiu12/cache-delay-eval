@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "sampled_rows_compared_to_original": 200,
+  "source_messages_compared": 1212,
+  "reconstructed_prompts_retokenized": 581,
+  "user_assistant_pairs_sharing_turn_identifier": 606,
+  "repeated_exchange_identifiers_within_conversations": 0,
+  "interpretation": "Each user/assistant exchange shares one turn_identifier; repeated message-level IDs are expected and do not indicate duplicate exchanges.",
+  "empty_content_messages_by_role": {
+    "user": 6
+  },
+  "selections": {
+    "smoke": {
+      "sessions": 8,
+      "all_original_user_turns_preserved": 43
+    },
+    "experiment": {
+      "sessions": 64,
+      "all_original_user_turns_preserved": 153
+    }
+  },
+  "validator_sha256": "0f76b3e361701876f2458117861cfd115d9ee881b839bf03dfae6bcd6d6e4ad6",
+  "all_recorded_assistant_token_lengths": {
+    "count": 606,
+    "minimum": 1,
+    "maximum": 1978,
+    "mean": 272.8069306930693,
+    "p50": 216,
+    "p90": 542,
+    "p95": 715,
+    "p99": 1318,
+    "over_proposed_512_cap": 70
+  }
+}

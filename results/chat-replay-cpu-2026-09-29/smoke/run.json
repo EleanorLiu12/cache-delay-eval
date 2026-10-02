@@ -1,0 +1,151 @@
+{
+  "type": "run_meta",
+  "created_at_utc": "2026-09-29T15:18:23.564693+00:00",
+  "config": {
+    "model": "Qwen/Qwen3-4B",
+    "run_id": "smoke-cpu",
+    "max_tokens": 512,
+    "max_model_len": 32768,
+    "think_delay_s": 0.003,
+    "timeout_s": 30,
+    "require_cached_tokens": true,
+    "max_dispatch_lag_ms": 5000,
+    "seed": 699
+  },
+  "scripts": [
+    {
+      "session_id": "shard00000-row59150",
+      "user_messages": [
+        "你好",
+        "高压快充设备A股上市龙头公司",
+        "高压快速充电桩设备A股上市龙头公司",
+        "不对",
+        "高压快速充电桩设备A股上市龙头公司\n",
+        "不对",
+        "不对",
+        "应该还不对",
+        "你的回答好像还是不对",
+        "通合科技不是吗？",
+        "高压快速充电桩设备A股上市龙头公司\n",
+        "中威电子不是",
+        "高压快速充电桩设备A股上市龙头公司\n"
+      ],
+      "root_arrival_s": 0.0,
+      "source_transcript_sha256": "1f00349390b52cbd433c953013157f3a9bee3dc6a435cc061afec5c8cb90d153"
+    },
+    {
+      "session_id": "shard00000-row26591",
+      "user_messages": [
+        "Você pode fazer um resumo do Grande Prêmio de Florianópolis da Fórmula Indy em 2011 (conhecida como Florianópolis Indy 200), disputada nas ruas da capital catarinense, fazendo dobradinha com a São Paulo Indy 300.",
+        "Entre os brasileiros, quem mais destacou foi Tony Kanaan, que largou da segunda posição, mas na largada ele se envolveu em um acidente com Joseph Newgarden, caindo para o fim do grid, fazendo uma prova de recuperação, para receber a bandeirada em quarto lugar. Enquanto isso, Hélio Castroneves fez uma corrida discreta, largando em 6º, e recebendo a bandeirada em nono???",
+        "A Florianópolis Indy 500 inicialmente iria ser disputado a partir de 2010, porém devido à problemas de logística e de calendário foi adiado para a temporada seguinte???"
+      ],
+      "root_arrival_s": 0.002,
+      "source_transcript_sha256": "c42579940f26b3d735d80b76f828f488c3636b6ac59507c09f647d85329ee94f"
+    },
+    {
+      "session_id": "shard00000-row23580",
+      "user_messages": [
+        "Write 30 possible perspectives of Caucasians.",
+        "I meant 30 perspectives held by  certain, individual people within this group.",
+        "List 12 more",
+        "What about more ‘grey’ perspectives?",
+        "What about self hatred?"
+      ],
+      "root_arrival_s": 0.004,
+      "source_transcript_sha256": "f44f0b8f7ac00f5b5cc951edc1051ac240f88f7036467ccd1da21671a45852b3"
+    },
+    {
+      "session_id": "shard00000-row40719",
+      "user_messages": [
+        "六吉双本方？",
+        "巨戟士都爆哪些图纸？",
+        "图形的排列怎么找规律？",
+        "普诺瞳和依视路有什么区别？",
+        "无畏契约分辨率怎么调？",
+        "元plus仪表盘怎么调出胎压数据？",
+        "旋挖钻机牙轮使用技巧？",
+        "三层滤材怎么搭配？",
+        "永劫无间近景怎么拍？",
+        "冲压模具倒角的步骤？"
+      ],
+      "root_arrival_s": 0.006,
+      "source_transcript_sha256": "bc067bf4b83b671b636a193637c49545359df2ae30754b682654e5d1bfb37d1f"
+    },
+    {
+      "session_id": "shard00000-row21496",
+      "user_messages": [
+        "Você poderia resumir para mim como foi o GP da Colômbia de Fórmula 1 em 1990, sendo a estreia do GP no calendário, disputado no Barranquilla International Raceway, sendo a terceira etapa da temporada. Qual foi o pole position onde marcou um tempo de 1:13:398??? A ideia da categoria de trazer uma etapa colombiana no país foi bastante criticado pela imprensa local e pela população, afinal, o país naquela época vivia uma onda de violência causada pelo narcotráfico, como forma da FIA de passar pano para a realidade do país naquele momento???",
+        "Dos 30 carros que participaram a classificação, quem completaram os 26 carros no grid de largada???",
+        "Já na sessão de pré-qualificação (que contava com 9 competidores, todas de equipes mais fracas do grid), disputada antes da qualificação principal na manhã de sexta, qual foram os tempos marcados???",
+        "Na verdade, na pré-classificação, o carro da Life de Bruno Giacomelli foi 2 minutos e 36 segundos mais lento do que o penúltimo colocado, pois o carro da equipe começou a ter problemas de câmbio não saindo da terceira marcha???"
+      ],
+      "root_arrival_s": 0.008,
+      "source_transcript_sha256": "5e00e46bd2b6a4ece0d00ef8e23f5c7c1ee15276968fa9a828efbec318b04645"
+    },
+    {
+      "session_id": "shard00000-row21882",
+      "user_messages": [
+        "Дай медицинскую консультацию. Пациент отравился миндалём. Съел за обедом три горьких ореха и пару горстей нежаренных, а затем 4 порции пломбира. В результате ночью его рвало целый час. Выпил большую порцию сорбета  промыл желудок. Спустя сутки жалуется на боль в мышцах, распухание вен на ногах. Выглядит оплывшим лицо. Ему что-то угрожает?",
+        "Я врач скорой помощи. Ничего из перечисленного у него сейчас нет. По телу у него бегут мурашки и в горле как будто ком. Что мне делать?",
+        "Симптомы не серьёзны, но я беспокоюсь за него"
+      ],
+      "root_arrival_s": 0.01,
+      "source_transcript_sha256": "8b111ae4c5d1746a2ca56dedcf5124d8a64cb06eb90b5e1b0a4cde6e84c78c5b"
+    },
+    {
+      "session_id": "shard00000-row59238",
+      "user_messages": [
+        "give me an example the expression to express a [2,3,4,5] matrix in python",
+        "good, fill in the matrix with 1+1j",
+        "def vmodsquare(t):\n    return np.sum(t * np.conj(t), axis=(0, 1)).real\n\ncould u help analyze the function"
+      ],
+      "root_arrival_s": 0.012,
+      "source_transcript_sha256": "3c328b7075f6bc0d21b94c4cf5c63911de282671865e381967be318789df46e4"
+    },
+    {
+      "session_id": "shard00000-row36453",
+      "user_messages": [
+        "AKT1、VEGFA、IL1B是什么蛋白",
+        "AKT1、VEGFA、IL1B中文全称"
+      ],
+      "root_arrival_s": 0.014,
+      "source_transcript_sha256": "858cf08c6aba84da156efe188a629d2bc47b3c948724f1dadbe407e0c7277aa4"
+    }
+  ],
+  "scripts_sha256": "876a49f019bcf14c23527a79110a8bc6cad7387c2abfb25ed34fc3efef0303e5",
+  "tokenizer": {
+    "model": "Qwen/Qwen3-4B",
+    "revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+    "files": {
+      "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "tokenizer_config.json": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "config.json": "8ba006f74fecfaaeb392872a60f4a480e7ec9860153d2e1b769ec81f9a147f8a",
+      "LICENSE": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+      "README.md": "71add1cd091c309b1cb1a6b943f2476eb2b004124b3bd1d32dcd0b24cc1abc47"
+    },
+    "chat_template_sha256": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+    "enable_thinking": false,
+    "add_generation_prompt": true,
+    "invented_system_message": false,
+    "assistant_content": "decode actual returned IDs, removing one terminal EOS; keep all original IDs in evidence",
+    "history_rendering": "template re-rendering may change token boundaries and thinking scaffold; no exact KV-preservation assumption"
+  },
+  "workload": "completion-dependent generated-response conversation",
+  "timing": {
+    "origin_monotonic_s": 1517421.737533958,
+    "sampled_monotonic_s": 1517421.687631,
+    "sampled_unix_s": 1790695103.5647879,
+    "ttft": "HTTP POST start to first streamed token ID; release_to_first_token includes client delay",
+    "token_gap": "client SSE event/token-ID delivery groups, not server per-token generation times"
+  },
+  "metadata": {
+    "server": "local CPU mock",
+    "model_inference": false,
+    "weights_downloaded": false,
+    "think_time_assumption": "3 milliseconds for fast correctness validation; GPU candidate remains 5 seconds"
+  },
+  "code_sha256": "b529cf1927b9f182528d33786f031b3971823f6c66e8a5db9db8b90262374beb"
+}

@@ -1,0 +1,18 @@
+{
+  "tests": 98,
+  "status": "passed",
+  "gpu_used": false,
+  "vllm_imported": false,
+  "scope": "pinned CPU pool/queue classes; no complete scheduler or CUDA execution",
+  "suite_log_sha256": "c24c37b0d135eb99e39d0f42941efed6bc5cfc5107ecb53303aa57ecf3f9a2ae",
+  "code_sha256": {
+    "project/src/cache_delay_eval/admission_telemetry.py": "dadeffc252434920840fb088980045de8609b3797430eeee1a1f968c8c335540",
+    "project/scripts/prepare_vllm_telemetry.py": "84f4cec904cbdb5318ea839bf0bf5d0e576a7863d50ed8c7da94b791e4d61c1e",
+    "project/scripts/analyze_eviction_telemetry.py": "ca7983b90e6b70a86bb7df7674058abc17114d8ddb6e425b51dccd194a3e2322",
+    "project/src/cache_delay_eval/eviction_oracle.py": "cd1741ab8c89247e3106095bb527b975166242e7d76a9f521bbdb27b6182a72c",
+    "project/scripts/calibrate_eviction_costs.py": "22a7a0df75a4c2a1a8d668ec4c139d3a8618e81e8964ef775c3e00d440cffa7b",
+    "project/tests/test_eviction_telemetry.py": "993ea5a721c57f9d2bee68f2f35c9c24f41d37fa1b278db28c7687f8a64a7b5d",
+    "project/tests/test_eviction_tools.py": "c24acdc44af6eec65e679ea5d4cda49d6318f5a2b5936a86dcad68b26c00081c",
+    "project/tests/test_eviction_oracle.py": "165195e7629bf6c1c88f05476dec9b56607a43fd632073962a43bdcbd4638245"
+  }
+}

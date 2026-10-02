@@ -1,0 +1,44 @@
+{
+  "status": "passed",
+  "review_date": "2026-10-01",
+  "historical_files_unchanged": 420,
+  "local_links_valid": true,
+  "authored_files_english": true,
+  "raw_gpu_counters_match_previous_independent_recount": true,
+  "figure_visually_checked": true,
+  "public_source_checks": [
+    {
+      "url": "https://raw.githubusercontent.com/blitz-serving/yaullm/aa897f04a5a891c39e96ca2d554cf310d2933fa2/vllm/v1/core/block_pool.py",
+      "sha256": "fcd454d647f533f29b26e3becfa65c8c5f7b3d3120a1e55b3195d25b1e4e1a23",
+      "bytes": 16271
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blitz-serving/yaullm/aa897f04a5a891c39e96ca2d554cf310d2933fa2/vllm/core/evictor.py",
+      "sha256": "154886543898f1c984e7d8dfeb2768e42b58304306596bba660e8e2d5cb2424c",
+      "bytes": 5515
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/2cf0a6915ce544dc493a0990f2ea38d81601128a/vllm/v1/metrics/stats.py",
+      "sha256": "7682d3086bf5395f163f423677485432ee2c035aada2f370c0f82b291e53ca47",
+      "metric_definition_matches": [
+        {
+          "line": 442,
+          "code": "        for event in events:\n            if event.type == EngineCoreEventType.QUEUED:\n                req_stats.queued_ts = event.timestamp\n                lora_states.request_waiting(req_id, lora_name)\n            elif event.type == EngineCoreEventType.SCHEDULED:\n                if req_stats.scheduled_ts == 0.0:  # ignore preemptions"
+        },
+        {
+          "line": 445,
+          "code": "                lora_states.request_waiting(req_id, lora_name)\n            elif event.type == EngineCoreEventType.SCHEDULED:\n                if req_stats.scheduled_ts == 0.0:  # ignore preemptions\n                    req_stats.scheduled_ts = event.timestamp\n                lora_states.request_running(req_id, lora_name)\n            elif event.type == EngineCoreEventType.PREEMPTED:"
+        },
+        {
+          "line": 446,
+          "code": "            elif event.type == EngineCoreEventType.SCHEDULED:\n                if req_stats.scheduled_ts == 0.0:  # ignore preemptions\n                    req_stats.scheduled_ts = event.timestamp\n                lora_states.request_running(req_id, lora_name)\n            elif event.type == EngineCoreEventType.PREEMPTED:\n                self.num_preempted_reqs += 1"
+        },
+        {
+          "line": 464,
+          "code": "\n        # Queued interval is from first QUEUED event to first SCHEDULED\n        queued_time = req_stats.scheduled_ts - req_stats.queued_ts\n\n        # Prefill interval is from first SCHEDULED to first NEW_TOKEN\n        # Any preemptions during prefill is included in the interval"
+        }
+      ]
+    }
+  ],
+  "scope": "Historical evidence review; no new inference, dataset download, or policy experiment"
+}

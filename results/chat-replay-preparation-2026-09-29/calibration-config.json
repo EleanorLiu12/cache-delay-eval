@@ -1,0 +1,11 @@
+{
+  "model": "Qwen/Qwen3-4B",
+  "run_id": "calibration-candidate",
+  "max_tokens": 512,
+  "max_model_len": 32768,
+  "think_delay_s": 5.0,
+  "timeout_s": 600,
+  "require_cached_tokens": true,
+  "max_dispatch_lag_ms": 50.0,
+  "seed": 699
+}

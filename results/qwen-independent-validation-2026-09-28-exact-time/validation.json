@@ -1,0 +1,1555 @@
+{
+  "created_at_utc": "2026-09-29T00:19:28.841734+00:00",
+  "command": [
+    "scripts/validate_qwen_cpu.py",
+    "--trace",
+    "A,data/qwen-bailian/5f7439c51ec248a0c585f7d90a41a6f57773b912/qwen_traceA_blksz_16.jsonl,results/qwen-trace-a-2026-09-28,results/qwen-temporal-2026-09-28-exact-time/a",
+    "--trace",
+    "B,data/qwen-bailian-trace-b/5f7439c51ec248a0c585f7d90a41a6f57773b912/qwen_traceB_blksz_16.jsonl,results/qwen-trace-b-2026-09-28,results/qwen-temporal-2026-09-28-exact-time/b",
+    "--historical-baseline",
+    "results/cpu-meeting-2026-10-01/preservation-baseline.json",
+    "--output-dir",
+    "results/qwen-independent-validation-2026-09-28-exact-time"
+  ],
+  "validator_sha256": "9c2f6a8ba1054fe80724f79f068ce23c102550a13005bef863caff47cb902f04",
+  "methods": {
+    "independence": "No imports from production analyzers. Raw parent traversal, raw scalar distributions and exhaustive candidate prefix scans.",
+    "prefix_sampling": "Up to 80 deterministic requests per temporal cohort, covering equal timestamps, partial blocks, high/low overlap, initial/continuation, time/length boundaries; exhaustive raw candidates per sampled query.",
+    "limits": "Exhaustive prefix correctness is checked for the deterministic sample, not every request. Complete evidence counts and structural metadata are checked for every request."
+  },
+  "historical_preservation": {
+    "files_checked": 241,
+    "all_unchanged": true
+  },
+  "traces": {
+    "A": {
+      "input": "data/qwen-bailian/5f7439c51ec248a0c585f7d90a41a6f57773b912/qwen_traceA_blksz_16.jsonl",
+      "input_sha256": "07cedc9ed8aff301994ac68ed4aede8123b7603673575eeba9dd677de663db17",
+      "raw_audit": {
+        "valid_records": 43058,
+        "types": {
+          "text": 31744,
+          "image": 1617,
+          "search": 8187,
+          "file": 1510
+        },
+        "schema_issues": {
+          "out_of_order_adjacent_arrivals": 0,
+          "equal_adjacent_arrivals": 139
+        },
+        "lineage": {
+          "roots": 23101,
+          "root_turn_not_one": 0,
+          "observed_edges": 19957,
+          "missing_parent_edges": 0,
+          "parent_not_earlier_in_file": 0,
+          "parent_not_strictly_earlier_in_time": 0,
+          "nonconsecutive_turn_edges": 0,
+          "branching_parents": 0,
+          "mixed_type_components": 0,
+          "components_without_observed_root": 0
+        },
+        "partial_final_block_records": 40375,
+        "zero_output_records": 0,
+        "observed_depth": {
+          "count": 43058,
+          "mean": 2.1769473733104183,
+          "minimum": 1,
+          "maximum": 37,
+          "p25": 1,
+          "p50": 1,
+          "p75": 3,
+          "p90": 4,
+          "p95": 6,
+          "p99": 11
+        }
+      },
+      "structural": {
+        "all_types": {
+          "requests": 43058,
+          "components": 23101,
+          "types": {
+            "text": 31744,
+            "image": 1617,
+            "search": 8187,
+            "file": 1510
+          },
+          "singleton_components": 14089,
+          "multi_request_components": 9012
+        },
+        "observed_root_text": {
+          "requests": 31744,
+          "components": 16447,
+          "types": {
+            "text": 31744
+          },
+          "singleton_components": 9708,
+          "multi_request_components": 6739
+        }
+      },
+      "temporal": {
+        "requests_checked": 31744,
+        "positive_prefix_witness_checks": 325711,
+        "aggregate_and_stratum_comparisons_checked": 408,
+        "exhaustive_queries": 80,
+        "exhaustive_request_evidence": [
+          {
+            "chat_id": 0,
+            "source_line": 1,
+            "selection_reasons": [
+              "earliest"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 43057,
+            "source_line": 43058,
+            "selection_reasons": [
+              "latest"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 26189,
+            "source_line": 26190,
+            "selection_reasons": [
+              "shortest"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 42811,
+            "source_line": 42812,
+            "selection_reasons": [
+              "longest"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 11967,
+            "source_line": 11968,
+            "selection_reasons": [
+              "equal_arrival_time",
+              "high_overlap",
+              "initial",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 22309,
+            "source_line": 22310,
+            "selection_reasons": [
+              "equal_arrival_time"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 36865,
+            "source_line": 36866,
+            "selection_reasons": [
+              "equal_arrival_time"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 26763,
+            "source_line": 26764,
+            "selection_reasons": [
+              "equal_arrival_time"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 42384,
+            "source_line": 42385,
+            "selection_reasons": [
+              "equal_arrival_time"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 39603,
+            "source_line": 39604,
+            "selection_reasons": [
+              "equal_arrival_time"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 25140,
+            "source_line": 25141,
+            "selection_reasons": [
+              "equal_arrival_time"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 35033,
+            "source_line": 35034,
+            "selection_reasons": [
+              "equal_arrival_time"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 32737,
+            "source_line": 32738,
+            "selection_reasons": [
+              "equal_arrival_time"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 24817,
+            "source_line": 24818,
+            "selection_reasons": [
+              "equal_arrival_time"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 30153,
+            "source_line": 30154,
+            "selection_reasons": [
+              "partial_final_block",
+              "low_overlap",
+              "continuation",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 11972,
+            "source_line": 11973,
+            "selection_reasons": [
+              "partial_final_block",
+              "high_overlap",
+              "initial",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 6643,
+            "source_line": 6644,
+            "selection_reasons": [
+              "partial_final_block",
+              "low_overlap",
+              "initial",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 11869,
+            "source_line": 11870,
+            "selection_reasons": [
+              "partial_final_block",
+              "high_overlap",
+              "initial",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 22729,
+            "source_line": 22730,
+            "selection_reasons": [
+              "partial_final_block",
+              "high_overlap",
+              "initial",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 12855,
+            "source_line": 12856,
+            "selection_reasons": [
+              "partial_final_block",
+              "high_overlap",
+              "initial",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 37278,
+            "source_line": 37279,
+            "selection_reasons": [
+              "partial_final_block",
+              "high_overlap",
+              "initial",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 25012,
+            "source_line": 25013,
+            "selection_reasons": [
+              "partial_final_block",
+              "high_overlap",
+              "initial",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 17957,
+            "source_line": 17958,
+            "selection_reasons": [
+              "partial_final_block",
+              "low_overlap",
+              "continuation",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 27587,
+            "source_line": 27588,
+            "selection_reasons": [
+              "partial_final_block",
+              "high_overlap",
+              "continuation",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 41698,
+            "source_line": 41699,
+            "selection_reasons": [
+              "high_overlap",
+              "continuation",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 28934,
+            "source_line": 28935,
+            "selection_reasons": [
+              "high_overlap",
+              "continuation",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 15627,
+            "source_line": 15628,
+            "selection_reasons": [
+              "low_overlap",
+              "initial",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 26398,
+            "source_line": 26399,
+            "selection_reasons": [
+              "low_overlap",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 22975,
+            "source_line": 22976,
+            "selection_reasons": [
+              "low_overlap",
+              "continuation",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 17267,
+            "source_line": 17268,
+            "selection_reasons": [
+              "low_overlap",
+              "continuation",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 35872,
+            "source_line": 35873,
+            "selection_reasons": [
+              "low_overlap",
+              "continuation",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 40821,
+            "source_line": 40822,
+            "selection_reasons": [
+              "low_overlap",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 1215,
+            "source_line": 1216,
+            "selection_reasons": [
+              "low_overlap",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 16198,
+            "source_line": 16199,
+            "selection_reasons": [
+              "initial",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 15105,
+            "source_line": 15106,
+            "selection_reasons": [
+              "continuation",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 38027,
+            "source_line": 38028,
+            "selection_reasons": [
+              "continuation",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 10935,
+            "source_line": 10936,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 34437,
+            "source_line": 34438,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 43009,
+            "source_line": 43010,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 13126,
+            "source_line": 13127,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 23464,
+            "source_line": 23465,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 31796,
+            "source_line": 31797,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 32602,
+            "source_line": 32603,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 39576,
+            "source_line": 39577,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 28896,
+            "source_line": 28897,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 31625,
+            "source_line": 31626,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 6989,
+            "source_line": 6990,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 12251,
+            "source_line": 12252,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 13008,
+            "source_line": 13009,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 33072,
+            "source_line": 33073,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 18719,
+            "source_line": 18720,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 8006,
+            "source_line": 8007,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 12002,
+            "source_line": 12003,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 33148,
+            "source_line": 33149,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 19658,
+            "source_line": 19659,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 11245,
+            "source_line": 11246,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 8981,
+            "source_line": 8982,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 39288,
+            "source_line": 39289,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 23365,
+            "source_line": 23366,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 3330,
+            "source_line": 3331,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 1520,
+            "source_line": 1521,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 21953,
+            "source_line": 21954,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 21188,
+            "source_line": 21189,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 42056,
+            "source_line": 42057,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 20721,
+            "source_line": 20722,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 21773,
+            "source_line": 21774,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 35393,
+            "source_line": 35394,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 18664,
+            "source_line": 18665,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 32911,
+            "source_line": 32912,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 40543,
+            "source_line": 40544,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 5276,
+            "source_line": 5277,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 793,
+            "source_line": 794,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 36354,
+            "source_line": 36355,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 15110,
+            "source_line": 15111,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 17203,
+            "source_line": 17204,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 4869,
+            "source_line": 4870,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 38794,
+            "source_line": 38795,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 34128,
+            "source_line": 34129,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 24278,
+            "source_line": 24279,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 539,
+            "source_line": 540,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          }
+        ],
+        "all_checks_passed": true
+      }
+    },
+    "B": {
+      "input": "data/qwen-bailian-trace-b/5f7439c51ec248a0c585f7d90a41a6f57773b912/qwen_traceB_blksz_16.jsonl",
+      "input_sha256": "68e3f98e2d601d60d0abf4b89bc8a3654372abab7b1cde6373a13d0054379d59",
+      "raw_audit": {
+        "valid_records": 172800,
+        "types": {
+          "api": 150936,
+          "text": 21864
+        },
+        "schema_issues": {
+          "out_of_order_adjacent_arrivals": 0,
+          "equal_adjacent_arrivals": 2227
+        },
+        "lineage": {
+          "roots": 172800,
+          "root_turn_not_one": 0,
+          "observed_edges": 0,
+          "missing_parent_edges": 0,
+          "parent_not_earlier_in_file": 0,
+          "parent_not_strictly_earlier_in_time": 0,
+          "nonconsecutive_turn_edges": 0,
+          "branching_parents": 0,
+          "mixed_type_components": 0,
+          "components_without_observed_root": 0
+        },
+        "partial_final_block_records": 161936,
+        "zero_output_records": 0,
+        "observed_depth": {
+          "count": 172800,
+          "mean": 1,
+          "minimum": 1,
+          "maximum": 1,
+          "p25": 1,
+          "p50": 1,
+          "p75": 1,
+          "p90": 1,
+          "p95": 1,
+          "p99": 1
+        }
+      },
+      "structural": {
+        "all_types": {
+          "requests": 172800,
+          "components": 172800,
+          "types": {
+            "api": 150936,
+            "text": 21864
+          },
+          "singleton_components": 172800,
+          "multi_request_components": 0
+        },
+        "observed_root_api": {
+          "requests": 150936,
+          "components": 150936,
+          "types": {
+            "api": 150936
+          },
+          "singleton_components": 150936,
+          "multi_request_components": 0
+        },
+        "observed_root_text": {
+          "requests": 21864,
+          "components": 21864,
+          "types": {
+            "text": 21864
+          },
+          "singleton_components": 21864,
+          "multi_request_components": 0
+        }
+      },
+      "temporal": {
+        "requests_checked": 150936,
+        "positive_prefix_witness_checks": 1287202,
+        "aggregate_and_stratum_comparisons_checked": 252,
+        "exhaustive_queries": 80,
+        "exhaustive_request_evidence": [
+          {
+            "chat_id": 0,
+            "source_line": 1,
+            "selection_reasons": [
+              "earliest"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 172799,
+            "source_line": 172800,
+            "selection_reasons": [
+              "latest"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 2171,
+            "source_line": 2172,
+            "selection_reasons": [
+              "shortest"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 152409,
+            "source_line": 152410,
+            "selection_reasons": [
+              "longest"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 74828,
+            "source_line": 74829,
+            "selection_reasons": [
+              "equal_arrival_time",
+              "high_overlap",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 138325,
+            "source_line": 138326,
+            "selection_reasons": [
+              "equal_arrival_time",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 85179,
+            "source_line": 85180,
+            "selection_reasons": [
+              "equal_arrival_time"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 137362,
+            "source_line": 137363,
+            "selection_reasons": [
+              "equal_arrival_time"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 91805,
+            "source_line": 91806,
+            "selection_reasons": [
+              "equal_arrival_time"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 150914,
+            "source_line": 150915,
+            "selection_reasons": [
+              "equal_arrival_time"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 30879,
+            "source_line": 30880,
+            "selection_reasons": [
+              "equal_arrival_time"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 35413,
+            "source_line": 35414,
+            "selection_reasons": [
+              "equal_arrival_time"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 44352,
+            "source_line": 44353,
+            "selection_reasons": [
+              "equal_arrival_time"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 56821,
+            "source_line": 56822,
+            "selection_reasons": [
+              "equal_arrival_time"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 170052,
+            "source_line": 170053,
+            "selection_reasons": [
+              "partial_final_block",
+              "high_overlap",
+              "initial",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 125824,
+            "source_line": 125825,
+            "selection_reasons": [
+              "partial_final_block",
+              "high_overlap",
+              "initial",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 61162,
+            "source_line": 61163,
+            "selection_reasons": [
+              "partial_final_block",
+              "low_overlap",
+              "initial",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 163455,
+            "source_line": 163456,
+            "selection_reasons": [
+              "partial_final_block",
+              "low_overlap",
+              "initial",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 142422,
+            "source_line": 142423,
+            "selection_reasons": [
+              "partial_final_block",
+              "low_overlap",
+              "initial",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 162597,
+            "source_line": 162598,
+            "selection_reasons": [
+              "partial_final_block",
+              "high_overlap",
+              "initial",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 30153,
+            "source_line": 30154,
+            "selection_reasons": [
+              "partial_final_block",
+              "high_overlap",
+              "initial",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 147756,
+            "source_line": 147757,
+            "selection_reasons": [
+              "partial_final_block",
+              "low_overlap",
+              "initial",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 6457,
+            "source_line": 6458,
+            "selection_reasons": [
+              "partial_final_block",
+              "high_overlap",
+              "initial",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 11972,
+            "source_line": 11973,
+            "selection_reasons": [
+              "partial_final_block",
+              "high_overlap",
+              "initial",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 51932,
+            "source_line": 51933,
+            "selection_reasons": [
+              "high_overlap",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 11869,
+            "source_line": 11870,
+            "selection_reasons": [
+              "high_overlap",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 22729,
+            "source_line": 22730,
+            "selection_reasons": [
+              "high_overlap",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 6643,
+            "source_line": 6644,
+            "selection_reasons": [
+              "low_overlap",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 119214,
+            "source_line": 119215,
+            "selection_reasons": [
+              "low_overlap",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 98856,
+            "source_line": 98857,
+            "selection_reasons": [
+              "low_overlap",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 82030,
+            "source_line": 82031,
+            "selection_reasons": [
+              "low_overlap",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 12855,
+            "source_line": 12856,
+            "selection_reasons": [
+              "low_overlap",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 28191,
+            "source_line": 28192,
+            "selection_reasons": [
+              "low_overlap",
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 51998,
+            "source_line": 51999,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 37278,
+            "source_line": 37279,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 172311,
+            "source_line": 172312,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 25012,
+            "source_line": 25013,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 17957,
+            "source_line": 17958,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 60231,
+            "source_line": 60232,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 56067,
+            "source_line": 56068,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 27587,
+            "source_line": 27588,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 111089,
+            "source_line": 111090,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 48329,
+            "source_line": 48330,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 52543,
+            "source_line": 52544,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 41698,
+            "source_line": 41699,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 28934,
+            "source_line": 28935,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 115748,
+            "source_line": 115749,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 129051,
+            "source_line": 129052,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 92137,
+            "source_line": 92138,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 141679,
+            "source_line": 141680,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 97456,
+            "source_line": 97457,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 83809,
+            "source_line": 83810,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 94095,
+            "source_line": 94096,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 95093,
+            "source_line": 95094,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 11967,
+            "source_line": 11968,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 105988,
+            "source_line": 105989,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 15105,
+            "source_line": 15106,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 69155,
+            "source_line": 69156,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 87303,
+            "source_line": 87304,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 48958,
+            "source_line": 48959,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 26513,
+            "source_line": 26514,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 156728,
+            "source_line": 156729,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 85728,
+            "source_line": 85729,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 44484,
+            "source_line": 44485,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 157388,
+            "source_line": 157389,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 97014,
+            "source_line": 97015,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 69474,
+            "source_line": 69475,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 78508,
+            "source_line": 78509,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 146136,
+            "source_line": 146137,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 15627,
+            "source_line": 15628,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 58441,
+            "source_line": 58442,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 157336,
+            "source_line": 157337,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 35848,
+            "source_line": 35849,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 110069,
+            "source_line": 110070,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 19631,
+            "source_line": 19632,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 93215,
+            "source_line": 93216,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 69370,
+            "source_line": 69371,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 126692,
+            "source_line": 126693,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 44676,
+            "source_line": 44677,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          },
+          {
+            "chat_id": 26398,
+            "source_line": 26399,
+            "selection_reasons": [
+              "hash_sample"
+            ],
+            "exhaustive_prefix_and_context_equal": true
+          }
+        ],
+        "all_checks_passed": true
+      }
+    }
+  },
+  "passed": true
+}

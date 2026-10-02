@@ -1,0 +1,75 @@
+test_candidate_detection_is_independent_of_cache_on_off_effect (test_analyze_patterns.PatternAnalysisTests.test_candidate_detection_is_independent_of_cache_on_off_effect) ... ok
+test_constant_or_insufficient_measurements_are_undefined (test_analyze_patterns.PatternAnalysisTests.test_constant_or_insufficient_measurements_are_undefined) ... ok
+test_length_adjustment_removes_shared_linear_length_effect (test_analyze_patterns.PatternAnalysisTests.test_length_adjustment_removes_shared_linear_length_effect) ... ok
+test_pooled_sign_can_reverse_within_archetypes (test_analyze_patterns.PatternAnalysisTests.test_pooled_sign_can_reverse_within_archetypes) ... ok
+test_positive_hit_ttft_relation_is_detected (test_analyze_patterns.PatternAnalysisTests.test_positive_hit_ttft_relation_is_detected) ... ok
+test_preserves_complete_block_identity_and_partial_session_extension (test_live_pilot.MaterializeTests.test_preserves_complete_block_identity_and_partial_session_extension) ... ok
+test_rejects_wrong_source_and_noninjective_alphabet (test_live_pilot.MaterializeTests.test_rejects_wrong_source_and_noninjective_alphabet) ... ok
+test_real_plan_has_paired_conditions_and_only_cache_flag_changes (test_live_pilot.PlanTests.test_real_plan_has_paired_conditions_and_only_cache_flag_changes) ... ok
+test_concurrent_open_loop_and_exact_output (test_live_pilot.ReplayTests.test_concurrent_open_loop_and_exact_output) ... ok
+test_full_pair_analysis_and_mismatch_rejection (test_live_pilot.ReplayTests.test_full_pair_analysis_and_mismatch_rejection) ... ok
+test_wrong_output_length_invalidates_run (test_live_pilot.ReplayTests.test_wrong_output_length_invalidates_run) ... ok
+test_cached_suffix_cannot_hit_after_prefix_eviction (test_pattern_screen.PatternScreenTests.test_cached_suffix_cannot_hit_after_prefix_eviction) ... ok
+test_capacity_pressure_removes_reuse (test_pattern_screen.PatternScreenTests.test_capacity_pressure_removes_reuse) ... ok
+test_selection_uses_mean_and_excludes_single_turn_variant (test_pattern_screen.PatternScreenTests.test_selection_uses_mean_and_excludes_single_turn_variant) ... ok
+test_unbounded_serial_shared_prefix (test_pattern_screen.PatternScreenTests.test_unbounded_serial_shared_prefix) ... ok
+test_cooccurrence_excludes_self_components_simultaneity_and_future (test_qwen_analysis.QwenAnalysisTests.test_cooccurrence_excludes_self_components_simultaneity_and_future) ... ok
+test_equal_arrivals_are_not_history_and_inputs_not_outputs (test_qwen_analysis.QwenAnalysisTests.test_equal_arrivals_are_not_history_and_inputs_not_outputs) ... ok
+test_lineage_distinguishes_missing_root_and_detects_cycles (test_qwen_analysis.QwenAnalysisTests.test_lineage_distinguishes_missing_root_and_detects_cycles) ... ok
+test_neighbors_agree_with_brute_force_including_cross_component (test_qwen_analysis.QwenAnalysisTests.test_neighbors_agree_with_brute_force_including_cross_component) ... ok
+test_partial_blocks_excluded_and_nonprefix_matches_do_not_count (test_qwen_analysis.QwenAnalysisTests.test_partial_blocks_excluded_and_nonprefix_matches_do_not_count) ... ok
+test_boundary_expiry_ties_and_nonprefix_blocks (test_qwen_temporal.TemporalTests.test_boundary_expiry_ties_and_nonprefix_blocks) ... ok
+test_chain_groups_can_overlap_and_empty_rates_are_undefined (test_qwen_temporal.TemporalTests.test_chain_groups_can_overlap_and_empty_rates_are_undefined) ... ok
+test_decimal_window_boundary_is_not_lost_to_binary_rounding (test_qwen_temporal.TemporalTests.test_decimal_window_boundary_is_not_lost_to_binary_rounding) ... ok
+test_precursors_exclude_same_chain_same_time_and_future (test_qwen_temporal.TemporalTests.test_precursors_exclude_same_chain_same_time_and_future) ... ok
+test_recency_matches_exhaustive_all_scopes_and_witnesses (test_qwen_temporal.TemporalTests.test_recency_matches_exhaustive_all_scopes_and_witnesses) ... ok
+test_standardization_uses_supported_joint_cells_only (test_qwen_temporal.TemporalTests.test_standardization_uses_supported_joint_cells_only) ... ok
+test_branch_depth_is_distinct_from_component_size_and_declared_turn (test_qwen_trace_b.TraceBTests.test_branch_depth_is_distinct_from_component_size_and_declared_turn) ... ok
+test_lfs_pointer_is_parsed_exactly (test_qwen_trace_b.TraceBTests.test_lfs_pointer_is_parsed_exactly) ... ok
+test_singleton_initial_cohort_does_not_claim_empty_continuation_rate (test_qwen_trace_b.TraceBTests.test_singleton_initial_cohort_does_not_claim_empty_continuation_rate) ... ok
+test_type_discovery_excludes_mixed_components_from_uniform_type_cohorts (test_qwen_trace_b.TraceBTests.test_type_discovery_excludes_mixed_components_from_uniform_type_cohorts) ... ok
+test_a_block_straddling_the_prefix_boundary_is_not_shared (test_session_gen.BlockHashTests.test_a_block_straddling_the_prefix_boundary_is_not_shared)
+P = 520 with block_size 16 leaves 8 tokens of prefix in a mixed block. ... ok
+test_different_prefix_groups_share_nothing (test_session_gen.BlockHashTests.test_different_prefix_groups_share_nothing) ... ok
+test_each_turn_extends_the_previous_turns_blocks (test_session_gen.BlockHashTests.test_each_turn_extends_the_previous_turns_blocks) ... ok
+test_longer_shared_prefix_raises_the_shared_block_count (test_session_gen.BlockHashTests.test_longer_shared_prefix_raises_the_shared_block_count) ... ok
+test_same_prefix_group_shares_exactly_the_whole_blocks_of_the_prefix (test_session_gen.BlockHashTests.test_same_prefix_group_shares_exactly_the_whole_blocks_of_the_prefix) ... ok
+test_rejects_out_of_range_implemented_knobs (test_session_gen.KnobGuardTests.test_rejects_out_of_range_implemented_knobs) ... ok
+test_nearest_mix_picks_the_closest_grid_point (test_session_gen.RhoTests.test_nearest_mix_picks_the_closest_grid_point) ... ok
+test_pure_deep_short_gives_positive_coupling (test_session_gen.RhoTests.test_pure_deep_short_gives_positive_coupling) ... ok
+test_rho_is_not_monotone_in_the_mixture (test_session_gen.RhoTests.test_rho_is_not_monotone_in_the_mixture)
+Both pure archetypes couple positively; the negative values are the ... ok
+test_single_turn_shallow_archetype_reaches_strongly_negative_rho (test_session_gen.RhoTests.test_single_turn_shallow_archetype_reaches_strongly_negative_rho)
+The 3-turn shallow archetype caps |rho|; its later turns are long ... ok
+test_the_mixture_reaches_negative_rho (test_session_gen.RhoTests.test_the_mixture_reaches_negative_rho) ... ok
+test_request_count_holds_steady_across_the_mixture (test_session_gen.TraceShapeTests.test_request_count_holds_steady_across_the_mixture)
+Cells must differ in rho, not in trace size. ... ok
+test_round_trips_through_the_v1_reader (test_session_gen.TraceShapeTests.test_round_trips_through_the_v1_reader) ... ok
+test_same_seed_reproduces_the_trace (test_session_gen.TraceShapeTests.test_same_seed_reproduces_the_trace) ... ok
+test_capacity_realises_the_requested_ratio (test_session_gen.WorkingSetTests.test_capacity_realises_the_requested_ratio) ... ok
+test_only_W_above_one_can_evict (test_session_gen.WorkingSetTests.test_only_W_above_one_can_evict) ... ok
+test_block_hash_round_trip (test_trace.TraceTests.test_block_hash_round_trip)
+A Mooncake-style record carries neither prompt nor token_ids. ... ok
+test_reads_schema_1_0_traces (test_trace.TraceTests.test_reads_schema_1_0_traces)
+v1.0 traces written before the block-hash form stay readable. ... ok
+test_rejects_all_three_prompt_forms (test_trace.TraceTests.test_rejects_all_three_prompt_forms) ... ok
+test_rejects_block_hashes_without_prompt_tokens (test_trace.TraceTests.test_rejects_block_hashes_without_prompt_tokens) ... ok
+test_rejects_both_prompt_forms (test_trace.TraceTests.test_rejects_both_prompt_forms) ... ok
+test_rejects_no_prompt_form (test_trace.TraceTests.test_rejects_no_prompt_form) ... ok
+test_rejects_out_of_order_arrivals (test_trace.TraceTests.test_rejects_out_of_order_arrivals) ... ok
+test_rejects_session_claimed_by_two_users (test_trace.TraceTests.test_rejects_session_claimed_by_two_users)
+Guards against conversion bugs when deriving user_id from a hashed client id. ... ok
+test_rejects_unknown_schema_version (test_trace.TraceTests.test_rejects_unknown_schema_version) ... ok
+test_round_trip (test_trace.TraceTests.test_round_trip) ... ok
+test_empty_content_and_declared_turn_mismatch_are_separate (test_wildchat_audit.WildChatAuditTests.test_empty_content_and_declared_turn_mismatch_are_separate) ... ok
+test_null_user_timestamps_do_not_disqualify_content (test_wildchat_audit.WildChatAuditTests.test_null_user_timestamps_do_not_disqualify_content) ... ok
+test_overlap_includes_source_ids_and_whole_history_prefixes (test_wildchat_audit.WildChatAuditTests.test_overlap_includes_source_ids_and_whole_history_prefixes) ... ok
+test_role_order_is_audited_without_repair (test_wildchat_audit.WildChatAuditTests.test_role_order_is_audited_without_repair) ... ok
+
+----------------------------------------------------------------------
+Ran 60 tests in 1.643s
+
+OK
+Analyzed 2 cache-on runs with paired controls; 1/1 trace/capacity groups have positive hit/TTFT Pearson in every repetition
+Analyzed 2 cache-on runs with paired controls; 1/1 trace/capacity groups have positive hit/TTFT Pearson in every repetition
+Analyzed 2 cache-on runs with paired controls; 0/1 trace/capacity groups have positive hit/TTFT Pearson in every repetition

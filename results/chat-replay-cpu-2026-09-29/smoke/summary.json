@@ -1,0 +1,82 @@
+{
+  "planned_requests": 43,
+  "recorded_requests": 43,
+  "submitted_requests": 43,
+  "status_counts": {
+    "ok": 43,
+    "error": 0,
+    "blocked": 0,
+    "context_overflow": 0,
+    "cancelled": 0
+  },
+  "parent_dependency_violations": [],
+  "late_dispatches": 0,
+  "missing_cache_usage": 0,
+  "completed_sessions": 8,
+  "sessions": [
+    {
+      "session_id": "shard00000-row59150",
+      "planned_turns": 13,
+      "completed": true,
+      "completion_s": 0.20431008306331933,
+      "session_latency_s": 0.20431008306331933
+    },
+    {
+      "session_id": "shard00000-row26591",
+      "planned_turns": 3,
+      "completed": true,
+      "completion_s": 0.06459166714921594,
+      "session_latency_s": 0.06259166714921593
+    },
+    {
+      "session_id": "shard00000-row23580",
+      "planned_turns": 5,
+      "completed": true,
+      "completion_s": 0.09046254213899374,
+      "session_latency_s": 0.08646254213899374
+    },
+    {
+      "session_id": "shard00000-row40719",
+      "planned_turns": 10,
+      "completed": true,
+      "completion_s": 0.1605103330221027,
+      "session_latency_s": 0.1545103330221027
+    },
+    {
+      "session_id": "shard00000-row21496",
+      "planned_turns": 4,
+      "completed": true,
+      "completion_s": 0.07741158315911889,
+      "session_latency_s": 0.06941158315911888
+    },
+    {
+      "session_id": "shard00000-row21882",
+      "planned_turns": 3,
+      "completed": true,
+      "completion_s": 0.06517966696992517,
+      "session_latency_s": 0.05517966696992516
+    },
+    {
+      "session_id": "shard00000-row59238",
+      "planned_turns": 3,
+      "completed": true,
+      "completion_s": 0.06498387502506375,
+      "session_latency_s": 0.052983875025063756
+    },
+    {
+      "session_id": "shard00000-row36453",
+      "planned_turns": 2,
+      "completed": true,
+      "completion_s": 0.05149579211138189,
+      "session_latency_s": 0.03749579211138189
+    }
+  ],
+  "interrupted": false,
+  "valid": true,
+  "successful_request_metrics": {
+    "denominator": 43,
+    "mean_client_ttft_ms": 5.046665690146213,
+    "mean_release_to_first_token_ms": 9.605447725674438
+  },
+  "interpretation": "Latency averages exclude failed/blocked turns; status denominators and complete-session outcomes must accompany them. Mock-server values are correctness checks, not model performance."
+}

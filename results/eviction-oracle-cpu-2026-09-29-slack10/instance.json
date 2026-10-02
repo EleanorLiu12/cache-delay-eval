@@ -1,0 +1,80 @@
+{
+  "requests": [
+    {
+      "request_id": "138",
+      "arrival": 0,
+      "input_tokens": 42,
+      "output_tokens": 1,
+      "hashes": [
+        3636,
+        3637,
+        4681
+      ]
+    },
+    {
+      "request_id": "142",
+      "arrival": 266000,
+      "input_tokens": 43,
+      "output_tokens": 1,
+      "hashes": [
+        3636,
+        3637,
+        4797
+      ]
+    },
+    {
+      "request_id": "152",
+      "arrival": 551000,
+      "input_tokens": 51,
+      "output_tokens": 13,
+      "hashes": [
+        5035,
+        5036,
+        5037,
+        109
+      ]
+    },
+    {
+      "request_id": "160",
+      "arrival": 829000,
+      "input_tokens": 40,
+      "output_tokens": 1,
+      "hashes": [
+        3636,
+        3637,
+        5262
+      ]
+    }
+  ],
+  "capacity": 5,
+  "block_size": 16,
+  "max_sequences": 2,
+  "token_budget": 32,
+  "prefill_chunk": 32,
+  "overhead": 100,
+  "prefill_token_cost": 100,
+  "decode_token_cost": 1000,
+  "slack_percent": 10,
+  "epsilon": 1,
+  "initial_cache": [
+    [
+      3636
+    ],
+    [
+      3636,
+      3637
+    ],
+    null,
+    null,
+    null
+  ],
+  "initial_free_order": [
+    2,
+    3,
+    4,
+    1,
+    0
+  ],
+  "cost_revision": "uncalibrated_affine_v1",
+  "cost_table": null
+}

@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "real_source_configurations_independently_recomputed": 216,
+  "positive_primary_window_witnesses_checked": 29,
+  "synthetic_diagnostic": "Mixed trace matched; short-only trace did not",
+  "historical_files_unchanged": 420,
+  "protocol_sha256": "3c4dd16d383314fc39f94ffec0504346cfb6b928e6475d704751c8a1a16dab43",
+  "scope": "Validation of the declared structural statistic; not validation of production prevalence"
+}

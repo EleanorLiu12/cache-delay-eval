@@ -1,0 +1,1041 @@
+{
+  "status": "exact_structural_model_optimum",
+  "exact": true,
+  "visited_nodes": 10,
+  "pruned": 4,
+  "completed_leaves": 3,
+  "termination": "all_legal_ordered_victims_exhausted",
+  "lower_bound_sum_ttft_ticks": 10100,
+  "incumbent_sum_ttft_ticks": 10100,
+  "optimality_gap_ticks": 0,
+  "mean_ttft_reduction_ticks": 0.0,
+  "relative_reduction": 0.0,
+  "limits": [
+    {
+      "completion": 1101,
+      "duration": 1,
+      "gap": 1
+    },
+    {
+      "completion": 267201,
+      "duration": 1,
+      "gap": 1
+    },
+    {
+      "completion": 569501,
+      "duration": 13201,
+      "gap": 1101
+    },
+    {
+      "completion": 831501,
+      "duration": 1,
+      "gap": 1
+    }
+  ],
+  "cost_revision": "uncalibrated_affine_v1",
+  "units": "integer model ticks",
+  "baseline_included": true,
+  "hardware_validated": false,
+  "baseline": {
+    "sum_ttft": 10100,
+    "mean_ttft": 2525.0,
+    "ttft": [
+      1100,
+      1200,
+      5300,
+      2500
+    ],
+    "progress": [
+      {
+        "computed": 42,
+        "blocks": [],
+        "outputs": [
+          1100
+        ],
+        "completed": 1100,
+        "cached_tokens": 32,
+        "preemptions": 0
+      },
+      {
+        "computed": 43,
+        "blocks": [],
+        "outputs": [
+          267200
+        ],
+        "completed": 267200,
+        "cached_tokens": 32,
+        "preemptions": 0
+      },
+      {
+        "computed": 63,
+        "blocks": [],
+        "outputs": [
+          556300,
+          557400,
+          558500,
+          559600,
+          560700,
+          561800,
+          562900,
+          564000,
+          565100,
+          566200,
+          567300,
+          568400,
+          569500
+        ],
+        "completed": 569500,
+        "cached_tokens": 0,
+        "preemptions": 0
+      },
+      {
+        "computed": 40,
+        "blocks": [],
+        "outputs": [
+          831500
+        ],
+        "completed": 831500,
+        "cached_tokens": 16,
+        "preemptions": 0
+      }
+    ],
+    "events": [
+      {
+        "type": "allocation",
+        "time": 0,
+        "request_id": "138",
+        "candidates": [],
+        "victim_count": 0,
+        "victims": [],
+        "allocated": [
+          2
+        ]
+      },
+      {
+        "type": "iteration",
+        "start": 0,
+        "end": 1100,
+        "signature": "[[\"prefill\",10,32]]",
+        "services": [
+          {
+            "index": 0,
+            "kind": "prefill",
+            "tokens": 10,
+            "context": 32,
+            "request_id": "138"
+          }
+        ]
+      },
+      {
+        "type": "allocation",
+        "time": 266000,
+        "request_id": "142",
+        "candidates": [],
+        "victim_count": 0,
+        "victims": [],
+        "allocated": [
+          2
+        ]
+      },
+      {
+        "type": "iteration",
+        "start": 266000,
+        "end": 267200,
+        "signature": "[[\"prefill\",11,32]]",
+        "services": [
+          {
+            "index": 1,
+            "kind": "prefill",
+            "tokens": 11,
+            "context": 32,
+            "request_id": "142"
+          }
+        ]
+      },
+      {
+        "type": "allocation",
+        "time": 551000,
+        "request_id": "152",
+        "candidates": [
+          {
+            "block_id": 1,
+            "identity": [
+              3636,
+              3637
+            ],
+            "refs": 0
+          },
+          {
+            "block_id": 0,
+            "identity": [
+              3636
+            ],
+            "refs": 0
+          }
+        ],
+        "victim_count": 0,
+        "victims": [],
+        "allocated": [
+          2,
+          3
+        ]
+      },
+      {
+        "type": "iteration",
+        "start": 551000,
+        "end": 554300,
+        "signature": "[[\"prefill\",32,0]]",
+        "services": [
+          {
+            "index": 2,
+            "kind": "prefill",
+            "tokens": 32,
+            "context": 0,
+            "request_id": "152"
+          }
+        ]
+      },
+      {
+        "type": "allocation",
+        "time": 554300,
+        "request_id": "152",
+        "candidates": [
+          {
+            "block_id": 1,
+            "identity": [
+              3636,
+              3637
+            ],
+            "refs": 0
+          },
+          {
+            "block_id": 0,
+            "identity": [
+              3636
+            ],
+            "refs": 0
+          }
+        ],
+        "victim_count": 1,
+        "victims": [
+          {
+            "block_id": 1,
+            "identity": [
+              3636,
+              3637
+            ]
+          }
+        ],
+        "allocated": [
+          4,
+          1
+        ]
+      },
+      {
+        "type": "iteration",
+        "start": 554300,
+        "end": 556300,
+        "signature": "[[\"prefill\",19,32]]",
+        "services": [
+          {
+            "index": 2,
+            "kind": "prefill",
+            "tokens": 19,
+            "context": 32,
+            "request_id": "152"
+          }
+        ]
+      },
+      {
+        "type": "iteration",
+        "start": 556300,
+        "end": 557400,
+        "signature": "[[\"decode\",1,51]]",
+        "services": [
+          {
+            "index": 2,
+            "kind": "decode",
+            "tokens": 1,
+            "context": 51,
+            "request_id": "152"
+          }
+        ]
+      },
+      {
+        "type": "iteration",
+        "start": 557400,
+        "end": 558500,
+        "signature": "[[\"decode\",1,52]]",
+        "services": [
+          {
+            "index": 2,
+            "kind": "decode",
+            "tokens": 1,
+            "context": 52,
+            "request_id": "152"
+          }
+        ]
+      },
+      {
+        "type": "iteration",
+        "start": 558500,
+        "end": 559600,
+        "signature": "[[\"decode\",1,53]]",
+        "services": [
+          {
+            "index": 2,
+            "kind": "decode",
+            "tokens": 1,
+            "context": 53,
+            "request_id": "152"
+          }
+        ]
+      },
+      {
+        "type": "iteration",
+        "start": 559600,
+        "end": 560700,
+        "signature": "[[\"decode\",1,54]]",
+        "services": [
+          {
+            "index": 2,
+            "kind": "decode",
+            "tokens": 1,
+            "context": 54,
+            "request_id": "152"
+          }
+        ]
+      },
+      {
+        "type": "iteration",
+        "start": 560700,
+        "end": 561800,
+        "signature": "[[\"decode\",1,55]]",
+        "services": [
+          {
+            "index": 2,
+            "kind": "decode",
+            "tokens": 1,
+            "context": 55,
+            "request_id": "152"
+          }
+        ]
+      },
+      {
+        "type": "iteration",
+        "start": 561800,
+        "end": 562900,
+        "signature": "[[\"decode\",1,56]]",
+        "services": [
+          {
+            "index": 2,
+            "kind": "decode",
+            "tokens": 1,
+            "context": 56,
+            "request_id": "152"
+          }
+        ]
+      },
+      {
+        "type": "iteration",
+        "start": 562900,
+        "end": 564000,
+        "signature": "[[\"decode\",1,57]]",
+        "services": [
+          {
+            "index": 2,
+            "kind": "decode",
+            "tokens": 1,
+            "context": 57,
+            "request_id": "152"
+          }
+        ]
+      },
+      {
+        "type": "iteration",
+        "start": 564000,
+        "end": 565100,
+        "signature": "[[\"decode\",1,58]]",
+        "services": [
+          {
+            "index": 2,
+            "kind": "decode",
+            "tokens": 1,
+            "context": 58,
+            "request_id": "152"
+          }
+        ]
+      },
+      {
+        "type": "iteration",
+        "start": 565100,
+        "end": 566200,
+        "signature": "[[\"decode\",1,59]]",
+        "services": [
+          {
+            "index": 2,
+            "kind": "decode",
+            "tokens": 1,
+            "context": 59,
+            "request_id": "152"
+          }
+        ]
+      },
+      {
+        "type": "iteration",
+        "start": 566200,
+        "end": 567300,
+        "signature": "[[\"decode\",1,60]]",
+        "services": [
+          {
+            "index": 2,
+            "kind": "decode",
+            "tokens": 1,
+            "context": 60,
+            "request_id": "152"
+          }
+        ]
+      },
+      {
+        "type": "iteration",
+        "start": 567300,
+        "end": 568400,
+        "signature": "[[\"decode\",1,61]]",
+        "services": [
+          {
+            "index": 2,
+            "kind": "decode",
+            "tokens": 1,
+            "context": 61,
+            "request_id": "152"
+          }
+        ]
+      },
+      {
+        "type": "iteration",
+        "start": 568400,
+        "end": 569500,
+        "signature": "[[\"decode\",1,62]]",
+        "services": [
+          {
+            "index": 2,
+            "kind": "decode",
+            "tokens": 1,
+            "context": 62,
+            "request_id": "152"
+          }
+        ]
+      },
+      {
+        "type": "allocation",
+        "time": 829000,
+        "request_id": "160",
+        "candidates": [
+          {
+            "block_id": 4,
+            "identity": [
+              5035,
+              5036,
+              5037
+            ],
+            "refs": 0
+          },
+          {
+            "block_id": 3,
+            "identity": [
+              5035,
+              5036
+            ],
+            "refs": 0
+          },
+          {
+            "block_id": 2,
+            "identity": [
+              5035
+            ],
+            "refs": 0
+          }
+        ],
+        "victim_count": 1,
+        "victims": [
+          {
+            "block_id": 4,
+            "identity": [
+              5035,
+              5036,
+              5037
+            ]
+          }
+        ],
+        "allocated": [
+          1,
+          4
+        ]
+      },
+      {
+        "type": "iteration",
+        "start": 829000,
+        "end": 831500,
+        "signature": "[[\"prefill\",24,16]]",
+        "services": [
+          {
+            "index": 3,
+            "kind": "prefill",
+            "tokens": 24,
+            "context": 16,
+            "request_id": "160"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      [
+        1
+      ],
+      [
+        4
+      ]
+    ],
+    "final_cache": [
+      {
+        "identity": [
+          3636
+        ],
+        "refs": 0
+      },
+      {
+        "identity": [
+          3636,
+          3637
+        ],
+        "refs": 0
+      },
+      {
+        "identity": [
+          5035
+        ],
+        "refs": 0
+      },
+      {
+        "identity": [
+          5035,
+          5036
+        ],
+        "refs": 0
+      },
+      {
+        "identity": null,
+        "refs": 0
+      }
+    ],
+    "final_free_order": [
+      4,
+      3,
+      2,
+      1,
+      0
+    ],
+    "drain_time": 831500
+  },
+  "best": {
+    "sum_ttft": 10100,
+    "mean_ttft": 2525.0,
+    "ttft": [
+      1100,
+      1200,
+      5300,
+      2500
+    ],
+    "progress": [
+      {
+        "computed": 42,
+        "blocks": [],
+        "outputs": [
+          1100
+        ],
+        "completed": 1100,
+        "cached_tokens": 32,
+        "preemptions": 0
+      },
+      {
+        "computed": 43,
+        "blocks": [],
+        "outputs": [
+          267200
+        ],
+        "completed": 267200,
+        "cached_tokens": 32,
+        "preemptions": 0
+      },
+      {
+        "computed": 63,
+        "blocks": [],
+        "outputs": [
+          556300,
+          557400,
+          558500,
+          559600,
+          560700,
+          561800,
+          562900,
+          564000,
+          565100,
+          566200,
+          567300,
+          568400,
+          569500
+        ],
+        "completed": 569500,
+        "cached_tokens": 0,
+        "preemptions": 0
+      },
+      {
+        "computed": 40,
+        "blocks": [],
+        "outputs": [
+          831500
+        ],
+        "completed": 831500,
+        "cached_tokens": 16,
+        "preemptions": 0
+      }
+    ],
+    "events": [
+      {
+        "type": "allocation",
+        "time": 0,
+        "request_id": "138",
+        "candidates": [],
+        "victim_count": 0,
+        "victims": [],
+        "allocated": [
+          2
+        ]
+      },
+      {
+        "type": "iteration",
+        "start": 0,
+        "end": 1100,
+        "signature": "[[\"prefill\",10,32]]",
+        "services": [
+          {
+            "index": 0,
+            "kind": "prefill",
+            "tokens": 10,
+            "context": 32,
+            "request_id": "138"
+          }
+        ]
+      },
+      {
+        "type": "allocation",
+        "time": 266000,
+        "request_id": "142",
+        "candidates": [],
+        "victim_count": 0,
+        "victims": [],
+        "allocated": [
+          2
+        ]
+      },
+      {
+        "type": "iteration",
+        "start": 266000,
+        "end": 267200,
+        "signature": "[[\"prefill\",11,32]]",
+        "services": [
+          {
+            "index": 1,
+            "kind": "prefill",
+            "tokens": 11,
+            "context": 32,
+            "request_id": "142"
+          }
+        ]
+      },
+      {
+        "type": "allocation",
+        "time": 551000,
+        "request_id": "152",
+        "candidates": [
+          {
+            "block_id": 1,
+            "identity": [
+              3636,
+              3637
+            ],
+            "refs": 0
+          },
+          {
+            "block_id": 0,
+            "identity": [
+              3636
+            ],
+            "refs": 0
+          }
+        ],
+        "victim_count": 0,
+        "victims": [],
+        "allocated": [
+          2,
+          3
+        ]
+      },
+      {
+        "type": "iteration",
+        "start": 551000,
+        "end": 554300,
+        "signature": "[[\"prefill\",32,0]]",
+        "services": [
+          {
+            "index": 2,
+            "kind": "prefill",
+            "tokens": 32,
+            "context": 0,
+            "request_id": "152"
+          }
+        ]
+      },
+      {
+        "type": "allocation",
+        "time": 554300,
+        "request_id": "152",
+        "candidates": [
+          {
+            "block_id": 1,
+            "identity": [
+              3636,
+              3637
+            ],
+            "refs": 0
+          },
+          {
+            "block_id": 0,
+            "identity": [
+              3636
+            ],
+            "refs": 0
+          }
+        ],
+        "victim_count": 1,
+        "victims": [
+          {
+            "block_id": 1,
+            "identity": [
+              3636,
+              3637
+            ]
+          }
+        ],
+        "allocated": [
+          4,
+          1
+        ]
+      },
+      {
+        "type": "iteration",
+        "start": 554300,
+        "end": 556300,
+        "signature": "[[\"prefill\",19,32]]",
+        "services": [
+          {
+            "index": 2,
+            "kind": "prefill",
+            "tokens": 19,
+            "context": 32,
+            "request_id": "152"
+          }
+        ]
+      },
+      {
+        "type": "iteration",
+        "start": 556300,
+        "end": 557400,
+        "signature": "[[\"decode\",1,51]]",
+        "services": [
+          {
+            "index": 2,
+            "kind": "decode",
+            "tokens": 1,
+            "context": 51,
+            "request_id": "152"
+          }
+        ]
+      },
+      {
+        "type": "iteration",
+        "start": 557400,
+        "end": 558500,
+        "signature": "[[\"decode\",1,52]]",
+        "services": [
+          {
+            "index": 2,
+            "kind": "decode",
+            "tokens": 1,
+            "context": 52,
+            "request_id": "152"
+          }
+        ]
+      },
+      {
+        "type": "iteration",
+        "start": 558500,
+        "end": 559600,
+        "signature": "[[\"decode\",1,53]]",
+        "services": [
+          {
+            "index": 2,
+            "kind": "decode",
+            "tokens": 1,
+            "context": 53,
+            "request_id": "152"
+          }
+        ]
+      },
+      {
+        "type": "iteration",
+        "start": 559600,
+        "end": 560700,
+        "signature": "[[\"decode\",1,54]]",
+        "services": [
+          {
+            "index": 2,
+            "kind": "decode",
+            "tokens": 1,
+            "context": 54,
+            "request_id": "152"
+          }
+        ]
+      },
+      {
+        "type": "iteration",
+        "start": 560700,
+        "end": 561800,
+        "signature": "[[\"decode\",1,55]]",
+        "services": [
+          {
+            "index": 2,
+            "kind": "decode",
+            "tokens": 1,
+            "context": 55,
+            "request_id": "152"
+          }
+        ]
+      },
+      {
+        "type": "iteration",
+        "start": 561800,
+        "end": 562900,
+        "signature": "[[\"decode\",1,56]]",
+        "services": [
+          {
+            "index": 2,
+            "kind": "decode",
+            "tokens": 1,
+            "context": 56,
+            "request_id": "152"
+          }
+        ]
+      },
+      {
+        "type": "iteration",
+        "start": 562900,
+        "end": 564000,
+        "signature": "[[\"decode\",1,57]]",
+        "services": [
+          {
+            "index": 2,
+            "kind": "decode",
+            "tokens": 1,
+            "context": 57,
+            "request_id": "152"
+          }
+        ]
+      },
+      {
+        "type": "iteration",
+        "start": 564000,
+        "end": 565100,
+        "signature": "[[\"decode\",1,58]]",
+        "services": [
+          {
+            "index": 2,
+            "kind": "decode",
+            "tokens": 1,
+            "context": 58,
+            "request_id": "152"
+          }
+        ]
+      },
+      {
+        "type": "iteration",
+        "start": 565100,
+        "end": 566200,
+        "signature": "[[\"decode\",1,59]]",
+        "services": [
+          {
+            "index": 2,
+            "kind": "decode",
+            "tokens": 1,
+            "context": 59,
+            "request_id": "152"
+          }
+        ]
+      },
+      {
+        "type": "iteration",
+        "start": 566200,
+        "end": 567300,
+        "signature": "[[\"decode\",1,60]]",
+        "services": [
+          {
+            "index": 2,
+            "kind": "decode",
+            "tokens": 1,
+            "context": 60,
+            "request_id": "152"
+          }
+        ]
+      },
+      {
+        "type": "iteration",
+        "start": 567300,
+        "end": 568400,
+        "signature": "[[\"decode\",1,61]]",
+        "services": [
+          {
+            "index": 2,
+            "kind": "decode",
+            "tokens": 1,
+            "context": 61,
+            "request_id": "152"
+          }
+        ]
+      },
+      {
+        "type": "iteration",
+        "start": 568400,
+        "end": 569500,
+        "signature": "[[\"decode\",1,62]]",
+        "services": [
+          {
+            "index": 2,
+            "kind": "decode",
+            "tokens": 1,
+            "context": 62,
+            "request_id": "152"
+          }
+        ]
+      },
+      {
+        "type": "allocation",
+        "time": 829000,
+        "request_id": "160",
+        "candidates": [
+          {
+            "block_id": 4,
+            "identity": [
+              5035,
+              5036,
+              5037
+            ],
+            "refs": 0
+          },
+          {
+            "block_id": 3,
+            "identity": [
+              5035,
+              5036
+            ],
+            "refs": 0
+          },
+          {
+            "block_id": 2,
+            "identity": [
+              5035
+            ],
+            "refs": 0
+          }
+        ],
+        "victim_count": 1,
+        "victims": [
+          {
+            "block_id": 4,
+            "identity": [
+              5035,
+              5036,
+              5037
+            ]
+          }
+        ],
+        "allocated": [
+          1,
+          4
+        ]
+      },
+      {
+        "type": "iteration",
+        "start": 829000,
+        "end": 831500,
+        "signature": "[[\"prefill\",24,16]]",
+        "services": [
+          {
+            "index": 3,
+            "kind": "prefill",
+            "tokens": 24,
+            "context": 16,
+            "request_id": "160"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      [
+        1
+      ],
+      [
+        4
+      ]
+    ],
+    "final_cache": [
+      {
+        "identity": [
+          3636
+        ],
+        "refs": 0
+      },
+      {
+        "identity": [
+          3636,
+          3637
+        ],
+        "refs": 0
+      },
+      {
+        "identity": [
+          5035
+        ],
+        "refs": 0
+      },
+      {
+        "identity": [
+          5035,
+          5036
+        ],
+        "refs": 0
+      },
+      {
+        "identity": null,
+        "refs": 0
+      }
+    ],
+    "final_free_order": [
+      4,
+      3,
+      2,
+      1,
+      0
+    ],
+    "drain_time": 831500
+  }
+}

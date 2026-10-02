@@ -38,7 +38,8 @@ case ${1:-} in
     ;;
   launch)
     mkdir -p "$LOG_DIR"
-    mapfile -t uuids < <(nvidia-smi -L | grep -o 'MIG-[0-9a-f-]*')
+    uuids=()
+    while read -r uuid; do uuids+=("$uuid"); done < <(nvidia-smi -L | grep -o 'MIG-[0-9a-f-]*')
     [[ ${#uuids[@]} -eq $N ]] || { echo "expected $N MIG devices, found ${#uuids[@]}"; exit 1; }
     for i in $(seq 0 $((N - 1))); do serve "$i" "${uuids[$i]}" "$UTIL"; done
     ;;

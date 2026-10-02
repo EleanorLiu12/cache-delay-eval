@@ -85,7 +85,9 @@ async def profile(args):
             log.flush()
 
         write(dict(type="meta", url=url, model=args.model, wall_start=time.time(), args=vars(args)))
-        async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=600)) as session:
+        # Drop idle connections before the server's 5 s keep-alive closes them.
+    async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=600),
+                                     connector=aiohttp.TCPConnector(keepalive_timeout=2)) as session:
             for _ in range(args.warmup):
                 await run_one(session, url, args.model, tokens(rng, 256), 8)
             for length in args.prefill_lengths:

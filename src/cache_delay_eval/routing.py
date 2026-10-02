@@ -179,12 +179,13 @@ def choose(policy: str, views: list[InstanceView], request: Request, turn: int):
     return tied[turn % len(tied)], hits, scores
 
 
-async def stream(session, url, payload, on_first):
+async def stream(session, url, payload, body, on_first):
     loop = asyncio.get_running_loop()
     start = loop.time()
     first = finish = None
     usage: dict = {}
-    async with session.post(url + "/v1/completions", json=payload) as response:
+    async with session.post(url + "/v1/completions", data=body,
+                            headers={"Content-Type": "application/json"}) as response:
         if response.status != 200:
             raise RuntimeError(f"HTTP {response.status}: {(await response.text())[:500]}")
         async for raw in response.content:
@@ -266,6 +267,8 @@ async def replay(requests, views, book, policy, index_mode, model, output, meta,
                      ignore_eos=True, temperature=0, stream=True,
                      stream_options={"include_usage": True}, return_token_ids=True,
                      add_special_tokens=False) for r in requests]
+    # Encode before the timed schedule so dispatch does no JSON work.
+    bodies = [json.dumps(p).encode() for p in payloads]
     turn = [0]
     with output.open("x") as log:
         log.write(json.dumps(dict(meta, type="run_meta", policy=policy, index_mode=index_mode,
@@ -279,8 +282,11 @@ async def replay(requests, views, book, policy, index_mode, model, output, meta,
                                           resident=[len(v.resident) for v in views])) + "\n")
                 await asyncio.sleep(snapshot_s)
 
+        # vLLM's server closes idle connections after 5 s; dropping them on the
+        # client side after 2 s avoids reusing a connection the server just closed.
+        connector = aiohttp.TCPConnector(limit=0, keepalive_timeout=2)
         async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=timeout_s),
-                                         connector=aiohttp.TCPConnector(limit=0)) as session:
+                                         connector=connector) as session:
             epoch = loop.time() + 0.2
             snapper = asyncio.create_task(snapshots())
 
@@ -309,7 +315,7 @@ async def replay(requests, views, book, policy, index_mode, model, output, meta,
                            input_len=request.input_len, output_len=request.output_len,
                            predicted_hit_tokens=hits[chosen] * BLOCK)
                 try:
-                    row.update(await stream(session, view.url, payloads[i], first_token))
+                    row.update(await stream(session, view.url, payloads[i], bodies[i], first_token))
                     row["status"] = "ok"
                 except Exception as exc:
                     row.update(status="error", error=f"{type(exc).__name__}: {exc}")

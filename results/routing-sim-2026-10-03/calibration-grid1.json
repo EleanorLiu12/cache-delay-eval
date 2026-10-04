@@ -1,0 +1,197 @@
+{
+ "runs": [
+  "results/a30-routing-2026-10-02/runs/burst-half-affinity.jsonl",
+  "results/a30-routing-2026-10-02/runs/burst-half-lmetric.jsonl",
+  "results/a30-routing-2026-10-02/runs/burst-half-load.jsonl",
+  "results/a30-routing-2026-10-02/runs/hot-x2-affinity-events.jsonl",
+  "results/a30-routing-2026-10-02/runs/hot-x2-lmetric-events.jsonl",
+  "results/a30-routing-2026-10-02/runs/hot-x2-load-events.jsonl",
+  "results/a30-routing-2026-10-02/runs/hot-x3-affinity-events.jsonl",
+  "results/a30-routing-2026-10-02/runs/hot-x3-lmetric-events.jsonl",
+  "results/a30-routing-2026-10-02/runs/hot-x3-load-events.jsonl",
+  "results/a30-routing-2026-10-02/runs/typical-x2-affinity-events.jsonl",
+  "results/a30-routing-2026-10-02/runs/typical-x2-lmetric-events.jsonl",
+  "results/a30-routing-2026-10-02/runs/typical-x2-load-events.jsonl",
+  "results/a30-routing-2026-10-02/runs/typical-x3-affinity-events.jsonl",
+  "results/a30-routing-2026-10-02/runs/typical-x3-lmetric-events.jsonl",
+  "results/a30-routing-2026-10-02/runs/typical-x3-load-events.jsonl"
+ ],
+ "table": [
+  {
+   "cost": {
+    "base": 7.717017075361308,
+    "per_token": 0.04381839184002488,
+    "prefill_pair": 9.785886210259994e-06,
+    "decode_ctx": 0.0005,
+    "overhead": 5.207903513969639,
+    "overlap": 0.0
+   },
+   "mean_abs_log_error": 0.2976110272453595
+  },
+  {
+   "cost": {
+    "base": 7.717017075361308,
+    "per_token": 0.04381839184002488,
+    "prefill_pair": 9.785886210259994e-06,
+    "decode_ctx": 0.0005,
+    "overhead": 5.207903513969639,
+    "overlap": 1.0
+   },
+   "mean_abs_log_error": 0.37001111433480743
+  },
+  {
+   "cost": {
+    "base": 7.717017075361308,
+    "per_token": 0.035054713472019904,
+    "prefill_pair": 9.785886210259994e-06,
+    "decode_ctx": 0.0005,
+    "overhead": 5.207903513969639,
+    "overlap": 0.0
+   },
+   "mean_abs_log_error": 0.3857095466795662
+  },
+  {
+   "cost": {
+    "base": 7.717017075361308,
+    "per_token": 0.035054713472019904,
+    "prefill_pair": 9.785886210259994e-06,
+    "decode_ctx": 0.00066,
+    "overhead": 5.207903513969639,
+    "overlap": 1.0
+   },
+   "mean_abs_log_error": 0.43914556580450814
+  },
+  {
+   "cost": {
+    "base": 7.717017075361308,
+    "per_token": 0.04381839184002488,
+    "prefill_pair": 9.785886210259994e-06,
+    "decode_ctx": 0.00066,
+    "overhead": 5.207903513969639,
+    "overlap": 1.0
+   },
+   "mean_abs_log_error": 0.4574980845626898
+  },
+  {
+   "cost": {
+    "base": 7.717017075361308,
+    "per_token": 0.035054713472019904,
+    "prefill_pair": 9.785886210259994e-06,
+    "decode_ctx": 0.0005,
+    "overhead": 5.207903513969639,
+    "overlap": 1.0
+   },
+   "mean_abs_log_error": 0.4694646685067648
+  },
+  {
+   "cost": {
+    "base": 7.717017075361308,
+    "per_token": 0.04381839184002488,
+    "prefill_pair": 9.785886210259994e-06,
+    "decode_ctx": 0.0004,
+    "overhead": 5.207903513969639,
+    "overlap": 0.0
+   },
+   "mean_abs_log_error": 0.4734342266061949
+  },
+  {
+   "cost": {
+    "base": 7.717017075361308,
+    "per_token": 0.04381839184002488,
+    "prefill_pair": 9.785886210259994e-06,
+    "decode_ctx": 0.0004,
+    "overhead": 5.207903513969639,
+    "overlap": 1.0
+   },
+   "mean_abs_log_error": 0.5446564544757417
+  },
+  {
+   "cost": {
+    "base": 7.717017075361308,
+    "per_token": 0.035054713472019904,
+    "prefill_pair": 9.785886210259994e-06,
+    "decode_ctx": 0.0004,
+    "overhead": 5.207903513969639,
+    "overlap": 0.0
+   },
+   "mean_abs_log_error": 0.5699760937092174
+  },
+  {
+   "cost": {
+    "base": 7.717017075361308,
+    "per_token": 0.04381839184002488,
+    "prefill_pair": 9.785886210259994e-06,
+    "decode_ctx": 0.00066,
+    "overhead": 5.207903513969639,
+    "overlap": 0.0
+   },
+   "mean_abs_log_error": 0.5747213635251749
+  },
+  {
+   "cost": {
+    "base": 7.717017075361308,
+    "per_token": 0.035054713472019904,
+    "prefill_pair": 9.785886210259994e-06,
+    "decode_ctx": 0.00066,
+    "overhead": 5.207903513969639,
+    "overlap": 0.0
+   },
+   "mean_abs_log_error": 0.5749547280890152
+  },
+  {
+   "cost": {
+    "base": 7.717017075361308,
+    "per_token": 0.035054713472019904,
+    "prefill_pair": 9.785886210259994e-06,
+    "decode_ctx": 0.0004,
+    "overhead": 5.207903513969639,
+    "overlap": 1.0
+   },
+   "mean_abs_log_error": 0.631937233753033
+  },
+  {
+   "cost": {
+    "base": 7.717017075361308,
+    "per_token": 0.04381839184002488,
+    "prefill_pair": 9.785886210259994e-06,
+    "decode_ctx": 0.0003,
+    "overhead": 5.207903513969639,
+    "overlap": 0.0
+   },
+   "mean_abs_log_error": 0.708417477798863
+  },
+  {
+   "cost": {
+    "base": 7.717017075361308,
+    "per_token": 0.04381839184002488,
+    "prefill_pair": 9.785886210259994e-06,
+    "decode_ctx": 0.0003,
+    "overhead": 5.207903513969639,
+    "overlap": 1.0
+   },
+   "mean_abs_log_error": 0.8097808299468556
+  },
+  {
+   "cost": {
+    "base": 7.717017075361308,
+    "per_token": 0.035054713472019904,
+    "prefill_pair": 9.785886210259994e-06,
+    "decode_ctx": 0.0003,
+    "overhead": 5.207903513969639,
+    "overlap": 0.0
+   },
+   "mean_abs_log_error": 0.8419205455224471
+  },
+  {
+   "cost": {
+    "base": 7.717017075361308,
+    "per_token": 0.035054713472019904,
+    "prefill_pair": 9.785886210259994e-06,
+    "decode_ctx": 0.0003,
+    "overhead": 5.207903513969639,
+    "overlap": 1.0
+   },
+   "mean_abs_log_error": 0.9424996539544239
+  }
+ ]
+}

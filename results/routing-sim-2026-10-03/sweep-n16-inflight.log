@@ -1,0 +1,144 @@
+capacity ('thinking', 0, 16, 1) max 18.28 req/s, trace 1.50 req/s
+capacity ('thinking', 0, 16, 4) max 23.09 req/s, trace 1.50 req/s
+capacity ('thinking', 0, 16, 16) max 24.44 req/s, trace 1.50 req/s
+capacity ('thinking', 1800, 16, 1) max 18.17 req/s, trace 1.60 req/s
+capacity ('thinking', 1800, 16, 4) max 22.59 req/s, trace 1.60 req/s
+capacity ('thinking', 1800, 16, 16) max 24.03 req/s, trace 1.60 req/s
+capacity ('thinking', 3600, 16, 1) max 12.75 req/s, trace 1.89 req/s
+capacity ('thinking', 3600, 16, 4) max 16.25 req/s, trace 1.89 req/s
+capacity ('thinking', 3600, 16, 16) max 17.23 req/s, trace 1.89 req/s
+capacity ('thinking', 5400, 16, 1) max 14.15 req/s, trace 1.02 req/s
+capacity ('thinking', 5400, 16, 4) max 18.01 req/s, trace 1.02 req/s
+capacity ('thinking', 5400, 16, 16) max 19.25 req/s, trace 1.02 req/s
+capacity ('coder', 0, 16, 1) max 13.86 req/s, trace 5.08 req/s
+capacity ('coder', 0, 16, 4) max 18.08 req/s, trace 5.08 req/s
+capacity ('coder', 0, 16, 16) max 20.13 req/s, trace 5.08 req/s
+capacity ('coder', 1800, 16, 1) max 13.79 req/s, trace 6.07 req/s
+capacity ('coder', 1800, 16, 4) max 17.76 req/s, trace 6.07 req/s
+capacity ('coder', 1800, 16, 16) max 19.84 req/s, trace 6.07 req/s
+capacity ('coder', 3600, 16, 1) max 14.14 req/s, trace 6.28 req/s
+capacity ('coder', 3600, 16, 4) max 18.26 req/s, trace 6.28 req/s
+capacity ('coder', 3600, 16, 16) max 20.14 req/s, trace 6.28 req/s
+capacity ('coder', 5400, 16, 1) max 14.34 req/s, trace 6.47 req/s
+capacity ('coder', 5400, 16, 4) max 18.40 req/s, trace 6.47 req/s
+capacity ('coder', 5400, 16, 16) max 20.43 req/s, trace 6.47 req/s
+capacity ('chatbot', 0, 16, 1) max 28.44 req/s, trace 4.59 req/s
+capacity ('chatbot', 0, 16, 4) max 36.00 req/s, trace 4.59 req/s
+capacity ('chatbot', 0, 16, 16) max 38.79 req/s, trace 4.59 req/s
+capacity ('chatbot', 1800, 16, 1) max 27.40 req/s, trace 5.57 req/s
+capacity ('chatbot', 1800, 16, 4) max 34.38 req/s, trace 5.57 req/s
+capacity ('chatbot', 1800, 16, 16) max 36.80 req/s, trace 5.57 req/s
+capacity ('chatbot', 3600, 16, 1) max 24.65 req/s, trace 6.27 req/s
+capacity ('chatbot', 3600, 16, 4) max 31.20 req/s, trace 6.27 req/s
+capacity ('chatbot', 3600, 16, 16) max 33.74 req/s, trace 6.27 req/s
+capacity ('chatbot', 5400, 16, 1) max 23.98 req/s, trace 7.49 req/s
+capacity ('chatbot', 5400, 16, 4) max 30.18 req/s, trace 7.49 req/s
+capacity ('chatbot', 5400, 16, 16) max 32.84 req/s, trace 7.49 req/s
+capacity ('trace-b', 0, 16, 1) max 140.55 req/s, trace 20.82 req/s
+capacity ('trace-b', 0, 16, 4) max 170.29 req/s, trace 20.82 req/s
+capacity ('trace-b', 0, 16, 16) max 186.40 req/s, trace 20.82 req/s
+capacity ('trace-b', 600, 16, 1) max 122.41 req/s, trace 22.94 req/s
+capacity ('trace-b', 600, 16, 4) max 148.72 req/s, trace 22.94 req/s
+capacity ('trace-b', 600, 16, 16) max 162.19 req/s, trace 22.94 req/s
+capacity ('trace-b', 1200, 16, 1) max 120.50 req/s, trace 23.35 req/s
+capacity ('trace-b', 1200, 16, 4) max 145.49 req/s, trace 23.35 req/s
+capacity ('trace-b', 1200, 16, 16) max 156.92 req/s, trace 23.35 req/s
+capacity ('trace-b', 1800, 16, 1) max 117.84 req/s, trace 24.07 req/s
+capacity ('trace-b', 1800, 16, 4) max 143.25 req/s, trace 24.07 req/s
+capacity ('trace-b', 1800, 16, 16) max 158.31 req/s, trace 24.07 req/s
+thinking 0 16 0.5 lmetric inflight ttft 165 p99 838 hit 0.48
+thinking 0 16 0.7 lmetric inflight ttft 224 p99 1064 hit 0.46
+thinking 0 4 0.7 lmetric inflight ttft 222 p99 996 hit 0.47
+thinking 0 4 0.5 lmetric inflight ttft 160 p99 824 hit 0.48
+thinking 0 1 0.5 lmetric inflight ttft 204 p99 2162 hit 0.41
+thinking 1800 16 0.7 lmetric inflight ttft 154 p99 807 hit 0.67
+thinking 1800 4 0.7 lmetric inflight ttft 149 p99 807 hit 0.66
+thinking 1800 16 0.5 lmetric inflight ttft 139 p99 783 hit 0.67
+thinking 1800 4 0.5 lmetric inflight ttft 138 p99 784 hit 0.66
+thinking 1800 1 0.7 lmetric inflight ttft 154 p99 793 hit 0.62
+thinking 1800 1 0.5 lmetric inflight ttft 140 p99 777 hit 0.63
+thinking 0 1 0.7 lmetric inflight ttft 2081 p99 14116 hit 0.36
+thinking 5400 4 0.7 lmetric inflight ttft 200 p99 846 hit 0.36
+thinking 5400 1 0.5 lmetric inflight ttft 194 p99 791 hit 0.33
+thinking 5400 4 0.5 lmetric inflight ttft 188 p99 803 hit 0.37
+thinking 5400 1 0.7 lmetric inflight ttft 240 p99 1937 hit 0.31
+thinking 5400 16 0.7 lmetric inflight ttft 197 p99 846 hit 0.37
+thinking 5400 16 0.5 lmetric inflight ttft 186 p99 808 hit 0.38
+thinking 3600 4 0.7 lmetric inflight ttft 273 p99 847 hit 0.39
+thinking 3600 4 0.5 lmetric inflight ttft 252 p99 797 hit 0.39
+thinking 3600 1 0.5 lmetric inflight ttft 254 p99 783 hit 0.37
+thinking 3600 1 0.7 lmetric inflight ttft 275 p99 808 hit 0.36
+thinking 3600 16 0.5 lmetric inflight ttft 249 p99 798 hit 0.41
+thinking 3600 16 0.7 lmetric inflight ttft 259 p99 854 hit 0.41
+coder 0 16 0.7 lmetric inflight ttft 207 p99 803 hit 0.54
+coder 0 16 0.5 lmetric inflight ttft 197 p99 780 hit 0.54
+coder 0 4 0.7 lmetric inflight ttft 246 p99 807 hit 0.43
+coder 0 4 0.5 lmetric inflight ttft 234 p99 783 hit 0.44
+coder 0 1 0.7 lmetric inflight ttft 284 p99 795 hit 0.32
+coder 0 1 0.5 lmetric inflight ttft 276 p99 779 hit 0.32
+coder 1800 16 0.7 lmetric inflight ttft 201 p99 798 hit 0.57
+coder 1800 16 0.5 lmetric inflight ttft 193 p99 779 hit 0.56
+coder 1800 4 0.7 lmetric inflight ttft 248 p99 799 hit 0.44
+coder 1800 4 0.5 lmetric inflight ttft 238 p99 782 hit 0.44
+coder 1800 1 0.5 lmetric inflight ttft 280 p99 779 hit 0.33
+coder 1800 1 0.7 lmetric inflight ttft 289 p99 791 hit 0.33
+coder 3600 16 0.7 lmetric inflight ttft 214 p99 804 hit 0.53
+coder 3600 4 0.5 lmetric inflight ttft 245 p99 783 hit 0.42
+coder 3600 16 0.5 lmetric inflight ttft 205 p99 783 hit 0.53
+coder 3600 4 0.7 lmetric inflight ttft 258 p99 804 hit 0.41
+coder 3600 1 0.5 lmetric inflight ttft 286 p99 779 hit 0.31
+coder 3600 1 0.7 lmetric inflight ttft 296 p99 794 hit 0.30
+coder 5400 16 0.7 lmetric inflight ttft 207 p99 801 hit 0.52
+coder 5400 4 0.5 lmetric inflight ttft 239 p99 782 hit 0.40
+coder 5400 16 0.5 lmetric inflight ttft 197 p99 780 hit 0.52
+coder 5400 4 0.7 lmetric inflight ttft 248 p99 802 hit 0.40
+coder 5400 1 0.5 lmetric inflight ttft 275 p99 779 hit 0.30
+coder 5400 1 0.7 lmetric inflight ttft 285 p99 795 hit 0.30
+chatbot 0 4 0.5 lmetric inflight ttft 107 p99 771 hit 0.43
+chatbot 0 16 0.5 lmetric inflight ttft 97 p99 769 hit 0.50
+chatbot 0 1 0.5 lmetric inflight ttft 135 p99 775 hit 0.23
+chatbot 0 16 0.7 lmetric inflight ttft 107 p99 789 hit 0.49
+chatbot 0 1 0.7 lmetric inflight ttft 149 p99 798 hit 0.23
+chatbot 0 4 0.7 lmetric inflight ttft 117 p99 795 hit 0.42
+chatbot 1800 16 0.5 lmetric inflight ttft 110 p99 773 hit 0.45
+chatbot 1800 4 0.5 lmetric inflight ttft 124 p99 778 hit 0.36
+chatbot 1800 16 0.7 lmetric inflight ttft 120 p99 797 hit 0.45
+chatbot 1800 1 0.5 lmetric inflight ttft 149 p99 776 hit 0.19
+chatbot 1800 1 0.7 lmetric inflight ttft 163 p99 799 hit 0.19
+chatbot 1800 4 0.7 lmetric inflight ttft 133 p99 800 hit 0.36
+chatbot 3600 16 0.5 lmetric inflight ttft 104 p99 766 hit 0.50
+chatbot 3600 16 0.7 lmetric inflight ttft 112 p99 782 hit 0.49
+chatbot 3600 4 0.5 lmetric inflight ttft 127 p99 771 hit 0.36
+chatbot 3600 1 0.5 lmetric inflight ttft 153 p99 770 hit 0.18
+chatbot 3600 1 0.7 lmetric inflight ttft 159 p99 783 hit 0.18
+chatbot 3600 4 0.7 lmetric inflight ttft 133 p99 785 hit 0.36
+trace-b 0 1 0.5 lmetric inflight ttft 49 p99 365 hit 0.40
+trace-b 0 1 0.7 lmetric inflight ttft 53 p99 377 hit 0.39
+trace-b 0 4 0.5 lmetric inflight ttft 47 p99 349 hit 0.46
+trace-b 0 16 0.5 lmetric inflight ttft 48 p99 338 hit 0.48
+trace-b 0 4 0.7 lmetric inflight ttft 52 p99 348 hit 0.46
+trace-b 0 16 0.7 lmetric inflight ttft 54 p99 352 hit 0.48
+trace-b 600 1 0.5 lmetric inflight ttft 53 p99 405 hit 0.41
+trace-b 600 4 0.5 lmetric inflight ttft 51 p99 371 hit 0.47
+trace-b 600 1 0.7 lmetric inflight ttft 57 p99 418 hit 0.40
+trace-b 600 16 0.5 lmetric inflight ttft 51 p99 361 hit 0.49
+trace-b 600 4 0.7 lmetric inflight ttft 56 p99 374 hit 0.47
+trace-b 600 16 0.7 lmetric inflight ttft 58 p99 380 hit 0.48
+trace-b 1200 1 0.5 lmetric inflight ttft 51 p99 349 hit 0.46
+trace-b 1200 4 0.5 lmetric inflight ttft 49 p99 323 hit 0.52
+trace-b 1200 1 0.7 lmetric inflight ttft 54 p99 347 hit 0.46
+trace-b 1200 16 0.5 lmetric inflight ttft 48 p99 304 hit 0.53
+trace-b 1200 4 0.7 lmetric inflight ttft 53 p99 329 hit 0.52
+trace-b 1200 16 0.7 lmetric inflight ttft 54 p99 313 hit 0.53
+chatbot 5400 16 0.5 lmetric inflight ttft 113 p99 770 hit 0.50
+chatbot 5400 16 0.7 lmetric inflight ttft 122 p99 788 hit 0.49
+chatbot 5400 4 0.5 lmetric inflight ttft 144 p99 775 hit 0.33
+trace-b 1800 4 0.5 lmetric inflight ttft 52 p99 409 hit 0.48
+trace-b 1800 1 0.7 lmetric inflight ttft 57 p99 435 hit 0.41
+trace-b 1800 1 0.5 lmetric inflight ttft 54 p99 423 hit 0.41
+chatbot 5400 1 0.5 lmetric inflight ttft 172 p99 776 hit 0.16
+trace-b 1800 16 0.5 lmetric inflight ttft 51 p99 394 hit 0.50
+trace-b 1800 4 0.7 lmetric inflight ttft 57 p99 413 hit 0.48
+chatbot 5400 1 0.7 lmetric inflight ttft 180 p99 788 hit 0.16
+trace-b 1800 16 0.7 lmetric inflight ttft 59 p99 414 hit 0.50
+chatbot 5400 4 0.7 lmetric inflight ttft 151 p99 792 hit 0.33

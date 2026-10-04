@@ -1,0 +1,241 @@
+{
+ "runs": [
+  "results/a30-routing-2026-10-02/runs/burst-half-affinity.jsonl",
+  "results/a30-routing-2026-10-02/runs/burst-half-lmetric.jsonl",
+  "results/a30-routing-2026-10-02/runs/burst-half-load.jsonl",
+  "results/a30-routing-2026-10-02/runs/hot-x2-affinity-events.jsonl",
+  "results/a30-routing-2026-10-02/runs/hot-x2-lmetric-events.jsonl",
+  "results/a30-routing-2026-10-02/runs/hot-x2-load-events.jsonl",
+  "results/a30-routing-2026-10-02/runs/hot-x3-affinity-events.jsonl",
+  "results/a30-routing-2026-10-02/runs/hot-x3-lmetric-events.jsonl",
+  "results/a30-routing-2026-10-02/runs/hot-x3-load-events.jsonl",
+  "results/a30-routing-2026-10-02/runs/typical-x2-affinity-events.jsonl",
+  "results/a30-routing-2026-10-02/runs/typical-x2-lmetric-events.jsonl",
+  "results/a30-routing-2026-10-02/runs/typical-x2-load-events.jsonl",
+  "results/a30-routing-2026-10-02/runs/typical-x3-affinity-events.jsonl",
+  "results/a30-routing-2026-10-02/runs/typical-x3-lmetric-events.jsonl",
+  "results/a30-routing-2026-10-02/runs/typical-x3-load-events.jsonl"
+ ],
+ "table": [
+  {
+   "cost": {
+    "base": 7.717017075361308,
+    "per_token": 0.048200231024027373,
+    "prefill_pair": 9.785886210259994e-06,
+    "decode_ctx": 0.000525,
+    "overhead": 5.207903513969639,
+    "overlap": 0.5
+   },
+   "mean_abs_log_error": 0.2322715225031241
+  },
+  {
+   "cost": {
+    "base": 7.717017075361308,
+    "per_token": 0.048200231024027373,
+    "prefill_pair": 9.785886210259994e-06,
+    "decode_ctx": 0.0005,
+    "overhead": 5.207903513969639,
+    "overlap": 0.0
+   },
+   "mean_abs_log_error": 0.24328942491754763
+  },
+  {
+   "cost": {
+    "base": 7.717017075361308,
+    "per_token": 0.04381839184002488,
+    "prefill_pair": 9.785886210259994e-06,
+    "decode_ctx": 0.00055,
+    "overhead": 5.207903513969639,
+    "overlap": 0.5
+   },
+   "mean_abs_log_error": 0.24537681179790624
+  },
+  {
+   "cost": {
+    "base": 7.717017075361308,
+    "per_token": 0.048200231024027373,
+    "prefill_pair": 9.785886210259994e-06,
+    "decode_ctx": 0.000525,
+    "overhead": 5.207903513969639,
+    "overlap": 0.0
+   },
+   "mean_abs_log_error": 0.25176651922965904
+  },
+  {
+   "cost": {
+    "base": 7.717017075361308,
+    "per_token": 0.04381839184002488,
+    "prefill_pair": 9.785886210259994e-06,
+    "decode_ctx": 0.000525,
+    "overhead": 5.207903513969639,
+    "overlap": 0.0
+   },
+   "mean_abs_log_error": 0.2521636263048252
+  },
+  {
+   "cost": {
+    "base": 7.717017075361308,
+    "per_token": 0.048200231024027373,
+    "prefill_pair": 9.785886210259994e-06,
+    "decode_ctx": 0.00055,
+    "overhead": 5.207903513969639,
+    "overlap": 0.5
+   },
+   "mean_abs_log_error": 0.25281685468724474
+  },
+  {
+   "cost": {
+    "base": 7.717017075361308,
+    "per_token": 0.04381839184002488,
+    "prefill_pair": 9.785886210259994e-06,
+    "decode_ctx": 0.000525,
+    "overhead": 5.207903513969639,
+    "overlap": 0.5
+   },
+   "mean_abs_log_error": 0.260169116358101
+  },
+  {
+   "cost": {
+    "base": 7.717017075361308,
+    "per_token": 0.048200231024027373,
+    "prefill_pair": 9.785886210259994e-06,
+    "decode_ctx": 0.00055,
+    "overhead": 5.207903513969639,
+    "overlap": 0.0
+   },
+   "mean_abs_log_error": 0.2609595038806664
+  },
+  {
+   "cost": {
+    "base": 7.717017075361308,
+    "per_token": 0.04381839184002488,
+    "prefill_pair": 9.785886210259994e-06,
+    "decode_ctx": 0.00055,
+    "overhead": 5.207903513969639,
+    "overlap": 0.0
+   },
+   "mean_abs_log_error": 0.2734730684487908
+  },
+  {
+   "cost": {
+    "base": 7.717017075361308,
+    "per_token": 0.048200231024027373,
+    "prefill_pair": 9.785886210259994e-06,
+    "decode_ctx": 0.0005,
+    "overhead": 5.207903513969639,
+    "overlap": 0.5
+   },
+   "mean_abs_log_error": 0.2807602188375482
+  },
+  {
+   "cost": {
+    "base": 7.717017075361308,
+    "per_token": 0.04381839184002488,
+    "prefill_pair": 9.785886210259994e-06,
+    "decode_ctx": 0.0005,
+    "overhead": 5.207903513969639,
+    "overlap": 0.0
+   },
+   "mean_abs_log_error": 0.2976110272453595
+  },
+  {
+   "cost": {
+    "base": 7.717017075361308,
+    "per_token": 0.048200231024027373,
+    "prefill_pair": 9.785886210259994e-06,
+    "decode_ctx": 0.000475,
+    "overhead": 5.207903513969639,
+    "overlap": 0.0
+   },
+   "mean_abs_log_error": 0.31573343296583234
+  },
+  {
+   "cost": {
+    "base": 7.717017075361308,
+    "per_token": 0.04381839184002488,
+    "prefill_pair": 9.785886210259994e-06,
+    "decode_ctx": 0.0005,
+    "overhead": 5.207903513969639,
+    "overlap": 0.5
+   },
+   "mean_abs_log_error": 0.3221603234844739
+  },
+  {
+   "cost": {
+    "base": 7.717017075361308,
+    "per_token": 0.048200231024027373,
+    "prefill_pair": 9.785886210259994e-06,
+    "decode_ctx": 0.000475,
+    "overhead": 5.207903513969639,
+    "overlap": 0.5
+   },
+   "mean_abs_log_error": 0.3333236846983245
+  },
+  {
+   "cost": {
+    "base": 7.717017075361308,
+    "per_token": 0.048200231024027373,
+    "prefill_pair": 9.785886210259994e-06,
+    "decode_ctx": 0.00045,
+    "overhead": 5.207903513969639,
+    "overlap": 0.0
+   },
+   "mean_abs_log_error": 0.3385268387368868
+  },
+  {
+   "cost": {
+    "base": 7.717017075361308,
+    "per_token": 0.04381839184002488,
+    "prefill_pair": 9.785886210259994e-06,
+    "decode_ctx": 0.000475,
+    "overhead": 5.207903513969639,
+    "overlap": 0.0
+   },
+   "mean_abs_log_error": 0.35913578634162
+  },
+  {
+   "cost": {
+    "base": 7.717017075361308,
+    "per_token": 0.048200231024027373,
+    "prefill_pair": 9.785886210259994e-06,
+    "decode_ctx": 0.00045,
+    "overhead": 5.207903513969639,
+    "overlap": 0.5
+   },
+   "mean_abs_log_error": 0.36842056716655924
+  },
+  {
+   "cost": {
+    "base": 7.717017075361308,
+    "per_token": 0.04381839184002488,
+    "prefill_pair": 9.785886210259994e-06,
+    "decode_ctx": 0.000475,
+    "overhead": 5.207903513969639,
+    "overlap": 0.5
+   },
+   "mean_abs_log_error": 0.3795721480067317
+  },
+  {
+   "cost": {
+    "base": 7.717017075361308,
+    "per_token": 0.04381839184002488,
+    "prefill_pair": 9.785886210259994e-06,
+    "decode_ctx": 0.00045,
+    "overhead": 5.207903513969639,
+    "overlap": 0.0
+   },
+   "mean_abs_log_error": 0.3837454365602673
+  },
+  {
+   "cost": {
+    "base": 7.717017075361308,
+    "per_token": 0.04381839184002488,
+    "prefill_pair": 9.785886210259994e-06,
+    "decode_ctx": 0.00045,
+    "overhead": 5.207903513969639,
+    "overlap": 0.5
+   },
+   "mean_abs_log_error": 0.4022653528622844
+  }
+ ]
+}

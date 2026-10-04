@@ -1,0 +1,15 @@
+{
+ "cost": {
+  "base": 6.970536225227731,
+  "per_token": 0.03858318386867072,
+  "prefill_pair": 9.3086769428876e-06,
+  "decode_ctx": 0.0006983140520448857,
+  "overhead": 6.84104440674131
+ },
+ "points": 87,
+ "median_rel_error": 0.038342937608817705,
+ "max_rel_error": 0.38824321071981427,
+ "profiles": [
+  "results/a30-routing-2026-10-02/profile/inst0-idle.jsonl"
+ ]
+}

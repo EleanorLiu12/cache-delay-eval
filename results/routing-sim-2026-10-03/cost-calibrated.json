@@ -1,0 +1,11 @@
+{
+ "cost": {
+  "base": 7.717017075361308,
+  "per_token": 0.048200231024027373,
+  "prefill_pair": 9.785886210259994e-06,
+  "decode_ctx": 0.000525,
+  "overhead": 5.207903513969639,
+  "overlap": 0.0
+ },
+ "source": "cost-busy.json profile fit; decode_ctx and per_token from calibration-grid2.json (best of grid on events-mode and burst-half runs)"
+}

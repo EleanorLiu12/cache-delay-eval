@@ -1,6 +1,6 @@
 # Experiment Run Guide
 
-See the [research scope](research.md) for the objective and interpretation criteria, and the [first GPU experiment report](../results/cloudlab-pattern-03/report.md) for the completed configuration and results. This page documents reproduction steps.
+See the [first GPU experiment report](../results/cloudlab-pattern-03/report.md) for the completed configuration and results. This page documents reproduction steps.
 
 ## Install and check
 

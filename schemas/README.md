@@ -31,4 +31,4 @@ Readers accept schema versions 1.0 and 1.1; writers emit 1.1.
 The generator's `oracle_hit_rate` describes ideal historical reuse, without
 finite GPU capacity or in-flight work. Live measurements record `cached_tokens`
 and `prompt_tokens` separately; their ratio is the hit metric used in the
-[research question](../docs/research.md).
+[first GPU experiment](../results/cloudlab-pattern-03/report.md).

@@ -1,0 +1,11 @@
+--- a/vllm/platforms/interface.py
++++ b/vllm/platforms/interface.py
+@@ -261,6 +261,8 @@
+     @classmethod
+     def device_control_id_to_physical_device_id(cls, device_id: str) -> int:
+         """Map one device-control env entry to an integer physical device ID."""
++        if device_id.startswith("MIG-"):
++            return device_id
+         try:
+             return int(device_id)
+         except ValueError as e:

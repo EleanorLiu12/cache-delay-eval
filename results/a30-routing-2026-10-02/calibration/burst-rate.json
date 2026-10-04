@@ -1,0 +1,13 @@
+{
+  "moderate_trace_input_tokens": 1891672,
+  "moderate_replay_seconds": 150,
+  "moderate_input_tokens_per_second": 12611.146666666666,
+  "background_mean_input_tokens": 1920,
+  "matched_background_rate_requests_per_second": 6.568305555555556,
+  "chosen_background_rate_requests_per_second": 6.5,
+  "chosen_hot_rate_requests_per_second": 6.5,
+  "hot_prefix_tokens": 4096,
+  "hot_suffix_tokens": 256,
+  "hot_duration_seconds": 120,
+  "note": "The burst adds hot-prefix arrivals on top of a background rate matched to the moderate trace's aggregate input-token rate."
+}

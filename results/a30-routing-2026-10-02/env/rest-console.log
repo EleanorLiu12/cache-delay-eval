@@ -1,0 +1,33 @@
+Starting hot x3 lmetric dispatch at 2026-10-03T00:44:07Z
+{"requests": 895, "span_s": 199.79666666666662, "input_tokens": 3408731, "output_tokens": 217215, "classes": 223}
+{"type": "run_summary", "policy": "lmetric", "index_mode": "dispatch", "requests": 895, "errors": 0, "late_dispatches_50ms": 0, "per_instance": [180, 286, 166, 263], "ttft_ms": {"mean": 479.10023992513317, "p50": 89.759688000413, "p90": 1056.4418619997014, "p99": 5382.185402999312}, "engine_cached_fraction": 0.593018340256242, "index_error_tokens_mean": 418.1094972067039, "missing_engine_cached": 0, "event_seq_gaps": [0, 0, 0, 0], "unknown_event_blocks": [0, 0, 0, 0]}
+Starting burst-half affinity at 2026-10-03T00:47:36Z
+{"requests": 1309, "span_s": 299.88533082292975, "input_tokens": 3357184, "output_tokens": 335104, "classes": 936}
+{"type": "run_summary", "policy": "affinity", "index_mode": "events", "requests": 1309, "errors": 0, "late_dispatches_50ms": 0, "per_instance": [283, 281, 287, 458], "ttft_ms": {"mean": 7973.042597248305, "p50": 173.29969399997935, "p90": 39682.456596999145, "p99": 63679.232415000115}, "engine_cached_fraction": 0.45508616745462865, "index_error_tokens_mean": 0.0, "missing_engine_cached": 0, "event_seq_gaps": [0, 0, 0, 0], "unknown_event_blocks": [4245, 4214, 4305, 7239]}
+Starting burst-half lmetric at 2026-10-03T00:52:45Z
+{"requests": 1309, "span_s": 299.88533082292975, "input_tokens": 3357184, "output_tokens": 335104, "classes": 936}
+{"type": "run_summary", "policy": "lmetric", "index_mode": "events", "requests": 1309, "errors": 0, "late_dispatches_50ms": 0, "per_instance": [326, 337, 335, 311], "ttft_ms": {"mean": 176.48174870666827, "p50": 142.5017020001178, "p90": 317.24717500037514, "p99": 840.00821599966}, "engine_cached_fraction": 0.4538660973005948, "index_error_tokens_mean": 0.0, "missing_engine_cached": 0, "event_seq_gaps": [0, 0, 0, 0], "unknown_event_blocks": [4897, 5055, 5025, 4666]}
+Starting burst-half load at 2026-10-03T00:57:54Z
+{"requests": 1309, "span_s": 299.88533082292975, "input_tokens": 3357184, "output_tokens": 335104, "classes": 936}
+{"type": "run_summary", "policy": "load", "index_mode": "events", "requests": 1309, "errors": 0, "late_dispatches_50ms": 0, "per_instance": [330, 325, 323, 331], "ttft_ms": {"mean": 205.25434220474824, "p50": 123.95690700031992, "p90": 327.36725700033276, "p99": 2087.768616000176}, "engine_cached_fraction": 0.4514259569925271, "index_error_tokens_mean": 0.0, "missing_engine_cached": 0, "event_seq_gaps": [0, 0, 0, 0], "unknown_event_blocks": [4949, 4875, 4847, 4965]}
+FAIL burst-affinity.jsonl: n=2732 per_instance=[685, 671, 682, 694] ttft_mean=53927ms p99=106250ms cached=0.45 index exact 2724/2732, under 6 (mean 3419), over 2 (mean 672) 2 dispatches >50 ms late
+ok   burst-half-affinity.jsonl: n=1309 per_instance=[283, 281, 287, 458] ttft_mean=7973ms p99=63679ms cached=0.46 index exact 1309/1309, under 0 (mean 0), over 0 (mean 0) 
+ok   burst-half-lmetric.jsonl: n=1309 per_instance=[326, 337, 335, 311] ttft_mean=176ms p99=840ms cached=0.45 index exact 1309/1309, under 0 (mean 0), over 0 (mean 0) 
+ok   burst-half-load.jsonl: n=1309 per_instance=[330, 325, 323, 331] ttft_mean=205ms p99=2088ms cached=0.45 index exact 1309/1309, under 0 (mean 0), over 0 (mean 0) 
+FAIL burst-lmetric.jsonl: n=2732 per_instance=[750, 644, 686, 652] ttft_mean=54182ms p99=105082ms cached=0.45 index exact 2722/2732, under 8 (mean 2478), over 2 (mean 2224) 1 dispatches >50 ms late
+FAIL burst-load.jsonl: n=2732 per_instance=[678, 676, 686, 692] ttft_mean=54147ms p99=106143ms cached=0.45 index exact 2715/2732, under 17 (mean 3857), over 0 (mean 0) 2 dispatches >50 ms late
+ok   hot-x2-affinity-events.jsonl: n=895 per_instance=[174, 404, 138, 179] ttft_mean=325ms p99=5852ms cached=0.65 index exact 827/895, under 22 (mean 1011), over 46 (mean 42) 
+ok   hot-x2-lmetric-events.jsonl: n=895 per_instance=[181, 274, 161, 279] ttft_mean=160ms p99=804ms cached=0.65 index exact 833/895, under 13 (mean 91), over 49 (mean 16) 
+ok   hot-x2-load-events.jsonl: n=895 per_instance=[220, 227, 226, 222] ttft_mean=202ms p99=858ms cached=0.57 index exact 852/895, under 13 (mean 313), over 30 (mean 52) 
+ok   hot-x3-affinity-events.jsonl: n=895 per_instance=[173, 268, 163, 291] ttft_mean=1077ms p99=14354ms cached=0.64 index exact 793/895, under 46 (mean 2938), over 56 (mean 614) 
+ok   hot-x3-lmetric-dispatch.jsonl: n=895 per_instance=[180, 286, 166, 263] ttft_mean=479ms p99=5382ms cached=0.59 index exact 511/895, under 0 (mean 0), over 384 (mean 974) 
+ok   hot-x3-lmetric-events.jsonl: n=895 per_instance=[125, 247, 178, 345] ttft_mean=310ms p99=4567ms cached=0.64 index exact 829/895, under 15 (mean 180), over 51 (mean 54) 
+ok   hot-x3-load-events.jsonl: n=895 per_instance=[230, 227, 199, 239] ttft_mean=823ms p99=7632ms cached=0.55 index exact 824/895, under 30 (mean 2078), over 41 (mean 496) 
+ok   smoke.jsonl: n=154 per_instance=[70, 27, 27, 30] ttft_mean=96ms p99=293ms cached=0.50 index exact 154/154, under 0 (mean 0), over 0 (mean 0) 
+ok   typical-x2-affinity-events.jsonl: n=787 per_instance=[208, 194, 200, 185] ttft_mean=22473ms p99=169401ms cached=0.26 index exact 624/787, under 74 (mean 933), over 89 (mean 432) 
+ok   typical-x2-lmetric-events.jsonl: n=787 per_instance=[224, 193, 181, 189] ttft_mean=1542ms p99=7157ms cached=0.14 index exact 706/787, under 16 (mean 2148), over 65 (mean 1358) 
+ok   typical-x2-load-events.jsonl: n=787 per_instance=[197, 204, 208, 178] ttft_mean=2394ms p99=8977ms cached=0.07 index exact 714/787, under 20 (mean 2859), over 53 (mean 1694) 
+ok   typical-x3-affinity-events.jsonl: n=787 per_instance=[195, 179, 228, 185] ttft_mean=34462ms p99=250267ms cached=0.24 index exact 530/787, under 173 (mean 1616), over 84 (mean 1706) 
+ok   typical-x3-lmetric-events.jsonl: n=787 per_instance=[172, 217, 190, 208] ttft_mean=39155ms p99=75729ms cached=0.07 index exact 535/787, under 123 (mean 1184), over 129 (mean 2050) 
+ok   typical-x3-load-events.jsonl: n=787 per_instance=[200, 197, 196, 194] ttft_mean=40616ms p99=79473ms cached=0.06 index exact 557/787, under 131 (mean 1316), over 99 (mean 1373) 
+3 file(s) failed

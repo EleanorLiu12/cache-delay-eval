@@ -1,0 +1,74 @@
+Starting hot x2 lmetric at 2026-10-02T23:22:24Z
+{"requests": 895, "span_s": 299.69499999999994, "input_tokens": 3408731, "output_tokens": 217215, "classes": 223}
+{"type": "run_summary", "policy": "lmetric", "index_mode": "events", "requests": 895, "errors": 0, "late_dispatches_50ms": 0, "per_instance": [181, 274, 161, 279], "ttft_ms": {"mean": 159.59513713966348, "p50": 56.977656000071875, "p90": 629.8634099998708, "p99": 804.182978999961}, "engine_cached_fraction": 0.6527520065385036, "index_error_tokens_mean": 2.1988826815642457, "missing_engine_cached": 0, "event_seq_gaps": [0, 0, 0, 0], "unknown_event_blocks": [2412, 4345, 2246, 4414]}
+Starting hot x2 load at 2026-10-02T23:27:31Z
+{"requests": 895, "span_s": 299.69499999999994, "input_tokens": 3408731, "output_tokens": 217215, "classes": 223}
+{"type": "run_summary", "policy": "load", "index_mode": "events", "requests": 895, "errors": 0, "late_dispatches_50ms": 0, "per_instance": [220, 227, 226, 222], "ttft_ms": {"mean": 201.8871752491745, "p50": 57.43083600009413, "p90": 711.4436739998382, "p99": 858.2984059999035}, "engine_cached_fraction": 0.5749001607929755, "index_error_tokens_mean": 6.27486033519553, "missing_engine_cached": 0, "event_seq_gaps": [0, 0, 0, 0], "unknown_event_blocks": [3365, 3374, 3346, 3333]}
+Starting hot x2 affinity at 2026-10-02T23:32:40Z
+{"requests": 895, "span_s": 299.69499999999994, "input_tokens": 3408731, "output_tokens": 217215, "classes": 223}
+{"type": "run_summary", "policy": "affinity", "index_mode": "events", "requests": 895, "errors": 0, "late_dispatches_50ms": 0, "per_instance": [174, 404, 138, 179], "ttft_ms": {"mean": 325.2575917307212, "p50": 67.37745899999936, "p90": 699.2410570001084, "p99": 5851.897442999871}, "engine_cached_fraction": 0.6510152898542009, "index_error_tokens_mean": 27.012290502793295, "missing_engine_cached": 0, "event_seq_gaps": [0, 0, 0, 0], "unknown_event_blocks": [2014, 6434, 2155, 2822]}
+ok   hot-x2-affinity-events.jsonl: n=895 per_instance=[174, 404, 138, 179] ttft_mean=325ms p99=5852ms cached=0.65 index exact 827/895, under 22 (mean 1011), over 46 (mean 42) 
+ok   hot-x2-lmetric-events.jsonl: n=895 per_instance=[181, 274, 161, 279] ttft_mean=160ms p99=804ms cached=0.65 index exact 833/895, under 13 (mean 91), over 49 (mean 16) 
+ok   hot-x2-load-events.jsonl: n=895 per_instance=[220, 227, 226, 222] ttft_mean=202ms p99=858ms cached=0.57 index exact 852/895, under 13 (mean 313), over 30 (mean 52) 
+ok   smoke.jsonl: n=154 per_instance=[70, 27, 27, 30] ttft_mean=96ms p99=293ms cached=0.50 index exact 154/154, under 0 (mean 0), over 0 (mean 0) 
+0 file(s) failed
+Starting typical x2 load at 2026-10-02T23:37:48Z
+{"requests": 787, "span_s": 299.9650000000001, "input_tokens": 3811491, "output_tokens": 176632, "classes": 459}
+{"type": "run_summary", "policy": "load", "index_mode": "events", "requests": 787, "errors": 0, "late_dispatches_50ms": 0, "per_instance": [197, 204, 208, 178], "ttft_ms": {"mean": 2393.963627369755, "p50": 1052.2033410002223, "p90": 6786.768105999727, "p99": 8977.137057000164}, "engine_cached_fraction": 0.07142191861400171, "index_error_tokens_mean": 186.73443456162644, "missing_engine_cached": 0, "event_seq_gaps": [0, 0, 0, 0], "unknown_event_blocks": [2644, 2828, 2926, 2389]}
+Starting typical x2 affinity at 2026-10-02T23:42:56Z
+{"requests": 787, "span_s": 299.9650000000001, "input_tokens": 3811491, "output_tokens": 176632, "classes": 459}
+{"type": "run_summary", "policy": "affinity", "index_mode": "events", "requests": 787, "errors": 0, "late_dispatches_50ms": 0, "per_instance": [208, 194, 200, 185], "ttft_ms": {"mean": 22472.846176855135, "p50": 308.67441600003076, "p90": 105475.07379200033, "p99": 169400.99222799973}, "engine_cached_fraction": 0.2556102060847054, "index_error_tokens_mean": 136.57941550190597, "missing_engine_cached": 0, "event_seq_gaps": [0, 0, 0, 0], "unknown_event_blocks": [2474, 2285, 3157, 2828]}
+Starting typical x2 lmetric at 2026-10-02T23:50:18Z
+{"requests": 787, "span_s": 299.9650000000001, "input_tokens": 3811491, "output_tokens": 176632, "classes": 459}
+{"type": "run_summary", "policy": "lmetric", "index_mode": "events", "requests": 787, "errors": 0, "late_dispatches_50ms": 0, "per_instance": [224, 193, 181, 189], "ttft_ms": {"mean": 1541.6530571753478, "p50": 768.9517559997512, "p90": 4556.213600999854, "p99": 7156.593279999925}, "engine_cached_fraction": 0.14040489666642267, "index_error_tokens_mean": 155.85260482846252, "missing_engine_cached": 0, "event_seq_gaps": [0, 0, 0, 0], "unknown_event_blocks": [2778, 2654, 2688, 2629]}
+ok   hot-x2-affinity-events.jsonl: n=895 per_instance=[174, 404, 138, 179] ttft_mean=325ms p99=5852ms cached=0.65 index exact 827/895, under 22 (mean 1011), over 46 (mean 42) 
+ok   hot-x2-lmetric-events.jsonl: n=895 per_instance=[181, 274, 161, 279] ttft_mean=160ms p99=804ms cached=0.65 index exact 833/895, under 13 (mean 91), over 49 (mean 16) 
+ok   hot-x2-load-events.jsonl: n=895 per_instance=[220, 227, 226, 222] ttft_mean=202ms p99=858ms cached=0.57 index exact 852/895, under 13 (mean 313), over 30 (mean 52) 
+ok   smoke.jsonl: n=154 per_instance=[70, 27, 27, 30] ttft_mean=96ms p99=293ms cached=0.50 index exact 154/154, under 0 (mean 0), over 0 (mean 0) 
+ok   typical-x2-affinity-events.jsonl: n=787 per_instance=[208, 194, 200, 185] ttft_mean=22473ms p99=169401ms cached=0.26 index exact 624/787, under 74 (mean 933), over 89 (mean 432) 
+ok   typical-x2-lmetric-events.jsonl: n=787 per_instance=[224, 193, 181, 189] ttft_mean=1542ms p99=7157ms cached=0.14 index exact 706/787, under 16 (mean 2148), over 65 (mean 1358) 
+ok   typical-x2-load-events.jsonl: n=787 per_instance=[197, 204, 208, 178] ttft_mean=2394ms p99=8977ms cached=0.07 index exact 714/787, under 20 (mean 2859), over 53 (mean 1694) 
+0 file(s) failed
+Starting hot x3 lmetric at 2026-10-02T23:55:27Z
+{"requests": 895, "span_s": 199.79666666666662, "input_tokens": 3408731, "output_tokens": 217215, "classes": 223}
+{"type": "run_summary", "policy": "lmetric", "index_mode": "events", "requests": 895, "errors": 0, "late_dispatches_50ms": 0, "per_instance": [125, 247, 178, 345], "ttft_ms": {"mean": 310.3223844066974, "p50": 84.38641000066127, "p90": 745.5540659993858, "p99": 4567.36286999967}, "engine_cached_fraction": 0.6408155997055796, "index_error_tokens_mean": 6.09608938547486, "missing_engine_cached": 0, "event_seq_gaps": [0, 0, 0, 0], "unknown_event_blocks": [1899, 3905, 2793, 4831]}
+Starting hot x3 load at 2026-10-02T23:58:56Z
+{"requests": 895, "span_s": 199.79666666666662, "input_tokens": 3408731, "output_tokens": 217215, "classes": 223}
+{"type": "run_summary", "policy": "load", "index_mode": "events", "requests": 895, "errors": 0, "late_dispatches_50ms": 0, "per_instance": [230, 227, 199, 239], "ttft_ms": {"mean": 822.9180015195659, "p50": 103.59591700034798, "p90": 2834.966696000265, "p99": 7631.638195999585}, "engine_cached_fraction": 0.5538389506241472, "index_error_tokens_mean": 92.3709497206704, "missing_engine_cached": 0, "event_seq_gaps": [0, 0, 0, 0], "unknown_event_blocks": [3542, 3400, 3061, 3500]}
+Starting hot x3 affinity at 2026-10-03T00:02:27Z
+{"requests": 895, "span_s": 199.79666666666662, "input_tokens": 3408731, "output_tokens": 217215, "classes": 223}
+{"type": "run_summary", "policy": "affinity", "index_mode": "events", "requests": 895, "errors": 0, "late_dispatches_50ms": 0, "per_instance": [173, 268, 163, 291], "ttft_ms": {"mean": 1076.866219559784, "p50": 95.97719500015955, "p90": 3088.795482999558, "p99": 14353.578086000198}, "engine_cached_fraction": 0.6444157664538505, "index_error_tokens_mean": 189.40782122905028, "missing_engine_cached": 0, "event_seq_gaps": [0, 0, 0, 0], "unknown_event_blocks": [2012, 4241, 2595, 4649]}
+ok   hot-x2-affinity-events.jsonl: n=895 per_instance=[174, 404, 138, 179] ttft_mean=325ms p99=5852ms cached=0.65 index exact 827/895, under 22 (mean 1011), over 46 (mean 42) 
+ok   hot-x2-lmetric-events.jsonl: n=895 per_instance=[181, 274, 161, 279] ttft_mean=160ms p99=804ms cached=0.65 index exact 833/895, under 13 (mean 91), over 49 (mean 16) 
+ok   hot-x2-load-events.jsonl: n=895 per_instance=[220, 227, 226, 222] ttft_mean=202ms p99=858ms cached=0.57 index exact 852/895, under 13 (mean 313), over 30 (mean 52) 
+ok   hot-x3-affinity-events.jsonl: n=895 per_instance=[173, 268, 163, 291] ttft_mean=1077ms p99=14354ms cached=0.64 index exact 793/895, under 46 (mean 2938), over 56 (mean 614) 
+ok   hot-x3-lmetric-events.jsonl: n=895 per_instance=[125, 247, 178, 345] ttft_mean=310ms p99=4567ms cached=0.64 index exact 829/895, under 15 (mean 180), over 51 (mean 54) 
+ok   hot-x3-load-events.jsonl: n=895 per_instance=[230, 227, 199, 239] ttft_mean=823ms p99=7632ms cached=0.55 index exact 824/895, under 30 (mean 2078), over 41 (mean 496) 
+ok   smoke.jsonl: n=154 per_instance=[70, 27, 27, 30] ttft_mean=96ms p99=293ms cached=0.50 index exact 154/154, under 0 (mean 0), over 0 (mean 0) 
+ok   typical-x2-affinity-events.jsonl: n=787 per_instance=[208, 194, 200, 185] ttft_mean=22473ms p99=169401ms cached=0.26 index exact 624/787, under 74 (mean 933), over 89 (mean 432) 
+ok   typical-x2-lmetric-events.jsonl: n=787 per_instance=[224, 193, 181, 189] ttft_mean=1542ms p99=7157ms cached=0.14 index exact 706/787, under 16 (mean 2148), over 65 (mean 1358) 
+ok   typical-x2-load-events.jsonl: n=787 per_instance=[197, 204, 208, 178] ttft_mean=2394ms p99=8977ms cached=0.07 index exact 714/787, under 20 (mean 2859), over 53 (mean 1694) 
+0 file(s) failed
+Starting typical x3 load at 2026-10-03T00:05:57Z
+{"requests": 787, "span_s": 199.97666666666677, "input_tokens": 3811491, "output_tokens": 176632, "classes": 459}
+{"type": "run_summary", "policy": "load", "index_mode": "events", "requests": 787, "errors": 0, "late_dispatches_50ms": 0, "per_instance": [200, 197, 196, 194], "ttft_ms": {"mean": 40616.154610775106, "p50": 41182.43528399944, "p90": 71074.60795000043, "p99": 79473.32993100007}, "engine_cached_fraction": 0.06384483132716305, "index_error_tokens_mean": 391.7662007623888, "missing_engine_cached": 0, "event_seq_gaps": [0, 0, 0, 0], "unknown_event_blocks": [2791, 2688, 2797, 2554]}
+Starting typical x3 affinity at 2026-10-03T00:10:40Z
+{"requests": 787, "span_s": 199.97666666666677, "input_tokens": 3811491, "output_tokens": 176632, "classes": 459}
+{"type": "run_summary", "policy": "affinity", "index_mode": "events", "requests": 787, "errors": 0, "late_dispatches_50ms": 0, "per_instance": [195, 179, 228, 185], "ttft_ms": {"mean": 34461.92911625922, "p50": 2311.8260889996236, "p90": 157195.91873400076, "p99": 250266.6342749999}, "engine_cached_fraction": 0.23791634297444228, "index_error_tokens_mean": 537.3113087674714, "missing_engine_cached": 0, "event_seq_gaps": [0, 0, 0, 0], "unknown_event_blocks": [3060, 2023, 2863, 2828]}
+Starting typical x3 lmetric at 2026-10-03T00:18:03Z
+{"requests": 787, "span_s": 199.97666666666677, "input_tokens": 3811491, "output_tokens": 176632, "classes": 459}
+{"type": "run_summary", "policy": "lmetric", "index_mode": "events", "requests": 787, "errors": 0, "late_dispatches_50ms": 0, "per_instance": [172, 217, 190, 208], "ttft_ms": {"mean": 39155.29466611182, "p50": 38331.61313600067, "p90": 67660.50212699975, "p99": 75728.55402000004}, "engine_cached_fraction": 0.0729835122265801, "index_error_tokens_mean": 521.0876747141042, "missing_engine_cached": 0, "event_seq_gaps": [0, 0, 0, 0], "unknown_event_blocks": [2433, 3156, 2574, 2669]}
+ok   hot-x2-affinity-events.jsonl: n=895 per_instance=[174, 404, 138, 179] ttft_mean=325ms p99=5852ms cached=0.65 index exact 827/895, under 22 (mean 1011), over 46 (mean 42) 
+ok   hot-x2-lmetric-events.jsonl: n=895 per_instance=[181, 274, 161, 279] ttft_mean=160ms p99=804ms cached=0.65 index exact 833/895, under 13 (mean 91), over 49 (mean 16) 
+ok   hot-x2-load-events.jsonl: n=895 per_instance=[220, 227, 226, 222] ttft_mean=202ms p99=858ms cached=0.57 index exact 852/895, under 13 (mean 313), over 30 (mean 52) 
+ok   hot-x3-affinity-events.jsonl: n=895 per_instance=[173, 268, 163, 291] ttft_mean=1077ms p99=14354ms cached=0.64 index exact 793/895, under 46 (mean 2938), over 56 (mean 614) 
+ok   hot-x3-lmetric-events.jsonl: n=895 per_instance=[125, 247, 178, 345] ttft_mean=310ms p99=4567ms cached=0.64 index exact 829/895, under 15 (mean 180), over 51 (mean 54) 
+ok   hot-x3-load-events.jsonl: n=895 per_instance=[230, 227, 199, 239] ttft_mean=823ms p99=7632ms cached=0.55 index exact 824/895, under 30 (mean 2078), over 41 (mean 496) 
+ok   smoke.jsonl: n=154 per_instance=[70, 27, 27, 30] ttft_mean=96ms p99=293ms cached=0.50 index exact 154/154, under 0 (mean 0), over 0 (mean 0) 
+ok   typical-x2-affinity-events.jsonl: n=787 per_instance=[208, 194, 200, 185] ttft_mean=22473ms p99=169401ms cached=0.26 index exact 624/787, under 74 (mean 933), over 89 (mean 432) 
+ok   typical-x2-lmetric-events.jsonl: n=787 per_instance=[224, 193, 181, 189] ttft_mean=1542ms p99=7157ms cached=0.14 index exact 706/787, under 16 (mean 2148), over 65 (mean 1358) 
+ok   typical-x2-load-events.jsonl: n=787 per_instance=[197, 204, 208, 178] ttft_mean=2394ms p99=8977ms cached=0.07 index exact 714/787, under 20 (mean 2859), over 53 (mean 1694) 
+ok   typical-x3-affinity-events.jsonl: n=787 per_instance=[195, 179, 228, 185] ttft_mean=34462ms p99=250267ms cached=0.24 index exact 530/787, under 173 (mean 1616), over 84 (mean 1706) 
+ok   typical-x3-lmetric-events.jsonl: n=787 per_instance=[172, 217, 190, 208] ttft_mean=39155ms p99=75729ms cached=0.07 index exact 535/787, under 123 (mean 1184), over 129 (mean 2050) 
+ok   typical-x3-load-events.jsonl: n=787 per_instance=[200, 197, 196, 194] ttft_mean=40616ms p99=79473ms cached=0.06 index exact 557/787, under 131 (mean 1316), over 99 (mean 1373) 
+0 file(s) failed

@@ -1,0 +1,10 @@
+--- a/vllm/platforms/cuda.py
++++ b/vllm/platforms/cuda.py
+@@ -1019,7 +1019,7 @@
+     if nvml_available:
+         pynvml.nvmlShutdown()
+ 
+-CudaPlatform = NvmlCudaPlatform if nvml_available else NonNvmlCudaPlatform
++CudaPlatform = NonNvmlCudaPlatform
+ 
+ CudaPlatform.log_warnings()

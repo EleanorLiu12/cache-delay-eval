@@ -1,0 +1,11 @@
+{
+  "rule": "moderate is the largest measured time scale with mean TTFT <= 2 times the x2 baseline; high is 1.5 times moderate",
+  "mean_ttft_ms": {
+    "x2": 200.0143367204185,
+    "x4": 6376.724210066671,
+    "x8": 23585.647950634408,
+    "x16": 32457.655143333333
+  },
+  "moderate_time_scale": 2,
+  "high_time_scale": 3
+}
